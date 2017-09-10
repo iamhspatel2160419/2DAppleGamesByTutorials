@@ -24,6 +24,12 @@
 		7F37070B1F6498F000722623 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F37070E1F6498F000722623 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F3707101F6498F100722623 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7FA705881F65AB300009FF20 /* background1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background1.png; sourceTree = "<group>"; };
+		7FA705891F65AB300009FF20 /* background2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background2.png; sourceTree = "<group>"; };
+		7FA7058A1F65AB300009FF20 /* MainMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MainMenu.png; sourceTree = "<group>"; };
+		7FA7058B1F65AB300009FF20 /* YouLose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YouLose.png; sourceTree = "<group>"; };
+		7FA7058C1F65AB300009FF20 /* YouWin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YouWin.png; sourceTree = "<group>"; };
+		7FA7058D1F65AB320009FF20 /* sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprites.atlas; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,11 +66,25 @@
 				7F3707041F6498F000722623 /* GameScene.swift */,
 				7F3707061F6498F000722623 /* GameViewController.swift */,
 				7F3707081F6498F000722623 /* Main.storyboard */,
+				7FA705871F65AB300009FF20 /* Images */,
+				7FA7058D1F65AB320009FF20 /* sprites.atlas */,
 				7F37070B1F6498F000722623 /* Assets.xcassets */,
 				7F37070D1F6498F000722623 /* LaunchScreen.storyboard */,
 				7F3707101F6498F100722623 /* Info.plist */,
 			);
 			path = Zombie_Conga;
+			sourceTree = "<group>";
+		};
+		7FA705871F65AB300009FF20 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				7FA705881F65AB300009FF20 /* background1.png */,
+				7FA705891F65AB300009FF20 /* background2.png */,
+				7FA7058A1F65AB300009FF20 /* MainMenu.png */,
+				7FA7058B1F65AB300009FF20 /* YouLose.png */,
+				7FA7058C1F65AB300009FF20 /* YouWin.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
