@@ -16,28 +16,24 @@ depends-top-level:
 depends-member:
 - !private ["s7CVarArgP", "SKColor"]
 - !private ["s7CVarArgP", "backgroundColor"]
+- !private ["s7CVarArgP", "green"]
 - !private ["s7CVarArgP", "init"]
-- !private ["s7CVarArgP", "whiteColor"]
 - ["s7CVarArgP", ""]
 - !private ["s28CustomDebugStringConvertibleP", "SKColor"]
 - !private ["s28CustomDebugStringConvertibleP", "backgroundColor"]
+- !private ["s28CustomDebugStringConvertibleP", "green"]
 - !private ["s28CustomDebugStringConvertibleP", "init"]
-- !private ["s28CustomDebugStringConvertibleP", "whiteColor"]
 - ["s28CustomDebugStringConvertibleP", ""]
 - !private ["s23CustomStringConvertibleP", "SKColor"]
 - !private ["s23CustomStringConvertibleP", "backgroundColor"]
+- !private ["s23CustomStringConvertibleP", "green"]
 - !private ["s23CustomStringConvertibleP", "init"]
-- !private ["s23CustomStringConvertibleP", "whiteColor"]
 - ["s23CustomStringConvertibleP", ""]
 - !private ["s9EquatableP", "SKColor"]
 - !private ["s9EquatableP", "backgroundColor"]
+- !private ["s9EquatableP", "green"]
 - !private ["s9EquatableP", "init"]
-- !private ["s9EquatableP", "whiteColor"]
 - ["s9EquatableP", ""]
-- !private ["So19GKSceneRootNodeTypeP", "SKColor"]
-- !private ["So19GKSceneRootNodeTypeP", "backgroundColor"]
-- !private ["So19GKSceneRootNodeTypeP", "init"]
-- ["So19GKSceneRootNodeTypeP", ""]
 - !private ["12Zombie_Conga9GameSceneC", "SKColor"]
 - ["12Zombie_Conga9GameSceneC", "SKView"]
 - !private ["12Zombie_Conga9GameSceneC", "backgroundColor"]
@@ -46,33 +42,33 @@ depends-member:
 - ["12Zombie_Conga9GameSceneC", "init"]
 - !private ["s8HashableP", "SKColor"]
 - !private ["s8HashableP", "backgroundColor"]
+- !private ["s8HashableP", "green"]
 - !private ["s8HashableP", "init"]
-- !private ["s8HashableP", "whiteColor"]
 - ["s8HashableP", ""]
 - !private ["So8NSCodingP", "SKColor"]
 - !private ["So8NSCodingP", "backgroundColor"]
+- !private ["So8NSCodingP", "green"]
 - !private ["So8NSCodingP", "init"]
-- !private ["So8NSCodingP", "whiteColor"]
 - ["So8NSCodingP", ""]
 - !private ["So9NSCopyingP", "SKColor"]
 - !private ["So9NSCopyingP", "backgroundColor"]
+- !private ["So9NSCopyingP", "green"]
 - !private ["So9NSCopyingP", "init"]
-- !private ["So9NSCopyingP", "whiteColor"]
 - ["So9NSCopyingP", ""]
-- !private ["So21NSItemProviderReadingP", "whiteColor"]
-- !private ["So21NSItemProviderWritingP", "whiteColor"]
+- !private ["So21NSItemProviderReadingP", "green"]
+- !private ["So21NSItemProviderWritingP", "green"]
 - !private ["So8NSObjectC", "SKColor"]
 - ["So8NSObjectC", "SKView"]
 - !private ["So8NSObjectC", "backgroundColor"]
 - ["So8NSObjectC", "didMove"]
+- !private ["So8NSObjectC", "green"]
 - ["So8NSObjectC", "init"]
-- !private ["So8NSObjectC", "whiteColor"]
 - !private ["So16NSObjectProtocolP", "SKColor"]
 - !private ["So16NSObjectProtocolP", "backgroundColor"]
+- !private ["So16NSObjectProtocolP", "green"]
 - !private ["So16NSObjectProtocolP", "init"]
-- !private ["So16NSObjectProtocolP", "whiteColor"]
 - ["So16NSObjectProtocolP", ""]
-- !private ["So14NSSecureCodingP", "whiteColor"]
+- !private ["So14NSSecureCodingP", "green"]
 - !private ["So12SKEffectNodeC", "SKColor"]
 - ["So12SKEffectNodeC", "SKView"]
 - !private ["So12SKEffectNodeC", "backgroundColor"]
@@ -93,7 +89,7 @@ depends-member:
 - !private ["So10SKWarpableP", "backgroundColor"]
 - !private ["So10SKWarpableP", "init"]
 - ["So10SKWarpableP", ""]
-- !private ["So7UIColorC", "whiteColor"]
+- !private ["So7UIColorC", "green"]
 - !private ["So18UIFocusEnvironmentP", "SKColor"]
 - !private ["So18UIFocusEnvironmentP", "backgroundColor"]
 - !private ["So18UIFocusEnvironmentP", "init"]
@@ -115,18 +111,17 @@ depends-member:
 - !private ["So30UIResponderStandardEditActionsP", "backgroundColor"]
 - !private ["So30UIResponderStandardEditActionsP", "init"]
 - ["So30UIResponderStandardEditActionsP", ""]
-- !private ["s26_ExpressibleByColorLiteralP", "whiteColor"]
+- !private ["s26_ExpressibleByColorLiteralP", "green"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "SKColor"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "backgroundColor"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "green"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
-- !private ["10Foundation27_KeyValueCodingAndObservingP", "whiteColor"]
 - ["10Foundation27_KeyValueCodingAndObservingP", ""]
 depends-nominal:
 - "s7CVarArgP"
 - "s28CustomDebugStringConvertibleP"
 - "s23CustomStringConvertibleP"
 - "s9EquatableP"
-- "So19GKSceneRootNodeTypeP"
 - "12Zombie_Conga9GameSceneC"
 - "s8HashableP"
 - "So8NSCodingP"
@@ -165,8 +160,6 @@ depends-external:
 - "/Users/nhiddink/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Swift.swiftmodule"
 - "/Users/nhiddink/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/UIKit.swiftmodule"
 - "/Users/nhiddink/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/GLKit.swiftmodule"
-- "/Users/nhiddink/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/SceneKit.swiftmodule"
 - "/Users/nhiddink/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/SpriteKit.swiftmodule"
-- "/Users/nhiddink/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/GameplayKit.swiftmodule"
 - "/Users/nhiddink/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/SwiftOnoneSupport.swiftmodule"
 interface-hash: "ca6710db3eb9312c89f65753b6adb38c"

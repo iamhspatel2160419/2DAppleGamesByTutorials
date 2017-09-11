@@ -4,13 +4,21 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>Actions.sks</key>
+		<key>AppIcon60x60@2x.png</key>
 		<data>
-		P8f3NeLnSG8XNXQuoAlKRnQUBjk=
+		7OABsBzkSQWn+wQqDgKATuMqRb0=
+		</data>
+		<key>AppIcon76x76@2x~ipad.png</key>
+		<data>
+		PLSfU/XZWTdxm4z48aEb3bjeNmY=
+		</data>
+		<key>Assets.car</key>
+		<data>
+		TXGU8RDdmyJt1bs+X73IMKBaZz8=
 		</data>
 		<key>Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		9nLqzDhEKU5rqEOoPksLafHb7Gc=
+		tOOW0I7aZvCIqeA9aRQYEmy3Mlw=
 		</data>
 		<key>Base.lproj/LaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -18,7 +26,7 @@
 		</data>
 		<key>Base.lproj/LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		lJa+TEU0NOz4qd2IQvg/hqINjBI=
+		IQjw0mgmfin3eXZhFnWtFugRQxU=
 		</data>
 		<key>Base.lproj/Main.storyboardc/BV1-FR-VrT-view-3se-qz-xqx.nib</key>
 		<data>
@@ -112,13 +120,9 @@
 		<data>
 		A+mRl02aZafimM9Zk0L0UpN3eBE=
 		</data>
-		<key>GameScene.sks</key>
-		<data>
-		JdBLXFEqe9oGEEU8Mg83YNGyJJQ=
-		</data>
 		<key>Info.plist</key>
 		<data>
-		ENN5p4mNDAoFBZ5fkP3ywHSk2vM=
+		WA7NsACX8g3z5vS289r/Ru6mmZ0=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -135,26 +139,48 @@
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>Actions.sks</key>
+		<key>AppIcon60x60@2x.png</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			P8f3NeLnSG8XNXQuoAlKRnQUBjk=
+			7OABsBzkSQWn+wQqDgKATuMqRb0=
 			</data>
 			<key>hash2</key>
 			<data>
-			cAHVn0SnTs9tZ2doaXI8QWYq8kHWdfkF7ttWL6GqVVI=
+			z6dGu5LskX3bXUURXBbF3HGNda0OlQsSATvImCy0IH0=
+			</data>
+		</dict>
+		<key>AppIcon76x76@2x~ipad.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			PLSfU/XZWTdxm4z48aEb3bjeNmY=
+			</data>
+			<key>hash2</key>
+			<data>
+			LFzv0wRrb0AzEm6uv+h/uQLmcIfSufiySBQOwTK3elM=
+			</data>
+		</dict>
+		<key>Assets.car</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			TXGU8RDdmyJt1bs+X73IMKBaZz8=
+			</data>
+			<key>hash2</key>
+			<data>
+			f2ZoiUd8fOKUMFrURpqGTSjM7RpshZUtYCZqplUWQTE=
 			</data>
 		</dict>
 		<key>Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			9nLqzDhEKU5rqEOoPksLafHb7Gc=
+			tOOW0I7aZvCIqeA9aRQYEmy3Mlw=
 			</data>
 			<key>hash2</key>
 			<data>
-			5eO6i7ryfKmAb69vCW0Q6eBplM9zd1qm+NmlNNpYy1E=
+			DYaLsxyVt1VPeaauwooiPHgVpS+uIP1AUuZhpuUWZ/w=
 			</data>
 		</dict>
 		<key>Base.lproj/LaunchScreen.storyboardc/Info.plist</key>
@@ -172,11 +198,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			lJa+TEU0NOz4qd2IQvg/hqINjBI=
+			IQjw0mgmfin3eXZhFnWtFugRQxU=
 			</data>
 			<key>hash2</key>
 			<data>
-			XXqSiV214rlY3ideWjyu+R4uqroPLU9VUE2A8BXZvQk=
+			xEIvbY23ysOL7Wd2TmbGO7gh+LJ5Vrz+xBAZSRZxccg=
 			</data>
 		</dict>
 		<key>Base.lproj/Main.storyboardc/BV1-FR-VrT-view-3se-qz-xqx.nib</key>
@@ -430,17 +456,6 @@
 			<key>hash2</key>
 			<data>
 			WuVxXBoZZMgoKc7Abr8s+09Rt6MRjbUoJLeNGo963TY=
-			</data>
-		</dict>
-		<key>GameScene.sks</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			JdBLXFEqe9oGEEU8Mg83YNGyJJQ=
-			</data>
-			<key>hash2</key>
-			<data>
-			hbERI6sgM5He+GGeEDIXMfUT+KvlHjmkYz92MmMWvN8=
 			</data>
 		</dict>
 		<key>embedded.mobileprovision</key>

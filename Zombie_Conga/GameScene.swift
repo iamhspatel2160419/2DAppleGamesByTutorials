@@ -10,6 +10,6 @@ import SpriteKit
 
 class GameScene: SKScene {
     override func didMove(to: SKView) {
-        backgroundColor = SKColor.whiteColor();
+        backgroundColor = SKColor.green;
     }
 }
