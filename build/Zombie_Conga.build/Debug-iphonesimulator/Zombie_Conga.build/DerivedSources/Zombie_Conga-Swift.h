@@ -174,7 +174,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_feature(modules)
 @import UIKit;
 @import SpriteKit;
-@import Foundation;
 @import CoreGraphics;
 #endif
 
@@ -203,18 +202,11 @@ SWIFT_CLASS("_TtC12Zombie_Conga11AppDelegate")
 @end
 
 @class SKView;
-@class UITouch;
-@class UIEvent;
 @class NSCoder;
 
 SWIFT_CLASS("_TtC12Zombie_Conga9GameScene")
 @interface GameScene : SKScene
-- (void)didMoveToView:(SKView * _Nonnull)view;
-- (void)touchesBegan:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
-- (void)touchesMoved:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
-- (void)touchesEnded:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
-- (void)touchesCancelled:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
-- (void)update:(NSTimeInterval)currentTime;
+- (void)didMoveToView:(SKView * _Nonnull)to;
 - (nonnull instancetype)initWithSize:(CGSize)size OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
@@ -225,10 +217,6 @@ SWIFT_CLASS("_TtC12Zombie_Conga9GameScene")
 SWIFT_CLASS("_TtC12Zombie_Conga18GameViewController")
 @interface GameViewController : UIViewController
 - (void)viewDidLoad;
-@property (nonatomic, readonly) BOOL shouldAutorotate;
-@property (nonatomic, readonly) UIInterfaceOrientationMask supportedInterfaceOrientations;
-- (void)didReceiveMemoryWarning;
-@property (nonatomic, readonly) BOOL prefersStatusBarHidden;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end

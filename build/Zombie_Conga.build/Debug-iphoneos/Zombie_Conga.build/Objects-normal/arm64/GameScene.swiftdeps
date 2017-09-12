@@ -8,141 +8,370 @@ provides-member:
 provides-dynamic-lookup:
 - "didMove"
 depends-top-level:
+- !private "/"
 - "AssignmentPrecedence"
+- !private "CGPoint"
 - "GameScene"
 - !private "SKColor"
 - "SKScene"
+- !private "SKSpriteNode"
 - "SKView"
+- !private "StringLiteralType"
 depends-member:
+- !private ["s23BidirectionalCollectionP", "init"]
+- !private ["SC7CGPointV", "init"]
+- !private ["SC6CGSizeV", "height"]
+- !private ["SC6CGSizeV", "width"]
+- !private ["s7CVarArgP", "CGPoint"]
 - !private ["s7CVarArgP", "SKColor"]
+- !private ["s7CVarArgP", "SKSpriteNode"]
+- !private ["s7CVarArgP", "addChild"]
+- !private ["s7CVarArgP", "anchorPoint"]
 - !private ["s7CVarArgP", "backgroundColor"]
-- !private ["s7CVarArgP", "green"]
 - !private ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "position"]
+- !private ["s7CVarArgP", "size"]
+- !private ["s7CVarArgP", "white"]
+- !private ["s7CVarArgP", "zPosition"]
 - ["s7CVarArgP", ""]
+- !private ["s10CollectionP", "init"]
+- !private ["s10ComparableP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "CGPoint"]
 - !private ["s28CustomDebugStringConvertibleP", "SKColor"]
+- !private ["s28CustomDebugStringConvertibleP", "SKSpriteNode"]
+- !private ["s28CustomDebugStringConvertibleP", "addChild"]
+- !private ["s28CustomDebugStringConvertibleP", "anchorPoint"]
 - !private ["s28CustomDebugStringConvertibleP", "backgroundColor"]
-- !private ["s28CustomDebugStringConvertibleP", "green"]
+- !private ["s28CustomDebugStringConvertibleP", "height"]
 - !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "position"]
+- !private ["s28CustomDebugStringConvertibleP", "size"]
+- !private ["s28CustomDebugStringConvertibleP", "white"]
+- !private ["s28CustomDebugStringConvertibleP", "width"]
+- !private ["s28CustomDebugStringConvertibleP", "zPosition"]
 - ["s28CustomDebugStringConvertibleP", ""]
+- !private ["s29CustomPlaygroundQuickLookableP", "anchorPoint"]
+- !private ["s29CustomPlaygroundQuickLookableP", "height"]
+- !private ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s29CustomPlaygroundQuickLookableP", "position"]
+- !private ["s29CustomPlaygroundQuickLookableP", "width"]
+- !private ["s29CustomPlaygroundQuickLookableP", "zPosition"]
+- !private ["s17CustomReflectableP", "height"]
+- !private ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "width"]
+- !private ["s23CustomStringConvertibleP", "CGPoint"]
 - !private ["s23CustomStringConvertibleP", "SKColor"]
+- !private ["s23CustomStringConvertibleP", "SKSpriteNode"]
+- !private ["s23CustomStringConvertibleP", "addChild"]
+- !private ["s23CustomStringConvertibleP", "anchorPoint"]
 - !private ["s23CustomStringConvertibleP", "backgroundColor"]
-- !private ["s23CustomStringConvertibleP", "green"]
 - !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "position"]
+- !private ["s23CustomStringConvertibleP", "size"]
+- !private ["s23CustomStringConvertibleP", "white"]
+- !private ["s23CustomStringConvertibleP", "zPosition"]
 - ["s23CustomStringConvertibleP", ""]
+- !private ["s9DecodableP", "height"]
+- !private ["s9DecodableP", "init"]
+- !private ["s9DecodableP", "width"]
+- !private ["s9EncodableP", "height"]
+- !private ["s9EncodableP", "init"]
+- !private ["s9EncodableP", "width"]
+- !private ["s9EquatableP", "CGPoint"]
 - !private ["s9EquatableP", "SKColor"]
+- !private ["s9EquatableP", "SKSpriteNode"]
+- !private ["s9EquatableP", "addChild"]
+- !private ["s9EquatableP", "anchorPoint"]
 - !private ["s9EquatableP", "backgroundColor"]
-- !private ["s9EquatableP", "green"]
+- !private ["s9EquatableP", "height"]
 - !private ["s9EquatableP", "init"]
+- !private ["s9EquatableP", "position"]
+- !private ["s9EquatableP", "size"]
+- !private ["s9EquatableP", "white"]
+- !private ["s9EquatableP", "width"]
+- !private ["s9EquatableP", "zPosition"]
 - ["s9EquatableP", ""]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s26ExpressibleByStringLiteralP", "init"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- !private ["12Zombie_Conga9GameSceneC", "CGPoint"]
 - !private ["12Zombie_Conga9GameSceneC", "SKColor"]
+- !private ["12Zombie_Conga9GameSceneC", "SKSpriteNode"]
 - ["12Zombie_Conga9GameSceneC", "SKView"]
+- !private ["12Zombie_Conga9GameSceneC", "addChild"]
 - !private ["12Zombie_Conga9GameSceneC", "backgroundColor"]
 - ["12Zombie_Conga9GameSceneC", "deinit"]
 - ["12Zombie_Conga9GameSceneC", "didMove"]
 - ["12Zombie_Conga9GameSceneC", "init"]
+- !private ["12Zombie_Conga9GameSceneC", "size"]
+- !private ["s8HashableP", "CGPoint"]
 - !private ["s8HashableP", "SKColor"]
+- !private ["s8HashableP", "SKSpriteNode"]
+- !private ["s8HashableP", "addChild"]
+- !private ["s8HashableP", "anchorPoint"]
 - !private ["s8HashableP", "backgroundColor"]
-- !private ["s8HashableP", "green"]
 - !private ["s8HashableP", "init"]
+- !private ["s8HashableP", "position"]
+- !private ["s8HashableP", "size"]
+- !private ["s8HashableP", "white"]
+- !private ["s8HashableP", "zPosition"]
 - ["s8HashableP", ""]
+- !private ["s25LosslessStringConvertibleP", "init"]
+- !private ["s10MirrorPathP", "init"]
+- !private ["So8NSCodingP", "CGPoint"]
 - !private ["So8NSCodingP", "SKColor"]
+- !private ["So8NSCodingP", "SKSpriteNode"]
+- !private ["So8NSCodingP", "addChild"]
+- !private ["So8NSCodingP", "anchorPoint"]
 - !private ["So8NSCodingP", "backgroundColor"]
-- !private ["So8NSCodingP", "green"]
 - !private ["So8NSCodingP", "init"]
+- !private ["So8NSCodingP", "position"]
+- !private ["So8NSCodingP", "size"]
+- !private ["So8NSCodingP", "white"]
+- !private ["So8NSCodingP", "zPosition"]
 - ["So8NSCodingP", ""]
+- !private ["So9NSCopyingP", "CGPoint"]
 - !private ["So9NSCopyingP", "SKColor"]
+- !private ["So9NSCopyingP", "SKSpriteNode"]
+- !private ["So9NSCopyingP", "addChild"]
+- !private ["So9NSCopyingP", "anchorPoint"]
 - !private ["So9NSCopyingP", "backgroundColor"]
-- !private ["So9NSCopyingP", "green"]
 - !private ["So9NSCopyingP", "init"]
+- !private ["So9NSCopyingP", "position"]
+- !private ["So9NSCopyingP", "size"]
+- !private ["So9NSCopyingP", "white"]
+- !private ["So9NSCopyingP", "zPosition"]
 - ["So9NSCopyingP", ""]
-- !private ["So21NSItemProviderReadingP", "green"]
-- !private ["So21NSItemProviderWritingP", "green"]
+- !private ["So21NSItemProviderReadingP", "init"]
+- !private ["So21NSItemProviderReadingP", "white"]
+- !private ["So21NSItemProviderWritingP", "init"]
+- !private ["So21NSItemProviderWritingP", "white"]
+- !private ["So16NSMutableCopyingP", "init"]
+- !private ["So8NSObjectC", "CGPoint"]
 - !private ["So8NSObjectC", "SKColor"]
+- !private ["So8NSObjectC", "SKSpriteNode"]
 - ["So8NSObjectC", "SKView"]
+- !private ["So8NSObjectC", "addChild"]
+- !private ["So8NSObjectC", "anchorPoint"]
 - !private ["So8NSObjectC", "backgroundColor"]
 - ["So8NSObjectC", "didMove"]
-- !private ["So8NSObjectC", "green"]
 - ["So8NSObjectC", "init"]
+- !private ["So8NSObjectC", "position"]
+- !private ["So8NSObjectC", "size"]
+- !private ["So8NSObjectC", "white"]
+- !private ["So8NSObjectC", "zPosition"]
+- !private ["So16NSObjectProtocolP", "CGPoint"]
 - !private ["So16NSObjectProtocolP", "SKColor"]
+- !private ["So16NSObjectProtocolP", "SKSpriteNode"]
+- !private ["So16NSObjectProtocolP", "addChild"]
+- !private ["So16NSObjectProtocolP", "anchorPoint"]
 - !private ["So16NSObjectProtocolP", "backgroundColor"]
-- !private ["So16NSObjectProtocolP", "green"]
 - !private ["So16NSObjectProtocolP", "init"]
+- !private ["So16NSObjectProtocolP", "position"]
+- !private ["So16NSObjectProtocolP", "size"]
+- !private ["So16NSObjectProtocolP", "white"]
+- !private ["So16NSObjectProtocolP", "zPosition"]
 - ["So16NSObjectProtocolP", ""]
-- !private ["So14NSSecureCodingP", "green"]
+- !private ["So14NSSecureCodingP", "init"]
+- !private ["So14NSSecureCodingP", "white"]
+- !private ["So8NSStringC", "init"]
+- !private ["s26RangeReplaceableCollectionP", "init"]
+- !private ["So12SKEffectNodeC", "CGPoint"]
 - !private ["So12SKEffectNodeC", "SKColor"]
+- !private ["So12SKEffectNodeC", "SKSpriteNode"]
 - ["So12SKEffectNodeC", "SKView"]
+- !private ["So12SKEffectNodeC", "addChild"]
 - !private ["So12SKEffectNodeC", "backgroundColor"]
 - ["So12SKEffectNodeC", "didMove"]
 - ["So12SKEffectNodeC", "init"]
+- !private ["So12SKEffectNodeC", "size"]
+- !private ["So6SKNodeC", "CGPoint"]
 - !private ["So6SKNodeC", "SKColor"]
+- !private ["So6SKNodeC", "SKSpriteNode"]
 - ["So6SKNodeC", "SKView"]
+- !private ["So6SKNodeC", "addChild"]
+- !private ["So6SKNodeC", "anchorPoint"]
 - !private ["So6SKNodeC", "backgroundColor"]
 - ["So6SKNodeC", "didMove"]
 - ["So6SKNodeC", "init"]
+- !private ["So6SKNodeC", "position"]
+- !private ["So6SKNodeC", "size"]
+- !private ["So6SKNodeC", "zPosition"]
+- !private ["So7SKSceneC", "CGPoint"]
 - !private ["So7SKSceneC", "SKColor"]
+- !private ["So7SKSceneC", "SKSpriteNode"]
 - ["So7SKSceneC", "SKView"]
+- !private ["So7SKSceneC", "addChild"]
 - !private ["So7SKSceneC", "backgroundColor"]
 - ["So7SKSceneC", "didMove"]
 - ["So7SKSceneC", "init"]
+- !private ["So7SKSceneC", "size"]
 - ["So7SKSceneC", ""]
+- !private ["So12SKSpriteNodeC", "anchorPoint"]
+- !private ["So12SKSpriteNodeC", "init"]
+- !private ["So12SKSpriteNodeC", "position"]
+- !private ["So12SKSpriteNodeC", "zPosition"]
+- !private ["So10SKWarpableP", "CGPoint"]
 - !private ["So10SKWarpableP", "SKColor"]
+- !private ["So10SKWarpableP", "SKSpriteNode"]
+- !private ["So10SKWarpableP", "addChild"]
+- !private ["So10SKWarpableP", "anchorPoint"]
 - !private ["So10SKWarpableP", "backgroundColor"]
 - !private ["So10SKWarpableP", "init"]
+- !private ["So10SKWarpableP", "position"]
+- !private ["So10SKWarpableP", "size"]
+- !private ["So10SKWarpableP", "zPosition"]
 - ["So10SKWarpableP", ""]
-- !private ["So7UIColorC", "green"]
+- !private ["s8SequenceP", "init"]
+- !private ["SS", "init"]
+- !private ["s14StringProtocolP", "init"]
+- !private ["s16TextOutputStreamP", "init"]
+- !private ["s20TextOutputStreamableP", "init"]
+- !private ["So7UIColorC", "white"]
+- !private ["So18UIFocusEnvironmentP", "CGPoint"]
 - !private ["So18UIFocusEnvironmentP", "SKColor"]
+- !private ["So18UIFocusEnvironmentP", "SKSpriteNode"]
+- !private ["So18UIFocusEnvironmentP", "addChild"]
+- !private ["So18UIFocusEnvironmentP", "anchorPoint"]
 - !private ["So18UIFocusEnvironmentP", "backgroundColor"]
 - !private ["So18UIFocusEnvironmentP", "init"]
+- !private ["So18UIFocusEnvironmentP", "position"]
+- !private ["So18UIFocusEnvironmentP", "size"]
+- !private ["So18UIFocusEnvironmentP", "zPosition"]
 - ["So18UIFocusEnvironmentP", ""]
+- !private ["So11UIFocusItemP", "CGPoint"]
 - !private ["So11UIFocusItemP", "SKColor"]
+- !private ["So11UIFocusItemP", "SKSpriteNode"]
+- !private ["So11UIFocusItemP", "addChild"]
+- !private ["So11UIFocusItemP", "anchorPoint"]
 - !private ["So11UIFocusItemP", "backgroundColor"]
 - !private ["So11UIFocusItemP", "init"]
+- !private ["So11UIFocusItemP", "position"]
+- !private ["So11UIFocusItemP", "size"]
+- !private ["So11UIFocusItemP", "zPosition"]
 - ["So11UIFocusItemP", ""]
+- !private ["So30UIPasteConfigurationSupportingP", "CGPoint"]
 - !private ["So30UIPasteConfigurationSupportingP", "SKColor"]
+- !private ["So30UIPasteConfigurationSupportingP", "SKSpriteNode"]
+- !private ["So30UIPasteConfigurationSupportingP", "addChild"]
+- !private ["So30UIPasteConfigurationSupportingP", "anchorPoint"]
 - !private ["So30UIPasteConfigurationSupportingP", "backgroundColor"]
 - !private ["So30UIPasteConfigurationSupportingP", "init"]
+- !private ["So30UIPasteConfigurationSupportingP", "position"]
+- !private ["So30UIPasteConfigurationSupportingP", "size"]
+- !private ["So30UIPasteConfigurationSupportingP", "zPosition"]
 - ["So30UIPasteConfigurationSupportingP", ""]
+- !private ["So11UIResponderC", "CGPoint"]
 - !private ["So11UIResponderC", "SKColor"]
+- !private ["So11UIResponderC", "SKSpriteNode"]
 - ["So11UIResponderC", "SKView"]
+- !private ["So11UIResponderC", "addChild"]
+- !private ["So11UIResponderC", "anchorPoint"]
 - !private ["So11UIResponderC", "backgroundColor"]
 - ["So11UIResponderC", "didMove"]
 - ["So11UIResponderC", "init"]
+- !private ["So11UIResponderC", "position"]
+- !private ["So11UIResponderC", "size"]
+- !private ["So11UIResponderC", "zPosition"]
+- !private ["So30UIResponderStandardEditActionsP", "CGPoint"]
 - !private ["So30UIResponderStandardEditActionsP", "SKColor"]
+- !private ["So30UIResponderStandardEditActionsP", "SKSpriteNode"]
+- !private ["So30UIResponderStandardEditActionsP", "addChild"]
+- !private ["So30UIResponderStandardEditActionsP", "anchorPoint"]
 - !private ["So30UIResponderStandardEditActionsP", "backgroundColor"]
 - !private ["So30UIResponderStandardEditActionsP", "init"]
+- !private ["So30UIResponderStandardEditActionsP", "position"]
+- !private ["So30UIResponderStandardEditActionsP", "size"]
+- !private ["So30UIResponderStandardEditActionsP", "zPosition"]
 - ["So30UIResponderStandardEditActionsP", ""]
-- !private ["s26_ExpressibleByColorLiteralP", "green"]
+- !private ["s23_BidirectionalIndexableP", "init"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- !private ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- !private ["s26_ExpressibleByColorLiteralP", "white"]
+- !private ["s33_ExpressibleByStringInterpolationP", "init"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "init"]
+- !private ["s10_IndexableP", "init"]
+- !private ["s14_IndexableBaseP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "CGPoint"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "SKColor"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "SKSpriteNode"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "addChild"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "anchorPoint"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "backgroundColor"]
-- !private ["10Foundation27_KeyValueCodingAndObservingP", "green"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "position"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "size"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "white"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "zPosition"]
 - ["10Foundation27_KeyValueCodingAndObservingP", ""]
+- !private ["s21_ObjectiveCBridgeableP", "height"]
+- !private ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "width"]
+- !private ["s26_RangeReplaceableIndexableP", "init"]
+- !private ["s16_SwiftStringViewP", "init"]
 depends-nominal:
+- !private "s23BidirectionalCollectionP"
+- !private "SC7CGPointV"
+- !private "SC6CGSizeV"
 - "s7CVarArgP"
+- !private "s10CollectionP"
+- !private "s10ComparableP"
 - "s28CustomDebugStringConvertibleP"
+- !private "s29CustomPlaygroundQuickLookableP"
+- !private "s17CustomReflectableP"
 - "s23CustomStringConvertibleP"
+- !private "s9DecodableP"
+- !private "s9EncodableP"
 - "s9EquatableP"
+- !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- !private "s26ExpressibleByStringLiteralP"
+- !private "s33ExpressibleByUnicodeScalarLiteralP"
 - "12Zombie_Conga9GameSceneC"
 - "s8HashableP"
+- !private "s25LosslessStringConvertibleP"
+- !private "s10MirrorPathP"
 - "So8NSCodingP"
 - "So9NSCopyingP"
 - !private "So21NSItemProviderReadingP"
 - !private "So21NSItemProviderWritingP"
+- !private "So16NSMutableCopyingP"
 - "So8NSObjectC"
 - "So16NSObjectProtocolP"
 - !private "So14NSSecureCodingP"
+- !private "So8NSStringC"
+- !private "s26RangeReplaceableCollectionP"
 - "So12SKEffectNodeC"
 - "So6SKNodeC"
 - "So7SKSceneC"
+- !private "So12SKSpriteNodeC"
 - "So10SKWarpableP"
+- !private "s8SequenceP"
+- !private "SS"
+- !private "s14StringProtocolP"
+- !private "s16TextOutputStreamP"
+- !private "s20TextOutputStreamableP"
 - !private "So7UIColorC"
 - "So18UIFocusEnvironmentP"
 - "So11UIFocusItemP"
 - "So30UIPasteConfigurationSupportingP"
 - "So11UIResponderC"
 - "So30UIResponderStandardEditActionsP"
+- !private "s23_BidirectionalIndexableP"
+- !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- !private "s34_ExpressibleByBuiltinStringLiteralP"
+- !private "s39_ExpressibleByBuiltinUTF16StringLiteralP"
+- !private "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
 - !private "s26_ExpressibleByColorLiteralP"
+- !private "s33_ExpressibleByStringInterpolationP"
+- !private "s35_HasCustomAnyHashableRepresentationP"
+- !private "s10_IndexableP"
+- !private "s14_IndexableBaseP"
 - "10Foundation27_KeyValueCodingAndObservingP"
+- !private "s21_ObjectiveCBridgeableP"
+- !private "s26_RangeReplaceableIndexableP"
+- !private "s16_SwiftStringViewP"
 depends-dynamic-lookup:
 depends-external:
 - "/Users/nhiddink/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Dispatch.apinotesc"
