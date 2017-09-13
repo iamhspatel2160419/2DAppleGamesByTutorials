@@ -8,6 +8,8 @@
 
 import SpriteKit
 
+var zombie = SKSpriteNode()
+
 class GameScene: SKScene {
     override func didMove(to: SKView) {
         
@@ -21,13 +23,24 @@ class GameScene: SKScene {
         //background.anchorPoint = CGPoint(x: 0, y: 0)
         
         // Create Zombie Sprite
-        let zombie = SKSpriteNode(imageNamed: "zombie1.png")
+        zombie = SKSpriteNode(imageNamed: "zombie1.png")
         zombie.position = CGPoint(x: 400, y: 400)
         zombie.zPosition = 0
         zombie.anchorPoint = CGPoint(x: 0, y: 0)
         
+        // Scale Zombie
+        // zombie.xScale = 2.0
+        // zombie.yScale = 2.0
+        // or
+        // zombie.setScale(2.0)
+        
         // Add Sprites to Scene
         addChild(background)
         addChild(zombie)
+        
+    }
+    
+    override func update(_ currentTime: TimeInterval) {
+        zombie.position = CGPoint(x: zombie.position.x + 4, y: zombie.position.y)
     }
 }
