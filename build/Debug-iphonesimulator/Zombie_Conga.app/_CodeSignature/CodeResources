@@ -4,13 +4,21 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>Actions.sks</key>
+		<key>AppIcon60x60@2x.png</key>
 		<data>
-		P8f3NeLnSG8XNXQuoAlKRnQUBjk=
+		pg7FfKnkoct/mspNWpkz7lj62+k=
+		</data>
+		<key>AppIcon76x76@2x~ipad.png</key>
+		<data>
+		FWvN2nLiq6k7U2CN9tJPTWurCqM=
+		</data>
+		<key>Assets.car</key>
+		<data>
+		wR9XlCAlWFyA79KZGTbUlByQzRQ=
 		</data>
 		<key>Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		/zR0dtHToISdr6V/uAR57PlnaVk=
+		8KPGzQcgGz/pJk0hGxx8o6W0YYk=
 		</data>
 		<key>Base.lproj/LaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -18,7 +26,7 @@
 		</data>
 		<key>Base.lproj/LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		u0onM7Co3KxolsOAFUiHTyXOPsQ=
+		J6xqVc3afxksFaehv8RJpeG7dpY=
 		</data>
 		<key>Base.lproj/Main.storyboardc/BV1-FR-VrT-view-3se-qz-xqx.nib</key>
 		<data>
@@ -100,6 +108,10 @@
 		<data>
 		oR7EzRFkFS13K68nXsBVYGD/lmI=
 		</data>
+		<key>Frameworks/libswiftSwiftOnoneSupport.dylib</key>
+		<data>
+		eBHTCjpzXyKxzLW+wiICZE3W5sg=
+		</data>
 		<key>Frameworks/libswiftUIKit.dylib</key>
 		<data>
 		3TvenLU8SxpS2My4JlbxVkFu5x0=
@@ -112,13 +124,9 @@
 		<data>
 		ckaVhNK5brrmcnrZZ9jbdVUwaKQ=
 		</data>
-		<key>GameScene.sks</key>
-		<data>
-		JdBLXFEqe9oGEEU8Mg83YNGyJJQ=
-		</data>
 		<key>Info.plist</key>
 		<data>
-		eCZljmsj/yUo0Vmx5qwXIzW79x8=
+		e82jyma0glpnbWuFBx/5GKB5oo8=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -131,26 +139,48 @@
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>Actions.sks</key>
+		<key>AppIcon60x60@2x.png</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			P8f3NeLnSG8XNXQuoAlKRnQUBjk=
+			pg7FfKnkoct/mspNWpkz7lj62+k=
 			</data>
 			<key>hash2</key>
 			<data>
-			cAHVn0SnTs9tZ2doaXI8QWYq8kHWdfkF7ttWL6GqVVI=
+			o8xRZuEZZuJ467rNXfjjWD33Xl+FntBaU2LL3Gw9FGw=
+			</data>
+		</dict>
+		<key>AppIcon76x76@2x~ipad.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			FWvN2nLiq6k7U2CN9tJPTWurCqM=
+			</data>
+			<key>hash2</key>
+			<data>
+			P8ka9/K2fVrrGChQ6LUKjU+AQolV9kb9v1kqsTv9YjY=
+			</data>
+		</dict>
+		<key>Assets.car</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			wR9XlCAlWFyA79KZGTbUlByQzRQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			xjsHSaesxuBuMAgnU/ZreAVSUK7Of06x2pFlLNmwS0Y=
 			</data>
 		</dict>
 		<key>Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			/zR0dtHToISdr6V/uAR57PlnaVk=
+			8KPGzQcgGz/pJk0hGxx8o6W0YYk=
 			</data>
 			<key>hash2</key>
 			<data>
-			LIJ70pyMi7ssSq3E5Fb4uej+UWTA8bcTTS/HxwZInvs=
+			wE+vaEPxNXAsj2DqkXIP0FD6IfenX9imwqN9ggdRyqM=
 			</data>
 		</dict>
 		<key>Base.lproj/LaunchScreen.storyboardc/Info.plist</key>
@@ -168,11 +198,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			u0onM7Co3KxolsOAFUiHTyXOPsQ=
+			J6xqVc3afxksFaehv8RJpeG7dpY=
 			</data>
 			<key>hash2</key>
 			<data>
-			a/kttxsNx8U56tvD1ozpY5kVYSgFB3XiSvGMAQ+k77E=
+			ZQDwUStk52OdOsMeKecu5Dhdvu2DQVI76logNbdB4yg=
 			</data>
 		</dict>
 		<key>Base.lproj/Main.storyboardc/BV1-FR-VrT-view-3se-qz-xqx.nib</key>
@@ -395,6 +425,17 @@
 			ZhuFiNpW+9Kf2zCiJR3Tot7O2hCLcckXZRA+FvwVL5E=
 			</data>
 		</dict>
+		<key>Frameworks/libswiftSwiftOnoneSupport.dylib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			eBHTCjpzXyKxzLW+wiICZE3W5sg=
+			</data>
+			<key>hash2</key>
+			<data>
+			JTJXgrZIrsdfNLKGLTIybFCornsptfxAmf3X03Ku6qk=
+			</data>
+		</dict>
 		<key>Frameworks/libswiftUIKit.dylib</key>
 		<dict>
 			<key>hash</key>
@@ -426,17 +467,6 @@
 			<key>hash2</key>
 			<data>
 			crAuogDWEcYasWc8bJcjX5zcr27aY4TGozwT3tF2hJA=
-			</data>
-		</dict>
-		<key>GameScene.sks</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			JdBLXFEqe9oGEEU8Mg83YNGyJJQ=
-			</data>
-			<key>hash2</key>
-			<data>
-			hbERI6sgM5He+GGeEDIXMfUT+KvlHjmkYz92MmMWvN8=
 			</data>
 		</dict>
 		<key>libswiftRemoteMirror.dylib</key>
