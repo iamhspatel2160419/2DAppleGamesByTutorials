@@ -174,6 +174,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_feature(modules)
 @import UIKit;
 @import SpriteKit;
+@import Foundation;
 @import CoreGraphics;
 #endif
 
@@ -207,6 +208,7 @@ SWIFT_CLASS("_TtC12Zombie_Conga11AppDelegate")
 SWIFT_CLASS("_TtC12Zombie_Conga9GameScene")
 @interface GameScene : SKScene
 - (void)didMoveToView:(SKView * _Nonnull)to;
+- (void)update:(NSTimeInterval)currentTime;
 - (nonnull instancetype)initWithSize:(CGSize)size OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
