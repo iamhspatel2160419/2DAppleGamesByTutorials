@@ -203,12 +203,17 @@ SWIFT_CLASS("_TtC12Zombie_Conga11AppDelegate")
 @end
 
 @class SKView;
+@class UIRotationGestureRecognizer;
 @class NSCoder;
 
 SWIFT_CLASS("_TtC12Zombie_Conga9GameScene")
 @interface GameScene : SKScene
 - (void)didMoveToView:(SKView * _Nonnull)to;
 - (void)update:(NSTimeInterval)currentTime;
+- (void)touchedDown;
+- (void)pinchedIn;
+- (void)pinchedOut;
+- (void)rotatedView:(UIRotationGestureRecognizer * _Nonnull)sender;
 - (nonnull instancetype)initWithSize:(CGSize)size OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;

@@ -1,5 +1,14 @@
 ### Swift dependencies file v0 ###
 provides-top-level:
+- "lastUpdateTime"
+- "dt"
+- "zombieMovePointsPerSecond"
+- "velocity"
+- "zombie"
+- "touchGR"
+- "pinchInGR"
+- "pinchOutGR"
+- "rotateGR"
 - "GameScene"
 provides-nominal:
 - "12Zombie_Conga9GameSceneC"
@@ -7,407 +16,793 @@ provides-member:
 - ["12Zombie_Conga9GameSceneC", ""]
 provides-dynamic-lookup:
 - "didMove"
+- "pinchedIn"
+- "pinchedOut"
+- "rotatedView"
+- "touchedDown"
 - "update"
 depends-top-level:
+- !private "*"
 - !private "+"
+- !private "-"
 - !private "/"
+- !private ">"
 - "AssignmentPrecedence"
-- !private "CGPoint"
+- "CGFloat"
+- "CGPoint"
 - "GameScene"
 - !private "SKColor"
 - "SKScene"
-- !private "SKSpriteNode"
+- "SKSpriteNode"
 - "SKView"
-- !private "StringLiteralType"
+- "StringLiteralType"
 - "TimeInterval"
-- !private "zombie"
+- "UIPinchGestureRecognizer"
+- "UIRotationGestureRecognizer"
+- "UITapGestureRecognizer"
+- "dt"
+- "lastUpdateTime"
+- "pinchInGR"
+- "pinchOutGR"
+- !private "print"
+- "rotateGR"
+- "touchGR"
+- "velocity"
+- "zombie"
+- "zombieMovePointsPerSecond"
 depends-member:
-- !private ["s23BidirectionalCollectionP", "init"]
+- ["s23BidirectionalCollectionP", "init"]
+- !private ["s19BinaryFloatingPointP", "init"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- !private ["So15CALayerDelegateP", "addGestureRecognizer"]
+- !private ["12CoreGraphics7CGFloatV", "init"]
 - !private ["SC7CGPointV", "init"]
+- !private ["SC7CGPointV", "x"]
+- !private ["SC7CGPointV", "y"]
+- ["SC7CGPointV", "zero"]
 - !private ["SC6CGSizeV", "height"]
 - !private ["SC6CGSizeV", "width"]
+- !private ["s7CVarArgP", "CGFloat"]
 - !private ["s7CVarArgP", "CGPoint"]
+- !private ["s7CVarArgP", "GameScene"]
 - !private ["s7CVarArgP", "SKColor"]
 - !private ["s7CVarArgP", "SKSpriteNode"]
 - !private ["s7CVarArgP", "addChild"]
+- !private ["s7CVarArgP", "addGestureRecognizer"]
+- !private ["s7CVarArgP", "addTarget"]
 - !private ["s7CVarArgP", "anchorPoint"]
 - !private ["s7CVarArgP", "backgroundColor"]
-- !private ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "dt"]
+- ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "lastUpdateTime"]
+- !private ["s7CVarArgP", "moveSprite"]
 - !private ["s7CVarArgP", "position"]
+- !private ["s7CVarArgP", "print"]
+- !private ["s7CVarArgP", "rotateGR"]
+- !private ["s7CVarArgP", "rotatedView"]
+- !private ["s7CVarArgP", "rotation"]
 - !private ["s7CVarArgP", "size"]
+- !private ["s7CVarArgP", "view"]
 - !private ["s7CVarArgP", "white"]
 - !private ["s7CVarArgP", "zPosition"]
+- !private ["s7CVarArgP", "zRotation"]
 - !private ["s7CVarArgP", "zombie"]
+- !private ["s7CVarArgP", "zombieMovePointsPerSecond"]
 - ["s7CVarArgP", ""]
-- !private ["s10CollectionP", "init"]
-- !private ["s10ComparableP", "init"]
+- ["s10CollectionP", "init"]
+- ["s10ComparableP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "CGFloat"]
 - !private ["s28CustomDebugStringConvertibleP", "CGPoint"]
+- !private ["s28CustomDebugStringConvertibleP", "GameScene"]
 - !private ["s28CustomDebugStringConvertibleP", "SKColor"]
 - !private ["s28CustomDebugStringConvertibleP", "SKSpriteNode"]
 - !private ["s28CustomDebugStringConvertibleP", "addChild"]
+- !private ["s28CustomDebugStringConvertibleP", "addGestureRecognizer"]
+- !private ["s28CustomDebugStringConvertibleP", "addTarget"]
 - !private ["s28CustomDebugStringConvertibleP", "anchorPoint"]
 - !private ["s28CustomDebugStringConvertibleP", "backgroundColor"]
+- !private ["s28CustomDebugStringConvertibleP", "dt"]
 - !private ["s28CustomDebugStringConvertibleP", "height"]
-- !private ["s28CustomDebugStringConvertibleP", "init"]
+- ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "lastUpdateTime"]
+- !private ["s28CustomDebugStringConvertibleP", "moveSprite"]
 - !private ["s28CustomDebugStringConvertibleP", "position"]
+- !private ["s28CustomDebugStringConvertibleP", "print"]
+- !private ["s28CustomDebugStringConvertibleP", "rotateGR"]
+- !private ["s28CustomDebugStringConvertibleP", "rotatedView"]
+- !private ["s28CustomDebugStringConvertibleP", "rotation"]
 - !private ["s28CustomDebugStringConvertibleP", "size"]
+- !private ["s28CustomDebugStringConvertibleP", "view"]
 - !private ["s28CustomDebugStringConvertibleP", "white"]
 - !private ["s28CustomDebugStringConvertibleP", "width"]
+- !private ["s28CustomDebugStringConvertibleP", "x"]
+- !private ["s28CustomDebugStringConvertibleP", "y"]
 - !private ["s28CustomDebugStringConvertibleP", "zPosition"]
+- !private ["s28CustomDebugStringConvertibleP", "zRotation"]
+- ["s28CustomDebugStringConvertibleP", "zero"]
 - !private ["s28CustomDebugStringConvertibleP", "zombie"]
+- !private ["s28CustomDebugStringConvertibleP", "zombieMovePointsPerSecond"]
 - ["s28CustomDebugStringConvertibleP", ""]
+- !private ["s29CustomPlaygroundQuickLookableP", "_getBuiltinLogicValue"]
 - !private ["s29CustomPlaygroundQuickLookableP", "anchorPoint"]
 - !private ["s29CustomPlaygroundQuickLookableP", "height"]
-- !private ["s29CustomPlaygroundQuickLookableP", "init"]
+- ["s29CustomPlaygroundQuickLookableP", "init"]
 - !private ["s29CustomPlaygroundQuickLookableP", "position"]
 - !private ["s29CustomPlaygroundQuickLookableP", "width"]
+- !private ["s29CustomPlaygroundQuickLookableP", "x"]
+- !private ["s29CustomPlaygroundQuickLookableP", "y"]
 - !private ["s29CustomPlaygroundQuickLookableP", "zPosition"]
+- !private ["s29CustomPlaygroundQuickLookableP", "zRotation"]
+- ["s29CustomPlaygroundQuickLookableP", "zero"]
+- !private ["s17CustomReflectableP", "_getBuiltinLogicValue"]
 - !private ["s17CustomReflectableP", "height"]
-- !private ["s17CustomReflectableP", "init"]
+- ["s17CustomReflectableP", "init"]
 - !private ["s17CustomReflectableP", "width"]
+- !private ["s17CustomReflectableP", "x"]
+- !private ["s17CustomReflectableP", "y"]
+- ["s17CustomReflectableP", "zero"]
+- !private ["s23CustomStringConvertibleP", "CGFloat"]
 - !private ["s23CustomStringConvertibleP", "CGPoint"]
+- !private ["s23CustomStringConvertibleP", "GameScene"]
 - !private ["s23CustomStringConvertibleP", "SKColor"]
 - !private ["s23CustomStringConvertibleP", "SKSpriteNode"]
+- !private ["s23CustomStringConvertibleP", "_getBuiltinLogicValue"]
 - !private ["s23CustomStringConvertibleP", "addChild"]
+- !private ["s23CustomStringConvertibleP", "addGestureRecognizer"]
+- !private ["s23CustomStringConvertibleP", "addTarget"]
 - !private ["s23CustomStringConvertibleP", "anchorPoint"]
 - !private ["s23CustomStringConvertibleP", "backgroundColor"]
-- !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "dt"]
+- ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "lastUpdateTime"]
+- !private ["s23CustomStringConvertibleP", "moveSprite"]
 - !private ["s23CustomStringConvertibleP", "position"]
+- !private ["s23CustomStringConvertibleP", "print"]
+- !private ["s23CustomStringConvertibleP", "rotateGR"]
+- !private ["s23CustomStringConvertibleP", "rotatedView"]
+- !private ["s23CustomStringConvertibleP", "rotation"]
 - !private ["s23CustomStringConvertibleP", "size"]
+- !private ["s23CustomStringConvertibleP", "view"]
 - !private ["s23CustomStringConvertibleP", "white"]
 - !private ["s23CustomStringConvertibleP", "zPosition"]
+- !private ["s23CustomStringConvertibleP", "zRotation"]
 - !private ["s23CustomStringConvertibleP", "zombie"]
+- !private ["s23CustomStringConvertibleP", "zombieMovePointsPerSecond"]
 - ["s23CustomStringConvertibleP", ""]
+- !private ["s9DecodableP", "_getBuiltinLogicValue"]
 - !private ["s9DecodableP", "height"]
-- !private ["s9DecodableP", "init"]
+- ["s9DecodableP", "init"]
 - !private ["s9DecodableP", "width"]
+- !private ["s9DecodableP", "x"]
+- !private ["s9DecodableP", "y"]
+- ["s9DecodableP", "zero"]
+- !private ["s9EncodableP", "_getBuiltinLogicValue"]
 - !private ["s9EncodableP", "height"]
-- !private ["s9EncodableP", "init"]
+- ["s9EncodableP", "init"]
 - !private ["s9EncodableP", "width"]
+- !private ["s9EncodableP", "x"]
+- !private ["s9EncodableP", "y"]
+- ["s9EncodableP", "zero"]
+- !private ["s9EquatableP", "CGFloat"]
 - !private ["s9EquatableP", "CGPoint"]
+- !private ["s9EquatableP", "GameScene"]
 - !private ["s9EquatableP", "SKColor"]
 - !private ["s9EquatableP", "SKSpriteNode"]
+- !private ["s9EquatableP", "_getBuiltinLogicValue"]
 - !private ["s9EquatableP", "addChild"]
+- !private ["s9EquatableP", "addGestureRecognizer"]
+- !private ["s9EquatableP", "addTarget"]
 - !private ["s9EquatableP", "anchorPoint"]
 - !private ["s9EquatableP", "backgroundColor"]
+- !private ["s9EquatableP", "dt"]
 - !private ["s9EquatableP", "height"]
-- !private ["s9EquatableP", "init"]
+- ["s9EquatableP", "init"]
+- !private ["s9EquatableP", "lastUpdateTime"]
+- !private ["s9EquatableP", "moveSprite"]
 - !private ["s9EquatableP", "position"]
+- !private ["s9EquatableP", "print"]
+- !private ["s9EquatableP", "rotateGR"]
+- !private ["s9EquatableP", "rotatedView"]
+- !private ["s9EquatableP", "rotation"]
 - !private ["s9EquatableP", "size"]
+- !private ["s9EquatableP", "view"]
 - !private ["s9EquatableP", "white"]
 - !private ["s9EquatableP", "width"]
+- !private ["s9EquatableP", "x"]
+- !private ["s9EquatableP", "y"]
 - !private ["s9EquatableP", "zPosition"]
+- !private ["s9EquatableP", "zRotation"]
+- ["s9EquatableP", "zero"]
 - !private ["s9EquatableP", "zombie"]
+- !private ["s9EquatableP", "zombieMovePointsPerSecond"]
 - ["s9EquatableP", ""]
-- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
-- !private ["s26ExpressibleByStringLiteralP", "init"]
-- !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
-- !private ["12Zombie_Conga9GameSceneC", "CGPoint"]
+- !private ["s27ExpressibleByBooleanLiteralP", "_getBuiltinLogicValue"]
+- ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s25ExpressibleByFloatLiteralP", "init"]
+- !private ["s27ExpressibleByIntegerLiteralP", "init"]
+- ["s26ExpressibleByStringLiteralP", "init"]
+- ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- !private ["s13FloatingPointP", "init"]
+- !private ["12Zombie_Conga9GameSceneC", "CGFloat"]
+- ["12Zombie_Conga9GameSceneC", "CGPoint"]
+- !private ["12Zombie_Conga9GameSceneC", "GameScene"]
 - !private ["12Zombie_Conga9GameSceneC", "SKColor"]
-- !private ["12Zombie_Conga9GameSceneC", "SKSpriteNode"]
+- ["12Zombie_Conga9GameSceneC", "SKSpriteNode"]
 - ["12Zombie_Conga9GameSceneC", "SKView"]
 - ["12Zombie_Conga9GameSceneC", "TimeInterval"]
+- ["12Zombie_Conga9GameSceneC", "UIRotationGestureRecognizer"]
 - !private ["12Zombie_Conga9GameSceneC", "addChild"]
 - !private ["12Zombie_Conga9GameSceneC", "backgroundColor"]
 - ["12Zombie_Conga9GameSceneC", "deinit"]
 - ["12Zombie_Conga9GameSceneC", "didMove"]
+- !private ["12Zombie_Conga9GameSceneC", "dt"]
 - ["12Zombie_Conga9GameSceneC", "init"]
+- !private ["12Zombie_Conga9GameSceneC", "lastUpdateTime"]
+- ["12Zombie_Conga9GameSceneC", "moveSprite"]
+- ["12Zombie_Conga9GameSceneC", "pinchedIn"]
+- ["12Zombie_Conga9GameSceneC", "pinchedOut"]
+- !private ["12Zombie_Conga9GameSceneC", "print"]
+- !private ["12Zombie_Conga9GameSceneC", "rotateGR"]
+- ["12Zombie_Conga9GameSceneC", "rotatedView"]
 - !private ["12Zombie_Conga9GameSceneC", "size"]
+- ["12Zombie_Conga9GameSceneC", "touchedDown"]
 - ["12Zombie_Conga9GameSceneC", "update"]
+- !private ["12Zombie_Conga9GameSceneC", "view"]
 - !private ["12Zombie_Conga9GameSceneC", "zombie"]
+- !private ["12Zombie_Conga9GameSceneC", "zombieMovePointsPerSecond"]
+- !private ["s8HashableP", "CGFloat"]
 - !private ["s8HashableP", "CGPoint"]
+- !private ["s8HashableP", "GameScene"]
 - !private ["s8HashableP", "SKColor"]
 - !private ["s8HashableP", "SKSpriteNode"]
+- !private ["s8HashableP", "_getBuiltinLogicValue"]
 - !private ["s8HashableP", "addChild"]
+- !private ["s8HashableP", "addGestureRecognizer"]
+- !private ["s8HashableP", "addTarget"]
 - !private ["s8HashableP", "anchorPoint"]
 - !private ["s8HashableP", "backgroundColor"]
-- !private ["s8HashableP", "init"]
+- !private ["s8HashableP", "dt"]
+- ["s8HashableP", "init"]
+- !private ["s8HashableP", "lastUpdateTime"]
+- !private ["s8HashableP", "moveSprite"]
 - !private ["s8HashableP", "position"]
+- !private ["s8HashableP", "print"]
+- !private ["s8HashableP", "rotateGR"]
+- !private ["s8HashableP", "rotatedView"]
+- !private ["s8HashableP", "rotation"]
 - !private ["s8HashableP", "size"]
+- !private ["s8HashableP", "view"]
 - !private ["s8HashableP", "white"]
 - !private ["s8HashableP", "zPosition"]
+- !private ["s8HashableP", "zRotation"]
 - !private ["s8HashableP", "zombie"]
+- !private ["s8HashableP", "zombieMovePointsPerSecond"]
 - ["s8HashableP", ""]
-- !private ["s25LosslessStringConvertibleP", "init"]
-- !private ["s10MirrorPathP", "init"]
+- !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
+- ["s25LosslessStringConvertibleP", "init"]
+- ["s10MirrorPathP", "init"]
+- !private ["So8NSCodingP", "CGFloat"]
 - !private ["So8NSCodingP", "CGPoint"]
+- !private ["So8NSCodingP", "GameScene"]
 - !private ["So8NSCodingP", "SKColor"]
 - !private ["So8NSCodingP", "SKSpriteNode"]
 - !private ["So8NSCodingP", "addChild"]
+- !private ["So8NSCodingP", "addGestureRecognizer"]
 - !private ["So8NSCodingP", "anchorPoint"]
 - !private ["So8NSCodingP", "backgroundColor"]
-- !private ["So8NSCodingP", "init"]
+- !private ["So8NSCodingP", "dt"]
+- ["So8NSCodingP", "init"]
+- !private ["So8NSCodingP", "lastUpdateTime"]
+- !private ["So8NSCodingP", "moveSprite"]
 - !private ["So8NSCodingP", "position"]
+- !private ["So8NSCodingP", "print"]
+- !private ["So8NSCodingP", "rotateGR"]
+- !private ["So8NSCodingP", "rotatedView"]
 - !private ["So8NSCodingP", "size"]
+- !private ["So8NSCodingP", "view"]
 - !private ["So8NSCodingP", "white"]
 - !private ["So8NSCodingP", "zPosition"]
+- !private ["So8NSCodingP", "zRotation"]
 - !private ["So8NSCodingP", "zombie"]
+- !private ["So8NSCodingP", "zombieMovePointsPerSecond"]
 - ["So8NSCodingP", ""]
+- !private ["So9NSCopyingP", "CGFloat"]
 - !private ["So9NSCopyingP", "CGPoint"]
+- !private ["So9NSCopyingP", "GameScene"]
 - !private ["So9NSCopyingP", "SKColor"]
 - !private ["So9NSCopyingP", "SKSpriteNode"]
 - !private ["So9NSCopyingP", "addChild"]
 - !private ["So9NSCopyingP", "anchorPoint"]
 - !private ["So9NSCopyingP", "backgroundColor"]
-- !private ["So9NSCopyingP", "init"]
+- !private ["So9NSCopyingP", "dt"]
+- ["So9NSCopyingP", "init"]
+- !private ["So9NSCopyingP", "lastUpdateTime"]
+- !private ["So9NSCopyingP", "moveSprite"]
 - !private ["So9NSCopyingP", "position"]
+- !private ["So9NSCopyingP", "print"]
+- !private ["So9NSCopyingP", "rotateGR"]
+- !private ["So9NSCopyingP", "rotatedView"]
 - !private ["So9NSCopyingP", "size"]
+- !private ["So9NSCopyingP", "view"]
 - !private ["So9NSCopyingP", "white"]
 - !private ["So9NSCopyingP", "zPosition"]
+- !private ["So9NSCopyingP", "zRotation"]
 - !private ["So9NSCopyingP", "zombie"]
+- !private ["So9NSCopyingP", "zombieMovePointsPerSecond"]
 - ["So9NSCopyingP", ""]
-- !private ["So21NSItemProviderReadingP", "init"]
+- ["So21NSItemProviderReadingP", "init"]
 - !private ["So21NSItemProviderReadingP", "white"]
-- !private ["So21NSItemProviderWritingP", "init"]
+- ["So21NSItemProviderWritingP", "init"]
 - !private ["So21NSItemProviderWritingP", "white"]
-- !private ["So16NSMutableCopyingP", "init"]
-- !private ["So8NSObjectC", "CGPoint"]
+- ["So16NSMutableCopyingP", "init"]
+- !private ["So8NSObjectC", "CGFloat"]
+- ["So8NSObjectC", "CGPoint"]
+- !private ["So8NSObjectC", "GameScene"]
 - !private ["So8NSObjectC", "SKColor"]
-- !private ["So8NSObjectC", "SKSpriteNode"]
+- ["So8NSObjectC", "SKSpriteNode"]
 - ["So8NSObjectC", "SKView"]
 - ["So8NSObjectC", "TimeInterval"]
+- ["So8NSObjectC", "UIRotationGestureRecognizer"]
 - !private ["So8NSObjectC", "addChild"]
+- !private ["So8NSObjectC", "addGestureRecognizer"]
+- !private ["So8NSObjectC", "addTarget"]
 - !private ["So8NSObjectC", "anchorPoint"]
 - !private ["So8NSObjectC", "backgroundColor"]
 - ["So8NSObjectC", "didMove"]
+- !private ["So8NSObjectC", "dt"]
 - ["So8NSObjectC", "init"]
+- !private ["So8NSObjectC", "lastUpdateTime"]
+- ["So8NSObjectC", "moveSprite"]
+- ["So8NSObjectC", "pinchedIn"]
+- ["So8NSObjectC", "pinchedOut"]
 - !private ["So8NSObjectC", "position"]
+- !private ["So8NSObjectC", "print"]
+- !private ["So8NSObjectC", "rotateGR"]
+- ["So8NSObjectC", "rotatedView"]
+- !private ["So8NSObjectC", "rotation"]
 - !private ["So8NSObjectC", "size"]
+- ["So8NSObjectC", "touchedDown"]
 - ["So8NSObjectC", "update"]
+- !private ["So8NSObjectC", "view"]
 - !private ["So8NSObjectC", "white"]
 - !private ["So8NSObjectC", "zPosition"]
+- !private ["So8NSObjectC", "zRotation"]
 - !private ["So8NSObjectC", "zombie"]
+- !private ["So8NSObjectC", "zombieMovePointsPerSecond"]
+- !private ["So16NSObjectProtocolP", "CGFloat"]
 - !private ["So16NSObjectProtocolP", "CGPoint"]
+- !private ["So16NSObjectProtocolP", "GameScene"]
 - !private ["So16NSObjectProtocolP", "SKColor"]
 - !private ["So16NSObjectProtocolP", "SKSpriteNode"]
 - !private ["So16NSObjectProtocolP", "addChild"]
+- !private ["So16NSObjectProtocolP", "addGestureRecognizer"]
+- !private ["So16NSObjectProtocolP", "addTarget"]
 - !private ["So16NSObjectProtocolP", "anchorPoint"]
 - !private ["So16NSObjectProtocolP", "backgroundColor"]
-- !private ["So16NSObjectProtocolP", "init"]
+- !private ["So16NSObjectProtocolP", "dt"]
+- ["So16NSObjectProtocolP", "init"]
+- !private ["So16NSObjectProtocolP", "lastUpdateTime"]
+- !private ["So16NSObjectProtocolP", "moveSprite"]
 - !private ["So16NSObjectProtocolP", "position"]
+- !private ["So16NSObjectProtocolP", "print"]
+- !private ["So16NSObjectProtocolP", "rotateGR"]
+- !private ["So16NSObjectProtocolP", "rotatedView"]
+- !private ["So16NSObjectProtocolP", "rotation"]
 - !private ["So16NSObjectProtocolP", "size"]
+- !private ["So16NSObjectProtocolP", "view"]
 - !private ["So16NSObjectProtocolP", "white"]
 - !private ["So16NSObjectProtocolP", "zPosition"]
+- !private ["So16NSObjectProtocolP", "zRotation"]
 - !private ["So16NSObjectProtocolP", "zombie"]
+- !private ["So16NSObjectProtocolP", "zombieMovePointsPerSecond"]
 - ["So16NSObjectProtocolP", ""]
-- !private ["So14NSSecureCodingP", "init"]
+- ["So14NSSecureCodingP", "init"]
 - !private ["So14NSSecureCodingP", "white"]
-- !private ["So8NSStringC", "init"]
-- !private ["s26RangeReplaceableCollectionP", "init"]
-- !private ["So12SKEffectNodeC", "CGPoint"]
+- ["So8NSStringC", "init"]
+- !private ["s7NumericP", "init"]
+- ["s26RangeReplaceableCollectionP", "init"]
+- !private ["So12SKEffectNodeC", "CGFloat"]
+- ["So12SKEffectNodeC", "CGPoint"]
+- !private ["So12SKEffectNodeC", "GameScene"]
 - !private ["So12SKEffectNodeC", "SKColor"]
-- !private ["So12SKEffectNodeC", "SKSpriteNode"]
+- ["So12SKEffectNodeC", "SKSpriteNode"]
 - ["So12SKEffectNodeC", "SKView"]
 - ["So12SKEffectNodeC", "TimeInterval"]
+- ["So12SKEffectNodeC", "UIRotationGestureRecognizer"]
 - !private ["So12SKEffectNodeC", "addChild"]
 - !private ["So12SKEffectNodeC", "backgroundColor"]
 - ["So12SKEffectNodeC", "didMove"]
+- !private ["So12SKEffectNodeC", "dt"]
 - ["So12SKEffectNodeC", "init"]
+- !private ["So12SKEffectNodeC", "lastUpdateTime"]
+- ["So12SKEffectNodeC", "moveSprite"]
+- ["So12SKEffectNodeC", "pinchedIn"]
+- ["So12SKEffectNodeC", "pinchedOut"]
+- !private ["So12SKEffectNodeC", "print"]
+- !private ["So12SKEffectNodeC", "rotateGR"]
+- ["So12SKEffectNodeC", "rotatedView"]
 - !private ["So12SKEffectNodeC", "size"]
+- ["So12SKEffectNodeC", "touchedDown"]
 - ["So12SKEffectNodeC", "update"]
+- !private ["So12SKEffectNodeC", "view"]
 - !private ["So12SKEffectNodeC", "zombie"]
-- !private ["So6SKNodeC", "CGPoint"]
+- !private ["So12SKEffectNodeC", "zombieMovePointsPerSecond"]
+- !private ["So6SKNodeC", "CGFloat"]
+- ["So6SKNodeC", "CGPoint"]
+- !private ["So6SKNodeC", "GameScene"]
 - !private ["So6SKNodeC", "SKColor"]
-- !private ["So6SKNodeC", "SKSpriteNode"]
+- ["So6SKNodeC", "SKSpriteNode"]
 - ["So6SKNodeC", "SKView"]
 - ["So6SKNodeC", "TimeInterval"]
+- ["So6SKNodeC", "UIRotationGestureRecognizer"]
 - !private ["So6SKNodeC", "addChild"]
 - !private ["So6SKNodeC", "anchorPoint"]
 - !private ["So6SKNodeC", "backgroundColor"]
 - ["So6SKNodeC", "didMove"]
+- !private ["So6SKNodeC", "dt"]
 - ["So6SKNodeC", "init"]
+- !private ["So6SKNodeC", "lastUpdateTime"]
+- ["So6SKNodeC", "moveSprite"]
+- ["So6SKNodeC", "pinchedIn"]
+- ["So6SKNodeC", "pinchedOut"]
 - !private ["So6SKNodeC", "position"]
+- !private ["So6SKNodeC", "print"]
+- !private ["So6SKNodeC", "rotateGR"]
+- ["So6SKNodeC", "rotatedView"]
 - !private ["So6SKNodeC", "size"]
+- ["So6SKNodeC", "touchedDown"]
 - ["So6SKNodeC", "update"]
+- !private ["So6SKNodeC", "view"]
 - !private ["So6SKNodeC", "zPosition"]
+- !private ["So6SKNodeC", "zRotation"]
 - !private ["So6SKNodeC", "zombie"]
-- !private ["So7SKSceneC", "CGPoint"]
+- !private ["So6SKNodeC", "zombieMovePointsPerSecond"]
+- !private ["So7SKSceneC", "CGFloat"]
+- ["So7SKSceneC", "CGPoint"]
+- !private ["So7SKSceneC", "GameScene"]
 - !private ["So7SKSceneC", "SKColor"]
-- !private ["So7SKSceneC", "SKSpriteNode"]
+- ["So7SKSceneC", "SKSpriteNode"]
 - ["So7SKSceneC", "SKView"]
 - ["So7SKSceneC", "TimeInterval"]
+- ["So7SKSceneC", "UIRotationGestureRecognizer"]
 - !private ["So7SKSceneC", "addChild"]
 - !private ["So7SKSceneC", "backgroundColor"]
 - ["So7SKSceneC", "didMove"]
+- !private ["So7SKSceneC", "dt"]
 - ["So7SKSceneC", "init"]
+- !private ["So7SKSceneC", "lastUpdateTime"]
+- ["So7SKSceneC", "moveSprite"]
+- ["So7SKSceneC", "pinchedIn"]
+- ["So7SKSceneC", "pinchedOut"]
+- !private ["So7SKSceneC", "print"]
+- !private ["So7SKSceneC", "rotateGR"]
+- ["So7SKSceneC", "rotatedView"]
 - !private ["So7SKSceneC", "size"]
+- ["So7SKSceneC", "touchedDown"]
 - ["So7SKSceneC", "update"]
+- !private ["So7SKSceneC", "view"]
 - !private ["So7SKSceneC", "zombie"]
+- !private ["So7SKSceneC", "zombieMovePointsPerSecond"]
 - ["So7SKSceneC", ""]
 - !private ["So12SKSpriteNodeC", "anchorPoint"]
-- !private ["So12SKSpriteNodeC", "init"]
+- ["So12SKSpriteNodeC", "init"]
 - !private ["So12SKSpriteNodeC", "position"]
 - !private ["So12SKSpriteNodeC", "zPosition"]
+- !private ["So12SKSpriteNodeC", "zRotation"]
+- !private ["So6SKViewC", "addGestureRecognizer"]
+- !private ["So10SKWarpableP", "CGFloat"]
 - !private ["So10SKWarpableP", "CGPoint"]
+- !private ["So10SKWarpableP", "GameScene"]
 - !private ["So10SKWarpableP", "SKColor"]
 - !private ["So10SKWarpableP", "SKSpriteNode"]
 - !private ["So10SKWarpableP", "addChild"]
 - !private ["So10SKWarpableP", "anchorPoint"]
 - !private ["So10SKWarpableP", "backgroundColor"]
-- !private ["So10SKWarpableP", "init"]
+- !private ["So10SKWarpableP", "dt"]
+- ["So10SKWarpableP", "init"]
+- !private ["So10SKWarpableP", "lastUpdateTime"]
+- !private ["So10SKWarpableP", "moveSprite"]
 - !private ["So10SKWarpableP", "position"]
+- !private ["So10SKWarpableP", "print"]
+- !private ["So10SKWarpableP", "rotateGR"]
+- !private ["So10SKWarpableP", "rotatedView"]
 - !private ["So10SKWarpableP", "size"]
+- !private ["So10SKWarpableP", "view"]
 - !private ["So10SKWarpableP", "zPosition"]
+- !private ["So10SKWarpableP", "zRotation"]
 - !private ["So10SKWarpableP", "zombie"]
+- !private ["So10SKWarpableP", "zombieMovePointsPerSecond"]
 - ["So10SKWarpableP", ""]
-- !private ["s8SequenceP", "init"]
-- !private ["SS", "init"]
-- !private ["s14StringProtocolP", "init"]
-- !private ["s16TextOutputStreamP", "init"]
-- !private ["s20TextOutputStreamableP", "init"]
+- ["s8SequenceP", "init"]
+- !private ["s13SignedNumericP", "init"]
+- !private ["s10StrideableP", "init"]
+- ["SS", "init"]
+- ["s14StringProtocolP", "init"]
+- ["s16TextOutputStreamP", "init"]
+- ["s20TextOutputStreamableP", "init"]
+- !private ["So29UIAccessibilityIdentificationP", "addGestureRecognizer"]
+- !private ["So12UIAppearanceP", "addGestureRecognizer"]
+- !private ["So21UIAppearanceContainerP", "addGestureRecognizer"]
 - !private ["So7UIColorC", "white"]
+- !private ["So17UICoordinateSpaceP", "addGestureRecognizer"]
+- !private ["So13UIDynamicItemP", "addGestureRecognizer"]
+- !private ["So18UIFocusEnvironmentP", "CGFloat"]
 - !private ["So18UIFocusEnvironmentP", "CGPoint"]
+- !private ["So18UIFocusEnvironmentP", "GameScene"]
 - !private ["So18UIFocusEnvironmentP", "SKColor"]
 - !private ["So18UIFocusEnvironmentP", "SKSpriteNode"]
 - !private ["So18UIFocusEnvironmentP", "addChild"]
+- !private ["So18UIFocusEnvironmentP", "addGestureRecognizer"]
 - !private ["So18UIFocusEnvironmentP", "anchorPoint"]
 - !private ["So18UIFocusEnvironmentP", "backgroundColor"]
-- !private ["So18UIFocusEnvironmentP", "init"]
+- !private ["So18UIFocusEnvironmentP", "dt"]
+- ["So18UIFocusEnvironmentP", "init"]
+- !private ["So18UIFocusEnvironmentP", "lastUpdateTime"]
+- !private ["So18UIFocusEnvironmentP", "moveSprite"]
 - !private ["So18UIFocusEnvironmentP", "position"]
+- !private ["So18UIFocusEnvironmentP", "print"]
+- !private ["So18UIFocusEnvironmentP", "rotateGR"]
+- !private ["So18UIFocusEnvironmentP", "rotatedView"]
 - !private ["So18UIFocusEnvironmentP", "size"]
+- !private ["So18UIFocusEnvironmentP", "view"]
 - !private ["So18UIFocusEnvironmentP", "zPosition"]
+- !private ["So18UIFocusEnvironmentP", "zRotation"]
 - !private ["So18UIFocusEnvironmentP", "zombie"]
+- !private ["So18UIFocusEnvironmentP", "zombieMovePointsPerSecond"]
 - ["So18UIFocusEnvironmentP", ""]
+- !private ["So11UIFocusItemP", "CGFloat"]
 - !private ["So11UIFocusItemP", "CGPoint"]
+- !private ["So11UIFocusItemP", "GameScene"]
 - !private ["So11UIFocusItemP", "SKColor"]
 - !private ["So11UIFocusItemP", "SKSpriteNode"]
 - !private ["So11UIFocusItemP", "addChild"]
+- !private ["So11UIFocusItemP", "addGestureRecognizer"]
 - !private ["So11UIFocusItemP", "anchorPoint"]
 - !private ["So11UIFocusItemP", "backgroundColor"]
-- !private ["So11UIFocusItemP", "init"]
+- !private ["So11UIFocusItemP", "dt"]
+- ["So11UIFocusItemP", "init"]
+- !private ["So11UIFocusItemP", "lastUpdateTime"]
+- !private ["So11UIFocusItemP", "moveSprite"]
 - !private ["So11UIFocusItemP", "position"]
+- !private ["So11UIFocusItemP", "print"]
+- !private ["So11UIFocusItemP", "rotateGR"]
+- !private ["So11UIFocusItemP", "rotatedView"]
 - !private ["So11UIFocusItemP", "size"]
+- !private ["So11UIFocusItemP", "view"]
 - !private ["So11UIFocusItemP", "zPosition"]
+- !private ["So11UIFocusItemP", "zRotation"]
 - !private ["So11UIFocusItemP", "zombie"]
+- !private ["So11UIFocusItemP", "zombieMovePointsPerSecond"]
 - ["So11UIFocusItemP", ""]
+- !private ["So19UIGestureRecognizerC", "addTarget"]
+- ["So19UIGestureRecognizerC", "init"]
+- !private ["So19UIGestureRecognizerC", "rotation"]
+- !private ["So30UIPasteConfigurationSupportingP", "CGFloat"]
 - !private ["So30UIPasteConfigurationSupportingP", "CGPoint"]
+- !private ["So30UIPasteConfigurationSupportingP", "GameScene"]
 - !private ["So30UIPasteConfigurationSupportingP", "SKColor"]
 - !private ["So30UIPasteConfigurationSupportingP", "SKSpriteNode"]
 - !private ["So30UIPasteConfigurationSupportingP", "addChild"]
+- !private ["So30UIPasteConfigurationSupportingP", "addGestureRecognizer"]
 - !private ["So30UIPasteConfigurationSupportingP", "anchorPoint"]
 - !private ["So30UIPasteConfigurationSupportingP", "backgroundColor"]
-- !private ["So30UIPasteConfigurationSupportingP", "init"]
+- !private ["So30UIPasteConfigurationSupportingP", "dt"]
+- ["So30UIPasteConfigurationSupportingP", "init"]
+- !private ["So30UIPasteConfigurationSupportingP", "lastUpdateTime"]
+- !private ["So30UIPasteConfigurationSupportingP", "moveSprite"]
 - !private ["So30UIPasteConfigurationSupportingP", "position"]
+- !private ["So30UIPasteConfigurationSupportingP", "print"]
+- !private ["So30UIPasteConfigurationSupportingP", "rotateGR"]
+- !private ["So30UIPasteConfigurationSupportingP", "rotatedView"]
 - !private ["So30UIPasteConfigurationSupportingP", "size"]
+- !private ["So30UIPasteConfigurationSupportingP", "view"]
 - !private ["So30UIPasteConfigurationSupportingP", "zPosition"]
+- !private ["So30UIPasteConfigurationSupportingP", "zRotation"]
 - !private ["So30UIPasteConfigurationSupportingP", "zombie"]
+- !private ["So30UIPasteConfigurationSupportingP", "zombieMovePointsPerSecond"]
 - ["So30UIPasteConfigurationSupportingP", ""]
-- !private ["So11UIResponderC", "CGPoint"]
+- ["So24UIPinchGestureRecognizerC", "init"]
+- !private ["So11UIResponderC", "CGFloat"]
+- ["So11UIResponderC", "CGPoint"]
+- !private ["So11UIResponderC", "GameScene"]
 - !private ["So11UIResponderC", "SKColor"]
-- !private ["So11UIResponderC", "SKSpriteNode"]
+- ["So11UIResponderC", "SKSpriteNode"]
 - ["So11UIResponderC", "SKView"]
 - ["So11UIResponderC", "TimeInterval"]
+- ["So11UIResponderC", "UIRotationGestureRecognizer"]
 - !private ["So11UIResponderC", "addChild"]
+- !private ["So11UIResponderC", "addGestureRecognizer"]
 - !private ["So11UIResponderC", "anchorPoint"]
 - !private ["So11UIResponderC", "backgroundColor"]
 - ["So11UIResponderC", "didMove"]
+- !private ["So11UIResponderC", "dt"]
 - ["So11UIResponderC", "init"]
+- !private ["So11UIResponderC", "lastUpdateTime"]
+- ["So11UIResponderC", "moveSprite"]
+- ["So11UIResponderC", "pinchedIn"]
+- ["So11UIResponderC", "pinchedOut"]
 - !private ["So11UIResponderC", "position"]
+- !private ["So11UIResponderC", "print"]
+- !private ["So11UIResponderC", "rotateGR"]
+- ["So11UIResponderC", "rotatedView"]
 - !private ["So11UIResponderC", "size"]
+- ["So11UIResponderC", "touchedDown"]
 - ["So11UIResponderC", "update"]
+- !private ["So11UIResponderC", "view"]
 - !private ["So11UIResponderC", "zPosition"]
+- !private ["So11UIResponderC", "zRotation"]
 - !private ["So11UIResponderC", "zombie"]
+- !private ["So11UIResponderC", "zombieMovePointsPerSecond"]
+- !private ["So30UIResponderStandardEditActionsP", "CGFloat"]
 - !private ["So30UIResponderStandardEditActionsP", "CGPoint"]
+- !private ["So30UIResponderStandardEditActionsP", "GameScene"]
 - !private ["So30UIResponderStandardEditActionsP", "SKColor"]
 - !private ["So30UIResponderStandardEditActionsP", "SKSpriteNode"]
 - !private ["So30UIResponderStandardEditActionsP", "addChild"]
+- !private ["So30UIResponderStandardEditActionsP", "addGestureRecognizer"]
 - !private ["So30UIResponderStandardEditActionsP", "anchorPoint"]
 - !private ["So30UIResponderStandardEditActionsP", "backgroundColor"]
-- !private ["So30UIResponderStandardEditActionsP", "init"]
+- !private ["So30UIResponderStandardEditActionsP", "dt"]
+- ["So30UIResponderStandardEditActionsP", "init"]
+- !private ["So30UIResponderStandardEditActionsP", "lastUpdateTime"]
+- !private ["So30UIResponderStandardEditActionsP", "moveSprite"]
 - !private ["So30UIResponderStandardEditActionsP", "position"]
+- !private ["So30UIResponderStandardEditActionsP", "print"]
+- !private ["So30UIResponderStandardEditActionsP", "rotateGR"]
+- !private ["So30UIResponderStandardEditActionsP", "rotatedView"]
 - !private ["So30UIResponderStandardEditActionsP", "size"]
+- !private ["So30UIResponderStandardEditActionsP", "view"]
 - !private ["So30UIResponderStandardEditActionsP", "zPosition"]
+- !private ["So30UIResponderStandardEditActionsP", "zRotation"]
 - !private ["So30UIResponderStandardEditActionsP", "zombie"]
+- !private ["So30UIResponderStandardEditActionsP", "zombieMovePointsPerSecond"]
 - ["So30UIResponderStandardEditActionsP", ""]
-- !private ["s23_BidirectionalIndexableP", "init"]
-- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
-- !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
-- !private ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
-- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- !private ["So27UIRotationGestureRecognizerC", "addTarget"]
+- ["So27UIRotationGestureRecognizerC", "init"]
+- !private ["So27UIRotationGestureRecognizerC", "rotation"]
+- ["So22UITapGestureRecognizerC", "init"]
+- !private ["So18UITraitEnvironmentP", "addGestureRecognizer"]
+- !private ["So6UIViewC", "addGestureRecognizer"]
+- ["s23_BidirectionalIndexableP", "init"]
+- !private ["s15_CVarArgAlignedP", "init"]
+- !private ["s22_CVarArgPassedAsDoubleP", "init"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "addGestureRecognizer"]
+- !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "_getBuiltinLogicValue"]
+- ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
+- ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
 - !private ["s26_ExpressibleByColorLiteralP", "white"]
-- !private ["s33_ExpressibleByStringInterpolationP", "init"]
-- !private ["s35_HasCustomAnyHashableRepresentationP", "init"]
-- !private ["s10_IndexableP", "init"]
-- !private ["s14_IndexableBaseP", "init"]
+- ["s33_ExpressibleByStringInterpolationP", "init"]
+- ["s35_HasCustomAnyHashableRepresentationP", "init"]
+- ["s10_IndexableP", "init"]
+- ["s14_IndexableBaseP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "CGFloat"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "CGPoint"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "GameScene"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "SKColor"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "SKSpriteNode"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "addChild"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "addGestureRecognizer"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "addTarget"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "anchorPoint"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "backgroundColor"]
-- !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "dt"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "lastUpdateTime"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "moveSprite"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "position"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "print"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "rotateGR"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "rotatedView"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "rotation"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "size"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "view"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "white"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "zPosition"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "zRotation"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "zombie"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "zombieMovePointsPerSecond"]
 - ["10Foundation27_KeyValueCodingAndObservingP", ""]
+- !private ["s21_ObjectiveCBridgeableP", "_getBuiltinLogicValue"]
 - !private ["s21_ObjectiveCBridgeableP", "height"]
-- !private ["s21_ObjectiveCBridgeableP", "init"]
+- ["s21_ObjectiveCBridgeableP", "init"]
 - !private ["s21_ObjectiveCBridgeableP", "width"]
-- !private ["s26_RangeReplaceableIndexableP", "init"]
-- !private ["s16_SwiftStringViewP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "x"]
+- !private ["s21_ObjectiveCBridgeableP", "y"]
+- ["s21_ObjectiveCBridgeableP", "zero"]
+- ["s26_RangeReplaceableIndexableP", "init"]
+- !private ["s11_StrideableP", "init"]
+- ["s16_SwiftStringViewP", "init"]
 depends-nominal:
-- !private "s23BidirectionalCollectionP"
-- !private "SC7CGPointV"
+- "s23BidirectionalCollectionP"
+- !private "s19BinaryFloatingPointP"
+- !private "Sb"
+- !private "So15CALayerDelegateP"
+- !private "12CoreGraphics7CGFloatV"
+- "SC7CGPointV"
 - !private "SC6CGSizeV"
 - "s7CVarArgP"
-- !private "s10CollectionP"
-- !private "s10ComparableP"
+- "s10CollectionP"
+- "s10ComparableP"
 - "s28CustomDebugStringConvertibleP"
-- !private "s29CustomPlaygroundQuickLookableP"
-- !private "s17CustomReflectableP"
+- "s29CustomPlaygroundQuickLookableP"
+- "s17CustomReflectableP"
 - "s23CustomStringConvertibleP"
-- !private "s9DecodableP"
-- !private "s9EncodableP"
+- "s9DecodableP"
+- "s9EncodableP"
 - "s9EquatableP"
-- !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
-- !private "s26ExpressibleByStringLiteralP"
-- !private "s33ExpressibleByUnicodeScalarLiteralP"
+- !private "s27ExpressibleByBooleanLiteralP"
+- "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- !private "s25ExpressibleByFloatLiteralP"
+- !private "s27ExpressibleByIntegerLiteralP"
+- "s26ExpressibleByStringLiteralP"
+- "s33ExpressibleByUnicodeScalarLiteralP"
+- !private "s13FloatingPointP"
 - "12Zombie_Conga9GameSceneC"
 - "s8HashableP"
-- !private "s25LosslessStringConvertibleP"
-- !private "s10MirrorPathP"
+- "s25LosslessStringConvertibleP"
+- "s10MirrorPathP"
 - "So8NSCodingP"
 - "So9NSCopyingP"
-- !private "So21NSItemProviderReadingP"
-- !private "So21NSItemProviderWritingP"
-- !private "So16NSMutableCopyingP"
+- "So21NSItemProviderReadingP"
+- "So21NSItemProviderWritingP"
+- "So16NSMutableCopyingP"
 - "So8NSObjectC"
 - "So16NSObjectProtocolP"
-- !private "So14NSSecureCodingP"
-- !private "So8NSStringC"
-- !private "s26RangeReplaceableCollectionP"
+- "So14NSSecureCodingP"
+- "So8NSStringC"
+- !private "s7NumericP"
+- "s26RangeReplaceableCollectionP"
 - "So12SKEffectNodeC"
 - "So6SKNodeC"
 - "So7SKSceneC"
-- !private "So12SKSpriteNodeC"
+- "So12SKSpriteNodeC"
+- !private "So6SKViewC"
 - "So10SKWarpableP"
-- !private "s8SequenceP"
-- !private "SS"
-- !private "s14StringProtocolP"
-- !private "s16TextOutputStreamP"
-- !private "s20TextOutputStreamableP"
+- "s8SequenceP"
+- !private "s13SignedNumericP"
+- !private "s10StrideableP"
+- "SS"
+- "s14StringProtocolP"
+- "s16TextOutputStreamP"
+- "s20TextOutputStreamableP"
+- !private "So29UIAccessibilityIdentificationP"
+- !private "So12UIAppearanceP"
+- !private "So21UIAppearanceContainerP"
 - !private "So7UIColorC"
+- !private "So17UICoordinateSpaceP"
+- !private "So13UIDynamicItemP"
 - "So18UIFocusEnvironmentP"
 - "So11UIFocusItemP"
+- "So19UIGestureRecognizerC"
 - "So30UIPasteConfigurationSupportingP"
+- "So24UIPinchGestureRecognizerC"
 - "So11UIResponderC"
 - "So30UIResponderStandardEditActionsP"
-- !private "s23_BidirectionalIndexableP"
-- !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
-- !private "s34_ExpressibleByBuiltinStringLiteralP"
-- !private "s39_ExpressibleByBuiltinUTF16StringLiteralP"
-- !private "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- "So27UIRotationGestureRecognizerC"
+- "So22UITapGestureRecognizerC"
+- !private "So18UITraitEnvironmentP"
+- !private "So6UIViewC"
+- "s23_BidirectionalIndexableP"
+- !private "s15_CVarArgAlignedP"
+- !private "s22_CVarArgPassedAsDoubleP"
+- !private "s37_DefaultCustomPlaygroundQuickLookableP"
+- !private "s35_ExpressibleByBuiltinBooleanLiteralP"
+- "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- "s34_ExpressibleByBuiltinStringLiteralP"
+- "s39_ExpressibleByBuiltinUTF16StringLiteralP"
+- "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
 - !private "s26_ExpressibleByColorLiteralP"
-- !private "s33_ExpressibleByStringInterpolationP"
-- !private "s35_HasCustomAnyHashableRepresentationP"
-- !private "s10_IndexableP"
-- !private "s14_IndexableBaseP"
+- "s33_ExpressibleByStringInterpolationP"
+- "s35_HasCustomAnyHashableRepresentationP"
+- "s10_IndexableP"
+- "s14_IndexableBaseP"
 - "10Foundation27_KeyValueCodingAndObservingP"
-- !private "s21_ObjectiveCBridgeableP"
-- !private "s26_RangeReplaceableIndexableP"
-- !private "s16_SwiftStringViewP"
+- "s21_ObjectiveCBridgeableP"
+- "s26_RangeReplaceableIndexableP"
+- !private "s11_StrideableP"
+- "s16_SwiftStringViewP"
 depends-dynamic-lookup:
 depends-external:
 - "/Users/nhiddink/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Dispatch.apinotesc"
@@ -427,4 +822,4 @@ depends-external:
 - "/Users/nhiddink/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/GLKit.swiftmodule"
 - "/Users/nhiddink/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/SpriteKit.swiftmodule"
 - "/Users/nhiddink/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/SwiftOnoneSupport.swiftmodule"
-interface-hash: "506f0d64b1619a0d31796173a0c39ab4"
+interface-hash: "04b0b4c2128d530e64964f5968f5e965"

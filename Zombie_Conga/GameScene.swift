@@ -11,10 +11,15 @@ import SpriteKit
 var lastUpdateTime:TimeInterval = 0
 var dt:TimeInterval = 0
 
-let zombieMovePointsPerSecond: CGFloat = 480.0
+let zombieMovePointsPerSecond: CGFloat = 240.0
 var velocity = CGPoint.zero
 
-var zombie = SKSpriteNode()
+let zombie = SKSpriteNode(imageNamed: "zombie1.png")
+
+let touchGR = UITapGestureRecognizer()
+let pinchInGR = UIPinchGestureRecognizer()
+let pinchOutGR = UIPinchGestureRecognizer()
+let rotateGR = UIRotationGestureRecognizer()
 
 class GameScene: SKScene {
     override func didMove(to: SKView) {
@@ -28,8 +33,7 @@ class GameScene: SKScene {
         background.zPosition = -1
         //background.anchorPoint = CGPoint(x: 0, y: 0)
         
-        // Create Zombie Sprite
-        zombie = SKSpriteNode(imageNamed: "zombie1.png")
+        // Position Zombie Sprite
         zombie.position = CGPoint(x: 400, y: 400)
         zombie.zPosition = 0
         zombie.anchorPoint = CGPoint(x: 0, y: 0)
@@ -39,6 +43,12 @@ class GameScene: SKScene {
         // zombie.yScale = 2.0
         // or
         // zombie.setScale(2.0)
+        
+        //touchGR.addTarget(self, action: #selector(GameScene.touchedDown))
+        //pinchInGR.addTarget(self, action: #selector(GameScene.pinchedIn))
+        //pinchOutGR.addTarget(self, action: #selector(GameScene.pinchedOut))
+        rotateGR.addTarget(self, action: #selector(GameScene.rotatedView (_:) ))
+        self.view!.addGestureRecognizer(rotateGR)
         
         // Add Sprites to Scene
         addChild(background)
@@ -54,9 +64,9 @@ class GameScene: SKScene {
             dt = 0
         }
         lastUpdateTime = currentTime
-        print("\(dt*1000) milliseconds since last update")
+        //print("\(dt*1000) milliseconds since last update")
         
-        moveSprite(sprite: zombie, velocity: velocity)
+        moveSprite(sprite: zombie, velocity: CGPoint(x: zombieMovePointsPerSecond, y: zombie.zRotation))
     }
     
     func moveSprite(sprite: SKSpriteNode, velocity: CGPoint) {
@@ -67,27 +77,16 @@ class GameScene: SKScene {
         
     }
     
-    func moveZombieTowardTouch(touchLocation: CGPoint) {
-        // Subtract position vectors of touch and zombie to calculate offset vector
-        let offset = CGPoint(x: touchLocation.x - zombie.position.x, y: touchLocation.y - zombie.position.y)
-        let offsetLength = sqrt(offset.x * offset.x + offset.y * offset.y)
-        // Normalize the vector using the unit vector
-        let offsetDirection = CGPoint(x: offset.x / CGFloat(offsetLength), y: offset.y / CGFloat(offsetLength))
+    @objc func touchedDown() {}
+    
+    @objc func pinchedIn() {}
+    
+    @objc func pinchedOut() {}
+    
+    @objc func rotatedView(_ sender: UIRotationGestureRecognizer) {
         
-        velocity = CGPoint(x: offsetDirection.x * zombieMovePointsPerSecond, y: offsetDirection.y * zombieMovePointsPerSecond)
+        zombie.zRotation = sender.rotation
+        
     }
     
-    func sceneTouched(touchLocation:CGPoint) {
-        moveZombieTowardTouch(touchLocation: touchLocation)
-    }
-     func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        let touch = touches.anyObject() as! UITouch
-        let touchLocation = touch.location(in: self)
-        sceneTouched(touchLocation: touchLocation)
-    }
-    func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
-        let touch = touches.anyObject() as! UITouch
-        let touchLocation = touch.location(in: self)
-        sceneTouched(touchLocation: touchLocation)
-    }
 }
