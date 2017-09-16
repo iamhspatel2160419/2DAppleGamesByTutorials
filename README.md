@@ -7,7 +7,7 @@ This game's initial content was built step-by-step from Ray Wenderlich's Tutoria
 
 ### Dependencies
 
-While an [Apple Developer](https://developer.apple.com/) account is not required to run the project, it is highly suggested.
+While an [Apple Developer](https://developer.apple.com/) account is not required to run the project, it is highly recommended.
 
 + XCode 9.0 beta 6
 + iOS 11.0 beta 10
