@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F0DE9EA1F6F46CE00F144B5 /* MyUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0DE9E91F6F46CD00F144B5 /* MyUtils.swift */; };
 		7F3707071F6498F000722623 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3707061F6498F000722623 /* GameViewController.swift */; };
 		7F37070A1F6498F000722623 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F3707081F6498F000722623 /* Main.storyboard */; };
 		7F37070C1F6498F000722623 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F37070B1F6498F000722623 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7F0DE9E91F6F46CD00F144B5 /* MyUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUtils.swift; sourceTree = "<group>"; };
 		7F3706FB1F6498F000722623 /* Zombie_Conga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zombie_Conga.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F3707061F6498F000722623 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		7F3707091F6498F000722623 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				7FA705901F65AC040009FF20 /* AppDelegate.swift */,
 				7FA7058E1F65AC020009FF20 /* GameScene.swift */,
+				7F0DE9E91F6F46CD00F144B5 /* MyUtils.swift */,
 				7F3707061F6498F000722623 /* GameViewController.swift */,
 				7F3707081F6498F000722623 /* Main.storyboard */,
 				7F37070B1F6498F000722623 /* Assets.xcassets */,
@@ -142,6 +145,7 @@
 				7FA705911F65AC040009FF20 /* AppDelegate.swift in Sources */,
 				7FA7058F1F65AC020009FF20 /* GameScene.swift in Sources */,
 				7F3707071F6498F000722623 /* GameViewController.swift in Sources */,
+				7F0DE9EA1F6F46CE00F144B5 /* MyUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

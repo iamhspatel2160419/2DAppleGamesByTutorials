@@ -45,7 +45,7 @@ depends-member:
 - !private ["s19BinaryFloatingPointP", "init"]
 - !private ["Sb", "_getBuiltinLogicValue"]
 - !private ["12CoreGraphics7CGFloatV", "init"]
-- ["SC7CGPointV", "init"]
+- !private ["SC7CGPointV", "init"]
 - !private ["SC7CGPointV", "x"]
 - !private ["SC7CGPointV", "y"]
 - ["SC7CGPointV", "zero"]
