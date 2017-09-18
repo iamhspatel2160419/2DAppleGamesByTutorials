@@ -66,16 +66,16 @@ extension CGPoint {
     }
 }
 
-let π = CGFloat.pi
+//let π = CGFloat.pi
 
 func shortestAngleBetween(angle1: CGFloat,
                           angle2: CGFloat) -> CGFloat {
-    let twoπ = π * 2.0
+    let twoπ = pi * 2.0
     var angle = (angle2 - angle1).truncatingRemainder(dividingBy: twoπ)
-    if (angle >= π) {
+    if (angle >= pi) {
         angle = angle - twoπ
     }
-    if (angle <= -π) {
+    if (angle <= -pi) {
         angle = angle + twoπ
     }
     return angle

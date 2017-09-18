@@ -204,6 +204,8 @@ SWIFT_CLASS("_TtC12Zombie_Conga11AppDelegate")
 
 @class NSCoder;
 @class SKView;
+@class UITouch;
+@class UIEvent;
 
 SWIFT_CLASS("_TtC12Zombie_Conga9GameScene")
 @interface GameScene : SKScene
@@ -211,7 +213,8 @@ SWIFT_CLASS("_TtC12Zombie_Conga9GameScene")
 - (nonnull instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (void)didMoveToView:(SKView * _Nonnull)to;
 - (void)update:(NSTimeInterval)currentTime;
-- (void)moveSpriteToTouch;
+- (void)touchesBegan:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
+- (void)touchesMoved:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @end
 

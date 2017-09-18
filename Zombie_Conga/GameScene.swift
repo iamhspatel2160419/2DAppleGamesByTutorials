@@ -8,108 +8,123 @@
 
 import SpriteKit
 
-var lastUpdateTime:TimeInterval = 0
-var dt:TimeInterval = 0
-
-let zombieMovePointsPerSecond: CGFloat = 480.0
-var velocity = CGPoint.zero
-
-let zombie = SKSpriteNode(imageNamed: "zombie1.png")
-
-let touchGR = UITapGestureRecognizer()
-
-var playableRect: CGRect = CGRect()
+let pi = CGFloat.pi
 
 class GameScene: SKScene {
     
+    let zombie = SKSpriteNode(imageNamed: "zombie1.png")
+    var lastUpdateTime: TimeInterval = 0
+    var dt: TimeInterval = 0
+    let zombieMovePointsPerSecond: CGFloat = 480.0
+    var velocity: CGPoint = CGPoint.zero
+    var playableRect: CGRect
+    var lastTouchLocation: CGPoint?
+    let zombieRotationsPerSecond: CGFloat = 4.0 * pi
+    
     override init(size: CGSize) {
-        let maxAspectRatio:CGFloat = 16.0/9.0
+        
+        let maxAspectRatio:CGFloat = 16.0 / 9.0
         let playableHeight = size.width / maxAspectRatio
-        let playableMargin = (size.height-playableHeight) / 2.0
-        playableRect = CGRect(x: 0, y: playableMargin,
-                              width: size.width,
-                              height: playableHeight)
+        let playableMargin = (size.height - playableHeight) / 2.0
+        playableRect = CGRect(x: 0, y: playableMargin, width: size.width, height: playableHeight)
+        
         super.init(size: size)
     }
+    
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func debugDrawPlayableArea() {
+        let shape = SKShapeNode()
+        let path = CGMutablePath.init()
+        path.addRect(playableRect)
+        shape.path = path
+        shape.strokeColor = SKColor.red
+        shape.lineWidth = 4.0
+        addChild(shape)
+    }
+    
     override func didMove(to: SKView) {
         
-        // Initial Setup
         backgroundColor = SKColor.white
         
-        // Create Background Sprite
         let background = SKSpriteNode(imageNamed: "background1.png")
         background.position = CGPoint(x: size.width/2, y: size.height/2)
         background.zPosition = -1
-        //background.anchorPoint = CGPoint(x: 0, y: 0)
+        addChild(background)
         
-        // Position Zombie Sprite
         zombie.position = CGPoint(x: 400, y: 400)
         zombie.zPosition = 0
-        zombie.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        
-        // Scale Zombie
-        // zombie.xScale = 2.0
-        // zombie.yScale = 2.0
-        // or
         // zombie.setScale(2.0)
-        
-        touchGR.addTarget(self, action: #selector(GameScene.moveSpriteToTouch))
-        touchGR.numberOfTapsRequired = 1
-        touchGR.numberOfTouchesRequired = 1
-        self.view!.addGestureRecognizer(touchGR)
-        
-        // Add Sprites to Scene
-        addChild(background)
         addChild(zombie)
         
+        // debugDrawPlayableArea()
     }
     
     override func update(_ currentTime: TimeInterval) {
-        
         if lastUpdateTime > 0 {
             dt = currentTime - lastUpdateTime
         } else {
             dt = 0
         }
         lastUpdateTime = currentTime
-        //print("\(dt*1000) milliseconds since last update")
+        // print("\(dt*1000) milliseconds since last update")
         
-        moveSprite(sprite: zombie, velocity: velocity)
+        if let lastTouch = lastTouchLocation {
+            // lastTouchLocation is optional
+            let diff = lastTouch - zombie.position
+            if (diff.length() <= zombieMovePointsPerSecond * CGFloat(dt)) {
+                zombie.position = lastTouch
+                velocity = CGPoint.zero
+            } else {
+                rotateZombie()
+                calculateZombiePath(location: lastTouch)
+                moveSprite(sprite: zombie, velocity: velocity)
+            }
+        }
+        
         boundsCheckZombie()
-        rotateSprite(sprite: zombie, direction: velocity)
+    }
+    
+    func sceneTouched(touchLocation: CGPoint) {
+        lastTouchLocation = touchLocation
+        calculateZombiePath(location: touchLocation)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches.first
+        let touchLocation = touch?.location(in: self)
+        sceneTouched(touchLocation: touchLocation!)
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches.first
+        let touchLocation = touch?.location(in: self)
+        sceneTouched(touchLocation: touchLocation!)
+    }
+    
+    func rotateZombie() {
+        let shortest = shortestAngleBetween(angle1: zombie.zRotation, angle2: velocity.angle)
+        let amountToRotate = min(zombieRotationsPerSecond * CGFloat(dt), abs(shortest))
+        zombie.zRotation += shortest.sign() * amountToRotate
+    }
+    
+    func calculateZombiePath(location: CGPoint) {
+        let offset = location - zombie.position
+        let direction = offset.normalized()
+        velocity = direction * zombieMovePointsPerSecond
     }
     
     func moveSprite(sprite: SKSpriteNode, velocity: CGPoint) {
         let amountToMove = velocity * CGFloat(dt)
-        print("Amount to move: \(amountToMove)")
         sprite.position += amountToMove
     }
     
-    @objc func moveSpriteToTouch() {
-        let touchLocation = touchGR.location(in: self.view)
-        
-        let offset = CGPoint(x: touchLocation.x - zombie.position.x, y: touchLocation.y - zombie.position.y)
-        let length = sqrt(Double(offset.x * offset.x + offset.y * offset.y))
-        let direction = CGPoint(x: offset.x / CGFloat(length),
-                                y: offset.y / CGFloat(length))
-        velocity = CGPoint(x: direction.x * zombieMovePointsPerSecond,
-                           y: direction.y * zombieMovePointsPerSecond)
-    }
-    
-    func rotateSprite(sprite: SKSpriteNode, direction: CGPoint) {
-        sprite.zRotation = CGFloat(
-            atan2(Double(direction.y), Double(direction.x)))
-    }
-    
     func boundsCheckZombie() {
-        let bottomLeft = CGPoint(x: 0,
-                                 y: playableRect.minY)
-        let topRight = CGPoint(x: size.width,
-                               y: playableRect.maxY)
+        let bottomLeft = CGPoint(x: 0, y: playableRect.minY)
+        let topRight = CGPoint(x: size.width, y: playableRect.maxY)
+        
         if zombie.position.x <= bottomLeft.x {
             zombie.position.x = bottomLeft.x
             velocity.x = -velocity.x
