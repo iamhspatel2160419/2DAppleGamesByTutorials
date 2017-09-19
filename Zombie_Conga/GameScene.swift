@@ -29,6 +29,9 @@ class GameScene: SKScene {
     
     let catMovePointsPerSecond: CGFloat = 480.0
     
+    var lives = 5
+    var gameOver = false
+    
     override init(size: CGSize) {
         
         let maxAspectRatio:CGFloat = 16.0 / 9.0
@@ -81,7 +84,7 @@ class GameScene: SKScene {
                                                       SKAction.wait(forDuration: 2.0)])))
         
         run(SKAction.repeatForever(SKAction.sequence([SKAction.run(spawnCat),
-                                                            SKAction.wait(forDuration: 1.0)])))
+                                                      SKAction.wait(forDuration: 1.0)])))
         // debugDrawPlayableArea()
     }
     
@@ -110,6 +113,12 @@ class GameScene: SKScene {
         
         boundsCheckZombie()
         // checkCollisions()
+        moveTrain()
+        
+        if lives <= 0 && !gameOver {
+            gameOver = true
+            print("You lose!")
+        }
     }
     
     override func didEvaluateActions() {
@@ -194,7 +203,7 @@ class GameScene: SKScene {
                                     min: playableRect.minY + enemy.size.height / 2,
                                     max: playableRect.maxY - enemy.size.height / 2))
         addChild(enemy)
-        let moveAction = SKAction.moveTo(x: -enemy.size.width / 2, duration: 2.0)
+        let moveAction = SKAction.moveTo(x: -enemy.size.width / 2, duration: 2.5)
         let removeAction = SKAction.removeFromParent()
         enemy.run(SKAction.sequence([moveAction, removeAction]))
     }
@@ -229,12 +238,21 @@ class GameScene: SKScene {
     // MARK: Collision Detection
     
     func zombieCatCollision(cat: SKSpriteNode) {
-        cat.removeFromParent()
         run(catCollisionSound)
+        
+        cat.name = "train"
+        cat.removeAllActions()
+        cat.setScale(1.0)
+        cat.zRotation = 0
+
+        let turnGold = SKAction.colorize(with: UIColor.init(red: 252.0/255.0, green: 194.0/255.0, blue: 0.0, alpha: 1.0), colorBlendFactor: 0.8, duration: 0.2)
+        cat.run(turnGold)
     }
     func zombieEnemyCollision(enemy: SKSpriteNode) {
         
         run(enemyCollisionSound)
+        loseCats()
+        lives -= 1
         isZombieInvincible = true
         
         let blinkTimes = 10.0
@@ -245,11 +263,15 @@ class GameScene: SKScene {
             let remainder = Double(elapsedTime).truncatingRemainder(dividingBy: slice)
             node.isHidden = remainder > slice / 2
         }
+        let turnRed = SKAction.colorize(with: UIColor.red, colorBlendFactor: 0.3, duration: 0.2)
+        let originalColor = SKAction.colorize(with: UIColor.red, colorBlendFactor: 0.0, duration: 0.2)
+        let groupAction = SKAction.group([blinkAction, turnRed])
+        
         let setHidden = SKAction.run() {
             self.zombie.isHidden = false
             self.isZombieInvincible = false
         }
-        zombie.run(SKAction.sequence([blinkAction, setHidden]))
+        zombie.run(SKAction.sequence([groupAction, setHidden, originalColor]))
     }
     func checkCollisions() {
         var hitCats: [SKSpriteNode] = []
@@ -262,11 +284,12 @@ class GameScene: SKScene {
         for cat in hitCats {
             zombieCatCollision(cat: cat)
         }
-        var hitEnemies: [SKSpriteNode] = []
         
         if isZombieInvincible {
             return
         }
+        
+        var hitEnemies: [SKSpriteNode] = []
         enumerateChildNodes(withName: "enemy") { node, _ in
             let enemy = node as! SKSpriteNode
             
@@ -277,6 +300,60 @@ class GameScene: SKScene {
     
         for enemy in hitEnemies {
             zombieEnemyCollision(enemy: enemy)
+        }
+    }
+    
+    func moveTrain() {
+        var trainCount = 0
+        
+        var targetPosition = zombie.position
+        enumerateChildNodes(withName: "train") {
+            node, _ in
+            
+            trainCount += 1
+            
+            if !node.hasActions() {
+                let actionDuration = 0.3
+                let offset = targetPosition - node.position
+                let direction = offset.normalized()
+                let amountToMovePerSecond = direction * self.catMovePointsPerSecond
+                let amountToMove = amountToMovePerSecond * CGFloat(actionDuration)
+                let moveAction = SKAction.moveBy(x: amountToMove.x, y: amountToMove.y, duration: actionDuration)
+                
+                node.run(moveAction)
+            }
+            targetPosition = node.position
+        }
+        
+        if trainCount >= 30 && !gameOver {
+            gameOver = true
+            print("You win!")
+        }
+    }
+    
+    func loseCats() {
+
+        var loseCount = 0
+        enumerateChildNodes(withName: "train") { node, stop in
+
+            var randomSpot = node.position
+            randomSpot.x += CGFloat.random(min: -100, max: 100)
+            randomSpot.y += CGFloat.random(min: -100, max: 100)
+
+            node.name = ""
+            node.run(
+                SKAction.sequence([
+                    SKAction.group([
+                        SKAction.rotate(byAngle: pi * 4, duration: 1.0),
+                        SKAction.move(to: randomSpot, duration: 1.0),
+                        SKAction.scale(to: 0, duration: 1.0)
+                    ]),
+                    SKAction.removeFromParent()
+                ]))
+            loseCount += 1
+            if loseCount >= 2 {
+                stop.pointee = true
+            }
         }
     }
 }
