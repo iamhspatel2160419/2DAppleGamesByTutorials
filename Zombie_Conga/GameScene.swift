@@ -102,7 +102,10 @@ class GameScene: SKScene {
         }
         
         boundsCheckZombie()
+        checkCollisions()
     }
+    
+    // MARK: Scene Touch Handling
     
     func sceneTouched(touchLocation: CGPoint) {
         lastTouchLocation = touchLocation
@@ -120,6 +123,8 @@ class GameScene: SKScene {
         let touchLocation = touch?.location(in: self)
         sceneTouched(touchLocation: touchLocation!)
     }
+    
+    // MARK: Zombie Movements
     
     func rotateZombie() {
         let shortest = shortestAngleBetween(angle1: zombie.zRotation, angle2: velocity.angle)
@@ -146,7 +151,6 @@ class GameScene: SKScene {
     func moveSprite(sprite: SKSpriteNode, velocity: CGPoint) {
         let amountToMove = velocity * CGFloat(dt)
         sprite.position += amountToMove
-        //let aninmateAction = SKAction.animate(with: ["zombie1.png", "zombie2.png", "zombie3.png", "zombie4.png"], timePerFrame: 0.2)
     }
     
     func boundsCheckZombie() {
@@ -173,6 +177,7 @@ class GameScene: SKScene {
     
     func spawnEnemy(){
         let enemy = SKSpriteNode(imageNamed: "enemy.png")
+        enemy.name = "enemy"
         enemy.position = CGPoint(x: size.width + enemy.size.width/2,
                                  y: CGFloat.random(
                                     min: playableRect.minY + enemy.size.height / 2,
@@ -185,6 +190,7 @@ class GameScene: SKScene {
     
     func spawnCat() {
         let cat = SKSpriteNode(imageNamed: "cat")
+        cat.name = "cat"
         cat.position = CGPoint(x: CGFloat.random(min: playableRect.minX, max: playableRect.maxX),
                                y: CGFloat.random(min: playableRect.minY, max: playableRect.maxY))
         cat.setScale(0)
@@ -207,5 +213,37 @@ class GameScene: SKScene {
         let removeFromParent = SKAction.removeFromParent()
         let actions = [appear, groupWait, disappear, removeFromParent]
         cat.run(SKAction.sequence(actions))
+    }
+    
+    // MARK: Collision Detection
+    
+    func zombieCatCollision(cat: SKSpriteNode) {
+        cat.removeFromParent()
+    }
+    func zombieEnemyCollision(enemy: SKSpriteNode) {
+        enemy.removeFromParent()
+    }
+    func checkCollisions() {
+        var hitCats: [SKSpriteNode] = []
+        enumerateChildNodes(withName: "cat") { node, _ in
+            let cat = node as! SKSpriteNode
+            if cat.frame.intersects(self.zombie.frame) {
+                hitCats.append(cat)
+            }
+        }
+        for cat in hitCats {
+            zombieCatCollision(cat: cat)
+        }
+        var hitEnemies: [SKSpriteNode] = []
+        enumerateChildNodes(withName: "enemy") { node, _ in
+            let enemy = node as! SKSpriteNode
+            
+            if node.frame.insetBy(dx: 20, dy: 20).intersects(self.zombie.frame) {
+                hitEnemies.append(enemy)
+            }
+        }
+        for enemy in hitEnemies {
+            zombieEnemyCollision(enemy: enemy)
+        }
     }
 }
