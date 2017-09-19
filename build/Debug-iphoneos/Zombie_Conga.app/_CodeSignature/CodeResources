@@ -14,7 +14,7 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		Q+z78QyOZgSrwxxhF61RGb5vjuc=
+		TMVQYsPw45rLchF5PCcuJRR9GBA=
 		</data>
 		<key>Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
@@ -132,13 +132,33 @@
 		<data>
 		n57qDP4tZfLD1rCS43W0B4LQjzE=
 		</data>
+		<key>backgroundMusic.mp3</key>
+		<data>
+		svKWSYEjjCzMq833ltgHbXXzY6E=
+		</data>
 		<key>embedded.mobileprovision</key>
 		<data>
 		EYX+2gZK5zFxUq1IxEXZyHRNDmk=
 		</data>
+		<key>hitCat.wav</key>
+		<data>
+		a/dJ5PhcCCPf4qNzyGgXF9bUDCo=
+		</data>
+		<key>hitCatLady.wav</key>
+		<data>
+		U4SiYOUbRsI9Gcxd2p16c7HqPkQ=
+		</data>
 		<key>libswiftRemoteMirror.dylib</key>
 		<data>
 		pU5q8j4U9pPxjTHJ3cd31Ji9QHY=
+		</data>
+		<key>lose.wav</key>
+		<data>
+		jjwlJOkAIBR/xbPt4Cvw3KNmeP0=
+		</data>
+		<key>win.wav</key>
+		<data>
+		eypXE4umVpXoHURkHmdxdz8Fs1Y=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -169,11 +189,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Q+z78QyOZgSrwxxhF61RGb5vjuc=
+			TMVQYsPw45rLchF5PCcuJRR9GBA=
 			</data>
 			<key>hash2</key>
 			<data>
-			h90pb9aCibWd/kvBao46OYXBrjuRcASWw8XHcHL3gIo=
+			lTVKEanqVVMXvj4xqtRA2wo0vhA25IoqcJg65gAZEOw=
 			</data>
 		</dict>
 		<key>Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
@@ -473,6 +493,17 @@
 			hzY28f3Ju4QSZOLFqPwJ9qPXqwLgKhGBXmxr97q12Qc=
 			</data>
 		</dict>
+		<key>backgroundMusic.mp3</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			svKWSYEjjCzMq833ltgHbXXzY6E=
+			</data>
+			<key>hash2</key>
+			<data>
+			Tq8FAdLhOS51nawBVlHnKrMOTtRnWcEPaOkZf9B8a+k=
+			</data>
+		</dict>
 		<key>embedded.mobileprovision</key>
 		<dict>
 			<key>hash</key>
@@ -484,6 +515,28 @@
 			E0YOgFm1XxZNC4J/+O0a3bToxCutYicRjo4TtA0RZBo=
 			</data>
 		</dict>
+		<key>hitCat.wav</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			a/dJ5PhcCCPf4qNzyGgXF9bUDCo=
+			</data>
+			<key>hash2</key>
+			<data>
+			hq2R7SKdwZ8BXnpf+KNVZsGKzaZqCeJ1lGF235Gdm9o=
+			</data>
+		</dict>
+		<key>hitCatLady.wav</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			U4SiYOUbRsI9Gcxd2p16c7HqPkQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			g787MhR6TtRLvT3ZrCEpjgYbxJ3GJMOHwLI6sO2O35s=
+			</data>
+		</dict>
 		<key>libswiftRemoteMirror.dylib</key>
 		<dict>
 			<key>hash</key>
@@ -493,6 +546,28 @@
 			<key>hash2</key>
 			<data>
 			VYY3gKUO+l0Q5wKws5Mnwd5hLcbAw0b2d7elOdJZFdY=
+			</data>
+		</dict>
+		<key>lose.wav</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			jjwlJOkAIBR/xbPt4Cvw3KNmeP0=
+			</data>
+			<key>hash2</key>
+			<data>
+			Ebqsi5XPcDDfjLJZDYThSU+B6lsDujG9Eev0Yz60po0=
+			</data>
+		</dict>
+		<key>win.wav</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			eypXE4umVpXoHURkHmdxdz8Fs1Y=
+			</data>
+			<key>hash2</key>
+			<data>
+			utnKgmK9eHE/dwGTHMjbtvbLi5RXQ5PUSLpi3mpSWmE=
 			</data>
 		</dict>
 	</dict>

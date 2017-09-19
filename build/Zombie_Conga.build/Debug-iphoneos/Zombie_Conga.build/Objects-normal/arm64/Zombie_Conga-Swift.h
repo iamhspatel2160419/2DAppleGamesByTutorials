@@ -213,6 +213,7 @@ SWIFT_CLASS("_TtC12Zombie_Conga9GameScene")
 - (nonnull instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (void)didMoveToView:(SKView * _Nonnull)to;
 - (void)update:(NSTimeInterval)currentTime;
+- (void)didEvaluateActions;
 - (void)touchesBegan:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
 - (void)touchesMoved:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
