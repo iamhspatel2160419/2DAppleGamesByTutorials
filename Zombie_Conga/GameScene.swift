@@ -25,6 +25,10 @@ class GameScene: SKScene {
     let catCollisionSound: SKAction = SKAction.playSoundFileNamed("hitCat.wav", waitForCompletion: false)
     let enemyCollisionSound: SKAction = SKAction.playSoundFileNamed("hitCatLady.wav", waitForCompletion: false)
     
+    var isZombieInvincible: Bool = false
+    
+    let catMovePointsPerSecond: CGFloat = 480.0
+    
     override init(size: CGSize) {
         
         let maxAspectRatio:CGFloat = 16.0 / 9.0
@@ -67,7 +71,7 @@ class GameScene: SKScene {
         addChild(background)
         
         zombie.position = CGPoint(x: 400, y: 400)
-        zombie.zPosition = 0
+        zombie.zPosition = 100
         // zombie.setScale(2.0)
         addChild(zombie)
         
@@ -229,8 +233,23 @@ class GameScene: SKScene {
         run(catCollisionSound)
     }
     func zombieEnemyCollision(enemy: SKSpriteNode) {
-        enemy.removeFromParent()
+        
         run(enemyCollisionSound)
+        isZombieInvincible = true
+        
+        let blinkTimes = 10.0
+        let duration = 3.0
+        let blinkAction = SKAction.customAction(withDuration: duration) {
+            node, elapsedTime in
+            let slice = duration / blinkTimes
+            let remainder = Double(elapsedTime).truncatingRemainder(dividingBy: slice)
+            node.isHidden = remainder > slice / 2
+        }
+        let setHidden = SKAction.run() {
+            self.zombie.isHidden = false
+            self.isZombieInvincible = false
+        }
+        zombie.run(SKAction.sequence([blinkAction, setHidden]))
     }
     func checkCollisions() {
         var hitCats: [SKSpriteNode] = []
@@ -244,6 +263,10 @@ class GameScene: SKScene {
             zombieCatCollision(cat: cat)
         }
         var hitEnemies: [SKSpriteNode] = []
+        
+        if isZombieInvincible {
+            return
+        }
         enumerateChildNodes(withName: "enemy") { node, _ in
             let enemy = node as! SKSpriteNode
             
@@ -251,6 +274,7 @@ class GameScene: SKScene {
                 hitEnemies.append(enemy)
             }
         }
+    
         for enemy in hitEnemies {
             zombieEnemyCollision(enemy: enemy)
         }
