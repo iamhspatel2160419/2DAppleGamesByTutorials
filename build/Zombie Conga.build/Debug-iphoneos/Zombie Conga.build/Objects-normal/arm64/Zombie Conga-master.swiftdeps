@@ -1,0 +1,10 @@
+version: "Apple Swift version 4.0 (swiftlang-900.0.65 clang-900.0.37)"
+options: "5563403bdc7350a3187632558e300c1b"
+build_time: [1505907474, 413611000]
+inputs:
+  "/Users/nhiddink/GitHub/Zombie_Conga/Zombie Conga/MainMenuScene.swift": [1505905629, 0]
+  "/Users/nhiddink/GitHub/Zombie_Conga/Zombie Conga/GameOverScene.swift": [1505901613, 0]
+  "/Users/nhiddink/GitHub/Zombie_Conga/Zombie Conga/AppDelegate.swift": [1504993648, 0]
+  "/Users/nhiddink/GitHub/Zombie_Conga/Zombie Conga/GameScene.swift": [1505902788, 0]
+  "/Users/nhiddink/GitHub/Zombie_Conga/Zombie Conga/GameViewController.swift": [1505905016, 0]
+  "/Users/nhiddink/GitHub/Zombie_Conga/Zombie Conga/MyUtils.swift": [1505904080, 0]
