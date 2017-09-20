@@ -13,6 +13,8 @@ provides-top-level:
 - "/"
 - "/="
 - "shortestAngleBetween"
+- "backgroundMusicPlayer"
+- "playBackgroundMusic"
 provides-nominal:
 provides-member:
 - ["SC7CGPointV", ""]
@@ -35,23 +37,36 @@ depends-top-level:
 - "/="
 - !private "<"
 - !private "<="
+- !private "=="
 - !private ">="
+- "AVAudioPlayer"
 - "AssignmentPrecedence"
+- !private "Bundle"
 - "CGFloat"
 - "CGPoint"
 - !private "Float"
 - !private "FloatLiteralType"
 - !private "IntegerLiteralType"
+- "String"
 - !private "StringLiteralType"
 - "TernaryPrecedence"
 - !private "UInt32"
+- !private "URL"
 - !private "arc4random"
 - !private "assert"
 - !private "atan2"
+- "backgroundMusicPlayer"
 - !private "pi"
+- "playBackgroundMusic"
+- !private "print"
 - "shortestAngleBetween"
 - !private "sqrt"
+- !private "url"
 depends-member:
+- !private ["So13AVAudioPlayerC", "numberOfLoops"]
+- !private ["So13AVAudioPlayerC", "play"]
+- !private ["So13AVAudioPlayerC", "prepareToPlay"]
+- !private ["s23BidirectionalCollectionP", "init"]
 - !private ["s19BinaryFloatingPointP", "CGFloat"]
 - !private ["s19BinaryFloatingPointP", "Float"]
 - !private ["s19BinaryFloatingPointP", "UInt32"]
@@ -62,6 +77,8 @@ depends-member:
 - !private ["s19BinaryFloatingPointP", "truncatingRemainder"]
 - !private ["s13BinaryIntegerP", "max"]
 - !private ["Sb", "_getBuiltinLogicValue"]
+- !private ["So6BundleC", "main"]
+- !private ["So6BundleC", "path"]
 - ["12CoreGraphics7CGFloatV", "CGFloat"]
 - !private ["12CoreGraphics7CGFloatV", "Float"]
 - !private ["12CoreGraphics7CGFloatV", "UInt32"]
@@ -87,9 +104,15 @@ depends-member:
 - !private ["s7CVarArgP", "arc4random"]
 - !private ["s7CVarArgP", "assert"]
 - !private ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "main"]
 - !private ["s7CVarArgP", "max"]
+- !private ["s7CVarArgP", "numberOfLoops"]
+- !private ["s7CVarArgP", "path"]
+- !private ["s7CVarArgP", "play"]
+- !private ["s7CVarArgP", "prepareToPlay"]
 - !private ["s7CVarArgP", "random"]
 - !private ["s7CVarArgP", "truncatingRemainder"]
+- !private ["s10CollectionP", "init"]
 - !private ["s10ComparableP", "CGFloat"]
 - !private ["s10ComparableP", "Float"]
 - !private ["s10ComparableP", "UInt32"]
@@ -102,6 +125,11 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "atan2"]
 - !private ["s28CustomDebugStringConvertibleP", "init"]
 - !private ["s28CustomDebugStringConvertibleP", "length"]
+- !private ["s28CustomDebugStringConvertibleP", "main"]
+- !private ["s28CustomDebugStringConvertibleP", "numberOfLoops"]
+- !private ["s28CustomDebugStringConvertibleP", "path"]
+- !private ["s28CustomDebugStringConvertibleP", "play"]
+- !private ["s28CustomDebugStringConvertibleP", "prepareToPlay"]
 - !private ["s28CustomDebugStringConvertibleP", "sqrt"]
 - !private ["s28CustomDebugStringConvertibleP", "x"]
 - !private ["s28CustomDebugStringConvertibleP", "y"]
@@ -135,7 +163,12 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "arc4random"]
 - !private ["s23CustomStringConvertibleP", "assert"]
 - !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "main"]
 - !private ["s23CustomStringConvertibleP", "max"]
+- !private ["s23CustomStringConvertibleP", "numberOfLoops"]
+- !private ["s23CustomStringConvertibleP", "path"]
+- !private ["s23CustomStringConvertibleP", "play"]
+- !private ["s23CustomStringConvertibleP", "prepareToPlay"]
 - !private ["s23CustomStringConvertibleP", "random"]
 - !private ["s23CustomStringConvertibleP", "truncatingRemainder"]
 - !private ["s9DecodableP", "CGFloat"]
@@ -177,7 +210,12 @@ depends-member:
 - !private ["s9EquatableP", "atan2"]
 - !private ["s9EquatableP", "init"]
 - !private ["s9EquatableP", "length"]
+- !private ["s9EquatableP", "main"]
 - !private ["s9EquatableP", "max"]
+- !private ["s9EquatableP", "numberOfLoops"]
+- !private ["s9EquatableP", "path"]
+- !private ["s9EquatableP", "play"]
+- !private ["s9EquatableP", "prepareToPlay"]
 - !private ["s9EquatableP", "random"]
 - !private ["s9EquatableP", "sqrt"]
 - !private ["s9EquatableP", "truncatingRemainder"]
@@ -221,12 +259,36 @@ depends-member:
 - !private ["s8HashableP", "arc4random"]
 - !private ["s8HashableP", "assert"]
 - !private ["s8HashableP", "init"]
+- !private ["s8HashableP", "main"]
 - !private ["s8HashableP", "max"]
+- !private ["s8HashableP", "numberOfLoops"]
+- !private ["s8HashableP", "path"]
+- !private ["s8HashableP", "play"]
+- !private ["s8HashableP", "prepareToPlay"]
 - !private ["s8HashableP", "random"]
 - !private ["s8HashableP", "truncatingRemainder"]
 - !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
 - !private ["s25LosslessStringConvertibleP", "init"]
 - !private ["s25LosslessStringConvertibleP", "max"]
+- !private ["s10MirrorPathP", "init"]
+- !private ["So8NSCodingP", "init"]
+- !private ["So9NSCopyingP", "init"]
+- !private ["So21NSItemProviderReadingP", "init"]
+- !private ["So21NSItemProviderWritingP", "init"]
+- !private ["So16NSMutableCopyingP", "init"]
+- !private ["So8NSObjectC", "main"]
+- !private ["So8NSObjectC", "numberOfLoops"]
+- !private ["So8NSObjectC", "path"]
+- !private ["So8NSObjectC", "play"]
+- !private ["So8NSObjectC", "prepareToPlay"]
+- !private ["So16NSObjectProtocolP", "init"]
+- !private ["So16NSObjectProtocolP", "main"]
+- !private ["So16NSObjectProtocolP", "numberOfLoops"]
+- !private ["So16NSObjectProtocolP", "path"]
+- !private ["So16NSObjectProtocolP", "play"]
+- !private ["So16NSObjectProtocolP", "prepareToPlay"]
+- !private ["So14NSSecureCodingP", "init"]
+- !private ["So8NSStringC", "init"]
 - !private ["s7NumericP", "CGFloat"]
 - !private ["s7NumericP", "Float"]
 - !private ["s7NumericP", "UInt32"]
@@ -236,6 +298,9 @@ depends-member:
 - !private ["s7NumericP", "max"]
 - !private ["s7NumericP", "random"]
 - !private ["s7NumericP", "truncatingRemainder"]
+- !private ["s26RangeReplaceableCollectionP", "init"]
+- !private ["10Foundation20ReferenceConvertibleP", "init"]
+- !private ["s8SequenceP", "init"]
 - !private ["s13SignedNumericP", "CGFloat"]
 - !private ["s13SignedNumericP", "Float"]
 - !private ["s13SignedNumericP", "UInt32"]
@@ -254,8 +319,14 @@ depends-member:
 - !private ["s10StrideableP", "max"]
 - !private ["s10StrideableP", "random"]
 - !private ["s10StrideableP", "truncatingRemainder"]
+- !private ["SS", "init"]
+- !private ["s14StringProtocolP", "init"]
+- !private ["s16TextOutputStreamP", "init"]
+- !private ["s20TextOutputStreamableP", "init"]
 - !private ["s6UInt32V", "max"]
+- !private ["10Foundation3URLV", "init"]
 - !private ["s15UnsignedIntegerP", "max"]
+- !private ["s23_BidirectionalIndexableP", "init"]
 - !private ["s18_BitwiseOperationsP", "max"]
 - !private ["s15_CVarArgAlignedP", "CGFloat"]
 - !private ["s15_CVarArgAlignedP", "Float"]
@@ -279,7 +350,19 @@ depends-member:
 - !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "init"]
 - !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "max"]
 - !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- !private ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
 - !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- !private ["s34_ExpressibleByFileReferenceLiteralP", "init"]
+- !private ["s33_ExpressibleByStringInterpolationP", "init"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "init"]
+- !private ["s10_IndexableP", "init"]
+- !private ["s14_IndexableBaseP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "main"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "numberOfLoops"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "path"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "play"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "prepareToPlay"]
 - !private ["s21_ObjectiveCBridgeableP", "CGFloat"]
 - !private ["s21_ObjectiveCBridgeableP", "Float"]
 - !private ["s21_ObjectiveCBridgeableP", "UInt32"]
@@ -295,6 +378,7 @@ depends-member:
 - !private ["s21_ObjectiveCBridgeableP", "truncatingRemainder"]
 - !private ["s21_ObjectiveCBridgeableP", "x"]
 - !private ["s21_ObjectiveCBridgeableP", "y"]
+- !private ["s26_RangeReplaceableIndexableP", "init"]
 - !private ["s11_StrideableP", "CGFloat"]
 - !private ["s11_StrideableP", "Float"]
 - !private ["s11_StrideableP", "UInt32"]
@@ -304,13 +388,18 @@ depends-member:
 - !private ["s11_StrideableP", "max"]
 - !private ["s11_StrideableP", "random"]
 - !private ["s11_StrideableP", "truncatingRemainder"]
+- !private ["s16_SwiftStringViewP", "init"]
 depends-nominal:
+- !private "So13AVAudioPlayerC"
+- !private "s23BidirectionalCollectionP"
 - !private "s19BinaryFloatingPointP"
 - !private "s13BinaryIntegerP"
 - !private "Sb"
+- !private "So6BundleC"
 - "12CoreGraphics7CGFloatV"
 - "SC7CGPointV"
 - !private "s7CVarArgP"
+- !private "s10CollectionP"
 - !private "s10ComparableP"
 - !private "s28CustomDebugStringConvertibleP"
 - !private "s29CustomPlaygroundQuickLookableP"
@@ -330,12 +419,31 @@ depends-nominal:
 - !private "s13FloatingPointP"
 - !private "s8HashableP"
 - !private "s25LosslessStringConvertibleP"
+- !private "s10MirrorPathP"
+- !private "So8NSCodingP"
+- !private "So9NSCopyingP"
+- !private "So21NSItemProviderReadingP"
+- !private "So21NSItemProviderWritingP"
+- !private "So16NSMutableCopyingP"
+- !private "So8NSObjectC"
+- !private "So16NSObjectProtocolP"
+- !private "So14NSSecureCodingP"
+- !private "So8NSStringC"
 - !private "s7NumericP"
+- !private "s26RangeReplaceableCollectionP"
+- !private "10Foundation20ReferenceConvertibleP"
+- !private "s8SequenceP"
 - !private "s13SignedNumericP"
 - !private "s12StaticStringV"
 - !private "s10StrideableP"
+- !private "SS"
+- !private "s14StringProtocolP"
+- !private "s16TextOutputStreamP"
+- !private "s20TextOutputStreamableP"
 - !private "s6UInt32V"
+- !private "10Foundation3URLV"
 - !private "s15UnsignedIntegerP"
+- !private "s23_BidirectionalIndexableP"
 - !private "s18_BitwiseOperationsP"
 - !private "s15_CVarArgAlignedP"
 - !private "s22_CVarArgPassedAsDoubleP"
@@ -344,14 +452,24 @@ depends-nominal:
 - !private "s33_ExpressibleByBuiltinFloatLiteralP"
 - !private "s35_ExpressibleByBuiltinIntegerLiteralP"
 - !private "s34_ExpressibleByBuiltinStringLiteralP"
+- !private "s39_ExpressibleByBuiltinUTF16StringLiteralP"
 - !private "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- !private "s34_ExpressibleByFileReferenceLiteralP"
+- !private "s33_ExpressibleByStringInterpolationP"
+- !private "s35_HasCustomAnyHashableRepresentationP"
+- !private "s10_IndexableP"
+- !private "s14_IndexableBaseP"
+- !private "10Foundation27_KeyValueCodingAndObservingP"
 - !private "s21_ObjectiveCBridgeableP"
+- !private "s26_RangeReplaceableIndexableP"
 - !private "s11_StrideableP"
+- !private "s16_SwiftStringViewP"
 depends-dynamic-lookup:
 depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Dispatch.apinotesc"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/ObjectiveC.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/ModelIO.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreMedia.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/simd.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreImage.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/QuartzCore.swiftmodule"
@@ -359,7 +477,9 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Metal.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Darwin.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/AVFoundation.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreAudio.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreGraphics.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Swift.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/UIKit.swiftmodule"
@@ -371,4 +491,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.0.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.0.sdk/System/Library/Frameworks/SpriteKit.framework/Headers/SpriteKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.0.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
-interface-hash: "53253370c61515560e39e32a820d07b7"
+interface-hash: "3f30006cc821bd2defe5aa7a1f302572"
