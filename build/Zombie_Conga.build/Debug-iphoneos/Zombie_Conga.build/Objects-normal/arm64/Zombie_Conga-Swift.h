@@ -204,6 +204,15 @@ SWIFT_CLASS("_TtC12Zombie_Conga11AppDelegate")
 
 @class NSCoder;
 @class SKView;
+
+SWIFT_CLASS("_TtC12Zombie_Conga13GameOverScene")
+@interface GameOverScene : SKScene
+- (nonnull instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)didMoveToView:(SKView * _Nonnull)to;
+- (nonnull instancetype)initWithSize:(CGSize)size SWIFT_UNAVAILABLE;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
+@end
+
 @class UITouch;
 @class UIEvent;
 
