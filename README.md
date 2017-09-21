@@ -1,6 +1,6 @@
-![Banner](Zombie_Conga/Assets.xcassets/Characters/zombie1.imageset/zombie1.png)![Banner](Zombie_Conga/Assets.xcassets/Characters/cat.imageset/cat.png)
-![Banner](Zombie_Conga/Assets.xcassets/Characters/cat.imageset/cat.png)
-![Banner](Zombie_Conga/Assets.xcassets/Characters/cat.imageset/cat.png)
+![Banner](Zombie%20Conga/Assets.xcassets/Characters/zombie1.imageset/zombie1.png)![Banner](Zombie%20Conga/Assets.xcassets/Characters/cat.imageset/cat.png)
+![Banner](Zombie%20Conga/Assets.xcassets/Characters/cat.imageset/cat.png)
+![Banner](Zombie%20Conga/Assets.xcassets/Characters/cat.imageset/cat.png)
 
 # Zombie Conga
 This game's initial content was built step-by-step from Ray Wenderlich's Tutorial Book [2D Apple Games by Tutorials](https://store.raywenderlich.com/products/2d-apple-games-by-tutorials)
