@@ -9,12 +9,18 @@ This game's initial content was built step-by-step from Ray Wenderlich's Tutoria
 
 While an [Apple Developer](https://developer.apple.com/) account is not required to run the project, it is highly recommended.
 
-+ XCode 9.0 beta 6
-+ iOS 11.0 beta 10
++ XCode 9.0
++ iOS 11.0
 
 ### Gameplay
 
-_COMING SOON_
+Who ever said you herding cats was hard? In Zombie Conga, you play the role of a zombie who's sole mission is to break the world record for the longest conga line of cats! There's only one problem...
+
+![Banner](Zombie%20Conga/Assets.xcassets/conga_line.imageset/conga_line.png)
+
+You're not alone! Avoid the crazy cat lady or she will steal two of the cats in your conga line. If she steals your cats five times, you lose!
+
+![Banner](Zombie%20Conga/Assets.xcassets/invincible.imageset/invincible.png)
 
 ### Future Plans
 No future work is planned at this time.
