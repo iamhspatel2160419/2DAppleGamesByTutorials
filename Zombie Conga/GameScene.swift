@@ -89,7 +89,7 @@ class GameScene: SKScene {
         // zombie.setScale(2.0)
         backgroundLayer.addChild(zombie)
         
-        run(SKAction.repeatForever(zombieAnimation))
+        // run(SKAction.repeatForever(zombieAnimation))
         
         run(SKAction.repeatForever(SKAction.sequence([SKAction.run(spawnEnemy),
                                                       SKAction.wait(forDuration: 2.0)])))
@@ -110,7 +110,7 @@ class GameScene: SKScene {
         
         if let lastTouch = lastTouchLocation {
             // lastTouchLocation is optional
-             let diff = lastTouch - zombie.position
+            let diff = lastTouch - zombie.position
         
             if (diff.length() <= zombieMovePointsPerSecond * CGFloat(dt)) {
                 zombie.position = lastTouch
@@ -154,11 +154,13 @@ class GameScene: SKScene {
         let background1 = SKSpriteNode(imageNamed: "background1")
         background1.anchorPoint = CGPoint.zero
         background1.position = CGPoint(x: 0, y: 0)
+        background1.zPosition = -1
         backgroundNode.addChild(background1)
 
         let background2 = SKSpriteNode(imageNamed: "background2")
         background2.anchorPoint = CGPoint.zero
         background2.position = CGPoint(x: background1.size.width, y: 0)
+        background2.zPosition = -1
         backgroundNode.addChild(background2)
 
         backgroundNode.size = CGSize(width: background1.size.width + background2.size.width,
@@ -255,12 +257,15 @@ class GameScene: SKScene {
     func spawnEnemy(){
         let enemy = SKSpriteNode(imageNamed: "enemy.png")
         enemy.name = "enemy"
-        enemy.position = CGPoint(x: size.width + enemy.size.width/2,
-                                 y: CGFloat.random(
-                                    min: playableRect.minY + enemy.size.height / 2,
-                                    max: playableRect.maxY - enemy.size.height / 2))
+        let enemyScenePosition = CGPoint(
+            x: size.width + enemy.size.width/2,
+            y: CGFloat.random(min: playableRect.minY + enemy.size.height / 2,
+                              max: playableRect.maxY - enemy.size.height / 2))
+        enemy.position = backgroundLayer.convert(enemyScenePosition, from: self)
+        enemy.zPosition = 50
         backgroundLayer.addChild(enemy)
-        let moveAction = SKAction.moveTo(x: -enemy.size.width / 2, duration: 2.5)
+
+        let moveAction = SKAction.moveBy(x: -size.width - enemy.size.width, y: 0, duration: 2.0)
         let removeAction = SKAction.removeFromParent()
         enemy.run(SKAction.sequence([moveAction, removeAction]))
     }
@@ -273,6 +278,7 @@ class GameScene: SKScene {
         cat.position = backgroundLayer.convert(catScenePosition, from: self)
         
         cat.setScale(0)
+        cat.zPosition = 20
         backgroundLayer.addChild(cat)
 
         let appear = SKAction.scale(to: 1.0, duration: 0.5)
@@ -352,7 +358,7 @@ class GameScene: SKScene {
         backgroundLayer.enumerateChildNodes(withName: "enemy") { node, _ in
             let enemy = node as! SKSpriteNode
             
-            if node.frame.insetBy(dx: 20, dy: 20).intersects(self.zombie.frame) {
+            if node.frame.insetBy(dx: 25, dy: 25).intersects(self.zombie.frame) {
                 hitEnemies.append(enemy)
             }
         }
