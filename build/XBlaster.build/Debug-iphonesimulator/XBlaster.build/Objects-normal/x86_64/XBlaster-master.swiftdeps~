@@ -1,0 +1,7 @@
+version: "Apple Swift version 4.0 (swiftlang-900.0.65 clang-900.0.37)"
+options: "b927955f31f47d40473c324d3c96f692"
+build_time: [1506362463, 165519000]
+inputs:
+  "/Users/nhiddink/GitHub/XBlaster/XBlaster/GameScene.swift": [1506362382, 0]
+  "/Users/nhiddink/GitHub/XBlaster/XBlaster/GameViewController.swift": [1506362383, 0]
+  "/Users/nhiddink/GitHub/XBlaster/XBlaster/AppDelegate.swift": [1506362380, 0]
