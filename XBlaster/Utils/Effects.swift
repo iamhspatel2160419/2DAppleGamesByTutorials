@@ -1,24 +1,10 @@
-/*
- * Copyright (c) 2013-2014 Razeware LLC
- * 
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- * 
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- * 
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
+//
+//  Effects.swift
+//  XBlaster
+//
+//  Created by Neil Hiddink on 9/26/17.
+//  Copyright © 2017 Neil Hiddink. All rights reserved.
+//
 
 import SpriteKit
 
@@ -28,18 +14,18 @@ import SpriteKit
  * Unfortunately, SKAction does not have a concept of a timing function, so
  * we need to replicate the actions using SKTEffect subclasses.
  */
-public class SKTEffect {
-  unowned var node: SKNode
+class SKTEffect {
+  /*unowned*/ var node: SKNode  // TODO: make unowned (crashes on beta 1)
   var duration: NSTimeInterval
-  public var timingFunction: ((CGFloat) -> CGFloat)?
+  var timingFunction: ((CGFloat) -> CGFloat)?
 
-  public init(node: SKNode, duration: NSTimeInterval) {
+  init(node: SKNode, duration: NSTimeInterval) {
     self.node = node
     self.duration = duration
     timingFunction = SKTTimingFunctionLinear
   }
 
-  public func update(t: CGFloat) {
+  func update(t: CGFloat) {
     // subclasses implement this
   }
 }
@@ -47,19 +33,19 @@ public class SKTEffect {
 /**
  * Moves a node from its current position to a new position.
  */
-public class SKTMoveEffect: SKTEffect {
+class SKTMoveEffect: SKTEffect {
   var startPosition: CGPoint
   var delta: CGPoint
   var previousPosition: CGPoint
   
-  public init(node: SKNode, duration: NSTimeInterval, startPosition: CGPoint, endPosition: CGPoint) {
+  init(node: SKNode, duration: NSTimeInterval, startPosition: CGPoint, endPosition: CGPoint) {
     previousPosition = node.position
     self.startPosition = startPosition
     delta = endPosition - startPosition
     super.init(node: node, duration: duration)
   }
   
-  public override func update(t: CGFloat) {
+  override func update(t: CGFloat) {
     // This allows multiple SKTMoveEffect objects to modify the same node
     // at the same time.
     let newPosition = startPosition + delta*t
@@ -72,19 +58,19 @@ public class SKTMoveEffect: SKTEffect {
 /**
  * Scales a node to a certain scale factor.
  */
-public class SKTScaleEffect: SKTEffect {
+class SKTScaleEffect: SKTEffect {
   var startScale: CGPoint
   var delta: CGPoint
   var previousScale: CGPoint
 
-  public init(node: SKNode, duration: NSTimeInterval, startScale: CGPoint, endScale: CGPoint) {
+  init(node: SKNode, duration: NSTimeInterval, startScale: CGPoint, endScale: CGPoint) {
     previousScale = CGPoint(x: node.xScale, y: node.yScale)
     self.startScale = startScale
     delta = endScale - startScale
     super.init(node: node, duration: duration)
   }
 
-  public override func update(t: CGFloat) {
+  override func update(t: CGFloat) {
     let newScale = startScale + delta*t
     let diff = newScale / previousScale
     previousScale = newScale
@@ -96,19 +82,19 @@ public class SKTScaleEffect: SKTEffect {
 /**
  * Rotates a node to a certain angle.
  */
-public class SKTRotateEffect: SKTEffect {
+class SKTRotateEffect: SKTEffect {
   var startAngle: CGFloat
   var delta: CGFloat
   var previousAngle: CGFloat
 
-  public init(node: SKNode, duration: NSTimeInterval, startAngle: CGFloat, endAngle: CGFloat) {
+  init(node: SKNode, duration: NSTimeInterval, startAngle: CGFloat, endAngle: CGFloat) {
     previousAngle = node.zRotation
     self.startAngle = startAngle
     delta = endAngle - startAngle
     super.init(node: node, duration: duration)
   }
 
-  public override func update(t: CGFloat) {
+  override func update(t: CGFloat) {
     let newAngle = startAngle + delta*t
     let diff = newAngle - previousAngle
     previousAngle = newAngle
@@ -119,9 +105,9 @@ public class SKTRotateEffect: SKTEffect {
 /**
  * Wrapper that allows you to use SKTEffect objects as regular SKActions.
  */
-public extension SKAction {
-  public class func actionWithEffect(effect: SKTEffect) -> SKAction {
-    return SKAction.customActionWithDuration(effect.duration) { node, elapsedTime in
+extension SKAction {
+  class func actionWithEffect(effect: SKTEffect) -> SKAction! {
+    return SKAction.customActionWithDuration(effect.duration) {(node, elapsedTime) in
       var t = elapsedTime / CGFloat(effect.duration)
 
       if let timingFunction = effect.timingFunction {

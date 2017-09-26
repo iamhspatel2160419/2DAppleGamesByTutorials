@@ -37,10 +37,10 @@ class PlayerShip: Entity {
 
         let wings = SKLabelNode(fontNamed: "Arial")
         wings.name = "wings"
-        wings.fontSize = 40
-        wings.text = "<>"
+        wings.fontSize = 50
+        wings.text = "⇥⇤"
         wings.fontColor = SKColor.white
-        wings.position = CGPoint(x: 1, y: 7)
+        wings.position = CGPoint(x: 0, y: 20)
 
         wings.zRotation = degreesToRadians(value: CGFloat(180))
         mainShip.addChild(wings)

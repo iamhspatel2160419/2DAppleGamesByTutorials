@@ -1,28 +1,14 @@
-/*
- * Copyright (c) 2013-2014 Razeware LLC
- * 
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- * 
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- * 
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
+//
+//  SKAction+SpecialEffects.swift
+//  XBlaster
+//
+//  Created by Neil Hiddink on 9/26/17.
+//  Copyright © 2017 Neil Hiddink. All rights reserved.
+//
 
 import SpriteKit
 
-public extension SKAction {
+extension SKAction {
   /**
    * Creates a screen shake animation.
    *
@@ -31,7 +17,7 @@ public extension SKAction {
    * @param oscillations The number of oscillations; 10 is a good value.
    * @param duration How long the effect lasts. Shorter is better.
    */
-  public class func screenShakeWithNode(node: SKNode, amount: CGPoint, oscillations: Int, duration: NSTimeInterval) -> SKAction {
+  class func screenShakeWithNode(node: SKNode, amount: CGPoint, oscillations: Int, duration: NSTimeInterval) -> SKAction! {
     let oldPosition = node.position
     let newPosition = oldPosition + amount
     
@@ -50,7 +36,7 @@ public extension SKAction {
    * @param oscillations The number of oscillations; 10 is a good value.
    * @param duration How long the effect lasts. Shorter is better.
    */
-  public class func screenRotateWithNode(node: SKNode, angle: CGFloat, oscillations: Int, duration: NSTimeInterval) -> SKAction {
+  class func screenRotateWithNode(node: SKNode, angle: CGFloat, oscillations: Int, duration: NSTimeInterval) -> SKAction! {
     let oldAngle = node.zRotation
     let newAngle = oldAngle + angle
     
@@ -69,7 +55,7 @@ public extension SKAction {
    * @param oscillations The number of oscillations; 10 is a good value.
    * @param duration How long the effect lasts. Shorter is better.
    */
-  public class func screenZoomWithNode(node: SKNode, amount: CGPoint, oscillations: Int, duration: NSTimeInterval) -> SKAction {
+  class func screenZoomWithNode(node: SKNode, amount: CGPoint, oscillations: Int, duration: NSTimeInterval) -> SKAction! {
     let oldScale = CGPoint(x: node.xScale, y: node.yScale)
     let newScale = oldScale * amount
     
@@ -82,7 +68,7 @@ public extension SKAction {
   /**
    * Causes the scene background to flash for duration seconds.
    */
-  public class func colorGlitchWithScene(scene: SKScene, originalColor: SKColor, duration: NSTimeInterval) -> SKAction {
+  class func colorGlitchWithScene(scene: SKScene, originalColor: SKColor, duration: NSTimeInterval) -> SKAction! {
     return SKAction.customActionWithDuration(duration) {(node, elapsedTime) in
       if elapsedTime < CGFloat(duration) {
         scene.backgroundColor = SKColorWithRGB(Int.random(0...255), Int.random(0...255), Int.random(0...255))

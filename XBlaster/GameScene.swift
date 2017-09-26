@@ -10,19 +10,19 @@ import SpriteKit
 
 class GameScene: SKScene {
     
-    let playerLayerNode = SKNode()
-    let hudLayerNode = SKNode()
-    
     let playableRect: CGRect
+    let hudLayerNode = SKNode()
     let hudHeight: CGFloat = 90
     
-    var playerShip: PlayerShip!
     let scoreLabel = SKLabelNode(fontNamed: "Edit Undo Line BRK")
-    
     var scoreFlashAction: SKAction!
-    
     let healthBarString: NSString = "===================="
     let playerHealthLabel = SKLabelNode(fontNamed: "Arial")
+    
+    let playerLayerNode = SKNode()
+    var playerShip: PlayerShip!
+    
+    var deltaPoint = CGPoint.zero
     
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -40,6 +40,26 @@ class GameScene: SKScene {
         setupSceneLayers()
         setUpUI()
         setupEntities()
+    }
+    
+    override func update(_ currentTime: TimeInterval) {
+        var newPoint:CGPoint = playerShip.position + deltaPoint
+
+        newPoint.x.clamp(
+            CGRectGetMinX(playableRect), CGRectGetMaxX(playableRect))
+        newPoint.y.clamp(
+            CGRectGetMinY(playableRect),CGRectGetMaxY(playableRect))
+
+        playerShip.position = newPoint
+        deltaPoint = CGPoint.zero
+    }
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches.first
+        let currentTouchLocation = touch.location(in: self)
+        let previousTouchLocation = touch?.previousLocation(in: self)
+        deltaPoint = currentTouchLocation - previousTouchLocation
     }
     
     func setupSceneLayers() {
