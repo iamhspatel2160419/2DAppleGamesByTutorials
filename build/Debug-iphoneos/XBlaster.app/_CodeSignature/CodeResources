@@ -4,10 +4,6 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>Actions.sks</key>
-		<data>
-		P8f3NeLnSG8XNXQuoAlKRnQUBjk=
-		</data>
 		<key>AppIcon60x60@2x.png</key>
 		<data>
 		WcsROar0jCMFhsxNl3Wu1qHSdWQ=
@@ -124,10 +120,6 @@
 		<data>
 		76jBc38Uw7AKMYUVUIH833djJsQ=
 		</data>
-		<key>GameScene.sks</key>
-		<data>
-		DEHRMLLTC+BrHauYZbZftPV56q0=
-		</data>
 		<key>Info.plist</key>
 		<data>
 		iketPd7lnmnBscFswVyHLJuuPpI=
@@ -151,17 +143,6 @@
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>Actions.sks</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			P8f3NeLnSG8XNXQuoAlKRnQUBjk=
-			</data>
-			<key>hash2</key>
-			<data>
-			cAHVn0SnTs9tZ2doaXI8QWYq8kHWdfkF7ttWL6GqVVI=
-			</data>
-		</dict>
 		<key>AppIcon60x60@2x.png</key>
 		<dict>
 			<key>hash</key>
@@ -479,17 +460,6 @@
 			<key>hash2</key>
 			<data>
 			mtwCtrJ/2843AYlpcvuARt2mfSNK2XNY4qVydMOfwDY=
-			</data>
-		</dict>
-		<key>GameScene.sks</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			DEHRMLLTC+BrHauYZbZftPV56q0=
-			</data>
-			<key>hash2</key>
-			<data>
-			MbqLTnkc0VftvL4B0Tu0jPpu09apir5fcNrVbyyA3Iw=
 			</data>
 		</dict>
 		<key>edunline.ttf</key>

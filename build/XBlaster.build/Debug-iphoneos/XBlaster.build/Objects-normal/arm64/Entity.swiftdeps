@@ -1,0 +1,252 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "Entity"
+provides-nominal:
+- "8XBlaster6EntityC"
+provides-member:
+- ["8XBlaster6EntityC", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- "AssignmentPrecedence"
+- "CGPoint"
+- "CGPointZero"
+- "Entity"
+- "NSCoder"
+- "NSTimeInterval"
+- !private "SKColor"
+- "SKSpriteNode"
+- "SKTexture"
+- !private "StringLiteralType"
+depends-member:
+- ["s7CVarArgP", "CGPointZero"]
+- !private ["s7CVarArgP", "SKColor"]
+- !private ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "position"]
+- !private ["s7CVarArgP", "size"]
+- !private ["s7CVarArgP", "whiteColor"]
+- ["s7CVarArgP", ""]
+- ["s28CustomDebugStringConvertibleP", "CGPointZero"]
+- !private ["s28CustomDebugStringConvertibleP", "SKColor"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "position"]
+- !private ["s28CustomDebugStringConvertibleP", "size"]
+- !private ["s28CustomDebugStringConvertibleP", "whiteColor"]
+- ["s28CustomDebugStringConvertibleP", ""]
+- ["s29CustomPlaygroundQuickLookableP", "CGPointZero"]
+- !private ["s29CustomPlaygroundQuickLookableP", "SKColor"]
+- !private ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s29CustomPlaygroundQuickLookableP", "position"]
+- !private ["s29CustomPlaygroundQuickLookableP", "size"]
+- ["s29CustomPlaygroundQuickLookableP", ""]
+- !private ["s17CustomReflectableP", "init"]
+- ["s23CustomStringConvertibleP", "CGPointZero"]
+- !private ["s23CustomStringConvertibleP", "SKColor"]
+- !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "position"]
+- !private ["s23CustomStringConvertibleP", "size"]
+- !private ["s23CustomStringConvertibleP", "whiteColor"]
+- ["s23CustomStringConvertibleP", ""]
+- ["8XBlaster6EntityC", "CGPoint"]
+- ["8XBlaster6EntityC", "CGPointZero"]
+- ["8XBlaster6EntityC", "NSCoder"]
+- ["8XBlaster6EntityC", "NSTimeInterval"]
+- !private ["8XBlaster6EntityC", "SKColor"]
+- ["8XBlaster6EntityC", "SKTexture"]
+- ["8XBlaster6EntityC", "deinit"]
+- ["8XBlaster6EntityC", "direction"]
+- ["8XBlaster6EntityC", "generateTexture"]
+- ["8XBlaster6EntityC", "health"]
+- ["8XBlaster6EntityC", "init"]
+- ["8XBlaster6EntityC", "maxHealth"]
+- !private ["8XBlaster6EntityC", "position"]
+- ["s9EquatableP", "CGPointZero"]
+- !private ["s9EquatableP", "SKColor"]
+- !private ["s9EquatableP", "init"]
+- !private ["s9EquatableP", "position"]
+- !private ["s9EquatableP", "size"]
+- !private ["s9EquatableP", "whiteColor"]
+- ["s9EquatableP", ""]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s26ExpressibleByStringLiteralP", "init"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- ["s8HashableP", "CGPointZero"]
+- !private ["s8HashableP", "SKColor"]
+- !private ["s8HashableP", "init"]
+- !private ["s8HashableP", "position"]
+- !private ["s8HashableP", "size"]
+- !private ["s8HashableP", "whiteColor"]
+- ["s8HashableP", ""]
+- ["So8NSCodingP", "CGPointZero"]
+- !private ["So8NSCodingP", "SKColor"]
+- !private ["So8NSCodingP", "init"]
+- !private ["So8NSCodingP", "position"]
+- !private ["So8NSCodingP", "size"]
+- !private ["So8NSCodingP", "whiteColor"]
+- ["So8NSCodingP", ""]
+- ["So9NSCopyingP", "CGPointZero"]
+- !private ["So9NSCopyingP", "SKColor"]
+- !private ["So9NSCopyingP", "init"]
+- !private ["So9NSCopyingP", "position"]
+- !private ["So9NSCopyingP", "size"]
+- !private ["So9NSCopyingP", "whiteColor"]
+- ["So9NSCopyingP", ""]
+- !private ["So21NSItemProviderReadingP", "whiteColor"]
+- !private ["So21NSItemProviderWritingP", "whiteColor"]
+- ["So8NSObjectC", "CGPoint"]
+- ["So8NSObjectC", "CGPointZero"]
+- ["So8NSObjectC", "NSCoder"]
+- ["So8NSObjectC", "NSTimeInterval"]
+- !private ["So8NSObjectC", "SKColor"]
+- ["So8NSObjectC", "SKTexture"]
+- ["So8NSObjectC", "direction"]
+- ["So8NSObjectC", "generateTexture"]
+- ["So8NSObjectC", "health"]
+- ["So8NSObjectC", "init"]
+- ["So8NSObjectC", "maxHealth"]
+- !private ["So8NSObjectC", "position"]
+- !private ["So8NSObjectC", "size"]
+- !private ["So8NSObjectC", "whiteColor"]
+- ["So16NSObjectProtocolP", "CGPointZero"]
+- !private ["So16NSObjectProtocolP", "SKColor"]
+- !private ["So16NSObjectProtocolP", "init"]
+- !private ["So16NSObjectProtocolP", "position"]
+- !private ["So16NSObjectProtocolP", "size"]
+- !private ["So16NSObjectProtocolP", "whiteColor"]
+- ["So16NSObjectProtocolP", ""]
+- !private ["So14NSSecureCodingP", "whiteColor"]
+- ["So6SKNodeC", "CGPoint"]
+- ["So6SKNodeC", "CGPointZero"]
+- ["So6SKNodeC", "NSCoder"]
+- ["So6SKNodeC", "NSTimeInterval"]
+- !private ["So6SKNodeC", "SKColor"]
+- ["So6SKNodeC", "SKTexture"]
+- ["So6SKNodeC", "direction"]
+- ["So6SKNodeC", "generateTexture"]
+- ["So6SKNodeC", "health"]
+- ["So6SKNodeC", "init"]
+- ["So6SKNodeC", "maxHealth"]
+- !private ["So6SKNodeC", "position"]
+- ["So12SKSpriteNodeC", "CGPoint"]
+- ["So12SKSpriteNodeC", "CGPointZero"]
+- ["So12SKSpriteNodeC", "NSCoder"]
+- ["So12SKSpriteNodeC", "NSTimeInterval"]
+- !private ["So12SKSpriteNodeC", "SKColor"]
+- ["So12SKSpriteNodeC", "SKTexture"]
+- ["So12SKSpriteNodeC", "direction"]
+- ["So12SKSpriteNodeC", "generateTexture"]
+- ["So12SKSpriteNodeC", "health"]
+- ["So12SKSpriteNodeC", "init"]
+- ["So12SKSpriteNodeC", "maxHealth"]
+- !private ["So12SKSpriteNodeC", "position"]
+- ["So12SKSpriteNodeC", ""]
+- !private ["So9SKTextureC", "size"]
+- ["So10SKWarpableP", "CGPointZero"]
+- !private ["So10SKWarpableP", "SKColor"]
+- !private ["So10SKWarpableP", "init"]
+- !private ["So10SKWarpableP", "position"]
+- ["So10SKWarpableP", ""]
+- !private ["s12StaticStringV", "init"]
+- !private ["So7UIColorC", "whiteColor"]
+- ["So18UIFocusEnvironmentP", "CGPointZero"]
+- !private ["So18UIFocusEnvironmentP", "SKColor"]
+- !private ["So18UIFocusEnvironmentP", "init"]
+- !private ["So18UIFocusEnvironmentP", "position"]
+- ["So18UIFocusEnvironmentP", ""]
+- ["So11UIFocusItemP", "CGPointZero"]
+- !private ["So11UIFocusItemP", "SKColor"]
+- !private ["So11UIFocusItemP", "init"]
+- !private ["So11UIFocusItemP", "position"]
+- ["So11UIFocusItemP", ""]
+- ["So30UIPasteConfigurationSupportingP", "CGPointZero"]
+- !private ["So30UIPasteConfigurationSupportingP", "SKColor"]
+- !private ["So30UIPasteConfigurationSupportingP", "init"]
+- !private ["So30UIPasteConfigurationSupportingP", "position"]
+- ["So30UIPasteConfigurationSupportingP", ""]
+- ["So11UIResponderC", "CGPoint"]
+- ["So11UIResponderC", "CGPointZero"]
+- ["So11UIResponderC", "NSCoder"]
+- ["So11UIResponderC", "NSTimeInterval"]
+- !private ["So11UIResponderC", "SKColor"]
+- ["So11UIResponderC", "SKTexture"]
+- ["So11UIResponderC", "direction"]
+- ["So11UIResponderC", "generateTexture"]
+- ["So11UIResponderC", "health"]
+- ["So11UIResponderC", "init"]
+- ["So11UIResponderC", "maxHealth"]
+- !private ["So11UIResponderC", "position"]
+- ["So30UIResponderStandardEditActionsP", "CGPointZero"]
+- !private ["So30UIResponderStandardEditActionsP", "SKColor"]
+- !private ["So30UIResponderStandardEditActionsP", "init"]
+- !private ["So30UIResponderStandardEditActionsP", "position"]
+- ["So30UIResponderStandardEditActionsP", ""]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- !private ["s26_ExpressibleByColorLiteralP", "whiteColor"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "CGPointZero"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "SKColor"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "position"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "size"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "whiteColor"]
+- ["10Foundation27_KeyValueCodingAndObservingP", ""]
+depends-nominal:
+- "s7CVarArgP"
+- "s28CustomDebugStringConvertibleP"
+- "s29CustomPlaygroundQuickLookableP"
+- !private "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- "8XBlaster6EntityC"
+- "s9EquatableP"
+- !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- !private "s26ExpressibleByStringLiteralP"
+- !private "s33ExpressibleByUnicodeScalarLiteralP"
+- "s8HashableP"
+- "So8NSCodingP"
+- "So9NSCopyingP"
+- !private "So21NSItemProviderReadingP"
+- !private "So21NSItemProviderWritingP"
+- "So8NSObjectC"
+- "So16NSObjectProtocolP"
+- !private "So14NSSecureCodingP"
+- "So6SKNodeC"
+- "So12SKSpriteNodeC"
+- !private "So9SKTextureC"
+- "So10SKWarpableP"
+- !private "s12StaticStringV"
+- !private "So7UIColorC"
+- "So18UIFocusEnvironmentP"
+- "So11UIFocusItemP"
+- "So30UIPasteConfigurationSupportingP"
+- "So11UIResponderC"
+- "So30UIResponderStandardEditActionsP"
+- !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- !private "s34_ExpressibleByBuiltinStringLiteralP"
+- !private "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- !private "s26_ExpressibleByColorLiteralP"
+- "10Foundation27_KeyValueCodingAndObservingP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/ModelIO.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/simd.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Metal.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/GLKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/SpriteKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/SwiftOnoneSupport.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.0.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.0.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.0.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.0.sdk/System/Library/Frameworks/SpriteKit.framework/Headers/SpriteKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.0.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+interface-hash: "b121ec8a57169963b4f9e982733ba92a"

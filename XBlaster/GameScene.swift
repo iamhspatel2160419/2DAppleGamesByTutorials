@@ -10,11 +10,104 @@ import SpriteKit
 
 class GameScene: SKScene {
     
-    override func didMove(to view: SKView) {
-        let myLabel = SKLabelNode(fontNamed:"Edit Undo Line BRK")
-        myLabel.text = "Hello, World!"
-        myLabel.fontSize = 80
-        myLabel.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
-        self.addChild(myLabel)
+    let playerLayerNode = SKNode()
+    let hudLayerNode = SKNode()
+    
+    let playableRect: CGRect
+    let hudHeight: CGFloat = 90
+    
+    let fighter = SKLabelNode(fontNamed: "Edit Undo Line BRK")
+    let scoreLabel = SKLabelNode(fontNamed: "Edit Undo Line BRK")
+    
+    var scoreFlashAction: SKAction!
+    
+    let healthBarString: NSString = "===================="
+    let playerHealthLabel = SKLabelNode(fontNamed: "Arial")
+    
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
+    
+    override init(size: CGSize) {
+        // Calculate playable margin
+        let maxAspectRatio: CGFloat = 16.0/9.0 //iPhone 5"
+        let maxAspectRatioWidth = size.height / maxAspectRatio
+        let playableMargin = (size.width-maxAspectRatioWidth) / 2.0
+        playableRect = CGRect(x: playableMargin, y: 0,
+                              width: size.width - playableMargin / 2,
+                              height: size.height - hudHeight)
+        super.init(size: size)
+        setupSceneLayers()
+        setUpUI()
+    }
+    
+    func setUpUI() {
+        
+        let backgroundSize = CGSize(width: size.width, height:hudHeight)
+        let backgroundColor = SKColor.black
+        let hudBarBackground = SKSpriteNode(color: backgroundColor, size: backgroundSize)
+        
+        scoreLabel.fontSize = 50
+        scoreLabel.text = "Score: 0"
+        scoreLabel.name = "scoreLabel"
+        scoreLabel.verticalAlignmentMode = .center
+        scoreLabel.position = CGPoint(x: size.width / 2, y: size.height - hudBarBackground.size.height / 4)
+        hudLayerNode.addChild(scoreLabel)
+        
+        fighter.text = "🚀"
+        fighter.fontSize = 80
+        fighter.zRotation = 45 * (CGFloat.pi / 180)
+        fighter.position = CGPoint(x: self.frame.midX, y: self.frame.maxY / 4)
+        fighter.verticalAlignmentMode = .center
+        fighter.horizontalAlignmentMode = .center
+        self.addChild(fighter)
+        
+        hudBarBackground.position = CGPoint(x:0, y: size.height - hudHeight)
+        hudBarBackground.anchorPoint = CGPoint.zero
+        hudLayerNode.addChild(hudBarBackground)
+        
+        scoreFlashAction = SKAction.sequence([SKAction.scale(to: 1.5, duration: 0.1), SKAction.scale(to: 1.0, duration: 0.1)])
+        scoreLabel.run(SKAction.repeat(scoreFlashAction, count: 20))
+        
+        let playerHealthBackgroundLabel = SKLabelNode(fontNamed: "Arial")
+        playerHealthBackgroundLabel.name = "playerHealthBackground"
+        playerHealthBackgroundLabel.fontColor = SKColor.darkGray
+        playerHealthBackgroundLabel.fontSize = 50
+        playerHealthBackgroundLabel.text = healthBarString as String?
+
+        playerHealthBackgroundLabel.horizontalAlignmentMode = .left
+        playerHealthBackgroundLabel.verticalAlignmentMode = .top
+        playerHealthBackgroundLabel.position = CGPoint(x: playableRect.minX,
+                                                       y: size.height - CGFloat(hudHeight) + playerHealthBackgroundLabel.frame.size.height)
+        hudLayerNode.addChild(playerHealthBackgroundLabel)
+
+        playerHealthLabel.name = "playerHealthLabel"
+        playerHealthLabel.fontColor = SKColor.green
+        playerHealthLabel.fontSize = 50
+        playerHealthLabel.text = healthBarString.substring(to: 20*75/100)
+        playerHealthLabel.horizontalAlignmentMode = .left
+        playerHealthLabel.verticalAlignmentMode = .top
+        playerHealthLabel.position = CGPoint(x: playableRect.minX,
+                                             y: size.height - CGFloat(hudHeight) + playerHealthLabel.frame.size.height)
+        hudLayerNode.addChild(playerHealthLabel)
+    }
+
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches.first
+        let touchLocation = touch?.location(in: self)
+        touchedScene(touchLocation: touchLocation!)
+    }
+    
+    func touchedScene(touchLocation: CGPoint) {
+        let moveFighter = SKAction.move(to: touchLocation, duration: 0.1)
+        fighter.run(moveFighter)
+    }
+    
+    func setupSceneLayers() {
+        playerLayerNode.zPosition = 50
+        hudLayerNode.zPosition = 100
+        addChild(playerLayerNode)
+        addChild(hudLayerNode)
+    }
+    
 }
