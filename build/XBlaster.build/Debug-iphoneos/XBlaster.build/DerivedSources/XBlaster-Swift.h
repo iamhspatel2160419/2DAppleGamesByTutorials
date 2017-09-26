@@ -202,14 +202,20 @@ SWIFT_CLASS("_TtC8XBlaster11AppDelegate")
 @end
 
 @class NSCoder;
-@class UITouch;
-@class UIEvent;
+@class SKTexture;
+@class UIColor;
+
+SWIFT_CLASS("_TtC8XBlaster6Entity")
+@interface Entity : SKSpriteNode
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithTexture:(SKTexture * _Nullable)texture color:(UIColor * _Nonnull)color size:(CGSize)size SWIFT_UNAVAILABLE;
+@end
+
 
 SWIFT_CLASS("_TtC8XBlaster9GameScene")
 @interface GameScene : SKScene
 - (nonnull instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithSize:(CGSize)size OBJC_DESIGNATED_INITIALIZER;
-- (void)touchesMoved:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @end
 
@@ -220,6 +226,12 @@ SWIFT_CLASS("_TtC8XBlaster18GameViewController")
 - (void)viewDidLoad;
 @property (nonatomic, readonly) BOOL prefersStatusBarHidden;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC8XBlaster10PlayerShip")
+@interface PlayerShip : Entity
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 

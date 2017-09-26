@@ -16,7 +16,7 @@ class GameScene: SKScene {
     let playableRect: CGRect
     let hudHeight: CGFloat = 90
     
-    let fighter = SKLabelNode(fontNamed: "Edit Undo Line BRK")
+    var playerShip: PlayerShip!
     let scoreLabel = SKLabelNode(fontNamed: "Edit Undo Line BRK")
     
     var scoreFlashAction: SKAction!
@@ -39,6 +39,14 @@ class GameScene: SKScene {
         super.init(size: size)
         setupSceneLayers()
         setUpUI()
+        setupEntities()
+    }
+    
+    func setupSceneLayers() {
+        playerLayerNode.zPosition = 50
+        hudLayerNode.zPosition = 100
+        addChild(playerLayerNode)
+        addChild(hudLayerNode)
     }
     
     func setUpUI() {
@@ -53,14 +61,6 @@ class GameScene: SKScene {
         scoreLabel.verticalAlignmentMode = .center
         scoreLabel.position = CGPoint(x: size.width / 2, y: size.height - hudBarBackground.size.height / 4)
         hudLayerNode.addChild(scoreLabel)
-        
-        fighter.text = "🚀"
-        fighter.fontSize = 80
-        fighter.zRotation = 45 * (CGFloat.pi / 180)
-        fighter.position = CGPoint(x: self.frame.midX, y: self.frame.maxY / 4)
-        fighter.verticalAlignmentMode = .center
-        fighter.horizontalAlignmentMode = .center
-        self.addChild(fighter)
         
         hudBarBackground.position = CGPoint(x:0, y: size.height - hudHeight)
         hudBarBackground.anchorPoint = CGPoint.zero
@@ -91,23 +91,10 @@ class GameScene: SKScene {
                                              y: size.height - CGFloat(hudHeight) + playerHealthLabel.frame.size.height)
         hudLayerNode.addChild(playerHealthLabel)
     }
-
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let touch = touches.first
-        let touchLocation = touch?.location(in: self)
-        touchedScene(touchLocation: touchLocation!)
-    }
     
-    func touchedScene(touchLocation: CGPoint) {
-        let moveFighter = SKAction.move(to: touchLocation, duration: 0.1)
-        fighter.run(moveFighter)
-    }
-    
-    func setupSceneLayers() {
-        playerLayerNode.zPosition = 50
-        hudLayerNode.zPosition = 100
-        addChild(playerLayerNode)
-        addChild(hudLayerNode)
+    func setupEntities() {
+        playerShip = PlayerShip(entityPosition: CGPoint(x: size.width / 2, y: 100))
+        playerLayerNode.addChild(playerShip)
     }
     
 }
