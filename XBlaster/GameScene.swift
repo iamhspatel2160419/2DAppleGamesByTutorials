@@ -45,10 +45,8 @@ class GameScene: SKScene {
     override func update(_ currentTime: TimeInterval) {
         var newPoint:CGPoint = playerShip.position + deltaPoint
 
-        newPoint.x.clamp(min: playableRect.minX, max: playableRect.maxX)
-        newPoint.y.clamp(min: playableRect.minY, max: playableRect.maxY)
-
-        playerShip.position = newPoint
+        playerShip.position = CGPoint(x: newPoint.x.clamp(min: playableRect.minX, max: playableRect.maxX),
+                                      y: newPoint.y.clamp(min: playableRect.minY, max: playableRect.maxY))
         deltaPoint = CGPoint.zero
     }
     
