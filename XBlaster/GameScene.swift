@@ -45,21 +45,18 @@ class GameScene: SKScene {
     override func update(_ currentTime: TimeInterval) {
         var newPoint:CGPoint = playerShip.position + deltaPoint
 
-        newPoint.x.clamp(
-            CGRectGetMinX(playableRect), CGRectGetMaxX(playableRect))
-        newPoint.y.clamp(
-            CGRectGetMinY(playableRect),CGRectGetMaxY(playableRect))
+        newPoint.x.clamp(min: playableRect.minX, max: playableRect.maxX)
+        newPoint.y.clamp(min: playableRect.minY, max: playableRect.maxY)
 
         playerShip.position = newPoint
         deltaPoint = CGPoint.zero
     }
-    }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first
-        let currentTouchLocation = touch.location(in: self)
+        let currentTouchLocation = touch?.location(in: self)
         let previousTouchLocation = touch?.previousLocation(in: self)
-        deltaPoint = currentTouchLocation - previousTouchLocation
+        deltaPoint = currentTouchLocation! - previousTouchLocation!
     }
     
     func setupSceneLayers() {

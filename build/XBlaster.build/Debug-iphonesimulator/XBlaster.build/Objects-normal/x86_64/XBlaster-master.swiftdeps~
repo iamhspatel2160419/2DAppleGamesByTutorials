@@ -1,7 +1,9 @@
 version: "Apple Swift version 4.0 (swiftlang-900.0.65 clang-900.0.37)"
 options: "b927955f31f47d40473c324d3c96f692"
-build_time: [1506362463, 165519000]
+build_time: [1506638740, 959007000]
 inputs:
-  "/Users/nhiddink/GitHub/XBlaster/XBlaster/GameScene.swift": [1506362382, 0]
-  "/Users/nhiddink/GitHub/XBlaster/XBlaster/GameViewController.swift": [1506362383, 0]
+  "/Users/nhiddink/GitHub/XBlaster/XBlaster/Entities/Entity.swift": !dirty [1506392476, 0]
+  "/Users/nhiddink/GitHub/XBlaster/XBlaster/GameScene.swift": !dirty [1506463246, 0]
+  "/Users/nhiddink/GitHub/XBlaster/XBlaster/GameViewController.swift": !dirty [1506389509, 0]
   "/Users/nhiddink/GitHub/XBlaster/XBlaster/AppDelegate.swift": [1506362380, 0]
+  "/Users/nhiddink/GitHub/XBlaster/XBlaster/Entities/PlayerShip.swift": !dirty [1506461410, 0]

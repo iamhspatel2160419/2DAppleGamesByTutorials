@@ -42,7 +42,7 @@ class PlayerShip: Entity {
         wings.fontColor = SKColor.white
         wings.position = CGPoint(x: 0, y: 20)
 
-        wings.zRotation = degreesToRadians(value: CGFloat(180))
+        wings.zRotation = CGFloat(180.0).degreesToRadians()
         mainShip.addChild(wings)
 
         let textureView = SKView()

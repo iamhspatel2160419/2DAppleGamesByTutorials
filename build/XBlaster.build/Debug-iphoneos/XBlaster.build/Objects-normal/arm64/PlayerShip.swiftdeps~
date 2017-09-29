@@ -23,12 +23,13 @@ depends-top-level:
 - "SharedTexture"
 - !private "StringLiteralType"
 - !private "UnicodeScalarType"
-- !private "degreesToRadians"
 depends-member:
 - !private ["s23BidirectionalCollectionP", "init"]
+- !private ["s19BinaryFloatingPointP", "degreesToRadians"]
 - !private ["s19BinaryFloatingPointP", "init"]
 - !private ["So15CALayerDelegateP", "init"]
 - !private ["So15CALayerDelegateP", "texture"]
+- !private ["12CoreGraphics7CGFloatV", "degreesToRadians"]
 - !private ["12CoreGraphics7CGFloatV", "init"]
 - !private ["SC7CGPointV", "init"]
 - !private ["s7CVarArgP", "CGFloat"]
@@ -53,6 +54,7 @@ depends-member:
 - !private ["s7CVarArgP", "zRotation"]
 - ["s7CVarArgP", ""]
 - !private ["s10CollectionP", "init"]
+- !private ["s10ComparableP", "degreesToRadians"]
 - !private ["s10ComparableP", "init"]
 - !private ["s28CustomDebugStringConvertibleP", "CGFloat"]
 - !private ["s28CustomDebugStringConvertibleP", "CGPoint"]
@@ -62,7 +64,6 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "SKView"]
 - !private ["s28CustomDebugStringConvertibleP", "SharedTexture"]
 - !private ["s28CustomDebugStringConvertibleP", "addChild"]
-- !private ["s28CustomDebugStringConvertibleP", "degreesToRadians"]
 - !private ["s28CustomDebugStringConvertibleP", "filteringMode"]
 - !private ["s28CustomDebugStringConvertibleP", "fontColor"]
 - !private ["s28CustomDebugStringConvertibleP", "fontSize"]
@@ -82,12 +83,12 @@ depends-member:
 - !private ["s29CustomPlaygroundQuickLookableP", "SKLabelNode"]
 - !private ["s29CustomPlaygroundQuickLookableP", "SKView"]
 - !private ["s29CustomPlaygroundQuickLookableP", "SharedTexture"]
-- !private ["s29CustomPlaygroundQuickLookableP", "degreesToRadians"]
 - !private ["s29CustomPlaygroundQuickLookableP", "filteringMode"]
 - !private ["s29CustomPlaygroundQuickLookableP", "generateTexture"]
 - ["s29CustomPlaygroundQuickLookableP", "init"]
 - !private ["s29CustomPlaygroundQuickLookableP", "name"]
 - ["s29CustomPlaygroundQuickLookableP", ""]
+- !private ["s17CustomReflectableP", "degreesToRadians"]
 - !private ["s17CustomReflectableP", "init"]
 - !private ["s23CustomStringConvertibleP", "CGFloat"]
 - !private ["s23CustomStringConvertibleP", "CGPoint"]
@@ -110,7 +111,9 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "white"]
 - !private ["s23CustomStringConvertibleP", "zRotation"]
 - ["s23CustomStringConvertibleP", ""]
+- !private ["s9DecodableP", "degreesToRadians"]
 - !private ["s9DecodableP", "init"]
+- !private ["s9EncodableP", "degreesToRadians"]
 - !private ["s9EncodableP", "init"]
 - !private ["8XBlaster6EntityC", "CGFloat"]
 - ["8XBlaster6EntityC", "CGPoint"]
@@ -121,7 +124,6 @@ depends-member:
 - ["8XBlaster6EntityC", "SKTexture"]
 - !private ["8XBlaster6EntityC", "SKView"]
 - !private ["8XBlaster6EntityC", "SharedTexture"]
-- !private ["8XBlaster6EntityC", "degreesToRadians"]
 - ["8XBlaster6EntityC", "generateTexture"]
 - ["8XBlaster6EntityC", "init"]
 - !private ["8XBlaster6EntityC", "name"]
@@ -149,10 +151,13 @@ depends-member:
 - !private ["s9EquatableP", "zRotation"]
 - ["s9EquatableP", ""]
 - !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s25ExpressibleByFloatLiteralP", "degreesToRadians"]
 - !private ["s25ExpressibleByFloatLiteralP", "init"]
+- !private ["s27ExpressibleByIntegerLiteralP", "degreesToRadians"]
 - !private ["s27ExpressibleByIntegerLiteralP", "init"]
 - !private ["s26ExpressibleByStringLiteralP", "init"]
 - !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- !private ["s13FloatingPointP", "degreesToRadians"]
 - !private ["s13FloatingPointP", "init"]
 - !private ["s8HashableP", "CGFloat"]
 - !private ["s8HashableP", "CGPoint"]
@@ -186,7 +191,6 @@ depends-member:
 - !private ["So8NSCodingP", "SKView"]
 - !private ["So8NSCodingP", "SharedTexture"]
 - !private ["So8NSCodingP", "addChild"]
-- !private ["So8NSCodingP", "degreesToRadians"]
 - !private ["So8NSCodingP", "filteringMode"]
 - !private ["So8NSCodingP", "fontColor"]
 - !private ["So8NSCodingP", "fontSize"]
@@ -207,7 +211,6 @@ depends-member:
 - !private ["So9NSCopyingP", "SKView"]
 - !private ["So9NSCopyingP", "SharedTexture"]
 - !private ["So9NSCopyingP", "addChild"]
-- !private ["So9NSCopyingP", "degreesToRadians"]
 - !private ["So9NSCopyingP", "filteringMode"]
 - !private ["So9NSCopyingP", "fontColor"]
 - !private ["So9NSCopyingP", "fontSize"]
@@ -234,7 +237,6 @@ depends-member:
 - !private ["So8NSObjectC", "SKView"]
 - !private ["So8NSObjectC", "SharedTexture"]
 - !private ["So8NSObjectC", "addChild"]
-- !private ["So8NSObjectC", "degreesToRadians"]
 - !private ["So8NSObjectC", "filteringMode"]
 - !private ["So8NSObjectC", "fontColor"]
 - !private ["So8NSObjectC", "fontSize"]
@@ -254,7 +256,6 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "SKView"]
 - !private ["So16NSObjectProtocolP", "SharedTexture"]
 - !private ["So16NSObjectProtocolP", "addChild"]
-- !private ["So16NSObjectProtocolP", "degreesToRadians"]
 - !private ["So16NSObjectProtocolP", "filteringMode"]
 - !private ["So16NSObjectProtocolP", "fontColor"]
 - !private ["So16NSObjectProtocolP", "fontSize"]
@@ -270,6 +271,7 @@ depends-member:
 - !private ["So14NSSecureCodingP", "init"]
 - !private ["So14NSSecureCodingP", "white"]
 - !private ["So8NSStringC", "init"]
+- !private ["s7NumericP", "degreesToRadians"]
 - !private ["s7NumericP", "init"]
 - !private ["8XBlaster10PlayerShipC", "CGFloat"]
 - ["8XBlaster10PlayerShipC", "CGPoint"]
@@ -280,7 +282,6 @@ depends-member:
 - ["8XBlaster10PlayerShipC", "SKTexture"]
 - !private ["8XBlaster10PlayerShipC", "SKView"]
 - !private ["8XBlaster10PlayerShipC", "SharedTexture"]
-- !private ["8XBlaster10PlayerShipC", "degreesToRadians"]
 - ["8XBlaster10PlayerShipC", "deinit"]
 - ["8XBlaster10PlayerShipC", "generateTexture"]
 - ["8XBlaster10PlayerShipC", "init"]
@@ -305,7 +306,6 @@ depends-member:
 - !private ["So6SKNodeC", "SKView"]
 - !private ["So6SKNodeC", "SharedTexture"]
 - !private ["So6SKNodeC", "addChild"]
-- !private ["So6SKNodeC", "degreesToRadians"]
 - !private ["So6SKNodeC", "fontColor"]
 - !private ["So6SKNodeC", "fontSize"]
 - ["So6SKNodeC", "generateTexture"]
@@ -323,7 +323,6 @@ depends-member:
 - ["So12SKSpriteNodeC", "SKTexture"]
 - !private ["So12SKSpriteNodeC", "SKView"]
 - !private ["So12SKSpriteNodeC", "SharedTexture"]
-- !private ["So12SKSpriteNodeC", "degreesToRadians"]
 - ["So12SKSpriteNodeC", "generateTexture"]
 - !private ["So12SKSpriteNodeC", "name"]
 - !private ["So9SKTextureC", "filteringMode"]
@@ -338,7 +337,6 @@ depends-member:
 - !private ["So10SKWarpableP", "SKLabelNode"]
 - !private ["So10SKWarpableP", "SKView"]
 - !private ["So10SKWarpableP", "SharedTexture"]
-- !private ["So10SKWarpableP", "degreesToRadians"]
 - !private ["So10SKWarpableP", "generateTexture"]
 - !private ["So10SKWarpableP", "init"]
 - !private ["So10SKWarpableP", "name"]
@@ -347,8 +345,10 @@ depends-member:
 - ["8XBlaster13SharedTextureV", "SKTexture"]
 - ["8XBlaster13SharedTextureV", "init"]
 - ["8XBlaster13SharedTextureV", "texture"]
+- !private ["s13SignedNumericP", "degreesToRadians"]
 - !private ["s13SignedNumericP", "init"]
 - !private ["s12StaticStringV", "init"]
+- !private ["s10StrideableP", "degreesToRadians"]
 - !private ["s10StrideableP", "init"]
 - !private ["SS", "init"]
 - !private ["s14StringProtocolP", "init"]
@@ -373,7 +373,6 @@ depends-member:
 - !private ["So18UIFocusEnvironmentP", "SKView"]
 - !private ["So18UIFocusEnvironmentP", "SharedTexture"]
 - !private ["So18UIFocusEnvironmentP", "addChild"]
-- !private ["So18UIFocusEnvironmentP", "degreesToRadians"]
 - !private ["So18UIFocusEnvironmentP", "fontColor"]
 - !private ["So18UIFocusEnvironmentP", "fontSize"]
 - !private ["So18UIFocusEnvironmentP", "generateTexture"]
@@ -392,7 +391,6 @@ depends-member:
 - !private ["So11UIFocusItemP", "SKView"]
 - !private ["So11UIFocusItemP", "SharedTexture"]
 - !private ["So11UIFocusItemP", "addChild"]
-- !private ["So11UIFocusItemP", "degreesToRadians"]
 - !private ["So11UIFocusItemP", "fontColor"]
 - !private ["So11UIFocusItemP", "fontSize"]
 - !private ["So11UIFocusItemP", "generateTexture"]
@@ -411,7 +409,6 @@ depends-member:
 - !private ["So30UIPasteConfigurationSupportingP", "SKView"]
 - !private ["So30UIPasteConfigurationSupportingP", "SharedTexture"]
 - !private ["So30UIPasteConfigurationSupportingP", "addChild"]
-- !private ["So30UIPasteConfigurationSupportingP", "degreesToRadians"]
 - !private ["So30UIPasteConfigurationSupportingP", "fontColor"]
 - !private ["So30UIPasteConfigurationSupportingP", "fontSize"]
 - !private ["So30UIPasteConfigurationSupportingP", "generateTexture"]
@@ -432,7 +429,6 @@ depends-member:
 - !private ["So11UIResponderC", "SKView"]
 - !private ["So11UIResponderC", "SharedTexture"]
 - !private ["So11UIResponderC", "addChild"]
-- !private ["So11UIResponderC", "degreesToRadians"]
 - !private ["So11UIResponderC", "fontColor"]
 - !private ["So11UIResponderC", "fontSize"]
 - ["So11UIResponderC", "generateTexture"]
@@ -450,7 +446,6 @@ depends-member:
 - !private ["So30UIResponderStandardEditActionsP", "SKView"]
 - !private ["So30UIResponderStandardEditActionsP", "SharedTexture"]
 - !private ["So30UIResponderStandardEditActionsP", "addChild"]
-- !private ["So30UIResponderStandardEditActionsP", "degreesToRadians"]
 - !private ["So30UIResponderStandardEditActionsP", "fontColor"]
 - !private ["So30UIResponderStandardEditActionsP", "fontSize"]
 - !private ["So30UIResponderStandardEditActionsP", "generateTexture"]
@@ -466,7 +461,9 @@ depends-member:
 - !private ["So6UIViewC", "init"]
 - !private ["So6UIViewC", "texture"]
 - !private ["s23_BidirectionalIndexableP", "init"]
+- !private ["s15_CVarArgAlignedP", "degreesToRadians"]
 - !private ["s15_CVarArgAlignedP", "init"]
+- !private ["s22_CVarArgPassedAsDoubleP", "degreesToRadians"]
 - !private ["s22_CVarArgPassedAsDoubleP", "init"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "init"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "texture"]
@@ -487,7 +484,6 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "SKView"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "SharedTexture"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "addChild"]
-- !private ["10Foundation27_KeyValueCodingAndObservingP", "degreesToRadians"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "filteringMode"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "fontColor"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "fontSize"]
@@ -500,8 +496,10 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "white"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "zRotation"]
 - ["10Foundation27_KeyValueCodingAndObservingP", ""]
+- !private ["s21_ObjectiveCBridgeableP", "degreesToRadians"]
 - !private ["s21_ObjectiveCBridgeableP", "init"]
 - !private ["s26_RangeReplaceableIndexableP", "init"]
+- !private ["s11_StrideableP", "degreesToRadians"]
 - !private ["s11_StrideableP", "init"]
 - !private ["s16_SwiftStringViewP", "init"]
 depends-nominal:
@@ -595,6 +593,7 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Dispatch.apinotesc"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/ObjectiveC.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/ModelIO.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreMedia.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/simd.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreImage.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/QuartzCore.swiftmodule"
@@ -602,7 +601,9 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Metal.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Darwin.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/AVFoundation.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreAudio.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreGraphics.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Swift.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/UIKit.swiftmodule"
