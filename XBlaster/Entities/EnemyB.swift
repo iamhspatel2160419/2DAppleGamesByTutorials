@@ -14,20 +14,21 @@ class EnemyB: Enemy, SKPhysicsContactDelegate {
         
         struct SharedTexture {
             static var texture = SKTexture()
-            static var onceToken: dispatch_once_t = 0
+            static var onceToken = "EnemyB"
         }
         
-        dispatch_once(&SharedTexture.onceToken, {
+        // See extension in Entity.swift
+        DispatchQueue.once(token: SharedTexture.onceToken) {
             let mainShip:SKLabelNode = SKLabelNode(fontNamed: "Arial")
             mainShip.name = "mainship"
             mainShip.fontSize = 40
-            mainShip.fontColor = SKColor.whiteColor()
+            mainShip.fontColor = SKColor.white
             mainShip.text = "⎛-⚉-⎞"
             
             let textureView = SKView()
-            SharedTexture.texture = textureView.textureFromNode(mainShip)
-            SharedTexture.texture.filteringMode = .Nearest
-        })
+            SharedTexture.texture = textureView.texture(from: mainShip)!
+            SharedTexture.texture.filteringMode = .nearest
+        }
         
         return SharedTexture.texture
     }
@@ -53,7 +54,7 @@ class EnemyB: Enemy, SKPhysicsContactDelegate {
         scoreLabel.text = String(score)
         
         // Set a default waypoint. The actual waypoint will be called by whoever created this instance
-        aiSteering = AISteering(entity:self, waypoint:CGPointZero)
+        aiSteering = AISteering(entity:self, waypoint:CGPoint.zero)
         
         // Changing the maxVelicity and maxSteeringForce will change how an entity moves towards its waypoint.
         // Changing these values can generate some interesting movement effects

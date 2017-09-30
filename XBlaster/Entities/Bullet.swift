@@ -27,7 +27,8 @@ class Bullet: Entity {
             static var texture = SKTexture()
             static var onceToken = "bullet"
         }
-                
+        
+        // See extension in Entity.swift
         DispatchQueue.once(token: SharedTexture.onceToken) {
             let bullet = SKLabelNode(fontNamed: "Arial")
             bullet.name = "bullet"

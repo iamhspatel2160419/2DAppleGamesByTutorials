@@ -27,6 +27,7 @@ class PlayerShip: Entity {
             static var onceToken = "playerShip"
         }
         
+        // See extension in Entity.swift
         DispatchQueue.once(token: SharedTexture.onceToken) {
             let mainShip = SKLabelNode(fontNamed: "Arial")
             mainShip.name = "mainship"
@@ -45,10 +46,10 @@ class PlayerShip: Entity {
             mainShip.addChild(wings)
 
             let textureView = SKView()
-            SharedTexutre.texture = textureView.texture(from: mainShip)!
-            SharedTexutre.texture.filteringMode = .nearest
+            SharedTexture.texture = textureView.texture(from: mainShip)!
+            SharedTexture.texture.filteringMode = .nearest
         }
         
-        return SharedTexutre.texture
+        return SharedTexture.texture
     }
 }
