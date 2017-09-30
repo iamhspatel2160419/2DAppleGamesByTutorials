@@ -212,6 +212,13 @@ SWIFT_CLASS("_TtC8XBlaster6Entity")
 - (nonnull instancetype)initWithTexture:(SKTexture * _Nullable)texture color:(UIColor * _Nonnull)color size:(CGSize)size SWIFT_UNAVAILABLE;
 @end
 
+
+SWIFT_CLASS("_TtC8XBlaster6Bullet")
+@interface Bullet : Entity
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 @class UITouch;
 @class UIEvent;
 

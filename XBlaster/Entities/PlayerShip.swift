@@ -8,18 +8,7 @@
 
 import SpriteKit
 
-struct SharedTexture {
-    static var texture = SKTexture()
-    init() {
-    }
-}
-
-
 class PlayerShip: Entity {
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
     
     init(entityPosition: CGPoint) {
         let entityTexture = PlayerShip.generateTexture()!
@@ -27,28 +16,39 @@ class PlayerShip: Entity {
         name = "playerShip"
     }
     
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     override class func generateTexture() -> SKTexture? {
 
-        let mainShip = SKLabelNode(fontNamed: "Arial")
-        mainShip.name = "mainship"
-        mainShip.fontSize = 40
-        mainShip.fontColor = SKColor.white
-        mainShip.text = "▲"
+        struct SharedTexture {
+            static var texture = SKTexture()
+            static var onceToken = "playerShip"
+        }
+        
+        DispatchQueue.once(token: SharedTexture.onceToken) {
+            let mainShip = SKLabelNode(fontNamed: "Arial")
+            mainShip.name = "mainship"
+            mainShip.fontSize = 40
+            mainShip.fontColor = SKColor.white
+            mainShip.text = "▲"
 
-        let wings = SKLabelNode(fontNamed: "Arial")
-        wings.name = "wings"
-        wings.fontSize = 50
-        wings.text = "⇥ ⇤"
-        wings.fontColor = SKColor.white
-        wings.position = CGPoint(x: 0, y: 20)
+            let wings = SKLabelNode(fontNamed: "Arial")
+            wings.name = "wings"
+            wings.fontSize = 45
+            wings.text = "< >"
+            wings.fontColor = SKColor.white
+            wings.position = CGPoint(x: 0, y: 10)
+            wings.zRotation = CGFloat(180.0).degreesToRadians()
+            
+            mainShip.addChild(wings)
 
-        wings.zRotation = CGFloat(180.0).degreesToRadians()
-        mainShip.addChild(wings)
-
-        let textureView = SKView()
-        SharedTexture.texture = textureView.texture(from: mainShip)!
-        SharedTexture.texture.filteringMode = .nearest
-
-        return SharedTexture.texture
+            let textureView = SKView()
+            SharedTexutre.texture = textureView.texture(from: mainShip)!
+            SharedTexutre.texture.filteringMode = .nearest
+        }
+        
+        return SharedTexutre.texture
     }
 }

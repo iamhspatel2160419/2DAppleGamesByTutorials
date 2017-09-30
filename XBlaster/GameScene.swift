@@ -24,6 +24,11 @@ class GameScene: SKScene {
     
     var deltaPoint = CGPoint.zero
     
+    let bulletLayerNode = SKNode()
+    var bulletInterval: TimeInterval = 0
+    var lastUpdateTime: TimeInterval = 0
+    var dt: TimeInterval = 0
+    
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -48,6 +53,22 @@ class GameScene: SKScene {
         playerShip.position = CGPoint(x: newPoint.x.clamp(min: playableRect.minX, max: playableRect.maxX),
                                       y: newPoint.y.clamp(min: playableRect.minY, max: playableRect.maxY))
         deltaPoint = CGPoint.zero
+        
+        if lastUpdateTime > 0 {
+            dt = currentTime - lastUpdateTime
+        } else {
+            dt = 0
+        }
+        lastUpdateTime = currentTime
+        bulletInterval += dt
+        if bulletInterval > 0.15 {
+            bulletInterval = 0
+
+            let bullet = Bullet(entityPosition: playerShip.position)
+            bulletLayerNode.addChild(bullet)
+            bullet.run(SKAction.sequence([SKAction.moveBy(x: 0, y: size.height, duration: 1),
+                                          SKAction.removeFromParent()]))
+        }
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {

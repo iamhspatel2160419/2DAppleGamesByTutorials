@@ -49,6 +49,7 @@ depends-top-level:
 - !private "sin"
 - !private "sqrt"
 depends-member:
+- !private ["Sb", "_getBuiltinLogicValue"]
 - !private ["SC7CGPointV", "x"]
 - !private ["SC7CGPointV", "y"]
 - ["SC8CGVectorV", "CGFloat"]
@@ -69,7 +70,7 @@ depends-member:
 - !private ["SC8CGVectorV", "sin"]
 - !private ["SC8CGVectorV", "sqrt"]
 - ["SC8CGVectorV", "unitVectorFromAngle"]
-- !private ["SC8CGVectorV", "zeroVector"]
+- !private ["SC8CGVectorV", "zero"]
 - !private ["s28CustomDebugStringConvertibleP", "CGVector"]
 - !private ["s28CustomDebugStringConvertibleP", "atan2"]
 - !private ["s28CustomDebugStringConvertibleP", "cos"]
@@ -82,12 +83,16 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "sqrt"]
 - !private ["s28CustomDebugStringConvertibleP", "x"]
 - !private ["s28CustomDebugStringConvertibleP", "y"]
-- !private ["s28CustomDebugStringConvertibleP", "zeroVector"]
+- !private ["s28CustomDebugStringConvertibleP", "zero"]
+- !private ["s29CustomPlaygroundQuickLookableP", "_getBuiltinLogicValue"]
 - !private ["s29CustomPlaygroundQuickLookableP", "x"]
 - !private ["s29CustomPlaygroundQuickLookableP", "y"]
+- !private ["s17CustomReflectableP", "_getBuiltinLogicValue"]
 - !private ["s17CustomReflectableP", "x"]
 - !private ["s17CustomReflectableP", "y"]
+- !private ["s23CustomStringConvertibleP", "_getBuiltinLogicValue"]
 - !private ["s9DecodableP", "CGVector"]
+- !private ["s9DecodableP", "_getBuiltinLogicValue"]
 - !private ["s9DecodableP", "atan2"]
 - !private ["s9DecodableP", "cos"]
 - !private ["s9DecodableP", "dx"]
@@ -99,8 +104,9 @@ depends-member:
 - !private ["s9DecodableP", "sqrt"]
 - !private ["s9DecodableP", "x"]
 - !private ["s9DecodableP", "y"]
-- !private ["s9DecodableP", "zeroVector"]
+- !private ["s9DecodableP", "zero"]
 - !private ["s9EncodableP", "CGVector"]
+- !private ["s9EncodableP", "_getBuiltinLogicValue"]
 - !private ["s9EncodableP", "atan2"]
 - !private ["s9EncodableP", "cos"]
 - !private ["s9EncodableP", "dx"]
@@ -112,8 +118,9 @@ depends-member:
 - !private ["s9EncodableP", "sqrt"]
 - !private ["s9EncodableP", "x"]
 - !private ["s9EncodableP", "y"]
-- !private ["s9EncodableP", "zeroVector"]
+- !private ["s9EncodableP", "zero"]
 - !private ["s9EquatableP", "CGVector"]
+- !private ["s9EquatableP", "_getBuiltinLogicValue"]
 - !private ["s9EquatableP", "atan2"]
 - !private ["s9EquatableP", "cos"]
 - !private ["s9EquatableP", "dx"]
@@ -125,8 +132,13 @@ depends-member:
 - !private ["s9EquatableP", "sqrt"]
 - !private ["s9EquatableP", "x"]
 - !private ["s9EquatableP", "y"]
-- !private ["s9EquatableP", "zeroVector"]
+- !private ["s9EquatableP", "zero"]
+- !private ["s27ExpressibleByBooleanLiteralP", "_getBuiltinLogicValue"]
+- !private ["s8HashableP", "_getBuiltinLogicValue"]
+- !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
+- !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "_getBuiltinLogicValue"]
 - !private ["s21_ObjectiveCBridgeableP", "CGVector"]
+- !private ["s21_ObjectiveCBridgeableP", "_getBuiltinLogicValue"]
 - !private ["s21_ObjectiveCBridgeableP", "atan2"]
 - !private ["s21_ObjectiveCBridgeableP", "cos"]
 - !private ["s21_ObjectiveCBridgeableP", "dx"]
@@ -138,16 +150,22 @@ depends-member:
 - !private ["s21_ObjectiveCBridgeableP", "sqrt"]
 - !private ["s21_ObjectiveCBridgeableP", "x"]
 - !private ["s21_ObjectiveCBridgeableP", "y"]
-- !private ["s21_ObjectiveCBridgeableP", "zeroVector"]
+- !private ["s21_ObjectiveCBridgeableP", "zero"]
 depends-nominal:
+- !private "Sb"
 - !private "SC7CGPointV"
 - "SC8CGVectorV"
 - !private "s28CustomDebugStringConvertibleP"
 - !private "s29CustomPlaygroundQuickLookableP"
 - !private "s17CustomReflectableP"
+- !private "s23CustomStringConvertibleP"
 - !private "s9DecodableP"
 - !private "s9EncodableP"
 - !private "s9EquatableP"
+- !private "s27ExpressibleByBooleanLiteralP"
+- !private "s8HashableP"
+- !private "s25LosslessStringConvertibleP"
+- !private "s35_ExpressibleByBuiltinBooleanLiteralP"
 - !private "s21_ObjectiveCBridgeableP"
 depends-dynamic-lookup:
 depends-external:

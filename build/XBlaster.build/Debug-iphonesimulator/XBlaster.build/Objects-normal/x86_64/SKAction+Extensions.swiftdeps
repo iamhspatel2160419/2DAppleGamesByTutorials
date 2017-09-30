@@ -4,7 +4,6 @@ provides-nominal:
 provides-member:
 - ["So8SKActionC", ""]
 - ["So8SKActionC", "afterDelay"]
-- ["So8SKActionC", "afterDelay"]
 - ["So8SKActionC", "removeFromParentAfterDelay"]
 - ["So8SKActionC", "jumpToHeight"]
 provides-dynamic-lookup:
@@ -19,7 +18,6 @@ depends-top-level:
 - "CGPoint"
 - "SKAction"
 - "TimeInterval"
-- "dispatch_block_t"
 depends-member:
 - !private ["s19BinaryFloatingPointP", "init"]
 - !private ["12CoreGraphics7CGFloatV", "init"]
@@ -120,7 +118,6 @@ depends-member:
 - ["So8NSObjectC", "TimeInterval"]
 - ["So8NSObjectC", "afterDelay"]
 - !private ["So8NSObjectC", "customAction"]
-- ["So8NSObjectC", "dispatch_block_t"]
 - ["So8NSObjectC", "jumpToHeight"]
 - !private ["So8NSObjectC", "position"]
 - !private ["So8NSObjectC", "removeFromParent"]
@@ -143,7 +140,6 @@ depends-member:
 - ["So8SKActionC", "TimeInterval"]
 - ["So8SKActionC", "afterDelay"]
 - !private ["So8SKActionC", "customAction"]
-- ["So8SKActionC", "dispatch_block_t"]
 - ["So8SKActionC", "jumpToHeight"]
 - !private ["So8SKActionC", "removeFromParent"]
 - ["So8SKActionC", "removeFromParentAfterDelay"]
@@ -245,4 +241,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/SpriteKit.framework/Headers/SpriteKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
-interface-hash: "835b608eaccdc2f56a1234a4867282f0"
+interface-hash: "3234514395c97dbbea0ab8f2d1936f3a"

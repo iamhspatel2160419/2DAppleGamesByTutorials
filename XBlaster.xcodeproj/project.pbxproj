@@ -28,6 +28,11 @@
 		7F0DEA281F797E2D00F144B5 /* edunline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F0DEA271F797D6500F144B5 /* edunline.ttf */; };
 		7F3020AB1F79F091001244B0 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3020AA1F79F090001244B0 /* Entity.swift */; };
 		7F3020AD1F7A5FD3001244B0 /* PlayerShip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3020AC1F7A5FD2001244B0 /* PlayerShip.swift */; };
+		7F8399841F7F440900AAA4A2 /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8399831F7F440900AAA4A2 /* Enemy.swift */; };
+		7F8399861F7F441800AAA4A2 /* EnemyA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8399851F7F441800AAA4A2 /* EnemyA.swift */; };
+		7F8399881F7F441F00AAA4A2 /* EnemyB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8399871F7F441F00AAA4A2 /* EnemyB.swift */; };
+		7F83998B1F7F443500AAA4A2 /* AISteering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F83998A1F7F443500AAA4A2 /* AISteering.swift */; };
+		7FE485211F7EF87C003FE503 /* Bullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE485201F7EF87C003FE503 /* Bullet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +59,11 @@
 		7F0DEA271F797D6500F144B5 /* edunline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = edunline.ttf; sourceTree = "<group>"; };
 		7F3020AA1F79F090001244B0 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		7F3020AC1F7A5FD2001244B0 /* PlayerShip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerShip.swift; sourceTree = "<group>"; };
+		7F8399831F7F440900AAA4A2 /* Enemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
+		7F8399851F7F441800AAA4A2 /* EnemyA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyA.swift; sourceTree = "<group>"; };
+		7F8399871F7F441F00AAA4A2 /* EnemyB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyB.swift; sourceTree = "<group>"; };
+		7F83998A1F7F443500AAA4A2 /* AISteering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AISteering.swift; sourceTree = "<group>"; };
+		7FE485201F7EF87C003FE503 /* Bullet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bullet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +96,7 @@
 		7F0DEA0C1F797B8C00F144B5 /* XBlaster */ = {
 			isa = PBXGroup;
 			children = (
+				7F8399891F7F442300AAA4A2 /* AI */,
 				7F3020A91F79EEFC001244B0 /* Entities */,
 				7F0DEA0D1F797B8C00F144B5 /* AppDelegate.swift */,
 				7F0DEA131F797B8F00F144B5 /* GameScene.swift */,
@@ -121,6 +132,10 @@
 			children = (
 				7F3020AA1F79F090001244B0 /* Entity.swift */,
 				7F3020AC1F7A5FD2001244B0 /* PlayerShip.swift */,
+				7FE485201F7EF87C003FE503 /* Bullet.swift */,
+				7F8399831F7F440900AAA4A2 /* Enemy.swift */,
+				7F8399851F7F441800AAA4A2 /* EnemyA.swift */,
+				7F8399871F7F441F00AAA4A2 /* EnemyB.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -142,6 +157,14 @@
 				7F0182421F7DD5C700A7F578 /* VectorMath.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		7F8399891F7F442300AAA4A2 /* AI */ = {
+			isa = PBXGroup;
+			children = (
+				7F83998A1F7F443500AAA4A2 /* AISteering.swift */,
+			);
+			path = AI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,6 +242,7 @@
 			files = (
 				7F01823F1F7DD58C00A7F578 /* Effects.swift in Sources */,
 				7F01822F1F7DD2B500A7F578 /* CGVector+Extensions.swift in Sources */,
+				7F8399861F7F441800AAA4A2 /* EnemyA.swift in Sources */,
 				7F3020AB1F79F091001244B0 /* Entity.swift in Sources */,
 				7F0DEA141F797B8F00F144B5 /* GameScene.swift in Sources */,
 				7F0182311F7DD2EC00A7F578 /* Int+Extensions.swift in Sources */,
@@ -226,14 +250,18 @@
 				7F0182431F7DD5C700A7F578 /* VectorMath.swift in Sources */,
 				7F01822B1F7DCA5800A7F578 /* CGFloat+Extensions.swift in Sources */,
 				7F0182331F7DD34F00A7F578 /* SKAction+Extensions.swift in Sources */,
+				7F8399841F7F440900AAA4A2 /* Enemy.swift in Sources */,
 				7F0DEA161F797B8F00F144B5 /* GameViewController.swift in Sources */,
+				7F83998B1F7F443500AAA4A2 /* AISteering.swift in Sources */,
 				7F01822D1F7DCBB200A7F578 /* CGPoint+Extensions.swift in Sources */,
+				7F8399881F7F441F00AAA4A2 /* EnemyB.swift in Sources */,
 				7F0182351F7DD3FD00A7F578 /* SKAction+SpecialEffects.swift in Sources */,
 				7F0DEA0E1F797B8C00F144B5 /* AppDelegate.swift in Sources */,
 				7F3020AD1F7A5FD3001244B0 /* PlayerShip.swift in Sources */,
 				7F01823D1F7DD54D00A7F578 /* Audio.swift in Sources */,
 				7F01823B1F7DD52100A7F578 /* SKColor+Extensions.swift in Sources */,
 				7F0182411F7DD5BF00A7F578 /* TimingFunctions.swift in Sources */,
+				7FE485211F7EF87C003FE503 /* Bullet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
