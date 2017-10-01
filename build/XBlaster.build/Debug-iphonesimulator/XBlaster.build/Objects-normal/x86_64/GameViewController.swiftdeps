@@ -143,6 +143,8 @@ depends-member:
 - !private ["s16RawRepresentableP", "aspectFill"]
 - !private ["So12SKEffectNodeC", "scaleMode"]
 - !private ["So6SKNodeC", "scaleMode"]
+- !private ["So24SKPhysicsContactDelegateP", "init"]
+- !private ["So24SKPhysicsContactDelegateP", "scaleMode"]
 - !private ["So7SKSceneC", "scaleMode"]
 - !private ["SC16SKSceneScaleModeO", "aspectFill"]
 - !private ["So6SKViewC", "ignoresSiblingOrder"]
@@ -302,6 +304,7 @@ depends-nominal:
 - !private "s16RawRepresentableP"
 - !private "So12SKEffectNodeC"
 - !private "So6SKNodeC"
+- !private "So24SKPhysicsContactDelegateP"
 - !private "So7SKSceneC"
 - !private "SC16SKSceneScaleModeO"
 - !private "So6SKViewC"

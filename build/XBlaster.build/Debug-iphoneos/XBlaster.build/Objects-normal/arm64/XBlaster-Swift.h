@@ -219,17 +219,42 @@ SWIFT_CLASS("_TtC8XBlaster6Bullet")
 @end
 
 
+SWIFT_CLASS("_TtC8XBlaster5Enemy")
+@interface Enemy : Entity
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC8XBlaster6EnemyA")
+@interface EnemyA : Enemy <SKPhysicsContactDelegate>
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC8XBlaster6EnemyB")
+@interface EnemyB : Enemy <SKPhysicsContactDelegate>
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@class SKView;
 @class UITouch;
 @class UIEvent;
 
 SWIFT_CLASS("_TtC8XBlaster9GameScene")
-@interface GameScene : SKScene
-- (nonnull instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@interface GameScene : SKScene <SKPhysicsContactDelegate>
 - (nonnull instancetype)initWithSize:(CGSize)size OBJC_DESIGNATED_INITIALIZER;
-- (void)update:(NSTimeInterval)currentTime;
+- (nonnull instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)didMoveToView:(SKView * _Nonnull)view;
+- (void)touchesBegan:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
 - (void)touchesMoved:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
+- (void)touchesEnded:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
+- (void)touchesCancelled:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
+- (void)update:(NSTimeInterval)currentTime;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @end
+
+
 
 @class NSBundle;
 

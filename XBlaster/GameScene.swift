@@ -171,11 +171,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     // This method is called by the physics engine when two physics body collide
     func didBeginContact(contact: SKPhysicsContact!) {
         
-        // Check to see if Body A is an enamy ship and if so call collided with
+        // Check to see if Body A is an enemy ship and if so call collided with
         if let enemyNode = contact.bodyA.node {
             if enemyNode.name == "enemy" {
                 let enemy = enemyNode as! Entity
-                enemy.collidedWith(contact.bodyA, contact: contact)
+                enemy.collidedWith(body: contact.bodyA, contact: contact)
             }
         }
         
@@ -183,7 +183,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if let playerNode = contact.bodyB.node {
             if playerNode.name == "playerShip" || playerNode.name == "bullet" {
                 let player = playerNode as! Entity
-                player.collidedWith(contact.bodyA, contact: contact)
+                player.collidedWith(body: contact.bodyA, contact: contact)
             }
         }
     }

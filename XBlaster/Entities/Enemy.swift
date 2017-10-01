@@ -14,7 +14,7 @@ import SpriteKit
 class Enemy : Entity {
     
     let healthMeterLabel = SKLabelNode(fontNamed: "Arial")
-    let healthMeterText: String? = "________"
+    let healthMeterText: String = "________"
     let scoreLabel = SKLabelNode(fontNamed: "Edit Undo Line BRK")
     let damageTakenPerHit = 10.0
     
@@ -103,7 +103,8 @@ class Enemy : Entity {
         // mark them a no longer being dead
         if dead {
             dead = false
-            position = CGPoint(x: CGFloat.random(min: playableRect.origin.x, max: playableRect.size.width), y: playableRect.size.height)
+            position = CGPoint(x: CGFloat.random(min: playableRect.origin.x, max: playableRect.size.width),
+                               y: playableRect.size.height)
         }
         
         // If the enemy has reached is next waypoint then set the next waypoint to the players
@@ -117,17 +118,17 @@ class Enemy : Entity {
         aiSteering.update(delta: delta)
         
         // Update the health meter for the enemy
-        var healthBarLength = 8.0 * health / 100
-        let index = 
-        healthMeterLabel.text = "\(String(healthMeterLabel[..<(Int(healthBarLength))]))"
+        let healthBarLength = 8.0 * health / 100
         
+        let index = healthMeterText.index(healthMeterText.startIndex, offsetBy: Int(healthBarLength))
+        healthMeterLabel.text = "\(healthMeterText[..<index])"
+        
+        //healthMeterLabel.text = "\(healthMeterText.substringToIndex(Int(healthBarLength)))"
         healthMeterLabel.fontColor = SKColor(red: CGFloat(2 * (1 - health / 100)),
                                              green:CGFloat(2 * health / 100), blue:0, alpha:1)
     }
     
     func configureCollisionBody() {
-        // More details on this method inside the PlayerShip class and more details on SpriteKit physics in
-        // Chapter 9, "Beginner Physics"
         physicsBody = SKPhysicsBody(rectangleOf: frame.size)
         physicsBody?.affectedByGravity = false
         physicsBody?.categoryBitMask = ColliderType.Enemy
@@ -167,7 +168,7 @@ class Enemy : Entity {
             
             // Increase the score for the player
             let mainScene = scene as! GameScene
-            mainScene.increaseScoreBy(score)
+            mainScene.increaseScoreBy(increment: score)
             
             // Reset the enemies health
             health = maxHealth

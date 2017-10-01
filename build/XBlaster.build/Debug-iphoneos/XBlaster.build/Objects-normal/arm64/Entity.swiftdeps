@@ -3,8 +3,10 @@ provides-top-level:
 - "Entity"
 provides-nominal:
 - "8XBlaster6EntityC"
+- "8XBlaster6EntityC12ColliderTypeV"
 provides-member:
 - ["8XBlaster6EntityC", ""]
+- ["8XBlaster6EntityC12ColliderTypeV", ""]
 - ["So13DispatchQueueC", ""]
 - ["So13DispatchQueueC", "once"]
 provides-dynamic-lookup:
@@ -15,11 +17,14 @@ depends-top-level:
 - "Entity"
 - "NSCoder"
 - !private "SKColor"
+- "SKPhysicsBody"
+- "SKPhysicsContact"
 - "SKSpriteNode"
 - "SKTexture"
 - "String"
 - !private "StringLiteralType"
 - "TimeInterval"
+- "UInt32"
 - !private "objc_sync_enter"
 - !private "objc_sync_exit"
 depends-member:
@@ -47,6 +52,11 @@ depends-member:
 - !private ["s10CollectionP", "append"]
 - !private ["s10CollectionP", "contains"]
 - ["s10CollectionP", "init"]
+- ["8XBlaster6EntityC12ColliderTypeV", "Bullet"]
+- ["8XBlaster6EntityC12ColliderTypeV", "Enemy"]
+- ["8XBlaster6EntityC12ColliderTypeV", "Player"]
+- ["8XBlaster6EntityC12ColliderTypeV", "UInt32"]
+- ["8XBlaster6EntityC12ColliderTypeV", "init"]
 - ["s28CustomDebugStringConvertibleP", "CGPoint"]
 - !private ["s28CustomDebugStringConvertibleP", "SKColor"]
 - ["s28CustomDebugStringConvertibleP", "String"]
@@ -109,10 +119,15 @@ depends-member:
 - ["s9EncodableP", "init"]
 - ["s9EncodableP", "zero"]
 - ["8XBlaster6EntityC", "CGPoint"]
+- ["8XBlaster6EntityC", "ColliderType"]
 - ["8XBlaster6EntityC", "NSCoder"]
 - !private ["8XBlaster6EntityC", "SKColor"]
+- ["8XBlaster6EntityC", "SKPhysicsBody"]
+- ["8XBlaster6EntityC", "SKPhysicsContact"]
 - ["8XBlaster6EntityC", "SKTexture"]
 - ["8XBlaster6EntityC", "TimeInterval"]
+- ["8XBlaster6EntityC", "UInt32"]
+- ["8XBlaster6EntityC", "collidedWith"]
 - ["8XBlaster6EntityC", "deinit"]
 - ["8XBlaster6EntityC", "direction"]
 - ["8XBlaster6EntityC", "generateTexture"]
@@ -176,10 +191,14 @@ depends-member:
 - ["So8NSObjectC", "CGPoint"]
 - ["So8NSObjectC", "NSCoder"]
 - !private ["So8NSObjectC", "SKColor"]
+- ["So8NSObjectC", "SKPhysicsBody"]
+- ["So8NSObjectC", "SKPhysicsContact"]
 - ["So8NSObjectC", "SKTexture"]
 - ["So8NSObjectC", "String"]
 - ["So8NSObjectC", "TimeInterval"]
+- ["So8NSObjectC", "UInt32"]
 - ["So8NSObjectC", "_onceTracker"]
+- ["So8NSObjectC", "collidedWith"]
 - ["So8NSObjectC", "direction"]
 - ["So8NSObjectC", "generateTexture"]
 - ["So8NSObjectC", "health"]
@@ -218,8 +237,12 @@ depends-member:
 - ["So6SKNodeC", "CGPoint"]
 - ["So6SKNodeC", "NSCoder"]
 - !private ["So6SKNodeC", "SKColor"]
+- ["So6SKNodeC", "SKPhysicsBody"]
+- ["So6SKNodeC", "SKPhysicsContact"]
 - ["So6SKNodeC", "SKTexture"]
 - ["So6SKNodeC", "TimeInterval"]
+- ["So6SKNodeC", "UInt32"]
+- ["So6SKNodeC", "collidedWith"]
 - ["So6SKNodeC", "direction"]
 - ["So6SKNodeC", "generateTexture"]
 - ["So6SKNodeC", "health"]
@@ -230,8 +253,12 @@ depends-member:
 - ["So12SKSpriteNodeC", "CGPoint"]
 - ["So12SKSpriteNodeC", "NSCoder"]
 - !private ["So12SKSpriteNodeC", "SKColor"]
+- ["So12SKSpriteNodeC", "SKPhysicsBody"]
+- ["So12SKSpriteNodeC", "SKPhysicsContact"]
 - ["So12SKSpriteNodeC", "SKTexture"]
 - ["So12SKSpriteNodeC", "TimeInterval"]
+- ["So12SKSpriteNodeC", "UInt32"]
+- ["So12SKSpriteNodeC", "collidedWith"]
 - ["So12SKSpriteNodeC", "direction"]
 - ["So12SKSpriteNodeC", "generateTexture"]
 - ["So12SKSpriteNodeC", "health"]
@@ -269,8 +296,12 @@ depends-member:
 - ["So11UIResponderC", "CGPoint"]
 - ["So11UIResponderC", "NSCoder"]
 - !private ["So11UIResponderC", "SKColor"]
+- ["So11UIResponderC", "SKPhysicsBody"]
+- ["So11UIResponderC", "SKPhysicsContact"]
 - ["So11UIResponderC", "SKTexture"]
 - ["So11UIResponderC", "TimeInterval"]
+- ["So11UIResponderC", "UInt32"]
+- ["So11UIResponderC", "collidedWith"]
 - ["So11UIResponderC", "direction"]
 - ["So11UIResponderC", "generateTexture"]
 - ["So11UIResponderC", "health"]
@@ -335,6 +366,7 @@ depends-nominal:
 - "SC7CGPointV"
 - "s7CVarArgP"
 - "s10CollectionP"
+- "8XBlaster6EntityC12ColliderTypeV"
 - "s28CustomDebugStringConvertibleP"
 - "s29CustomPlaygroundQuickLookableP"
 - "s17CustomReflectableP"
@@ -417,4 +449,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.0.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.0.sdk/System/Library/Frameworks/SpriteKit.framework/Headers/SpriteKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.0.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
-interface-hash: "d8e33836ded197f9aca028d5c37de2a0"
+interface-hash: "499a6b539cc09ca3f49aa091af45f614"
