@@ -15,11 +15,11 @@
 		7F0DE9F61F71263A00F144B5 /* win.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7F0DE9F01F7124E400F144B5 /* win.wav */; };
 		7F0DE9F81F726F9E00F144B5 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0DE9F71F726F9D00F144B5 /* GameOverScene.swift */; };
 		7F0DE9FA1F727F5300F144B5 /* MainMenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0DE9F91F727F5200F144B5 /* MainMenuScene.swift */; };
-		7F0DE9FD1F728AF300F144B5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F0DE9FC1F728A7D00F144B5 /* Info.plist */; };
 		7F3707071F6498F000722623 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3707061F6498F000722623 /* GameViewController.swift */; };
 		7F37070A1F6498F000722623 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F3707081F6498F000722623 /* Main.storyboard */; };
 		7F37070C1F6498F000722623 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F37070B1F6498F000722623 /* Assets.xcassets */; };
 		7F37070F1F6498F000722623 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F37070D1F6498F000722623 /* LaunchScreen.storyboard */; };
+		7F3E3E331F890DBC00B2520D /* SCOREBOARD.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F3E3E321F8907E500B2520D /* SCOREBOARD.ttf */; };
 		7FA7058F1F65AC020009FF20 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA7058E1F65AC020009FF20 /* GameScene.swift */; };
 		7FA705911F65AC040009FF20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA705901F65AC040009FF20 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
@@ -39,6 +39,7 @@
 		7F3707091F6498F000722623 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7F37070B1F6498F000722623 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F37070E1F6498F000722623 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7F3E3E321F8907E500B2520D /* SCOREBOARD.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCOREBOARD.ttf; sourceTree = "<group>"; };
 		7FA7058E1F65AC020009FF20 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		7FA705901F65AC040009FF20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,12 +93,21 @@
 				7F0DE9E91F6F46CD00F144B5 /* MyUtils.swift */,
 				7F3707061F6498F000722623 /* GameViewController.swift */,
 				7F3707081F6498F000722623 /* Main.storyboard */,
+				7F3E3E311F8907BA00B2520D /* Fonts */,
 				7F0DE9EB1F7124E400F144B5 /* Sounds */,
 				7F37070B1F6498F000722623 /* Assets.xcassets */,
 				7F37070D1F6498F000722623 /* LaunchScreen.storyboard */,
 				7F0DE9FC1F728A7D00F144B5 /* Info.plist */,
 			);
 			path = "Zombie Conga";
+			sourceTree = "<group>";
+		};
+		7F3E3E311F8907BA00B2520D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				7F3E3E321F8907E500B2520D /* SCOREBOARD.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,12 +171,12 @@
 			files = (
 				7F37070A1F6498F000722623 /* Main.storyboard in Resources */,
 				7F0DE9F61F71263A00F144B5 /* win.wav in Resources */,
-				7F0DE9FD1F728AF300F144B5 /* Info.plist in Resources */,
 				7F37070C1F6498F000722623 /* Assets.xcassets in Resources */,
 				7F0DE9F31F71262D00F144B5 /* backgroundMusic.mp3 in Resources */,
 				7F0DE9F41F71263100F144B5 /* lose.wav in Resources */,
 				7F0DE9F21F71262B00F144B5 /* hitCatLady.wav in Resources */,
 				7F37070F1F6498F000722623 /* LaunchScreen.storyboard in Resources */,
+				7F3E3E331F890DBC00B2520D /* SCOREBOARD.ttf in Resources */,
 				7F0DE9F11F71262200F144B5 /* hitCat.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

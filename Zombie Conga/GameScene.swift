@@ -28,13 +28,16 @@ class GameScene: SKScene {
     var isZombieInvincible: Bool = false
     
     let catMovePointsPerSecond: CGFloat = 480.0
+    var catsInTrain: Int = 0
+    var catsNeeded: Int = 0
     
     var lives = 5
     var gameOver = false
     
     let backgroundMovePointsPerSecond: CGFloat = 200.0
-    
     let backgroundLayer = SKNode()
+    
+    let livesLabel = SKLabelNode(fontNamed: "SCOREBOARD")
     
     override init(size: CGSize) {
         
@@ -70,6 +73,18 @@ class GameScene: SKScene {
     
     override func didMove(to: SKView) {
         
+        /*
+        // Helper Method to Find Custom Font Names
+        for family: String in UIFont.familyNames
+        {
+            print("\(family)")
+            for names: String in UIFont.fontNames(forFamilyName: family)
+            {
+                print("== \(names)")
+            }
+        }
+       */
+        
         playBackgroundMusic(filename: "backgroundMusic.mp3")
         
         backgroundLayer.zPosition = -1
@@ -97,6 +112,17 @@ class GameScene: SKScene {
         run(SKAction.repeatForever(SKAction.sequence([SKAction.run(spawnCat),
                                                       SKAction.wait(forDuration: 1.0)])))
         // debugDrawPlayableArea()
+        
+        livesLabel.text = "Lives: X"
+        livesLabel.fontColor = SKColor.black
+        livesLabel.fontSize = 100
+        livesLabel.zPosition = 150
+        livesLabel.horizontalAlignmentMode = .left
+        livesLabel.color = .white
+        livesLabel.alpha = 0.5
+        livesLabel.position = CGPoint(x: ((size.width / 2) - (playableRect.size.width / 2) + CGFloat(20)),
+                                      y: ((size.height / 2) - (playableRect.size.height / 2) + CGFloat(20)))
+        addChild(livesLabel)
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -133,11 +159,20 @@ class GameScene: SKScene {
             gameOver = true
             // print("You lose!")
             backgroundMusicPlayer.stop()
+            catsInTrain = 0
             
             let gameOverScene = GameOverScene(size: size, won: false)
             gameOverScene.scaleMode = scaleMode
             let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
             view?.presentScene(gameOverScene, transition: reveal)
+        }
+        
+        catsNeeded = 20 - catsInTrain
+        
+        if catsNeeded >= 20 {
+            livesLabel.text = "Lives: \(lives) Cats Needed: \(20)"
+        } else {
+            livesLabel.text = "Lives: \(lives) Cats Needed: \(catsNeeded)"
         }
     }
     
@@ -309,7 +344,8 @@ class GameScene: SKScene {
         cat.removeAllActions()
         cat.setScale(1.0)
         cat.zRotation = 0
-
+        catsInTrain += 1
+        
         let turnGold = SKAction.colorize(with: UIColor.init(red: 252.0/255.0, green: 194.0/255.0, blue: 0.0, alpha: 1.0), colorBlendFactor: 0.8, duration: 0.2)
         cat.run(turnGold)
     }
@@ -370,7 +406,6 @@ class GameScene: SKScene {
     
     func moveTrain() {
         var trainCount = 0
-        
         var targetPosition = zombie.position
         backgroundLayer.enumerateChildNodes(withName: "train") {
             node, _ in
@@ -405,6 +440,7 @@ class GameScene: SKScene {
     func loseCats() {
 
         var loseCount = 0
+        catsInTrain -= 2
         backgroundLayer.enumerateChildNodes(withName: "train") { node, stop in
 
             var randomSpot = node.position
