@@ -13,7 +13,7 @@ class GameScene: SKScene {
     
     // MARK: Properties
     
-    private var cat : SKLabelNode?
+    
     
     // MARK: Scene Life Cycle
     
