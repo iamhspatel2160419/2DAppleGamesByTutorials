@@ -8,6 +8,10 @@
 
 import SpriteKit
 
+protocol EventListenerNode {
+    func didMoveToScene()
+}
+
 // MARK: GameScene: SKScene
 
 class GameScene: SKScene {
@@ -23,5 +27,11 @@ class GameScene: SKScene {
         let playableRect = CGRect(x: 0, y: playableMargin,
                                   width: size.width, height: size.height-playableMargin*2)
         physicsBody = SKPhysicsBody(edgeLoopFrom: playableRect)
+        
+        enumerateChildNodes(withName: "//*", using: { node, _ in
+            if let eventListenerNode = node as? EventListenerNode {
+                eventListenerNode.didMoveToScene()
+            }
+        })
     }
 }
