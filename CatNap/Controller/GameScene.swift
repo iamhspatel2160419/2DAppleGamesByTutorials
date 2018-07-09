@@ -7,21 +7,21 @@
 //
 
 import SpriteKit
-import GameplayKit
+
+// MARK: GameScene: SKScene
 
 class GameScene: SKScene {
-    
-    // MARK: Properties
-    
-    
     
     // MARK: Scene Life Cycle
     
     override func didMove(to view: SKView) {
-        
-    }
-    
-    override func update(_ currentTime: TimeInterval) {
 
+        let maxAspectRatio: CGFloat = 16.0/9.0
+        let maxAspectRatioHeight = size.width / maxAspectRatio
+        let playableMargin: CGFloat = (size.height
+            - maxAspectRatioHeight)/2
+        let playableRect = CGRect(x: 0, y: playableMargin,
+                                  width: size.width, height: size.height-playableMargin*2)
+        physicsBody = SKPhysicsBody(edgeLoopFrom: playableRect)
     }
 }
