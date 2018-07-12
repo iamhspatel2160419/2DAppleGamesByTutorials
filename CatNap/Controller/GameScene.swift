@@ -8,6 +8,13 @@
 
 import SpriteKit
 
+struct PhysicsCategory {
+    static let None:  UInt32 = 0
+    static let Cat:   UInt32 = 0b1 // 1
+    static let Block: UInt32 = 0b10 // 2
+    static let Bed:   UInt32 = 0b100 // 4
+}
+
 protocol EventListenerNode {
     func didMoveToScene()
 }
@@ -41,7 +48,8 @@ class GameScene: SKScene {
         
         bedNode = (childNode(withName: "bed") as! BedNode)
         catNode = (childNode(withName: "//cat_body") as! CatNode)
-        
         catNode.isPaused = false
+        
+        // SKTAudio.sharedInstance().playBackgroundMusic("backgroundMusic.mp3")
     }
 }
