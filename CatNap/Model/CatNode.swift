@@ -1,5 +1,5 @@
 //
-//  BedNode.swift
+//  CatNode.swift
 //  CatNap
 //
 //  Created by Neil Hiddink on 7/9/18.
@@ -8,18 +8,18 @@
 
 import SpriteKit
 
-// MARK: BedNode: SKSpriteNode
+// MARK: CatNode: SKSpriteNode
 
-class BedNode: SKSpriteNode {
+class CatNode: SKSpriteNode {
     
 }
 
-// MARK: BedNode: EventListenerNode
+// MARK: CatNode: EventListenerNode
 
-extension BedNode: EventListenerNode {
+extension CatNode: EventListenerNode {
     
     func didMoveToScene() {
-        print("Bed added to scene")
+        print("Cat added to scene")
     }
     
 }

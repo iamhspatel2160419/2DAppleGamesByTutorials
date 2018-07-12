@@ -16,10 +16,15 @@ protocol EventListenerNode {
 
 class GameScene: SKScene {
     
+    // MARK: Properties
+    
+    var bedNode: BedNode!
+    var catNode: CatNode!
+    
     // MARK: Scene Life Cycle
     
     override func didMove(to view: SKView) {
-
+        
         let maxAspectRatio: CGFloat = 16.0/9.0
         let maxAspectRatioHeight = size.width / maxAspectRatio
         let playableMargin: CGFloat = (size.height
@@ -33,5 +38,10 @@ class GameScene: SKScene {
                 eventListenerNode.didMoveToScene()
             }
         })
+        
+        bedNode = (childNode(withName: "bed") as! BedNode)
+        catNode = (childNode(withName: "//cat_body") as! CatNode)
+        
+        catNode.isPaused = false
     }
 }
