@@ -72,17 +72,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         view!.presentScene(scene)
     }
     
-    func lose() {
-
+    func win() {
         playable = false
-        
+        SKTAudio.sharedInstance().pauseBackgroundMusic()
+        SKTAudio.sharedInstance().playSoundEffect("win.mp3")
+        inGameMessage(text: "Nice job!")
+        run(SKAction.afterDelay(3, runBlock: newGame))
+        catNode.curlAt(scenePoint: bedNode.position)
+    }
+    
+    func lose() {
+        playable = false
         SKTAudio.sharedInstance().pauseBackgroundMusic()
         SKTAudio.sharedInstance().playSoundEffect("lose.mp3")
-
         inGameMessage(text: "Try again...")
-
         run(SKAction.afterDelay(5, runBlock: newGame))
-        
         catNode.wakeUp()
     }
     
@@ -102,6 +106,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         if collision == PhysicsCategory.Cat | PhysicsCategory.Bed {
             // print("SUCCESS")
+            win()
         } else if collision == PhysicsCategory.Cat | PhysicsCategory.Edge {
             // print("FAIL")
             lose()
