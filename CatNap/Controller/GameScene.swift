@@ -60,4 +60,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         // SKTAudio.sharedInstance().playBackgroundMusic("backgroundMusic.mp3")
     }
+    
+    // MARK: SKPhysicsContactDelegate Methods
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        
+        let collision = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
+        
+        if collision == PhysicsCategory.Cat | PhysicsCategory.Bed {
+            print("SUCCESS")
+        } else if collision == PhysicsCategory.Cat | PhysicsCategory.Edge {
+            print("FAIL")
+        }
+    }
 }
