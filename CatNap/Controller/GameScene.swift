@@ -14,6 +14,7 @@ struct PhysicsCategory {
     static let Block: UInt32 = 0b10 // 2
     static let Bed:   UInt32 = 0b100 // 4
     static let Edge: UInt32 = 0b1000 // 8
+    static let Label: UInt32 = 0b10000 // 16
 }
 
 protocol EventListenerNode {
@@ -32,6 +33,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var bedNode: BedNode!
     var catNode: CatNode!
+    
+    var playable = true
     
     // MARK: Scene Life Cycle
     
@@ -61,16 +64,48 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // SKTAudio.sharedInstance().playBackgroundMusic("backgroundMusic.mp3")
     }
     
+    // MARK: Helper Methods
+    
+    func newGame() {
+        let scene = GameScene(fileNamed:"GameScene")
+        scene!.scaleMode = scaleMode
+        view!.presentScene(scene)
+    }
+    
+    func lose() {
+
+        playable = false
+        
+        SKTAudio.sharedInstance().pauseBackgroundMusic()
+        SKTAudio.sharedInstance().playSoundEffect("lose.mp3")
+
+        inGameMessage(text: "Try again...")
+
+        run(SKAction.afterDelay(5, runBlock: newGame))
+        
+        catNode.wakeUp()
+    }
+    
+    func inGameMessage(text: String) {
+        let message = MessageNode(message: text)
+        message.position = CGPoint(x: frame.midX, y: frame.midY)
+        addChild(message)
+    }
+    
     // MARK: SKPhysicsContactDelegate Methods
     
     func didBegin(_ contact: SKPhysicsContact) {
         
+        guard playable else { return }
+        
         let collision = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
         
         if collision == PhysicsCategory.Cat | PhysicsCategory.Bed {
-            print("SUCCESS")
+            // print("SUCCESS")
         } else if collision == PhysicsCategory.Cat | PhysicsCategory.Edge {
-            print("FAIL")
+            // print("FAIL")
+            lose()
         }
     }
+    
 }
