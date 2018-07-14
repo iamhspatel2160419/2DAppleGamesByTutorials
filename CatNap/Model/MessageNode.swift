@@ -12,14 +12,20 @@ import SpriteKit
 
 class MessageNode: SKLabelNode {
     
+    // MARK: Properties
+    
+    private var numberOfBounces = 0
+    
     // MARK: Initialization
     
     convenience init(message: String) {
         self.init(fontNamed: "AvenirNext-Regular")
+        
         text = message
         fontSize = 256.0
         fontColor = SKColor.gray
         zPosition = 100
+        
         let front = SKLabelNode(fontNamed: "AvenirNext-Regular")
         front.text = message
         front.fontSize = 256.0
@@ -30,7 +36,15 @@ class MessageNode: SKLabelNode {
         physicsBody = SKPhysicsBody(circleOfRadius: 10)
         physicsBody!.collisionBitMask = PhysicsCategory.Edge
         physicsBody!.categoryBitMask = PhysicsCategory.Label
+        physicsBody!.contactTestBitMask = PhysicsCategory.Edge
         physicsBody!.restitution = 0.7
+    }
+    
+    func didBounce(){
+        numberOfBounces += 1
+        if numberOfBounces >= 4 {
+            self.removeFromParent()
+        }
     }
     
 }

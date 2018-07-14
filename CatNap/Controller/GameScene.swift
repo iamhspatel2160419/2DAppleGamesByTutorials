@@ -46,8 +46,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             - maxAspectRatioHeight)/2
         let playableRect = CGRect(x: 0, y: playableMargin,
                                   width: size.width, height: size.height-playableMargin*2)
-        physicsBody = SKPhysicsBody(edgeLoopFrom: playableRect)
         
+        physicsBody = SKPhysicsBody(edgeLoopFrom: playableRect)
         physicsWorld.contactDelegate = self
         physicsBody!.categoryBitMask = PhysicsCategory.Edge
         
@@ -61,7 +61,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         catNode = (childNode(withName: "//cat_body") as! CatNode)
         catNode.isPaused = false
         
-        // SKTAudio.sharedInstance().playBackgroundMusic("backgroundMusic.mp3")
+        //SKTAudio.sharedInstance().playBackgroundMusic("backgroundMusic.mp3")
     }
     
     // MARK: Helper Methods
@@ -100,9 +100,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func didBegin(_ contact: SKPhysicsContact) {
         
-        guard playable else { return }
-        
         let collision = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
+        
+        if collision == PhysicsCategory.Label | PhysicsCategory.Edge {
+            let labelNode = contact.bodyA.categoryBitMask == PhysicsCategory.Label ?
+                contact.bodyA.node :
+                contact.bodyB.node
+            
+            if let message = labelNode as? MessageNode {
+                message.didBounce()
+            }
+        }
+        
+        guard playable else { return }
         
         if collision == PhysicsCategory.Cat | PhysicsCategory.Bed {
             // print("SUCCESS")
