@@ -64,6 +64,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         //SKTAudio.sharedInstance().playBackgroundMusic("backgroundMusic.mp3")
     }
     
+    override func didSimulatePhysics() {
+        guard playable else {
+            return
+        }
+        guard abs(catNode.parent!.zRotation) < CGFloat(25).degreesToRadians() else {
+            lose()
+            return
+        }
+    }
+    
     // MARK: Helper Methods
     
     func newGame() {
