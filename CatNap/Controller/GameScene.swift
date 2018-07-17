@@ -36,6 +36,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var playable = true
     
+    var currentLevel = 0
+
+    class func level(levelNum: Int) -> GameScene? {
+        let scene = GameScene(fileNamed: "Level\(levelNum)")!
+        scene.currentLevel = levelNum
+        scene.scaleMode = .aspectFill
+        return scene
+    }
+    
     // MARK: Scene Life Cycle
     
     override func didMove(to view: SKView) {
@@ -77,9 +86,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     // MARK: Helper Methods
     
     func newGame() {
-        let scene = GameScene(fileNamed:"GameScene")
-        scene!.scaleMode = scaleMode
-        view!.presentScene(scene)
+        view!.presentScene(GameScene.level(levelNum: currentLevel))
     }
     
     func win() {
