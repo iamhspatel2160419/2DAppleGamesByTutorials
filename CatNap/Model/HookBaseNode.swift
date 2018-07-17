@@ -8,7 +8,11 @@
 
 import SpriteKit
 
+// MARK: HookBaseNode: SKSpriteNode
+
 class HookBaseNode: SKSpriteNode {
+    
+    // MARK: Properties
     
     private var hookNode = SKSpriteNode(imageNamed: "hook")
     private var ropeNode = SKSpriteNode(imageNamed: "rope")
@@ -18,7 +22,36 @@ class HookBaseNode: SKSpriteNode {
         return hookJoint != nil
     }
     
+    // MARK: Helper Methods
+    
+    func hookCat(catPhysicsBody: SKPhysicsBody) {
+        catPhysicsBody.velocity = CGVector(dx: 0, dy: 0)
+        catPhysicsBody.angularVelocity = 0
+        
+        let pinPoint = CGPoint(x: hookNode.position.x, y: hookNode.position.y + hookNode.size.height/2)
+        hookJoint = SKPhysicsJointFixed.joint(withBodyA: hookNode.physicsBody!, bodyB: catPhysicsBody, anchor: pinPoint)
+        scene!.physicsWorld.add(hookJoint)
+        hookNode.physicsBody!.contactTestBitMask = PhysicsCategory.None
+    }
+    
+    func releaseCat() {
+        hookNode.physicsBody!.categoryBitMask = PhysicsCategory.None
+        hookNode.physicsBody!.contactTestBitMask = PhysicsCategory.None
+        hookJoint.bodyA.node!.zRotation = 0
+        hookJoint.bodyB.node!.zRotation = 0
+        scene!.physicsWorld.remove(hookJoint)
+        hookJoint = nil
+    }
+    
+    @objc func catTapped() {
+        if isHooked {
+            releaseCat()
+        }
+    }
+    
 }
+
+// MARK: HookBaseNode: EventListenerNode
 
 extension HookBaseNode: EventListenerNode {
     func didMoveToScene() {
@@ -51,8 +84,12 @@ extension HookBaseNode: EventListenerNode {
         ropeNode.constraints = [orientConstraint]
         
         hookNode.physicsBody!.applyImpulse(CGVector(dx: 50, dy: 0))
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(catTapped), name: Notification.Name(CatNode.kCatTappedNotification), object: nil)
     }
 }
+
+//MARK: HookBaseNode: InteractiveNode
 
 extension HookBaseNode: InteractiveNode {
     func interact() {

@@ -12,14 +12,26 @@ import SpriteKit
 
 class CatNode: SKSpriteNode {
     
+    // MARK: Properties
+    
+    static let kCatTappedNotification = "kCatTappedNotification"
+    
+    // MARK: Touch Methods
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+        interact()
+    }
 }
 
 // MARK: CatNode: EventListenerNode
 
 extension CatNode: EventListenerNode {
-    
+
     func didMoveToScene() {
         // print("Cat added to scene")
+        
+        isUserInteractionEnabled = true
         
         let catBodyTexture = SKTexture(imageNamed: "cat_body_outline")
         parent!.physicsBody = SKPhysicsBody(texture: catBodyTexture, size: catBodyTexture.size())
@@ -69,4 +81,10 @@ extension CatNode: EventListenerNode {
             ]))
     }
     
+}
+
+extension CatNode: InteractiveNode {
+    func interact() {
+        NotificationCenter.default.post(Notification(name: NSNotification.Name(CatNode.kCatTappedNotification)))
+    }
 }
