@@ -16,6 +16,7 @@ struct PhysicsCategory {
     static let Edge: UInt32 = 0b1000 // 8
     static let Label: UInt32 = 0b10000 // 16
     static let Spring: UInt32 = 0b100000 // 32
+    static let Hook: UInt32 = 0b1000000 // 64
 }
 
 protocol EventListenerNode {
@@ -70,6 +71,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         bedNode = (childNode(withName: "bed") as! BedNode)
         catNode = (childNode(withName: "//cat_body") as! CatNode)
         catNode.isPaused = false
+        
+        // Sample Constraint Code
+        // let rotationConstraint = SKConstraint.zRotation(SKRange(lowerLimit: -π/4, upperLimit: π/4))
+        // catNode.parent!.constraints = [rotationConstraint]
         
         //SKTAudio.sharedInstance().playBackgroundMusic("backgroundMusic.mp3")
     }
