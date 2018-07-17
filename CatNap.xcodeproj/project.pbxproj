@@ -32,6 +32,8 @@
 		11F113AD20F798D9000BCA4D /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F113A120F798D9000BCA4D /* CGFloat+Extensions.swift */; };
 		11F113AF20F7C310000BCA4D /* BlockNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F113AE20F7C310000BCA4D /* BlockNode.swift */; };
 		11F113B120F927F1000BCA4D /* MessageNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F113B020F927F1000BCA4D /* MessageNode.swift */; };
+		11F113D720FDEBC3000BCA4D /* Level2.sks in Resources */ = {isa = PBXBuildFile; fileRef = 11F113D620FDEBC3000BCA4D /* Level2.sks */; };
+		11F113D920FDED2F000BCA4D /* SpringNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F113D820FDED2F000BCA4D /* SpringNode.swift */; };
 		7FB6EB511F83082F004B18C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB6EB501F83082F004B18C2 /* AppDelegate.swift */; };
 		7FB6EB571F830830004B18C2 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB6EB561F830830004B18C2 /* GameScene.swift */; };
 		7FB6EB591F830830004B18C2 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB6EB581F830830004B18C2 /* GameViewController.swift */; };
@@ -66,6 +68,8 @@
 		11F113A120F798D9000BCA4D /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
 		11F113AE20F7C310000BCA4D /* BlockNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockNode.swift; sourceTree = "<group>"; };
 		11F113B020F927F1000BCA4D /* MessageNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageNode.swift; sourceTree = "<group>"; };
+		11F113D620FDEBC3000BCA4D /* Level2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level2.sks; sourceTree = "<group>"; };
+		11F113D820FDED2F000BCA4D /* SpringNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringNode.swift; sourceTree = "<group>"; };
 		7FB6EB4D1F83082F004B18C2 /* CatNap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatNap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FB6EB501F83082F004B18C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FB6EB561F830830004B18C2 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -143,6 +147,7 @@
 				11D69A8420F3CBDB005AF1DD /* CatNode.swift */,
 				11F113AE20F7C310000BCA4D /* BlockNode.swift */,
 				11F113B020F927F1000BCA4D /* MessageNode.swift */,
+				11F113D820FDED2F000BCA4D /* SpringNode.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -151,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				11D69A7A20F3B001005AF1DD /* Level1.sks */,
+				11F113D620FDEBC3000BCA4D /* Level2.sks */,
 				11D69A7D20F3B001005AF1DD /* Cat.sks */,
 				11D69A7C20F3B001005AF1DD /* CatCurl.sks */,
 				11D69A7B20F3B001005AF1DD /* CatWakeUp.sks */,
@@ -269,6 +275,7 @@
 				11186AB320F2877700573E07 /* lose.mp3 in Resources */,
 				7FB6EB5E1F830832004B18C2 /* Assets.xcassets in Resources */,
 				11D69A8020F3B001005AF1DD /* CatCurl.sks in Resources */,
+				11F113D720FDEBC3000BCA4D /* Level2.sks in Resources */,
 				11D69A7F20F3B001005AF1DD /* CatWakeUp.sks in Resources */,
 				11186AB220F2877700573E07 /* win.mp3 in Resources */,
 				11D69A8120F3B001005AF1DD /* Cat.sks in Resources */,
@@ -303,6 +310,7 @@
 				11D69A8320F3C934005AF1DD /* BedNode.swift in Sources */,
 				11F113A420F798D9000BCA4D /* Int+Extensions.swift in Sources */,
 				7FB6EB591F830830004B18C2 /* GameViewController.swift in Sources */,
+				11F113D920FDED2F000BCA4D /* SpringNode.swift in Sources */,
 				11F113AD20F798D9000BCA4D /* CGFloat+Extensions.swift in Sources */,
 				11F113AC20F798D9000BCA4D /* Vector3.swift in Sources */,
 				7FB6EB511F83082F004B18C2 /* AppDelegate.swift in Sources */,

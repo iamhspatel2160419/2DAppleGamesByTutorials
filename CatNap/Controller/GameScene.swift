@@ -15,6 +15,7 @@ struct PhysicsCategory {
     static let Bed:   UInt32 = 0b100 // 4
     static let Edge: UInt32 = 0b1000 // 8
     static let Label: UInt32 = 0b10000 // 16
+    static let Spring: UInt32 = 0b100000 // 32
 }
 
 protocol EventListenerNode {
