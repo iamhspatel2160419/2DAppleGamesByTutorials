@@ -11,10 +11,13 @@ import SpriteKit
 // MARK: StoneNode: SKSpriteNode
 
 class StoneNode: SKSpriteNode {
+
+    // MARK: Touch Methods
     
-    // MARK: Properties
-    
-    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+        interact()
+    }
     
     // MARK: Helper Methods
     
@@ -56,6 +59,8 @@ extension StoneNode: EventListenerNode {
 
 extension StoneNode: InteractiveNode {
     func interact() {
-        
+        isUserInteractionEnabled = false
+        run(SKAction.sequence([SKAction.playSoundFileNamed("pop.mp3", waitForCompletion: false),
+                               SKAction.removeFromParent()]))
     }
 }
