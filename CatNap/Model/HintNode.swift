@@ -41,6 +41,8 @@ class HintNode: SKSpriteNode {
     
 }
 
+// MARK: HintNode: EventListenerNode
+
 extension HintNode: EventListenerNode {
     func didMoveToScene() {
         isUserInteractionEnabled = true
@@ -62,6 +64,8 @@ extension HintNode: EventListenerNode {
         })
     }
 }
+
+// MARK: HintNode: InteractiveNode
 
 extension HintNode: InteractiveNode {
     func interact() {
