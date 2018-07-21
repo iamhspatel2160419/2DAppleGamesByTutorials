@@ -15,6 +15,8 @@ class DiscoBallNode: SKSpriteNode {
     
     // MARK: Properties
     
+    static private(set) var isDiscoTime = false
+    
     private var player: AVPlayer!
     private var video: SKVideoNode!
     
@@ -37,6 +39,8 @@ class DiscoBallNode: SKSpriteNode {
                     self.isDiscoTime = false
                 })
             }
+            
+            DiscoBallNode.isDiscoTime = isDiscoTime
         }
     }
     
