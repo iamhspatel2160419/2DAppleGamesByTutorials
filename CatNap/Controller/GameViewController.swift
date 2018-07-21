@@ -25,7 +25,7 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         
         if let view = self.view as! SKView? {
-            if let scene = GameScene.level(levelNum: 4) {
+            if let scene = GameScene.level(levelNum: 5) {
                 scene.scaleMode = .aspectFill
                 view.presentScene(scene)
             }
