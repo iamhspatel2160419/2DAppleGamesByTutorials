@@ -14,6 +14,8 @@ class HintNode: SKSpriteNode {
     
     // MARK: Properties
     
+    var shape = SKShapeNode()
+    
     var arrowPath: CGPath = {
         let bezierPath = UIBezierPath()
         bezierPath.move(to: CGPoint(x: 0.5, y: 65.69))
@@ -28,12 +30,23 @@ class HintNode: SKSpriteNode {
         return bezierPath.cgPath
     }()
     
+    var fillColors = [UIColor.red, UIColor.yellow, UIColor.orange]
+    
+    // MARK: Touch Methods
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+        interact()
+    }
+    
 }
 
 extension HintNode: EventListenerNode {
     func didMoveToScene() {
+        isUserInteractionEnabled = true
+        
         color = SKColor.clear
-        let shape = SKShapeNode(path: arrowPath)
+        shape = SKShapeNode(path: arrowPath)
         shape.strokeColor = SKColor.gray
         shape.lineWidth = 4
         shape.fillColor = SKColor.white
@@ -47,5 +60,12 @@ extension HintNode: EventListenerNode {
         shape.run(bounceAction, completion: {
             self.removeFromParent()
         })
+    }
+}
+
+extension HintNode: InteractiveNode {
+    func interact() {
+        let random = Int(arc4random_uniform(UInt32(fillColors.count)))
+        shape.fillColor = fillColors[random]
     }
 }
