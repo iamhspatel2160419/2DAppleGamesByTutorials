@@ -12,5 +12,5 @@ While an [Apple Developer](https://developer.apple.com/) account is not required
 
 ### Future Plans
 
-- **__Additional Levels__** - Add addtional levels to the game.
-- **_Menu Scene_** - Add a menu scene that lets the user see which levels they have completed, shows the level they need to complete next, locks/unlocks levels as they are completed.
+- **Additional Levels** - Add addtional levels to the game.
+- **Menu Scene** - Add a menu scene that lets the user see which levels they have completed, shows the level they need to complete next, locks/unlocks levels as they are completed.
