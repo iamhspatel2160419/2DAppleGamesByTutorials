@@ -27,7 +27,8 @@ class Player: SKSpriteNode {
     }
     
     init() {
-        let texture = SKTexture(imageNamed: "player_ft1")
+        // texture uses custom init declared in Extensions.swift
+        let texture = SKTexture(pixelImageNamed: "player_ft1")
         super.init(texture: texture, color: .white,
                    size: texture.size())
         name = "Player"

@@ -32,6 +32,7 @@
 		11F1142321040CE8000BCA4D /* Bug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1142221040CE8000BCA4D /* Bug.swift */; };
 		11F114252104D28A000BCA4D /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F114242104D28A000BCA4D /* Types.swift */; };
 		11F114272104D2C0000BCA4D /* Animatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F114262104D2C0000BCA4D /* Animatable.swift */; };
+		11F1142A2104D651000BCA4D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F114292104D651000BCA4D /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		11F1142221040CE8000BCA4D /* Bug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bug.swift; sourceTree = "<group>"; };
 		11F114242104D28A000BCA4D /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		11F114262104D2C0000BCA4D /* Animatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animatable.swift; sourceTree = "<group>"; };
+		11F114292104D651000BCA4D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				11F114242104D28A000BCA4D /* Types.swift */,
+				11F114292104D651000BCA4D /* Extensions.swift */,
 				11F114262104D2C0000BCA4D /* Animatable.swift */,
 				11F114282104D2C5000BCA4D /* Characters */,
 			);
@@ -279,6 +282,7 @@
 				11F114072103DC7A000BCA4D /* CGPoint+Extensions.swift in Sources */,
 				11F114062103DC7A000BCA4D /* SKNode+Extensions.swift in Sources */,
 				11F113BF20FC402A000BCA4D /* AppDelegate.swift in Sources */,
+				11F1142A2104D651000BCA4D /* Extensions.swift in Sources */,
 				11F1142321040CE8000BCA4D /* Bug.swift in Sources */,
 				11F114252104D28A000BCA4D /* Types.swift in Sources */,
 				11F1142121040C8E000BCA4D /* Player.swift in Sources */,
