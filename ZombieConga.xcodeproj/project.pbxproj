@@ -34,7 +34,7 @@
 		7F0DE9F71F726F9D00F144B5 /* GameOverScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		7F0DE9F91F727F5200F144B5 /* MainMenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuScene.swift; sourceTree = "<group>"; };
 		7F0DE9FC1F728A7D00F144B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7F3706FB1F6498F000722623 /* Zombie Conga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Zombie Conga.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F3706FB1F6498F000722623 /* ZombieConga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZombieConga.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F3707061F6498F000722623 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		7F3707091F6498F000722623 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7F37070B1F6498F000722623 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -70,7 +70,7 @@
 		7F3706F21F6498EF00722623 = {
 			isa = PBXGroup;
 			children = (
-				7F3706FD1F6498F000722623 /* Zombie Conga */,
+				7F3706FD1F6498F000722623 /* ZombieConga */,
 				7F3706FC1F6498F000722623 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -78,12 +78,12 @@
 		7F3706FC1F6498F000722623 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7F3706FB1F6498F000722623 /* Zombie Conga.app */,
+				7F3706FB1F6498F000722623 /* ZombieConga.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7F3706FD1F6498F000722623 /* Zombie Conga */ = {
+		7F3706FD1F6498F000722623 /* ZombieConga */ = {
 			isa = PBXGroup;
 			children = (
 				7FA705901F65AC040009FF20 /* AppDelegate.swift */,
@@ -99,7 +99,7 @@
 				7F37070D1F6498F000722623 /* LaunchScreen.storyboard */,
 				7F0DE9FC1F728A7D00F144B5 /* Info.plist */,
 			);
-			path = "Zombie Conga";
+			path = ZombieConga;
 			sourceTree = "<group>";
 		};
 		7F3E3E311F8907BA00B2520D /* Fonts */ = {
@@ -113,9 +113,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7F3706FA1F6498F000722623 /* Zombie Conga */ = {
+		7F3706FA1F6498F000722623 /* ZombieConga */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7F3707131F6498F100722623 /* Build configuration list for PBXNativeTarget "Zombie Conga" */;
+			buildConfigurationList = 7F3707131F6498F100722623 /* Build configuration list for PBXNativeTarget "ZombieConga" */;
 			buildPhases = (
 				7F3706F71F6498F000722623 /* Sources */,
 				7F3706F81F6498F000722623 /* Frameworks */,
@@ -125,9 +125,9 @@
 			);
 			dependencies = (
 			);
-			name = "Zombie Conga";
+			name = ZombieConga;
 			productName = Zombie_Conga;
-			productReference = 7F3706FB1F6498F000722623 /* Zombie Conga.app */;
+			productReference = 7F3706FB1F6498F000722623 /* ZombieConga.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -146,7 +146,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 7F3706F61F6498EF00722623 /* Build configuration list for PBXProject "Zombie Conga" */;
+			buildConfigurationList = 7F3706F61F6498EF00722623 /* Build configuration list for PBXProject "ZombieConga" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -159,7 +159,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7F3706FA1F6498F000722623 /* Zombie Conga */,
+				7F3706FA1F6498F000722623 /* ZombieConga */,
 			);
 		};
 /* End PBXProject section */
@@ -359,7 +359,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7F3706F61F6498EF00722623 /* Build configuration list for PBXProject "Zombie Conga" */ = {
+		7F3706F61F6498EF00722623 /* Build configuration list for PBXProject "ZombieConga" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7F3707111F6498F100722623 /* Debug */,
@@ -368,7 +368,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7F3707131F6498F100722623 /* Build configuration list for PBXNativeTarget "Zombie Conga" */ = {
+		7F3707131F6498F100722623 /* Build configuration list for PBXNativeTarget "ZombieConga" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7F3707141F6498F100722623 /* Debug */,
