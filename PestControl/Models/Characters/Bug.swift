@@ -14,4 +14,15 @@ class Bug: SKSpriteNode {
         fatalError("Use init()")
     }
     
+    init() {
+        // texture uses custom init declared in Extensions.swift
+        let texture = SKTexture(pixelImageNamed: "bug_ft1")
+        super.init(texture: texture, color: .white, size: texture.size())
+        name = "Bug"
+        zPosition = 50
+        
+        physicsBody = SKPhysicsBody(circleOfRadius: size.width / 2)
+        physicsBody?.restitution = 0.5
+        physicsBody?.allowsRotation = false
+    }
 }
