@@ -14,4 +14,11 @@ class Player: SKSpriteNode {
         fatalError("Use init()")
     }
     
+    init() {
+        let texture = SKTexture(imageNamed: "player_ft1")
+        super.init(texture: texture, color: .white,
+                   size: texture.size())
+        name = "Player"
+        zPosition = 50
+    }
 }

@@ -20,7 +20,7 @@ class GameViewController: UIViewController {
 
             if let scene = SKScene(fileNamed: "GameScene") {
 
-                scene.scaleMode = .aspectFill
+                scene.scaleMode = .resizeFill
                 view.presentScene(scene)
             }
             
