@@ -30,6 +30,8 @@
 		11F1141F2104068E000BCA4D /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 11F1141E2104068E000BCA4D /* Actions.sks */; };
 		11F1142121040C8E000BCA4D /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1142021040C8E000BCA4D /* Player.swift */; };
 		11F1142321040CE8000BCA4D /* Bug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1142221040CE8000BCA4D /* Bug.swift */; };
+		11F114252104D28A000BCA4D /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F114242104D28A000BCA4D /* Types.swift */; };
+		11F114272104D2C0000BCA4D /* Animatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F114262104D2C0000BCA4D /* Animatable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,8 @@
 		11F1141E2104068E000BCA4D /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		11F1142021040C8E000BCA4D /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		11F1142221040CE8000BCA4D /* Bug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bug.swift; sourceTree = "<group>"; };
+		11F114242104D28A000BCA4D /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		11F114262104D2C0000BCA4D /* Animatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animatable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,8 +126,9 @@
 		11F1140C2103DC84000BCA4D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				11F1142021040C8E000BCA4D /* Player.swift */,
-				11F1142221040CE8000BCA4D /* Bug.swift */,
+				11F114242104D28A000BCA4D /* Types.swift */,
+				11F114262104D2C0000BCA4D /* Animatable.swift */,
+				11F114282104D2C5000BCA4D /* Characters */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -174,6 +179,15 @@
 			);
 			name = "Supporting Files";
 			path = PestControl;
+			sourceTree = "<group>";
+		};
+		11F114282104D2C5000BCA4D /* Characters */ = {
+			isa = PBXGroup;
+			children = (
+				11F1142021040C8E000BCA4D /* Player.swift */,
+				11F1142221040CE8000BCA4D /* Bug.swift */,
+			);
+			path = Characters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11F114012103DC7A000BCA4D /* CGVector+Extensions.swift in Sources */,
+				11F114272104D2C0000BCA4D /* Animatable.swift in Sources */,
 				11F1140B2103DC7A000BCA4D /* CGFloat+Extensions.swift in Sources */,
 				11F114082103DC7A000BCA4D /* SKTEffects.swift in Sources */,
 				11F113C520FC402A000BCA4D /* GameScene.swift in Sources */,
@@ -265,6 +280,7 @@
 				11F114062103DC7A000BCA4D /* SKNode+Extensions.swift in Sources */,
 				11F113BF20FC402A000BCA4D /* AppDelegate.swift in Sources */,
 				11F1142321040CE8000BCA4D /* Bug.swift in Sources */,
+				11F114252104D28A000BCA4D /* Types.swift in Sources */,
 				11F1142121040C8E000BCA4D /* Player.swift in Sources */,
 				11F114002103DC7A000BCA4D /* SKColor+Extensions.swift in Sources */,
 			);
