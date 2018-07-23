@@ -42,6 +42,7 @@ class GameScene: SKScene {
         if !player.hasBugspray {
             updateBugspray()
         }
+        advanceBreakableTile(locatedAt: player.position)
     }
     
     // MARK: Initialization
@@ -84,21 +85,21 @@ class GameScene: SKScene {
     func setupObstaclePhysics() {
         guard let obstaclesTileMap = obstaclesTileMap else { return }
 
-        var physicsBodies = [SKPhysicsBody]()
-
         for row in 0..<obstaclesTileMap.numberOfRows {
             for column in 0..<obstaclesTileMap.numberOfColumns {
-                guard let tile = tile(in: obstaclesTileMap, at: (column, row)) else { continue }
 
-                let center = obstaclesTileMap.centerOfTile(atColumn: column, row: row)
-                let body = SKPhysicsBody(rectangleOf: tile.size, center: center)
-                physicsBodies.append(body)
+                guard let tile = tile(in: obstaclesTileMap, at: (column, row)) else { continue }
+                guard tile.userData?.object(forKey: "obstacle") != nil else { continue }
+
+                let node = SKNode()
+                node.physicsBody = SKPhysicsBody(rectangleOf: tile.size)
+                node.physicsBody?.isDynamic = false
+                node.physicsBody?.friction = 0
+                node.physicsBody?.categoryBitMask = PhysicsCategory.Breakable
+                node.position = obstaclesTileMap.centerOfTile(atColumn: column, row: row)
+                obstaclesTileMap.addChild(node)
             }
         }
-
-        obstaclesTileMap.physicsBody = SKPhysicsBody(bodies: physicsBodies)
-        obstaclesTileMap.physicsBody?.isDynamic = false
-        obstaclesTileMap.physicsBody?.friction = 0
     }
     
     func tile(in tileMap: SKTileMapNode, at coordinates: TileCoordinates) -> SKTileDefinition? {
@@ -170,6 +171,21 @@ class GameScene: SKScene {
         }
     }
     
+    func tileGroupForName(tileSet: SKTileSet, name: String) -> SKTileGroup? {
+        let tileGroup = tileSet.tileGroups.filter { $0.name == name }.first
+        return tileGroup
+    }
+    
+    func advanceBreakableTile(locatedAt nodePosition: CGPoint) {
+        guard let obstaclesTileMap = obstaclesTileMap else { return }
+        let (column, row) = tileCoordinates(in: obstaclesTileMap, at: nodePosition)
+        let obstacle = tile(in: obstaclesTileMap, at: (column, row))
+        guard let nextTileGroupName = obstacle?.userData?.object(forKey: "breakable") as? String else { return }
+        
+        if let nextTileGroup = tileGroupForName(tileSet: obstaclesTileMap.tileSet, name: nextTileGroupName) {
+            obstaclesTileMap.setTileGroup(nextTileGroup, forColumn: column, row: row)
+        }
+    }
     // MARK: Touch Methods
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -196,6 +212,18 @@ extension GameScene: SKPhysicsContactDelegate {
             case PhysicsCategory.Bug:
                 if let bug = other.node as? Bug {
                     remove(bug: bug)
+                }
+            case PhysicsCategory.Firebug:
+                if player.hasBugspray {
+                    if let firebug = other.node as? Firebug {
+                        remove(bug: firebug)
+                        player.hasBugspray = false
+                    }
+                }
+            case PhysicsCategory.Breakable:
+                if let obstacleNode = other.node {
+                    advanceBreakableTile(locatedAt: obstacleNode.position)
+                    obstacleNode.removeFromParent()
                 }
             default:
                 break
