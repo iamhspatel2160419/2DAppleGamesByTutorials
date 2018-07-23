@@ -77,6 +77,11 @@ class GameScene: SKScene {
         super.init(coder: aDecoder)
         background = childNode(withName: "background") as? SKTileMapNode
         obstaclesTileMap = childNode(withName: "obstacles") as? SKTileMapNode
+       
+        if let timeLimit =
+            userData?.object(forKey: "timeLimit") as? Int {
+            self.timeLimit = timeLimit
+        }
     }
     
     // MARK: Helper Methods
