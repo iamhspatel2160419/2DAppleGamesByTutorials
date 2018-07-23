@@ -31,12 +31,14 @@ class HUD: SKNode {
     // MARK: Properties
     
     var timerLabel: SKLabelNode?
+    var bugCountLabel: SKLabelNode?
     
     // MARK: Initialization
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         timerLabel = childNode(withName: "Timer") as? SKLabelNode
+        bugCountLabel = childNode(withName: "Bug Count") as? SKLabelNode
     }
     
     override init() {
@@ -76,6 +78,22 @@ class HUD: SKNode {
         timerLabel?.fontName = "Menlo"
         
         updateTimer(time: time)
+    }
+    
+    func updateBugCount(with count: Int) {
+        bugCountLabel?.text = "Bugs: \(count)"
+    }
+    
+    func addBugCount(with count: Int) {
+        guard let scene = scene else { return }
+        let position = CGPoint(x: scene.frame.width / 2 - 30, y: scene.frame.height / 2 - 10)
+        add(message: "Bug Count", position: position, fontSize: 24)
+        
+        bugCountLabel = childNode(withName: "Bug Count") as? SKLabelNode
+        bugCountLabel?.verticalAlignmentMode = .top
+        bugCountLabel?.horizontalAlignmentMode = .right
+        bugCountLabel?.fontName = "Menlo"
+        updateBugCount(with: count)
     }
     
     func updateGameState(from: GameState, to: GameState) {

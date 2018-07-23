@@ -50,7 +50,7 @@ class GameScene: SKScene {
             }
             
             setupHUD()
-            hud.addTimer(time: timeLimit)
+            
             gameState = .start
         }
         
@@ -237,6 +237,9 @@ class GameScene: SKScene {
     
     func setupHUD() {
         camera?.addChild(hud)
+        
+        hud.addTimer(time: timeLimit)
+        hud.addBugCount(with: bugsNode.children.count)
     }
     
     func updateHUD(currentTime: TimeInterval) {
