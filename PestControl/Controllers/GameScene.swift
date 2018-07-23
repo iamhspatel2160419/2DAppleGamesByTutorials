@@ -17,6 +17,9 @@ class GameScene: SKScene {
     var background: SKTileMapNode!
     var player = Player()
     var bugsNode = SKNode()
+    var obstaclesTileMap: SKTileMapNode?
+    
+    var firebugCount: Int = 0
     
     // MARK: Scene Life Cycle
     
@@ -27,6 +30,7 @@ class GameScene: SKScene {
         setupCamera()
         setupWorldPhysics()
         createBugs()
+        setupObstaclePhysics()
     }
     
     // MARK: Initialization
@@ -34,6 +38,7 @@ class GameScene: SKScene {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         background = childNode(withName: "background") as? SKTileMapNode
+        obstaclesTileMap = childNode(withName: "obstacles") as? SKTileMapNode
     }
     
     // MARK: Helper Methods
@@ -65,6 +70,26 @@ class GameScene: SKScene {
         physicsWorld.contactDelegate = self
     }
     
+    func setupObstaclePhysics() {
+        guard let obstaclesTileMap = obstaclesTileMap else { return }
+
+        var physicsBodies = [SKPhysicsBody]()
+
+        for row in 0..<obstaclesTileMap.numberOfRows {
+            for column in 0..<obstaclesTileMap.numberOfColumns {
+                guard let tile = tile(in: obstaclesTileMap, at: (column, row)) else { continue }
+
+                let center = obstaclesTileMap.centerOfTile(atColumn: column, row: row)
+                let body = SKPhysicsBody(rectangleOf: tile.size, center: center)
+                physicsBodies.append(body)
+            }
+        }
+
+        obstaclesTileMap.physicsBody = SKPhysicsBody(bodies: physicsBodies)
+        obstaclesTileMap.physicsBody?.isDynamic = false
+        obstaclesTileMap.physicsBody?.friction = 0
+    }
+    
     func tile(in tileMap: SKTileMapNode, at coordinates: TileCoordinates) -> SKTileDefinition? {
         return tileMap.tileDefinition(atColumn: coordinates.column, row: coordinates.row)
     }
@@ -77,7 +102,14 @@ class GameScene: SKScene {
 
                 guard let tile = tile(in: bugsMap, at: (column, row)) else { continue }
                 
-                let bug = Bug()
+                let bug: Bug
+                if tile.userData?.object(forKey: "firebug") != nil {
+                    bug = Firebug()
+                    firebugCount += 1
+                } else {
+                    bug = Bug()
+                }
+                
                 bug.position = bugsMap.centerOfTile(atColumn: column, row: row)
                 
                 bugsNode.addChild(bug)
