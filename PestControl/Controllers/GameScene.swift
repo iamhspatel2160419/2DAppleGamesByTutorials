@@ -51,9 +51,15 @@ class GameScene: SKScene {
         setupHUD()
         
         hud.addTimer(time: timeLimit)
+        gameState = .start
     }
     
     override func update(_ currentTime: TimeInterval) {
+        guard gameState == .play else {
+            isPaused = true
+            return
+        }
+        
         if !player.hasBugspray {
             updateBugspray()
         }
@@ -233,10 +239,18 @@ class GameScene: SKScene {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else { return }
-        
-        player.move(target: touch.location(in: self))
+        switch gameState {
+            case .start:
+                gameState = .play
+                isPaused = false
+                startTime = nil
+                elapsedTime = 0
+            case .play:
+                player.move(target: touch.location(in: self))
+            default:
+                break
+        }
     }
-    
 }
 
 // MARK: GameScene: SKPhysicsContactDelegate
