@@ -27,6 +27,12 @@ class GameScene: SKScene {
     var elapsedTime: Int = 0
     var startTime: Int?
     
+    var gameState: GameState = .initial {
+        didSet {
+            hud.updateGameState(from: oldValue, to: gameState)
+        }
+    }
+    
     // MARK: Scene Life Cycle
     
     override func didMove(to view: SKView) {
@@ -215,9 +221,11 @@ class GameScene: SKScene {
     
     func checkEndGame() {
         if bugsNode.children.count == 0 {
-            print("* YOU WON!!!")
+            player.physicsBody?.linearDamping = 1
+            gameState = .win
         } else if timeLimit - elapsedTime <= 0 {
-            print("* YOU LOST :(")
+            player.physicsBody?.linearDamping = 1
+            gameState = .lose
         }
     }
     
