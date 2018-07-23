@@ -19,6 +19,11 @@ class Player: SKSpriteNode {
     // MARK: Properties
     
     var animations: [SKAction] = []
+    var hasBugspray: Bool = false {
+        didSet {
+            blink(color: .green, on: hasBugspray)
+        }
+    }
     
     // MARK: Initialization
     
@@ -72,6 +77,21 @@ class Player: SKSpriteNode {
         run(animations[direction.rawValue], withKey: "animation")
     }
     
+    func blink(color: SKColor, on: Bool) {
+        let blinkOff = SKAction.colorize(withColorBlendFactor: 0.0, duration: 0.2)
+        if on {
+            let blinkOn = SKAction.colorize(with: color, colorBlendFactor: 1.0, duration: 0.2)
+            let blink = SKAction.repeatForever(SKAction.sequence([blinkOn, blinkOff]))
+            xScale = xScale < 0 ? -1.5 : 1.5
+            yScale = 1.5
+            run(blink, withKey: "blink")
+        } else {
+            xScale = xScale < 0 ? -1.0 : 1.0
+            yScale = 1.0
+            removeAction(forKey: "blink")
+            run(blinkOff)
+        }
+    }
 }
 
 // MARK: Player: Animatable

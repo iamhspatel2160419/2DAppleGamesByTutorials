@@ -38,6 +38,12 @@ class GameScene: SKScene {
         }
     }
     
+    override func update(_ currentTime: TimeInterval) {
+        if !player.hasBugspray {
+            updateBugspray()
+        }
+    }
+    
     // MARK: Initialization
     
     required init?(coder aDecoder: NSCoder) {
@@ -146,6 +152,22 @@ class GameScene: SKScene {
         // 7
         bugSprayTileMap?.name = "BugSpray"
         addChild(bugSprayTileMap!)
+    }
+    
+    func tileCoordinates(in tileMap: SKTileMapNode, at position: CGPoint) -> TileCoordinates {
+        let column = tileMap.tileColumnIndex(fromPosition: position)
+        let row = tileMap.tileRowIndex(fromPosition: position)
+        
+        return (column, row)
+    }
+    
+    func updateBugspray() {
+        guard let bugSprayTileMap = bugSprayTileMap else { return }
+        let (column, row) = tileCoordinates(in: bugSprayTileMap, at: player.position)
+        if tile(in: bugSprayTileMap, at: (column, row)) != nil {
+            bugSprayTileMap.setTileGroup(nil, forColumn: column, row: row)
+            player.hasBugspray = true
+        }
     }
     
     // MARK: Touch Methods
