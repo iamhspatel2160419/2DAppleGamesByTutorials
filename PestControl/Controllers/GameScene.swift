@@ -18,6 +18,7 @@ class GameScene: SKScene {
     var player = Player()
     var bugsNode = SKNode()
     var obstaclesTileMap: SKTileMapNode?
+    var bugSprayTileMap: SKTileMapNode?
     
     var firebugCount: Int = 0
     
@@ -31,6 +32,10 @@ class GameScene: SKScene {
         setupWorldPhysics()
         createBugs()
         setupObstaclePhysics()
+        
+        if firebugCount > 0 {
+            createBugSpray(quantity: firebugCount + 10)
+        }
     }
     
     // MARK: Initialization
@@ -121,6 +126,26 @@ class GameScene: SKScene {
         addChild(bugsNode)
 
         bugsMap.removeFromParent()
+    }
+    
+    func createBugSpray(quantity: Int) {
+        let tile = SKTileDefinition(texture: SKTexture(pixelImageNamed: "bugspray"))
+        let tilerule = SKTileGroupRule(adjacency: SKTileAdjacencyMask.adjacencyAll, tileDefinitions: [tile])
+        let tilegroup = SKTileGroup(rules: [tilerule])
+        let tileSet = SKTileSet(tileGroups: [tilegroup])
+        let columns = background.numberOfColumns
+        let rows = background.numberOfRows
+        
+        bugSprayTileMap = SKTileMapNode(tileSet: tileSet, columns: columns, rows: rows, tileSize: tile.size)
+        for _ in 1...quantity {
+            let column = Int.random(min: 0, max: columns-1)
+            let row = Int.random(min: 0, max: rows-1)
+            bugSprayTileMap?.setTileGroup(tilegroup,
+                                          forColumn: column, row: row)
+        }
+        // 7
+        bugSprayTileMap?.name = "BugSpray"
+        addChild(bugSprayTileMap!)
     }
     
     // MARK: Touch Methods
