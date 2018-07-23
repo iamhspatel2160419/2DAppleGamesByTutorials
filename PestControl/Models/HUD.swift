@@ -36,6 +36,7 @@ class HUD: SKNode {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        timerLabel = childNode(withName: "Timer") as? SKLabelNode
     }
     
     override init() {
@@ -92,6 +93,12 @@ class HUD: SKNode {
             case .lose:
                 add(message: HUDMessages.lose, position: .zero)
                 add(message: HUDMessages.playAgain, position: CGPoint(x: 0, y: -100))
+            case .reload:
+                add(message: HUDMessages.reload, position: .zero, fontSize: 40)
+                add(message: HUDMessages.yes,
+                    position: CGPoint(x: -140, y: -100))
+                add(message: HUDMessages.no,
+                    position: CGPoint(x: 130, y: -100))
             default:
                 break
         }
@@ -107,6 +114,10 @@ class HUD: SKNode {
             case .lose:
                 remove(message: HUDMessages.lose)
                 remove(message: HUDMessages.playAgain)
+            case .reload:
+                remove(message: HUDMessages.reload)
+                remove(message: HUDMessages.yes)
+                remove(message: HUDMessages.no)
             default:
                 break
         }

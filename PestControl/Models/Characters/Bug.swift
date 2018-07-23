@@ -23,7 +23,8 @@ class Bug: SKSpriteNode {
     // MARK: Initialization
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("Use init()")
+        super.init(coder: aDecoder)
+        animations = aDecoder.decodeObject(forKey: "Bug.animations") as! [SKAction]
     }
     
     init() {
@@ -44,14 +45,14 @@ class Bug: SKSpriteNode {
     
     // MARK: Helper Methods
     
-    func move() {
+    @objc func moveBug() {
 
         let randomX = CGFloat(Int.random(min: -1, max: 1))
         let randomY = CGFloat(Int.random(min: -1, max: 1))
         let vector = CGVector(dx: randomX * BugSettings.bugDistance, dy: randomY * BugSettings.bugDistance)
         
         let moveBy = SKAction.move(by: vector, duration: 1)
-        let moveAgain = SKAction.run(move)
+        let moveAgain = SKAction.perform(#selector(moveBug), onTarget: self)
         
         let direction = animationDirection(for: vector)
 
@@ -80,3 +81,12 @@ class Bug: SKSpriteNode {
 // MARK: Bug: Animatable
 
 extension Bug: Animatable {}
+
+// MARK: Encoding - Saving and Loading Games
+
+extension Bug {
+    override func encode(with aCoder: NSCoder) {
+        aCoder.encode(animations, forKey: "Bug.animations")
+        super.encode(with: aCoder)
+    }
+}

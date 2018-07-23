@@ -19,16 +19,23 @@ class Player: SKSpriteNode {
     // MARK: Properties
     
     var animations: [SKAction] = []
-    var hasBugspray: Bool = false {
+    var hasBugSpray: Bool = false {
         didSet {
-            blink(color: .green, on: hasBugspray)
+            blink(color: .green, on: hasBugSpray)
         }
     }
     
     // MARK: Initialization
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("Use init()")
+        super.init(coder: aDecoder)
+        animations = aDecoder.decodeObject(forKey: "Player.animations") as! [SKAction]
+        hasBugSpray = aDecoder.decodeBool(forKey: "Player.hasBugspray")
+        
+        if hasBugSpray {
+            removeAction(forKey: "blink")
+            blink(color: .green, on: hasBugSpray)
+        }
     }
     
     init() {
@@ -97,3 +104,13 @@ class Player: SKSpriteNode {
 // MARK: Player: Animatable
 
 extension Player: Animatable {}
+
+// MARK: Encoding - Saving and Loading Games
+
+extension Player {
+    override func encode(with aCoder: NSCoder) {
+        aCoder.encode(hasBugSpray, forKey: "Player.hasBugspray")
+        aCoder.encode(animations, forKey: "Player.animations")
+        super.encode(with: aCoder)
+    }
+}
