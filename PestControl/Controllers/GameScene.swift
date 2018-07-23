@@ -60,6 +60,9 @@ class GameScene: SKScene {
     
     func setupWorldPhysics() {
         background.physicsBody = SKPhysicsBody.init(edgeLoopFrom: background.frame)
+        
+        background.physicsBody?.categoryBitMask = PhysicsCategory.Edge
+        physicsWorld.contactDelegate = self
     }
     
     func tile(in tileMap: SKTileMapNode, at coordinates: TileCoordinates) -> SKTileDefinition? {
@@ -96,4 +99,33 @@ class GameScene: SKScene {
         player.move(target: touch.location(in: self))
     }
     
+}
+
+// MARK: GameScene: SKPhysicsContactDelegate
+
+extension GameScene: SKPhysicsContactDelegate {
+    func remove(bug: Bug) {
+        bug.removeFromParent()
+        
+        background.addChild(bug)
+        bug.die()
+    }
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        let other = contact.bodyA.categoryBitMask == PhysicsCategory.Player ? contact.bodyB : contact.bodyA
+        switch other.categoryBitMask {
+            case PhysicsCategory.Bug:
+                if let bug = other.node as? Bug {
+                    remove(bug: bug)
+                }
+            default:
+                break
+        }
+        
+        if let physicsBody = player.physicsBody {
+            if physicsBody.velocity.length() > 0 {
+                player.checkDirection()
+            }
+        }
+    }
 }
