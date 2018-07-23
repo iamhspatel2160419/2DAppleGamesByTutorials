@@ -11,3 +11,5 @@ import Foundation
 enum Direction: Int {
     case forward = 0, backward, left, right
 }
+
+typealias TileCoordinates = (column: Int, row: Int)

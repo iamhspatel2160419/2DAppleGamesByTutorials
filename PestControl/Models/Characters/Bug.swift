@@ -8,7 +8,19 @@
 
 import SpriteKit
 
+enum BugSettings {
+    static let bugDistance: CGFloat = 16.0
+}
+
+// MARK: Bug: SKSpriteNode
+
 class Bug: SKSpriteNode {
+    
+    // MARK: Properties
+    
+    var animations: [SKAction] = []
+    
+    // MARK: Initialization
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("Use init()")
@@ -24,5 +36,35 @@ class Bug: SKSpriteNode {
         physicsBody = SKPhysicsBody(circleOfRadius: size.width / 2)
         physicsBody?.restitution = 0.5
         physicsBody?.allowsRotation = false
+        
+        createAnimations(character: "bug")
     }
+    
+    // MARK: Helper Methods
+    
+    func move() {
+
+        let randomX = CGFloat(Int.random(min: -1, max: 1))
+        let randomY = CGFloat(Int.random(min: -1, max: 1))
+        let vector = CGVector(dx: randomX * BugSettings.bugDistance, dy: randomY * BugSettings.bugDistance)
+        
+        let moveBy = SKAction.move(by: vector, duration: 1)
+        let moveAgain = SKAction.run(move)
+        
+        let direction = animationDirection(for: vector)
+
+        if direction == .left {
+            xScale = abs(xScale)
+        } else if direction == .right {
+            xScale = -abs(xScale)
+        }
+
+        run(animations[direction.rawValue], withKey: "animation")
+        run(SKAction.sequence([moveBy, moveAgain]))
+    }
+    
 }
+
+// MARK: Bug: Animatable
+
+extension Bug: Animatable {}

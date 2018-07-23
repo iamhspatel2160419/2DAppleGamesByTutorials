@@ -16,6 +16,7 @@ class GameScene: SKScene {
     
     var background: SKTileMapNode!
     var player = Player()
+    var bugsNode = SKNode()
     
     // MARK: Scene Life Cycle
     
@@ -25,6 +26,7 @@ class GameScene: SKScene {
         
         setupCamera()
         setupWorldPhysics()
+        createBugs()
     }
     
     // MARK: Initialization
@@ -58,6 +60,32 @@ class GameScene: SKScene {
     
     func setupWorldPhysics() {
         background.physicsBody = SKPhysicsBody.init(edgeLoopFrom: background.frame)
+    }
+    
+    func tile(in tileMap: SKTileMapNode, at coordinates: TileCoordinates) -> SKTileDefinition? {
+        return tileMap.tileDefinition(atColumn: coordinates.column, row: coordinates.row)
+    }
+    
+    func createBugs() {
+        guard let bugsMap = childNode(withName: "bugs") as? SKTileMapNode else { return }
+
+        for row in 0..<bugsMap.numberOfRows {
+            for column in 0..<bugsMap.numberOfColumns {
+
+                guard let tile = tile(in: bugsMap, at: (column, row)) else { continue }
+                
+                let bug = Bug()
+                bug.position = bugsMap.centerOfTile(atColumn: column, row: row)
+                
+                bugsNode.addChild(bug)
+                bug.move()
+            }
+        }
+
+        bugsNode.name = "Bugs"
+        addChild(bugsNode)
+
+        bugsMap.removeFromParent()
     }
     
     // MARK: Touch Methods
