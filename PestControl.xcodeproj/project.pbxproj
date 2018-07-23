@@ -30,7 +30,7 @@
 		11F114092103DC7A000BCA4D /* SKTAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F113FC2103DC7A000BCA4D /* SKTAudio.swift */; };
 		11F1140A2103DC7A000BCA4D /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F113FD2103DC7A000BCA4D /* Vector3.swift */; };
 		11F1140B2103DC7A000BCA4D /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F113FE2103DC7A000BCA4D /* CGFloat+Extensions.swift */; };
-		11F1141B2104066A000BCA4D /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 11F1141A2104066A000BCA4D /* GameScene.sks */; };
+		11F1141B2104066A000BCA4D /* Level4.sks in Resources */ = {isa = PBXBuildFile; fileRef = 11F1141A2104066A000BCA4D /* Level4.sks */; };
 		11F1141D2104067B000BCA4D /* TileSets.sks in Resources */ = {isa = PBXBuildFile; fileRef = 11F1141C2104067B000BCA4D /* TileSets.sks */; };
 		11F1142121040C8E000BCA4D /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1142021040C8E000BCA4D /* Player.swift */; };
 		11F1142321040CE8000BCA4D /* Bug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1142221040CE8000BCA4D /* Bug.swift */; };
@@ -65,7 +65,7 @@
 		11F113FC2103DC7A000BCA4D /* SKTAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTAudio.swift; sourceTree = "<group>"; };
 		11F113FD2103DC7A000BCA4D /* Vector3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector3.swift; sourceTree = "<group>"; };
 		11F113FE2103DC7A000BCA4D /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
-		11F1141A2104066A000BCA4D /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		11F1141A2104066A000BCA4D /* Level4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level4.sks; sourceTree = "<group>"; };
 		11F1141C2104067B000BCA4D /* TileSets.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TileSets.sks; sourceTree = "<group>"; };
 		11F1142021040C8E000BCA4D /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		11F1142221040CE8000BCA4D /* Bug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bug.swift; sourceTree = "<group>"; };
@@ -167,10 +167,10 @@
 		11F1140F2103DCA1000BCA4D /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				11F1141A2104066A000BCA4D /* GameScene.sks */,
 				110D9AD6210642B30094F91A /* Level1.sks */,
 				110D9AD7210642B30094F91A /* Level2.sks */,
 				110D9AD5210642B30094F91A /* Level3.sks */,
+				11F1141A2104066A000BCA4D /* Level4.sks */,
 				11F1141C2104067B000BCA4D /* TileSets.sks */,
 			);
 			name = Scenes;
@@ -263,7 +263,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11F1141B2104066A000BCA4D /* GameScene.sks in Resources */,
+				11F1141B2104066A000BCA4D /* Level4.sks in Resources */,
 				110D9AD9210642B30094F91A /* Level1.sks in Resources */,
 				11F113CA20FC402A000BCA4D /* Main.storyboard in Resources */,
 				11F1141D2104067B000BCA4D /* TileSets.sks in Resources */,

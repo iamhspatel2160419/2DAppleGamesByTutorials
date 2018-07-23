@@ -33,6 +33,8 @@ class GameScene: SKScene {
         }
     }
     
+    var currentLevel: Int = 1
+    
     // MARK: Scene Life Cycle
     
     override func didMove(to view: SKView) {
@@ -235,6 +237,16 @@ class GameScene: SKScene {
         }
     }
     
+    func transitionToScene(level: Int) {
+
+        guard let newScene = SKScene(fileNamed: "Level\(level)") as? GameScene else {
+            fatalError("Level: \(level) not found")
+        }
+
+        newScene.currentLevel = level
+        view?.presentScene(newScene, transition: SKTransition.flipVertical(withDuration: 0.5))
+    }
+    
     // MARK: Touch Methods
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -247,8 +259,12 @@ class GameScene: SKScene {
                 elapsedTime = 0
             case .play:
                 player.move(target: touch.location(in: self))
+            case .win:
+                transitionToScene(level: currentLevel + 1)
+            case .lose:
+                transitionToScene(level: 1)
             default:
-                break
+                    break
         }
     }
 }
