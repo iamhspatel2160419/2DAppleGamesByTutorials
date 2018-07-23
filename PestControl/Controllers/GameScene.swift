@@ -22,6 +22,10 @@ class GameScene: SKScene {
     var hud = HUD()
     
     var firebugCount: Int = 0
+    var timeLimit: Int = 10
+    
+    var elapsedTime: Int = 0
+    var startTime: Int?
     
     // MARK: Scene Life Cycle
     
@@ -39,6 +43,8 @@ class GameScene: SKScene {
         }
         
         setupHUD()
+        
+        hud.addTimer(time: timeLimit)
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -46,6 +52,9 @@ class GameScene: SKScene {
             updateBugspray()
         }
         advanceBreakableTile(locatedAt: player.position)
+        updateHUD(currentTime: currentTime)
+        
+        checkEndGame()
     }
     
     // MARK: Initialization
@@ -192,7 +201,24 @@ class GameScene: SKScene {
     
     func setupHUD() {
         camera?.addChild(hud)
-        hud.add(message: "Hello, world!", position: .zero)
+    }
+    
+    func updateHUD(currentTime: TimeInterval) {
+
+        if let startTime = startTime {
+            elapsedTime = Int(currentTime) - startTime
+        } else {
+            startTime = Int(currentTime) - elapsedTime
+        }
+        hud.updateTimer(time: timeLimit - elapsedTime)
+    }
+    
+    func checkEndGame() {
+        if bugsNode.children.count == 0 {
+            print("* YOU WON!!!")
+        } else if timeLimit - elapsedTime <= 0 {
+            print("* YOU LOST :(")
+        }
     }
     
     // MARK: Touch Methods
