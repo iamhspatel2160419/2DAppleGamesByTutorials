@@ -19,6 +19,7 @@ class GameScene: SKScene {
     var bugsNode = SKNode()
     var obstaclesTileMap: SKTileMapNode?
     var bugSprayTileMap: SKTileMapNode?
+    var hud = HUD()
     
     var firebugCount: Int = 0
     
@@ -36,6 +37,8 @@ class GameScene: SKScene {
         if firebugCount > 0 {
             createBugSpray(quantity: firebugCount + 10)
         }
+        
+        setupHUD()
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -186,6 +189,12 @@ class GameScene: SKScene {
             obstaclesTileMap.setTileGroup(nextTileGroup, forColumn: column, row: row)
         }
     }
+    
+    func setupHUD() {
+        camera?.addChild(hud)
+        hud.add(message: "Hello, world!", position: .zero)
+    }
+    
     // MARK: Touch Methods
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

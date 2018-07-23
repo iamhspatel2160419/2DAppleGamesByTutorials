@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		110D9AD2210624770094F91A /* Firebug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D9AD1210624770094F91A /* Firebug.swift */; };
+		110D9AD4210641600094F91A /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D9AD3210641600094F91A /* HUD.swift */; };
 		11F113BF20FC402A000BCA4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F113BE20FC402A000BCA4D /* AppDelegate.swift */; };
 		11F113C520FC402A000BCA4D /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F113C420FC402A000BCA4D /* GameScene.swift */; };
 		11F113C720FC402A000BCA4D /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F113C620FC402A000BCA4D /* GameViewController.swift */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		110D9AD1210624770094F91A /* Firebug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebug.swift; sourceTree = "<group>"; };
+		110D9AD3210641600094F91A /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 		11F113BB20FC402A000BCA4D /* PestControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PestControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11F113BE20FC402A000BCA4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11F113C420FC402A000BCA4D /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				11F114242104D28A000BCA4D /* Types.swift */,
 				11F114292104D651000BCA4D /* Extensions.swift */,
 				11F114262104D2C0000BCA4D /* Animatable.swift */,
+				110D9AD3210641600094F91A /* HUD.swift */,
 				11F114282104D2C5000BCA4D /* Characters */,
 			);
 			path = Models;
@@ -287,6 +290,7 @@
 				11F114062103DC7A000BCA4D /* SKNode+Extensions.swift in Sources */,
 				11F113BF20FC402A000BCA4D /* AppDelegate.swift in Sources */,
 				11F1142A2104D651000BCA4D /* Extensions.swift in Sources */,
+				110D9AD4210641600094F91A /* HUD.swift in Sources */,
 				11F1142321040CE8000BCA4D /* Bug.swift in Sources */,
 				11F114252104D28A000BCA4D /* Types.swift in Sources */,
 				11F1142121040C8E000BCA4D /* Player.swift in Sources */,
