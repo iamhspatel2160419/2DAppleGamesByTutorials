@@ -84,16 +84,12 @@
 		1176941F2109718900961D4E /* DropCharge */ = {
 			isa = PBXGroup;
 			children = (
+				1176945121097F3D00961D4E /* Models */,
+				1176945421097F7300961D4E /* Views */,
+				1176945521097F8400961D4E /* Controllers */,
 				117694202109718900961D4E /* AppDelegate.swift */,
-				117694222109718900961D4E /* GameScene.sks */,
-				117694242109718900961D4E /* Actions.sks */,
-				117694262109718A00961D4E /* GameScene.swift */,
-				117694282109718A00961D4E /* GameViewController.swift */,
-				1176942A2109718A00961D4E /* Main.storyboard */,
-				1176942D2109718A00961D4E /* Assets.xcassets */,
-				1176942F2109718A00961D4E /* LaunchScreen.storyboard */,
-				117694322109718A00961D4E /* Info.plist */,
-				1176943821097E3C00961D4E /* SKTUtils */,
+				1176945221097F4700961D4E /* Resources */,
+				1176945321097F5C00961D4E /* Supporting Files */,
 			);
 			path = DropCharge;
 			sourceTree = "<group>";
@@ -115,6 +111,58 @@
 				1176944421097E3C00961D4E /* CGFloat+Extensions.swift */,
 			);
 			path = SKTUtils;
+			sourceTree = "<group>";
+		};
+		1176945121097F3D00961D4E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				117694242109718900961D4E /* Actions.sks */,
+				1176945621097F8B00961D4E /* Scenes */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1176945221097F4700961D4E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1176942D2109718A00961D4E /* Assets.xcassets */,
+				1176943821097E3C00961D4E /* SKTUtils */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		1176945321097F5C00961D4E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				117694322109718A00961D4E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1176945421097F7300961D4E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1176942A2109718A00961D4E /* Main.storyboard */,
+				1176942F2109718A00961D4E /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1176945521097F8400961D4E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				117694262109718A00961D4E /* GameScene.swift */,
+				117694282109718A00961D4E /* GameViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1176945621097F8B00961D4E /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				117694222109718900961D4E /* GameScene.sks */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
