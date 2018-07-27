@@ -60,6 +60,11 @@ class GameScene: SKScene {
         
         lastOverlayPosition = overlayPosition
         lastOverlayHeight = initialPlatform.size.height / 2.0
+        
+        levelPositionY = bgNode.childNode(withName: "Overlay")!.position.y + backgroundOverlayHeight
+        while lastOverlayPosition.y < levelPositionY {
+            addRandomForegroundOverlay()
+        }
     }
     
     func loadForegroundOverlayTemplate(_ fileName: String) -> SKSpriteNode {
@@ -77,6 +82,17 @@ class GameScene: SKScene {
             foregroundOverlay.xScale = -1.0
         }
         fgNode.addChild(foregroundOverlay)
+    }
+    
+    func addRandomForegroundOverlay() {
+        let overlaySprite: SKSpriteNode!
+        let platformPercentage = 60
+        if Int.random(min: 1, max: 100) <= platformPercentage {
+            overlaySprite = platform5Across
+        } else {
+            overlaySprite = coinArrow
+        }
+        createForegroundOverlay(overlaySprite, flipX: false)
     }
     
     func createBackgroundOverlay() {
