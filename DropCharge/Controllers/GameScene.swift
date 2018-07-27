@@ -8,11 +8,27 @@
 
 import SpriteKit
 
+enum GameStatus: Int {
+    case waitingForTap = 0
+    case waitingForBomb = 1
+    case playing = 2
+    case gameOver = 3
+}
+enum PlayerStatus: Int {
+    case idle = 0
+    case jump = 1
+    case fall = 2
+    case lava = 3
+    case dead = 4 }
+
 // MARK: GameScene: SKScene
 
 class GameScene: SKScene {
  
     // MARK: Properties
+    
+    var gameState = GameStatus.waitingForTap
+    var playerState = PlayerStatus.idle
     
     var bgNode: SKNode!
     var fgNode: SKNode!
@@ -31,6 +47,9 @@ class GameScene: SKScene {
     override func didMove(to view: SKView) {
         setupNodes()
         setupLevel()
+        
+        let scale = SKAction.scale(to: 1.0, duration: 0.5)
+        fgNode.childNode(withName: "Ready")!.run(scale)
     }
     
     // MARK: Helper Methods
@@ -103,4 +122,33 @@ class GameScene: SKScene {
         bgNode.addChild(backgroundOverlay)
         levelPositionY += backgroundOverlayHeight
     }
+    
+    func bombDrop() {
+        gameState = .waitingForBomb
+        
+        let scale = SKAction.scale(to: 0, duration: 0.4)
+        fgNode.childNode(withName: "Title")!.run(scale)
+        fgNode.childNode(withName: "Ready")!.run(SKAction.sequence([SKAction.wait(forDuration: 0.2), scale]))
+        
+        let scaleUp = SKAction.scale(to: 1.25, duration: 0.25)
+        let scaleDown = SKAction.scale(to: 1.0, duration: 0.25)
+        let sequence = SKAction.sequence([scaleUp, scaleDown])
+        let repeatSeq = SKAction.repeatForever(sequence)
+        fgNode.childNode(withName: "Bomb")!.run(SKAction.unhide())
+        fgNode.childNode(withName: "Bomb")!.run(repeatSeq)
+        run(SKAction.sequence([SKAction.wait(forDuration: 2.0), SKAction.run(startGame)]))
+    }
+    
+    func startGame() {
+        fgNode.childNode(withName: "Bomb")!.removeFromParent()
+        gameState = .playing
+    }
+    
+    // MARK: Touch Methods
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if gameState == .waitingForTap {
+            bombDrop()
+        }
+    }
+    
 }
