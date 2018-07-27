@@ -52,7 +52,20 @@ class GameScene: SKScene {
     var player: SKSpriteNode!
     
     var platform5Across: SKSpriteNode!
+    var platformArrow: SKSpriteNode!
+    var platformDiagonal: SKSpriteNode!
+    var break5Across: SKSpriteNode!
+    var breakArrow: SKSpriteNode!
+    var breakDiagonal: SKSpriteNode!
     var coinArrow: SKSpriteNode!
+    var coin5Across: SKSpriteNode!
+    var coinCross: SKSpriteNode!
+    var coinDiagonal: SKSpriteNode!
+    var coinSArrow: SKSpriteNode!
+    var coinS5Across: SKSpriteNode!
+    var coinSCross: SKSpriteNode!
+    var coinSDiagonal: SKSpriteNode!
+    
     var lastOverlayPosition = CGPoint.zero
     var lastOverlayHeight: CGFloat = 0.0
     var levelPositionY: CGFloat = 0.0
@@ -113,13 +126,25 @@ class GameScene: SKScene {
         player = (fgNode.childNode(withName: "Player") as! SKSpriteNode)
         fgNode.childNode(withName: "Bomb")?.run(SKAction.hide())
         
+        lava = (fgNode.childNode(withName: "Lava") as! SKSpriteNode)
+        
+        platformArrow = loadForegroundOverlayTemplate("PlatformArrow")
         platform5Across = loadForegroundOverlayTemplate("Platform5Across")
+        platformDiagonal = loadForegroundOverlayTemplate("PlatformDiagonal")
+        breakArrow = loadForegroundOverlayTemplate("BreakArrow")
+        break5Across = loadForegroundOverlayTemplate("Break5Across")
+        breakDiagonal = loadForegroundOverlayTemplate("BreakDiagonal")
+        coin5Across = loadForegroundOverlayTemplate("Coin5Across")
+        coinDiagonal = loadForegroundOverlayTemplate("CoinDiagonal")
+        coinCross = loadForegroundOverlayTemplate("CoinCross")
         coinArrow = loadForegroundOverlayTemplate("CoinArrow")
+        coinS5Across = loadForegroundOverlayTemplate("CoinS5Across")
+        coinSDiagonal = loadForegroundOverlayTemplate("CoinSDiagonal")
+        coinSCross = loadForegroundOverlayTemplate("CoinSCross")
+        coinSArrow = loadForegroundOverlayTemplate("CoinSArrow")
         
         addChild(cameraNode)
         camera = cameraNode
-        
-        lava = (fgNode.childNode(withName: "Lava") as! SKSpriteNode)
     }
     
     func setupLevel() {
@@ -209,13 +234,80 @@ class GameScene: SKScene {
     
     func addRandomForegroundOverlay() {
         let overlaySprite: SKSpriteNode!
+        var flipH = false
         let platformPercentage = 60
+        
         if Int.random(min: 1, max: 100) <= platformPercentage {
-            overlaySprite = platform5Across
+            if Int.random(min: 1, max: 100) <= 75 {
+
+                switch Int.random(min: 0, max: 3) {
+                    case 0:
+                        overlaySprite = platformArrow
+                    case 1:
+                        overlaySprite = platform5Across
+                    case 2:
+                        overlaySprite = platformDiagonal
+                    case 3:
+                        overlaySprite = platformDiagonal
+                        flipH = true
+                    default:
+                        overlaySprite = platformArrow
+                }
+            } else {
+
+                switch Int.random(min: 0, max: 3) {
+                    case 0:
+                        overlaySprite = breakArrow
+                    case 1:
+                        overlaySprite = break5Across
+                    case 2:
+                        overlaySprite = breakDiagonal
+                    case 3:
+                        overlaySprite = breakDiagonal
+                        flipH = true
+                    default:
+                        overlaySprite = breakArrow
+                }
+            }
         } else {
-            overlaySprite = coinArrow
+            if Int.random(min: 1, max: 100) <= 75 {
+
+                switch Int.random(min: 0, max: 4) {
+                    case 0:
+                        overlaySprite = coinArrow
+                    case 1:
+                        overlaySprite = coin5Across
+                    case 2:
+                        overlaySprite = coinDiagonal
+                    case 3:
+                        overlaySprite = coinDiagonal
+                        flipH = true
+                    case 4:
+                        overlaySprite = coinCross
+                    default:
+                        overlaySprite = coinArrow
+                }
+            } else {
+
+                switch Int.random(min: 0, max: 4) {
+                    case 0:
+                        overlaySprite = coinSArrow
+                    case 1:
+                        overlaySprite = coinS5Across
+                    case 2:
+                        overlaySprite = coinSDiagonal
+                    case 3:
+                        overlaySprite = coinSDiagonal
+                        flipH = true
+                    case 4:
+                        overlaySprite = coinSCross
+                    default:
+                        overlaySprite = coinSArrow
+                }
+            }
         }
-        createForegroundOverlay(overlaySprite, flipX: false)
+        
+        createForegroundOverlay(overlaySprite, flipX: flipH)
     }
     
     func createBackgroundOverlay() {
@@ -361,9 +453,21 @@ extension GameScene: SKPhysicsContactDelegate {
                     coin.removeFromParent()
                     jumpPlayer()
                 }
+            case PhysicsCategory.CoinSpecial:
+                if let special = other.node as? SKSpriteNode {
+                    special.removeFromParent()
+                    boostPlayer()
+                }
             case PhysicsCategory.PlatformNormal:
                 if let _ = other.node as? SKSpriteNode {
                     if player.physicsBody!.velocity.dy < 0 {
+                        jumpPlayer()
+                    }
+                }
+            case PhysicsCategory.PlatformBreakable:
+                if let breakable = other.node as? SKSpriteNode {
+                    if player.physicsBody!.velocity.dy < 0 {
+                        breakable.removeFromParent()
                         jumpPlayer()
                     }
                 }
