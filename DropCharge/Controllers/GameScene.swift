@@ -90,6 +90,8 @@ class GameScene: SKScene {
         fgNode.childNode(withName: "Ready")!.run(scale)
         
         physicsWorld.contactDelegate = self
+        
+        playBackgroundMusic(name: "SpaceGame.caf")
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -543,5 +545,19 @@ extension GameScene {
     func removeTrail(trail: SKEmitterNode) {
         trail.numParticlesToEmit = 1
         trail.run(SKAction.removeFromParentAfterDelay(1.0))
+    }
+}
+
+// MARK: Sound Effects
+
+extension GameScene {
+    func playBackgroundMusic(name: String) {
+        if let backgroundMusic = childNode(withName: "backgroundMusic") {
+            backgroundMusic.removeFromParent()
+        }
+        let music = SKAudioNode(fileNamed: name)
+        music.name = "backgroundMusic"
+        music.autoplayLooped = true
+        addChild(music)
     }
 }
