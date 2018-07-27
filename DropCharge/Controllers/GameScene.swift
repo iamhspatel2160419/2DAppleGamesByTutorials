@@ -7,6 +7,7 @@
 //
 
 import SpriteKit
+import CoreMotion
 
 enum GameStatus: Int {
     case waitingForTap = 0
@@ -41,6 +42,9 @@ class GameScene: SKScene {
     var gameState = GameStatus.waitingForTap
     var playerState = PlayerStatus.idle
     
+    let motionManager = CMMotionManager()
+    var xAcceleration = CGFloat(0)
+    
     var bgNode: SKNode!
     var fgNode: SKNode!
     var backgroundOverlayTemplate: SKNode!
@@ -59,11 +63,16 @@ class GameScene: SKScene {
         setupNodes()
         setupLevel()
         setupPlayer()
+        setupCoreMotion()
         
         let scale = SKAction.scale(to: 1.0, duration: 0.5)
         fgNode.childNode(withName: "Ready")!.run(scale)
         
         physicsWorld.contactDelegate = self
+    }
+    
+    override func update(_ currentTime: TimeInterval) {
+        updatePlayer()
     }
     
     // MARK: Helper Methods
@@ -106,6 +115,49 @@ class GameScene: SKScene {
         player.physicsBody!.allowsRotation = false
         player.physicsBody!.categoryBitMask = PhysicsCategory.Player
         player.physicsBody!.collisionBitMask = 0
+    }
+    
+    func setupCoreMotion() {
+        motionManager.accelerometerUpdateInterval = 0.2
+        let queue = OperationQueue()
+        motionManager.startAccelerometerUpdates(to: queue, withHandler: { accelerometerData, error in
+            guard let accelerometerData = accelerometerData else { return }
+            let acceleration = accelerometerData.acceleration
+            self.xAcceleration = CGFloat(acceleration.x) * 0.75 + self.xAcceleration * 0.25
+        })
+    }
+    
+    func sceneCropAmount() -> CGFloat {
+        guard let view = view else { return 0 }
+        let scale = view.bounds.size.height / size.height
+        let scaledWidth = size.width * scale
+        let scaledOverlap = scaledWidth - view.bounds.size.width
+        
+        return scaledOverlap / scale
+    }
+    
+    func updatePlayer() {
+        player.physicsBody?.velocity.dx = xAcceleration * 1000.0
+        
+        // Wrap player around edges of screen
+        var playerPosition = convert(player.position, from: fgNode)
+        let rightLimit = size.width / 2 - sceneCropAmount() / 2 + player.size.width / 2
+        let leftLimit = -rightLimit
+        if playerPosition.x < leftLimit {
+            playerPosition = convert(CGPoint(x: rightLimit, y: 0.0), to: fgNode)
+            player.position.x = playerPosition.x
+        } else if playerPosition.x > rightLimit {
+            playerPosition = convert(CGPoint(x: leftLimit, y: 0.0), to: fgNode)
+            player.position.x = playerPosition.x
+        }
+        
+        if player.physicsBody!.velocity.dy < CGFloat(0.0) && playerState != .fall {
+            playerState = .fall
+            print("Falling.")
+        } else if player.physicsBody!.velocity.dy > CGFloat(0.0) && playerState != .jump {
+            playerState = .jump
+            print("Jumping.")
+        }
     }
     
     func loadForegroundOverlayTemplate(_ fileName: String) -> SKSpriteNode {
