@@ -19,7 +19,18 @@ enum PlayerStatus: Int {
     case jump = 1
     case fall = 2
     case lava = 3
-    case dead = 4 }
+    case dead = 4
+}
+
+struct PhysicsCategory {
+    static let None: UInt32              = 0
+    static let Player: UInt32            = 0b1      // 1
+    static let PlatformNormal: UInt32    = 0b10     // 2
+    static let PlatformBreakable: UInt32 = 0b100    // 4
+    static let CoinNormal: UInt32        = 0b1000   // 8
+    static let CoinSpecial: UInt32       = 0b10000  // 16
+    static let Edges: UInt32             = 0b100000 // 32
+}
 
 // MARK: GameScene: SKScene
 
@@ -51,6 +62,8 @@ class GameScene: SKScene {
         
         let scale = SKAction.scale(to: 1.0, duration: 0.5)
         fgNode.childNode(withName: "Ready")!.run(scale)
+        
+        physicsWorld.contactDelegate = self
     }
     
     // MARK: Helper Methods
@@ -91,7 +104,7 @@ class GameScene: SKScene {
         player.physicsBody = SKPhysicsBody(circleOfRadius: player.size.width * 0.3)
         player.physicsBody!.isDynamic = false
         player.physicsBody!.allowsRotation = false
-        player.physicsBody!.categoryBitMask = 0
+        player.physicsBody!.categoryBitMask = PhysicsCategory.Player
         player.physicsBody!.collisionBitMask = 0
     }
     
@@ -179,4 +192,27 @@ class GameScene: SKScene {
         }
     }
     
+}
+
+// MARK: GameScene: SKPhysicsContactDelegate
+
+extension GameScene: SKPhysicsContactDelegate {
+    func didBegin(_ contact: SKPhysicsContact) {
+        let other = contact.bodyA.categoryBitMask == PhysicsCategory.Player ? contact.bodyB : contact.bodyA
+        switch other.categoryBitMask {
+            case PhysicsCategory.CoinNormal:
+                if let coin = other.node as? SKSpriteNode {
+                    coin.removeFromParent()
+                    jumpPlayer()
+                }
+            case PhysicsCategory.PlatformNormal:
+                if let _ = other.node as? SKSpriteNode {
+                    if player.physicsBody!.velocity.dy < 0 {
+                        jumpPlayer()
+                    }
+                }
+            default:
+                break
+        }
+    }
 }
