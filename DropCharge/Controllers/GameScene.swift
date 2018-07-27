@@ -63,6 +63,8 @@ class GameScene: SKScene {
     var lastUpdateTimeInterval: TimeInterval = 0
     var deltaTime: TimeInterval = 0
     
+    var lives = 3
+    
     // MARK: Scene Life Cycle
     
     override func didMove(to view: SKView) {
@@ -91,6 +93,7 @@ class GameScene: SKScene {
 
         if gameState == .playing {
             updateCamera()
+            updateLevel()
             updatePlayer()
             updateLava(deltaTime)
             updateCollisionLava()
@@ -116,7 +119,7 @@ class GameScene: SKScene {
         addChild(cameraNode)
         camera = cameraNode
         
-        lava = fgNode.childNode(withName: "Lava") as! SKSpriteNode
+        lava = (fgNode.childNode(withName: "Lava") as! SKSpriteNode)
     }
     
     func setupLevel() {
@@ -248,7 +251,7 @@ class GameScene: SKScene {
     }
     
     func setPlayerVelocity(_ amount:CGFloat) {
-        let gain: CGFloat = 1.5
+        let gain: CGFloat = 2.5
         player.physicsBody!.velocity.dy = max(player.physicsBody!.velocity.dy, amount * gain)
     }
     
@@ -295,7 +298,41 @@ class GameScene: SKScene {
             playerState = .lava
             print("Lava!")
             boostPlayer()
+            lives -= 1
+            if lives <= 0 {
+                gameOver()
+            }
         }
+    }
+    
+    func updateLevel() {
+        let cameraPos = camera!.position
+        if cameraPos.y > levelPositionY - size.height {
+            createBackgroundOverlay()
+            while lastOverlayPosition.y < levelPositionY {
+                addRandomForegroundOverlay()
+            }
+        }
+    }
+    
+    func gameOver() {
+
+        gameState = .gameOver
+        playerState = .dead
+
+        physicsWorld.contactDelegate = nil
+        player.physicsBody?.isDynamic = false
+
+        let moveUp = SKAction.moveBy(x: 0.0, y: size.height/2.0, duration: 0.5)
+        moveUp.timingMode = .easeOut
+        let moveDown = SKAction.moveBy(x: 0.0, y: -(size.height * 1.5), duration: 1.0)
+        moveDown.timingMode = .easeIn
+        player.run(SKAction.sequence([moveUp, moveDown]))
+
+        let gameOverSprite = SKSpriteNode(imageNamed: "GameOver")
+        gameOverSprite.position = camera!.position
+        gameOverSprite.zPosition = 10
+        addChild(gameOverSprite)
     }
     
     // MARK: Touch Methods
@@ -303,6 +340,11 @@ class GameScene: SKScene {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if gameState == .waitingForTap {
             bombDrop()
+        } else if gameState == .gameOver {
+            let newScene = GameScene(fileNamed:"GameScene")
+            newScene!.scaleMode = .aspectFill
+            let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
+            view?.presentScene(newScene!, transition: reveal)
         }
     }
     
