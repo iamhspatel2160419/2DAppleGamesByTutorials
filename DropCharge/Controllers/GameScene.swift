@@ -336,7 +336,12 @@ class GameScene: SKScene {
     }
     
     func startGame() {
-        fgNode.childNode(withName: "Bomb")!.removeFromParent()
+        let bomb = fgNode.childNode(withName: "Bomb")!
+        let bombBlast = explosion(intensity: 2.0)
+        bombBlast.position = bomb.position
+        fgNode.addChild(bombBlast)
+        bomb.removeFromParent()
+        
         gameState = .playing
         player.physicsBody!.isDynamic = true
         superBoostPlayer()
@@ -474,5 +479,35 @@ extension GameScene: SKPhysicsContactDelegate {
             default:
                 break
         }
+    }
+}
+
+// MARK: Particle Systems
+
+extension GameScene {
+    func explosion(intensity: CGFloat) -> SKEmitterNode {
+        let emitter = SKEmitterNode()
+        let particleTexture = SKTexture(imageNamed: "spark")
+        
+        emitter.zPosition = 2
+        emitter.particleTexture = particleTexture
+        emitter.particleBirthRate = 4000 * intensity
+        emitter.numParticlesToEmit = Int(400 * intensity)
+        emitter.particleLifetime = 2.0
+        emitter.emissionAngle = CGFloat(90.0).degreesToRadians()
+        emitter.emissionAngleRange = CGFloat(360.0).degreesToRadians()
+        emitter.particleSpeed = 600 * intensity
+        emitter.particleSpeedRange = 1000 * intensity
+        emitter.particleAlpha = 1.0
+        emitter.particleAlphaRange = 0.25
+        emitter.particleScale = 1.2
+        emitter.particleScaleRange = 2.0
+        emitter.particleScaleSpeed = -1.5
+        emitter.particleColor = SKColor.orange
+        emitter.particleColorBlendFactor = 1
+        emitter.particleBlendMode = SKBlendMode.add
+        emitter.run(SKAction.removeFromParentAfterDelay(2.0))
+        
+        return emitter
     }
 }
