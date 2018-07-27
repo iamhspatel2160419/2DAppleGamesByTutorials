@@ -57,6 +57,8 @@ class GameScene: SKScene {
     var lastOverlayHeight: CGFloat = 0.0
     var levelPositionY: CGFloat = 0.0
     
+    let cameraNode = SKCameraNode()
+    
     // MARK: Scene Life Cycle
     
     override func didMove(to view: SKView) {
@@ -72,6 +74,7 @@ class GameScene: SKScene {
     }
     
     override func update(_ currentTime: TimeInterval) {
+        updateCamera()
         updatePlayer()
     }
     
@@ -90,6 +93,9 @@ class GameScene: SKScene {
         
         platform5Across = loadForegroundOverlayTemplate("Platform5Across")
         coinArrow = loadForegroundOverlayTemplate("CoinArrow")
+        
+        addChild(cameraNode)
+        camera = cameraNode
     }
     
     func setupLevel() {
@@ -235,6 +241,20 @@ class GameScene: SKScene {
     
     func superBoostPlayer() {
         setPlayerVelocity(1700)
+    }
+    
+    func updateCamera() {
+
+        let cameraTarget = convert(player.position, from: fgNode)
+        let targetPositionY = cameraTarget.y - (size.height * 0.10)
+
+        let diff = targetPositionY - camera!.position.y
+
+        let cameraLagFactor: CGFloat = 0.2
+        let lagDiff = diff * cameraLagFactor
+        let newCameraPositionY = camera!.position.y + lagDiff
+
+        camera!.position.y = newCameraPositionY
     }
     
     // MARK: Touch Methods
