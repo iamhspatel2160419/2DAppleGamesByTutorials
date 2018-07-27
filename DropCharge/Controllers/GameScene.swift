@@ -59,6 +59,10 @@ class GameScene: SKScene {
     
     let cameraNode = SKCameraNode()
     
+    var lava: SKSpriteNode!
+    var lastUpdateTimeInterval: TimeInterval = 0
+    var deltaTime: TimeInterval = 0
+    
     // MARK: Scene Life Cycle
     
     override func didMove(to view: SKView) {
@@ -74,8 +78,23 @@ class GameScene: SKScene {
     }
     
     override func update(_ currentTime: TimeInterval) {
-        updateCamera()
-        updatePlayer()
+        if lastUpdateTimeInterval > 0 {
+            deltaTime = currentTime - lastUpdateTimeInterval
+        } else {
+            deltaTime = 0
+        }
+        lastUpdateTimeInterval = currentTime
+
+        if isPaused {
+            return
+        }
+
+        if gameState == .playing {
+            updateCamera()
+            updatePlayer()
+            updateLava(deltaTime)
+            updateCollisionLava()
+        }
     }
     
     // MARK: Helper Methods
@@ -96,6 +115,8 @@ class GameScene: SKScene {
         
         addChild(cameraNode)
         camera = cameraNode
+        
+        lava = fgNode.childNode(withName: "Lava") as! SKSpriteNode
     }
     
     func setupLevel() {
@@ -246,8 +267,10 @@ class GameScene: SKScene {
     func updateCamera() {
 
         let cameraTarget = convert(player.position, from: fgNode)
-        let targetPositionY = cameraTarget.y - (size.height * 0.10)
-
+        var targetPositionY = cameraTarget.y - (size.height * 0.10)
+        let lavaPos = convert(lava.position, from: fgNode)
+        targetPositionY = max(targetPositionY, lavaPos.y)
+        
         let diff = targetPositionY - camera!.position.y
 
         let cameraLagFactor: CGFloat = 0.2
@@ -257,7 +280,26 @@ class GameScene: SKScene {
         camera!.position.y = newCameraPositionY
     }
     
+    func updateLava(_ dt: TimeInterval) {
+        let bottomOfScreenY = camera!.position.y - (size.height / 2)
+        let bottomOfScreenYFg = convert(CGPoint(x: 0, y: bottomOfScreenY), to: fgNode).y
+        let lavaVelocityY = CGFloat(120)
+        let lavaStep = lavaVelocityY * CGFloat(dt)
+        var newLavaPositionY = lava.position.y + lavaStep
+        newLavaPositionY = max(newLavaPositionY, bottomOfScreenYFg - 125.0)
+        lava.position.y = newLavaPositionY
+    }
+    
+    func updateCollisionLava() {
+        if player.position.y < lava.position.y + 90 {
+            playerState = .lava
+            print("Lava!")
+            boostPlayer()
+        }
+    }
+    
     // MARK: Touch Methods
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if gameState == .waitingForTap {
             bombDrop()
