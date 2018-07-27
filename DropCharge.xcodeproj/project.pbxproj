@@ -27,6 +27,8 @@
 		1176944E21097E3C00961D4E /* SKTAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1176944221097E3C00961D4E /* SKTAudio.swift */; };
 		1176944F21097E3C00961D4E /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1176944321097E3C00961D4E /* Vector3.swift */; };
 		1176945021097E3C00961D4E /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1176944421097E3C00961D4E /* CGFloat+Extensions.swift */; };
+		11E1CDE8210BD80F00AE1BBC /* Lava.sks in Resources */ = {isa = PBXBuildFile; fileRef = 11E1CDE6210BD80F00AE1BBC /* Lava.sks */; };
+		11E1CDEC210BDB8D00AE1BBC /* SmokeTrail.sks in Resources */ = {isa = PBXBuildFile; fileRef = 11E1CDEA210BDB8D00AE1BBC /* SmokeTrail.sks */; };
 		11EBF2DC210BB55C00BCCFC2 /* Platform5Across.sks in Resources */ = {isa = PBXBuildFile; fileRef = 11EBF2D9210BB55C00BCCFC2 /* Platform5Across.sks */; };
 		11EBF2DD210BB55C00BCCFC2 /* PlatformArrow.sks in Resources */ = {isa = PBXBuildFile; fileRef = 11EBF2DA210BB55C00BCCFC2 /* PlatformArrow.sks */; };
 		11EBF2DE210BB55C00BCCFC2 /* PlatformDiagonal.sks in Resources */ = {isa = PBXBuildFile; fileRef = 11EBF2DB210BB55C00BCCFC2 /* PlatformDiagonal.sks */; };
@@ -66,6 +68,8 @@
 		1176944221097E3C00961D4E /* SKTAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTAudio.swift; sourceTree = "<group>"; };
 		1176944321097E3C00961D4E /* Vector3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector3.swift; sourceTree = "<group>"; };
 		1176944421097E3C00961D4E /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
+		11E1CDE6210BD80F00AE1BBC /* Lava.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Lava.sks; sourceTree = "<group>"; };
+		11E1CDEA210BDB8D00AE1BBC /* SmokeTrail.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SmokeTrail.sks; sourceTree = "<group>"; };
 		11EBF2D9210BB55C00BCCFC2 /* Platform5Across.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Platform5Across.sks; sourceTree = "<group>"; };
 		11EBF2DA210BB55C00BCCFC2 /* PlatformArrow.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PlatformArrow.sks; sourceTree = "<group>"; };
 		11EBF2DB210BB55C00BCCFC2 /* PlatformDiagonal.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PlatformDiagonal.sks; sourceTree = "<group>"; };
@@ -146,6 +150,7 @@
 			children = (
 				117694242109718900961D4E /* Actions.sks */,
 				1176945621097F8B00961D4E /* Scenes */,
+				11E1CDE5210BD79D00AE1BBC /* Particles */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -205,6 +210,15 @@
 				11EBF2F0210BB59100BCCFC2 /* CoinSDiagonal.sks */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		11E1CDE5210BD79D00AE1BBC /* Particles */ = {
+			isa = PBXGroup;
+			children = (
+				11E1CDE6210BD80F00AE1BBC /* Lava.sks */,
+				11E1CDEA210BDB8D00AE1BBC /* SmokeTrail.sks */,
+			);
+			path = Particles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,11 +282,13 @@
 				11EBF2EB210BB58900BCCFC2 /* CoinArrow.sks in Resources */,
 				11EBF2EA210BB58900BCCFC2 /* CoinDiagonal.sks in Resources */,
 				1176942C2109718A00961D4E /* Main.storyboard in Resources */,
+				11E1CDE8210BD80F00AE1BBC /* Lava.sks in Resources */,
 				11EBF2F1210BB59100BCCFC2 /* CoinSCross.sks in Resources */,
 				117694232109718900961D4E /* GameScene.sks in Resources */,
 				1176942E2109718A00961D4E /* Assets.xcassets in Resources */,
 				11EBF2F4210BB59100BCCFC2 /* CoinSDiagonal.sks in Resources */,
 				11EBF2E4210BB57100BCCFC2 /* Break5Across.sks in Resources */,
+				11E1CDEC210BDB8D00AE1BBC /* SmokeTrail.sks in Resources */,
 				117694312109718A00961D4E /* LaunchScreen.storyboard in Resources */,
 				11EBF2F3210BB59100BCCFC2 /* CoinSArrow.sks in Resources */,
 				11EBF2EC210BB58900BCCFC2 /* Coin5Across.sks in Resources */,

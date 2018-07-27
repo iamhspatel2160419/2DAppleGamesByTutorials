@@ -126,7 +126,7 @@ class GameScene: SKScene {
         player = (fgNode.childNode(withName: "Player") as! SKSpriteNode)
         fgNode.childNode(withName: "Bomb")?.run(SKAction.hide())
         
-        lava = (fgNode.childNode(withName: "Lava") as! SKSpriteNode)
+        setupLava()
         
         platformArrow = loadForegroundOverlayTemplate("PlatformArrow")
         platform5Across = loadForegroundOverlayTemplate("Platform5Across")
@@ -391,9 +391,14 @@ class GameScene: SKScene {
     }
     
     func updateCollisionLava() {
-        if player.position.y < lava.position.y + 90 {
-            playerState = .lava
-            print("Lava!")
+        if player.position.y < lava.position.y + 180 {
+            if playerState != .lava {
+                playerState = .lava
+                let smokeTrail = addTrail(name: "SmokeTrail")
+                run(SKAction.sequence([SKAction.wait(forDuration: 3.0), SKAction.run() {
+                    self.removeTrail(trail: smokeTrail)
+                }]))
+            }
             boostPlayer()
             lives -= 1
             if lives <= 0 {
@@ -503,11 +508,40 @@ extension GameScene {
         emitter.particleScale = 1.2
         emitter.particleScaleRange = 2.0
         emitter.particleScaleSpeed = -1.5
-        emitter.particleColor = SKColor.orange
+        
+        let sequence = SKKeyframeSequence(capacity: 5)
+        sequence.addKeyframeValue(SKColor.white, time: 0)
+        sequence.addKeyframeValue(SKColor.yellow, time: 0.10)
+        sequence.addKeyframeValue(SKColor.orange, time: 0.15)
+        sequence.addKeyframeValue(SKColor.red, time: 0.75)
+        sequence.addKeyframeValue(SKColor.black, time: 0.95)
+        emitter.particleColorSequence = sequence
+        
         emitter.particleColorBlendFactor = 1
         emitter.particleBlendMode = SKBlendMode.add
         emitter.run(SKAction.removeFromParentAfterDelay(2.0))
         
         return emitter
+    }
+    
+    func setupLava() {
+        lava = (fgNode.childNode(withName: "Lava") as! SKSpriteNode)
+        let emitter = SKEmitterNode(fileNamed: "Lava.sks")!
+        emitter.particlePositionRange = CGVector(dx: size.width * 1.125, dy: 0.0)
+        emitter.advanceSimulationTime(3.0)
+        lava.addChild(emitter)
+    }
+    
+    func addTrail(name: String) -> SKEmitterNode {
+        let trail = SKEmitterNode(fileNamed: name)!
+        trail.zPosition = -1
+        trail.targetNode = fgNode
+        player.addChild(trail)
+        return trail
+    }
+    
+    func removeTrail(trail: SKEmitterNode) {
+        trail.numParticlesToEmit = 1
+        trail.run(SKAction.removeFromParentAfterDelay(1.0))
     }
 }
