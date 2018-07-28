@@ -78,6 +78,20 @@ class GameScene: SKScene {
     
     var lives = 3
     
+    let soundBombDrop = SKAction.playSoundFileNamed("bombDrop.wav", waitForCompletion: true)
+    let soundSuperBoost = SKAction.playSoundFileNamed("nitro.wav", waitForCompletion: false)
+    let soundTickTock = SKAction.playSoundFileNamed("tickTock.wav", waitForCompletion: true)
+    let soundBoost = SKAction.playSoundFileNamed("boost.wav", waitForCompletion: false)
+    let soundJump = SKAction.playSoundFileNamed("jump.wav", waitForCompletion: false)
+    let soundCoin = SKAction.playSoundFileNamed("coin1.wav", waitForCompletion: false)
+    let soundBrick = SKAction.playSoundFileNamed("brick.caf", waitForCompletion: false)
+    let soundHitLava = SKAction.playSoundFileNamed("DrownFireBug.mp3", waitForCompletion: false)
+    let soundGameOver = SKAction.playSoundFileNamed("player_die.wav", waitForCompletion: false)
+    let soundExplosions = [SKAction.playSoundFileNamed("explosion1.wav", waitForCompletion: false),
+                           SKAction.playSoundFileNamed("explosion2.wav", waitForCompletion: false),
+                           SKAction.playSoundFileNamed("explosion3.wav", waitForCompletion: false),
+                           SKAction.playSoundFileNamed("explosion4.wav", waitForCompletion: false)]
+    
     // MARK: Scene Life Cycle
     
     override func didMove(to view: SKView) {
@@ -193,30 +207,6 @@ class GameScene: SKScene {
         return scaledOverlap / scale
     }
     
-    func updatePlayer() {
-        player.physicsBody?.velocity.dx = xAcceleration * 1000.0
-        
-        // Wrap player around edges of screen
-        var playerPosition = convert(player.position, from: fgNode)
-        let rightLimit = size.width / 2 - sceneCropAmount() / 2 + player.size.width / 2
-        let leftLimit = -rightLimit
-        if playerPosition.x < leftLimit {
-            playerPosition = convert(CGPoint(x: rightLimit, y: 0.0), to: fgNode)
-            player.position.x = playerPosition.x
-        } else if playerPosition.x > rightLimit {
-            playerPosition = convert(CGPoint(x: leftLimit, y: 0.0), to: fgNode)
-            player.position.x = playerPosition.x
-        }
-        
-        if player.physicsBody!.velocity.dy < CGFloat(0.0) && playerState != .fall {
-            playerState = .fall
-            print("Falling.")
-        } else if player.physicsBody!.velocity.dy > CGFloat(0.0) && playerState != .jump {
-            playerState = .jump
-            print("Jumping.")
-        }
-    }
-    
     func loadForegroundOverlayTemplate(_ fileName: String) -> SKSpriteNode {
         let overlayScene = SKScene(fileNamed: fileName)!
         let overlayTemplate = overlayScene.childNode(withName: "Overlay")
@@ -321,6 +311,31 @@ class GameScene: SKScene {
         levelPositionY += backgroundOverlayHeight
     }
     
+    func startGame() {
+        let bomb = fgNode.childNode(withName: "Bomb")!
+        let bombBlast = explosion(intensity: 2.0)
+        bombBlast.position = bomb.position
+        fgNode.addChild(bombBlast)
+        run(soundExplosions[3])
+        bomb.removeFromParent()
+        
+        gameState = .playing
+        player.physicsBody!.isDynamic = true
+        superBoostPlayer()
+        
+        playBackgroundMusic(name: "bgMusic.mp3")
+        
+        let alarm = SKAudioNode(fileNamed: "alarm.wav")
+        alarm.name = "alarm"
+        alarm.autoplayLooped = true
+        addChild(alarm)
+    }
+    
+    func setPlayerVelocity(_ amount:CGFloat) {
+        let gain: CGFloat = 2.5
+        player.physicsBody!.velocity.dy = max(player.physicsBody!.velocity.dy, amount * gain)
+    }
+    
     func bombDrop() {
         gameState = .waitingForBomb
         
@@ -334,24 +349,7 @@ class GameScene: SKScene {
         let repeatSeq = SKAction.repeatForever(sequence)
         fgNode.childNode(withName: "Bomb")!.run(SKAction.unhide())
         fgNode.childNode(withName: "Bomb")!.run(repeatSeq)
-        run(SKAction.sequence([SKAction.wait(forDuration: 2.0), SKAction.run(startGame)]))
-    }
-    
-    func startGame() {
-        let bomb = fgNode.childNode(withName: "Bomb")!
-        let bombBlast = explosion(intensity: 2.0)
-        bombBlast.position = bomb.position
-        fgNode.addChild(bombBlast)
-        bomb.removeFromParent()
-        
-        gameState = .playing
-        player.physicsBody!.isDynamic = true
-        superBoostPlayer()
-    }
-    
-    func setPlayerVelocity(_ amount:CGFloat) {
-        let gain: CGFloat = 2.5
-        player.physicsBody!.velocity.dy = max(player.physicsBody!.velocity.dy, amount * gain)
+        run(SKAction.sequence([soundBombDrop, soundTickTock, SKAction.run(startGame)]))
     }
     
     func jumpPlayer() {
@@ -382,6 +380,30 @@ class GameScene: SKScene {
         camera!.position.y = newCameraPositionY
     }
     
+    func updatePlayer() {
+        player.physicsBody?.velocity.dx = xAcceleration * 1000.0
+        
+        // Wrap player around edges of screen
+        var playerPosition = convert(player.position, from: fgNode)
+        let rightLimit = size.width / 2 - sceneCropAmount() / 2 + player.size.width / 2
+        let leftLimit = -rightLimit
+        if playerPosition.x < leftLimit {
+            playerPosition = convert(CGPoint(x: rightLimit, y: 0.0), to: fgNode)
+            player.position.x = playerPosition.x
+        } else if playerPosition.x > rightLimit {
+            playerPosition = convert(CGPoint(x: leftLimit, y: 0.0), to: fgNode)
+            player.position.x = playerPosition.x
+        }
+        
+        if player.physicsBody!.velocity.dy < CGFloat(0.0) && playerState != .fall {
+            playerState = .fall
+            print("Falling.")
+        } else if player.physicsBody!.velocity.dy > CGFloat(0.0) && playerState != .jump {
+            playerState = .jump
+            print("Jumping.")
+        }
+    }
+    
     func updateLava(_ dt: TimeInterval) {
         let bottomOfScreenY = camera!.position.y - (size.height / 2)
         let bottomOfScreenYFg = convert(CGPoint(x: 0, y: bottomOfScreenY), to: fgNode).y
@@ -397,7 +419,7 @@ class GameScene: SKScene {
             if playerState != .lava {
                 playerState = .lava
                 let smokeTrail = addTrail(name: "SmokeTrail")
-                run(SKAction.sequence([SKAction.wait(forDuration: 3.0), SKAction.run() {
+                run(SKAction.sequence([soundHitLava, SKAction.wait(forDuration: 3.0), SKAction.run() {
                     self.removeTrail(trail: smokeTrail)
                 }]))
             }
@@ -432,15 +454,24 @@ class GameScene: SKScene {
         let moveDown = SKAction.moveBy(x: 0.0, y: -(size.height * 1.5), duration: 1.0)
         moveDown.timingMode = .easeIn
         player.run(SKAction.sequence([moveUp, moveDown]))
-
+        run(soundGameOver)
+        
         let gameOverSprite = SKSpriteNode(imageNamed: "GameOver")
         gameOverSprite.position = camera!.position
         gameOverSprite.zPosition = 10
         addChild(gameOverSprite)
+        
+        playBackgroundMusic(name: "SpaceGame.caf")
+        if let alarm = childNode(withName: "alarm") {
+            alarm.removeFromParent()
+        }
     }
     
-    // MARK: Touch Methods
-    
+}
+
+// MARK: Touch Methods
+
+extension GameScene {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if gameState == .waitingForTap {
             bombDrop()
@@ -451,7 +482,6 @@ class GameScene: SKScene {
             view?.presentScene(newScene!, transition: reveal)
         }
     }
-    
 }
 
 // MARK: GameScene: SKPhysicsContactDelegate
@@ -464,23 +494,27 @@ extension GameScene: SKPhysicsContactDelegate {
                 if let coin = other.node as? SKSpriteNode {
                     coin.removeFromParent()
                     jumpPlayer()
+                    run(soundCoin)
                 }
             case PhysicsCategory.CoinSpecial:
-                if let special = other.node as? SKSpriteNode {
-                    special.removeFromParent()
+                if let coin = other.node as? SKSpriteNode {
+                    coin.removeFromParent()
                     boostPlayer()
+                    run(soundBoost)
                 }
             case PhysicsCategory.PlatformNormal:
                 if let _ = other.node as? SKSpriteNode {
                     if player.physicsBody!.velocity.dy < 0 {
                         jumpPlayer()
+                        run(soundJump)
                     }
                 }
             case PhysicsCategory.PlatformBreakable:
-                if let breakable = other.node as? SKSpriteNode {
+                if let platform = other.node as? SKSpriteNode {
                     if player.physicsBody!.velocity.dy < 0 {
-                        breakable.removeFromParent()
+                        platform.removeFromParent()
                         jumpPlayer()
+                        run(soundBrick)
                     }
                 }
             default:
