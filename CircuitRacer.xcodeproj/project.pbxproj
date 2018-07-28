@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		11D651CC210CA316005B06D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D651CB210CA316005B06D4 /* AppDelegate.swift */; };
-		11D651CE210CA316005B06D4 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 11D651CD210CA316005B06D4 /* GameScene.sks */; };
 		11D651D2210CA317005B06D4 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D651D1210CA317005B06D4 /* GameScene.swift */; };
 		11D651D4210CA317005B06D4 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D651D3210CA317005B06D4 /* GameViewController.swift */; };
 		11D651D7210CA317005B06D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11D651D5210CA317005B06D4 /* Main.storyboard */; };
@@ -18,9 +17,6 @@
 		11D651ED210CA6A7005B06D4 /* SelectCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D651EC210CA6A7005B06D4 /* SelectCarViewController.swift */; };
 		11D651EF210CA6B8005B06D4 /* SelectLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D651EE210CA6B8005B06D4 /* SelectLevelViewController.swift */; };
 		11D651F2210CA6EC005B06D4 /* GameScene+Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D651F1210CA6EC005B06D4 /* GameScene+Buttons.swift */; };
-		11D651F4210CA704005B06D4 /* PauseScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 11D651F3210CA704005B06D4 /* PauseScene.sks */; };
-		11D651F6210CA713005B06D4 /* FailureScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 11D651F5210CA713005B06D4 /* FailureScene.sks */; };
-		11D651F8210CA721005B06D4 /* SuccessScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 11D651F7210CA721005B06D4 /* SuccessScene.sks */; };
 		11D651FA210CA735005B06D4 /* CarType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D651F9210CA735005B06D4 /* CarType.swift */; };
 		11D651FC210CA75B005B06D4 /* SKSpriteNode+CircuitRacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D651FB210CA75B005B06D4 /* SKSpriteNode+CircuitRacer.swift */; };
 		11D651FE210CA76A005B06D4 /* LevelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D651FD210CA76A005B06D4 /* LevelType.swift */; };
@@ -50,12 +46,15 @@
 		11D65232210CC8C3005B06D4 /* GameOverlayState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D65231210CC8C3005B06D4 /* GameOverlayState.swift */; };
 		11D65234210CC8DD005B06D4 /* GamePauseState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D65233210CC8DD005B06D4 /* GamePauseState.swift */; };
 		11D65236210CC8FD005B06D4 /* GameSuccessState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D65235210CC8FD005B06D4 /* GameSuccessState.swift */; };
+		11D6523B210CCB72005B06D4 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 11D65237210CCB71005B06D4 /* GameScene.sks */; };
+		11D6523C210CCB72005B06D4 /* SuccessScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 11D65238210CCB71005B06D4 /* SuccessScene.sks */; };
+		11D6523D210CCB72005B06D4 /* PauseScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 11D65239210CCB72005B06D4 /* PauseScene.sks */; };
+		11D6523E210CCB72005B06D4 /* FailureScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 11D6523A210CCB72005B06D4 /* FailureScene.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		11D651C8210CA316005B06D4 /* CircuitRacer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CircuitRacer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11D651CB210CA316005B06D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		11D651CD210CA316005B06D4 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		11D651D1210CA317005B06D4 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		11D651D3210CA317005B06D4 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		11D651D6210CA317005B06D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -66,9 +65,6 @@
 		11D651EC210CA6A7005B06D4 /* SelectCarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCarViewController.swift; sourceTree = "<group>"; };
 		11D651EE210CA6B8005B06D4 /* SelectLevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLevelViewController.swift; sourceTree = "<group>"; };
 		11D651F1210CA6EC005B06D4 /* GameScene+Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Buttons.swift"; sourceTree = "<group>"; };
-		11D651F3210CA704005B06D4 /* PauseScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PauseScene.sks; sourceTree = "<group>"; };
-		11D651F5210CA713005B06D4 /* FailureScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FailureScene.sks; sourceTree = "<group>"; };
-		11D651F7210CA721005B06D4 /* SuccessScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SuccessScene.sks; sourceTree = "<group>"; };
 		11D651F9210CA735005B06D4 /* CarType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarType.swift; sourceTree = "<group>"; };
 		11D651FB210CA75B005B06D4 /* SKSpriteNode+CircuitRacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKSpriteNode+CircuitRacer.swift"; sourceTree = "<group>"; };
 		11D651FD210CA76A005B06D4 /* LevelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelType.swift; sourceTree = "<group>"; };
@@ -98,6 +94,10 @@
 		11D65231210CC8C3005B06D4 /* GameOverlayState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverlayState.swift; sourceTree = "<group>"; };
 		11D65233210CC8DD005B06D4 /* GamePauseState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePauseState.swift; sourceTree = "<group>"; };
 		11D65235210CC8FD005B06D4 /* GameSuccessState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSuccessState.swift; sourceTree = "<group>"; };
+		11D65237210CCB71005B06D4 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		11D65238210CCB71005B06D4 /* SuccessScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SuccessScene.sks; sourceTree = "<group>"; };
+		11D65239210CCB72005B06D4 /* PauseScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PauseScene.sks; sourceTree = "<group>"; };
+		11D6523A210CCB72005B06D4 /* FailureScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FailureScene.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,10 +198,10 @@
 		11D651E8210CA5FC005B06D4 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				11D651CD210CA316005B06D4 /* GameScene.sks */,
-				11D651F3210CA704005B06D4 /* PauseScene.sks */,
-				11D651F5210CA713005B06D4 /* FailureScene.sks */,
-				11D651F7210CA721005B06D4 /* SuccessScene.sks */,
+				11D65237210CCB71005B06D4 /* GameScene.sks */,
+				11D6523A210CCB72005B06D4 /* FailureScene.sks */,
+				11D65239210CCB72005B06D4 /* PauseScene.sks */,
+				11D65238210CCB71005B06D4 /* SuccessScene.sks */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -336,13 +336,13 @@
 				11D651D7210CA317005B06D4 /* Main.storyboard in Resources */,
 				11D65228210CA846005B06D4 /* circuitracer.mp3 in Resources */,
 				11D6522A210CA846005B06D4 /* button_press.wav in Resources */,
-				11D651CE210CA316005B06D4 /* GameScene.sks in Resources */,
 				11D65222210CA841005B06D4 /* LevelDetails.plist in Resources */,
 				11D651D9210CA318005B06D4 /* Assets.xcassets in Resources */,
-				11D651F6210CA713005B06D4 /* FailureScene.sks in Resources */,
+				11D6523D210CCB72005B06D4 /* PauseScene.sks in Resources */,
 				11D65229210CA846005B06D4 /* lap.wav in Resources */,
-				11D651F4210CA704005B06D4 /* PauseScene.sks in Resources */,
-				11D651F8210CA721005B06D4 /* SuccessScene.sks in Resources */,
+				11D6523B210CCB72005B06D4 /* GameScene.sks in Resources */,
+				11D6523E210CCB72005B06D4 /* FailureScene.sks in Resources */,
+				11D6523C210CCB72005B06D4 /* SuccessScene.sks in Resources */,
 				11D651DC210CA318005B06D4 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,7 +11,7 @@ import Foundation
 extension GameScene: ButtonNodeResponder {
     
     func findAllButtonsInScene() -> [ButtonNode] {
-        return ButtonIdentifier.allIdentifiers.flatMap { buttonIdentifier in
+        return ButtonIdentifier.allIdentifiers.compactMap { buttonIdentifier in
             return childNode(withName: "//\(buttonIdentifier.rawValue)") as? ButtonNode
         }
     }
