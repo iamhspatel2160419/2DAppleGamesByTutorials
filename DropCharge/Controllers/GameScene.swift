@@ -106,6 +106,8 @@ class GameScene: SKScene {
     var timeSinceLastExplosion: TimeInterval = 0
     var timeForNextExplosion: TimeInterval = 1.0
     
+    let gameGain: CGFloat = 2.5
+    
     // MARK: Scene Life Cycle
     
     override func didMove(to view: SKView) {
@@ -345,6 +347,7 @@ class GameScene: SKScene {
         let bombBlast = explosion(intensity: 2.0)
         bombBlast.position = bomb.position
         fgNode.addChild(bombBlast)
+        screenShakeByAmt(100)
         run(soundExplosions[3])
         bomb.removeFromParent()
         
@@ -387,6 +390,7 @@ class GameScene: SKScene {
     
     func boostPlayer() {
         setPlayerVelocity(1200)
+        screenShakeByAmt(40)
     }
     
     func superBoostPlayer() {
@@ -472,6 +476,7 @@ class GameScene: SKScene {
                 }]))
             }
             boostPlayer()
+            screenShakeByAmt(50)
             lives -= 1
             if lives <= 0 {
                 gameOver()
@@ -606,6 +611,10 @@ extension GameScene {
         explode.position = convert(explosionPos, to: bgNode)
         explode.run(SKAction.removeFromParentAfterDelay(2.0))
         bgNode.addChild(explode)
+        
+        if randomNum == 3 {
+            screenShakeByAmt(10)
+        }
     }
     
     func explosion(intensity: CGFloat) -> SKEmitterNode {
@@ -715,5 +724,15 @@ extension GameScene {
         fgNode.addChild(particles)
         particles.run(SKAction.removeFromParentAfterDelay(1.0))
         sprite.run(SKAction.sequence([SKAction.scale(to: 0.0, duration: 0.5), SKAction.removeFromParent()]))
+    }
+    
+    func screenShakeByAmt(_ amt: CGFloat) {
+        let worldNode = childNode(withName: "World")!
+        worldNode.position = CGPoint(x: 0.0, y: 0.0)
+        worldNode.removeAction(forKey: "shake")
+        
+        let amount = CGPoint(x: 0, y: -(amt * gameGain))
+        let action = SKAction.screenShakeWithNode(worldNode, amount: amount, oscillations: 10, duration: 2.0)
+        worldNode.run(action, withKey: "shake")
     }
 }
