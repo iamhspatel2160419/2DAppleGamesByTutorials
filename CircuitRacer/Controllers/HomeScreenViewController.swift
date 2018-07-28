@@ -6,4 +6,17 @@
 //  Copyright © 2018 Neil Hiddink. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+// MARK: HomeScreenViewController: UIViewController
+
+class HomeScreenViewController: UIViewController {
+    @IBAction func playGame(_ sender: UIButton) {
+        SKTAudio.sharedInstance().playSoundEffect("button_press.wav")
+        if let selectCarVC = self.storyboard?.instantiateViewController(withIdentifier: "SelectCarViewController") as? SelectCarViewController {
+            navigationController?.pushViewController(selectCarVC, animated: true)
+        }
+        
+    }
+}
+

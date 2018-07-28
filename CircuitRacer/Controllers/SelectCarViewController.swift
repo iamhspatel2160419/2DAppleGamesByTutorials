@@ -6,4 +6,8 @@
 //  Copyright © 2018 Neil Hiddink. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+// MARK: SelectCarViewController: UIViewController
+
+class SelectCarViewController: UIViewController {}
