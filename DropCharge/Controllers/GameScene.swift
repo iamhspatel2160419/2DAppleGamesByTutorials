@@ -101,6 +101,11 @@ class GameScene: SKScene {
     var playerAnimationSteerRight: SKAction!
     var currentPlayerAnimation: SKAction?
     
+    var playerTrail: SKEmitterNode!
+    
+    var timeSinceLastExplosion: TimeInterval = 0
+    var timeForNextExplosion: TimeInterval = 1.0
+    
     // MARK: Scene Life Cycle
     
     override func didMove(to view: SKView) {
@@ -140,6 +145,7 @@ class GameScene: SKScene {
             updatePlayer()
             updateLava(deltaTime)
             updateCollisionLava()
+            updateExplosions(deltaTime)
         }
     }
     
@@ -204,6 +210,8 @@ class GameScene: SKScene {
         player.physicsBody!.allowsRotation = false
         player.physicsBody!.categoryBitMask = PhysicsCategory.Player
         player.physicsBody!.collisionBitMask = 0
+        
+        playerTrail = addTrail(name: "PlayerTrail")
     }
     
     func setupCoreMotion() {
@@ -419,6 +427,9 @@ class GameScene: SKScene {
         if player.physicsBody!.velocity.dy < CGFloat(0.0) && playerState != .fall {
             playerState = .fall
             //print("Falling.")
+            if playerTrail.particleBirthRate == 0 {
+                playerTrail.particleBirthRate = 200
+            }
         } else if player.physicsBody!.velocity.dy > CGFloat(0.0) && playerState != .jump {
             playerState = .jump
             //print("Jumping.")
@@ -454,6 +465,7 @@ class GameScene: SKScene {
         if player.position.y < lava.position.y + 180 {
             if playerState != .lava {
                 playerState = .lava
+                playerTrail.particleBirthRate = 0
                 let smokeTrail = addTrail(name: "SmokeTrail")
                 run(SKAction.sequence([soundHitLava, SKAction.wait(forDuration: 3.0), SKAction.run() {
                     self.removeTrail(trail: smokeTrail)
@@ -464,6 +476,15 @@ class GameScene: SKScene {
             if lives <= 0 {
                 gameOver()
             }
+        }
+    }
+    
+    func updateExplosions(_ dt: TimeInterval) {
+        timeSinceLastExplosion += dt
+        if timeSinceLastExplosion > timeForNextExplosion {
+            timeForNextExplosion = TimeInterval(CGFloat.random(min:0.1, max: 0.5))
+            timeSinceLastExplosion = 0
+            createRandomExplosion()
         }
     }
     
@@ -501,6 +522,12 @@ class GameScene: SKScene {
         if let alarm = childNode(withName: "alarm") {
             alarm.removeFromParent()
         }
+        
+        let blast = explosion(intensity: 3.0)
+        blast.position = gameOverSprite.position
+        blast.zPosition = 11
+        addChild(blast)
+        run(soundExplosions[3])
     }
     
 }
@@ -528,13 +555,13 @@ extension GameScene: SKPhysicsContactDelegate {
         switch other.categoryBitMask {
             case PhysicsCategory.CoinNormal:
                 if let coin = other.node as? SKSpriteNode {
-                    coin.removeFromParent()
+                    emitParticles(name: "CollectNormal", sprite: coin)
                     jumpPlayer()
                     run(soundCoin)
                 }
             case PhysicsCategory.CoinSpecial:
                 if let coin = other.node as? SKSpriteNode {
-                    coin.removeFromParent()
+                    emitParticles(name: "CollectSpecial", sprite: coin)
                     boostPlayer()
                     run(soundBoost)
                 }
@@ -548,7 +575,7 @@ extension GameScene: SKPhysicsContactDelegate {
             case PhysicsCategory.PlatformBreakable:
                 if let platform = other.node as? SKSpriteNode {
                     if player.physicsBody!.velocity.dy < 0 {
-                        platform.removeFromParent()
+                        emitParticles(name: "BrokenPlatform", sprite: platform)
                         jumpPlayer()
                         run(soundBrick)
                     }
@@ -562,6 +589,25 @@ extension GameScene: SKPhysicsContactDelegate {
 // MARK: Particle Systems
 
 extension GameScene {
+    
+    func createRandomExplosion() {
+
+        let cameraPos = camera!.position
+        let sceneW = size.width / 2.0
+        let sceneH = size.height
+        let randomX = CGFloat.random(min: -sceneW, max: sceneW)
+        let randomY = CGFloat.random(min: cameraPos.y - sceneH / 2, max: cameraPos.y + sceneH * 0.35)
+        let explosionPos = CGPoint(x: randomX, y: randomY)
+
+        let randomNum = Int.random(soundExplosions.count)
+        run(soundExplosions[randomNum])
+
+        let explode = explosion(intensity: 0.25 * CGFloat(randomNum + 1))
+        explode.position = convert(explosionPos, to: bgNode)
+        explode.run(SKAction.removeFromParentAfterDelay(2.0))
+        bgNode.addChild(explode)
+    }
+    
     func explosion(intensity: CGFloat) -> SKEmitterNode {
         let emitter = SKEmitterNode()
         let particleTexture = SKTexture(imageNamed: "spark")
@@ -659,5 +705,15 @@ extension GameScene {
             player.run(animation, withKey: "playerAnimation")
             currentPlayerAnimation = animation
         }
+    }
+    
+    func emitParticles(name: String, sprite: SKSpriteNode) {
+        let pos = fgNode.convert(sprite.position, from: sprite.parent!)
+        let particles = SKEmitterNode(fileNamed: name)!
+        particles.position = pos
+        particles.zPosition = 3
+        fgNode.addChild(particles)
+        particles.run(SKAction.removeFromParentAfterDelay(1.0))
+        sprite.run(SKAction.sequence([SKAction.scale(to: 0.0, duration: 0.5), SKAction.removeFromParent()]))
     }
 }
