@@ -45,6 +45,11 @@
 		11D65229210CA846005B06D4 /* lap.wav in Resources */ = {isa = PBXBuildFile; fileRef = 11D65225210CA846005B06D4 /* lap.wav */; };
 		11D6522A210CA846005B06D4 /* button_press.wav in Resources */ = {isa = PBXBuildFile; fileRef = 11D65226210CA846005B06D4 /* button_press.wav */; };
 		11D6522B210CA846005B06D4 /* box.wav in Resources */ = {isa = PBXBuildFile; fileRef = 11D65227210CA846005B06D4 /* box.wav */; };
+		11D6522E210CC8A7005B06D4 /* GameActiveState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D6522D210CC8A7005B06D4 /* GameActiveState.swift */; };
+		11D65230210CC8B4005B06D4 /* GameFailureState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D6522F210CC8B4005B06D4 /* GameFailureState.swift */; };
+		11D65232210CC8C3005B06D4 /* GameOverlayState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D65231210CC8C3005B06D4 /* GameOverlayState.swift */; };
+		11D65234210CC8DD005B06D4 /* GamePauseState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D65233210CC8DD005B06D4 /* GamePauseState.swift */; };
+		11D65236210CC8FD005B06D4 /* GameSuccessState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D65235210CC8FD005B06D4 /* GameSuccessState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +93,11 @@
 		11D65225210CA846005B06D4 /* lap.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = lap.wav; sourceTree = "<group>"; };
 		11D65226210CA846005B06D4 /* button_press.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button_press.wav; sourceTree = "<group>"; };
 		11D65227210CA846005B06D4 /* box.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = box.wav; sourceTree = "<group>"; };
+		11D6522D210CC8A7005B06D4 /* GameActiveState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameActiveState.swift; sourceTree = "<group>"; };
+		11D6522F210CC8B4005B06D4 /* GameFailureState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFailureState.swift; sourceTree = "<group>"; };
+		11D65231210CC8C3005B06D4 /* GameOverlayState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverlayState.swift; sourceTree = "<group>"; };
+		11D65233210CC8DD005B06D4 /* GamePauseState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePauseState.swift; sourceTree = "<group>"; };
+		11D65235210CC8FD005B06D4 /* GameSuccessState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSuccessState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +265,11 @@
 		11D6522C210CC848005B06D4 /* Game States */ = {
 			isa = PBXGroup;
 			children = (
+				11D6522D210CC8A7005B06D4 /* GameActiveState.swift */,
+				11D65231210CC8C3005B06D4 /* GameOverlayState.swift */,
+				11D6522F210CC8B4005B06D4 /* GameFailureState.swift */,
+				11D65233210CC8DD005B06D4 /* GamePauseState.swift */,
+				11D65235210CC8FD005B06D4 /* GameSuccessState.swift */,
 			);
 			path = "Game States";
 			sourceTree = "<group>";
@@ -339,6 +354,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11D65234210CC8DD005B06D4 /* GamePauseState.swift in Sources */,
+				11D65230210CC8B4005B06D4 /* GameFailureState.swift in Sources */,
 				11D65218210CA798005B06D4 /* Vector3.swift in Sources */,
 				11D651FA210CA735005B06D4 /* CarType.swift in Sources */,
 				11D65216210CA798005B06D4 /* SKTEffects.swift in Sources */,
@@ -351,12 +368,15 @@
 				11D6521C210CA7F6005B06D4 /* AnalogControl.swift in Sources */,
 				11D651EB210CA694005B06D4 /* HomeScreenViewController.swift in Sources */,
 				11D651D4210CA317005B06D4 /* GameViewController.swift in Sources */,
+				11D65236210CC8FD005B06D4 /* GameSuccessState.swift in Sources */,
 				11D651FE210CA76A005B06D4 /* LevelType.swift in Sources */,
 				11D65219210CA798005B06D4 /* CGFloat+Extensions.swift in Sources */,
 				11D6520E210CA798005B06D4 /* SKColor+Extensions.swift in Sources */,
+				11D65232210CC8C3005B06D4 /* GameOverlayState.swift in Sources */,
 				11D65200210CA77B005B06D4 /* SceneOverlay.swift in Sources */,
 				11D65214210CA798005B06D4 /* SKNode+Extensions.swift in Sources */,
 				11D651FC210CA75B005B06D4 /* SKSpriteNode+CircuitRacer.swift in Sources */,
+				11D6522E210CC8A7005B06D4 /* GameActiveState.swift in Sources */,
 				11D65212210CA798005B06D4 /* SKAction+Extensions.swift in Sources */,
 				11D651CC210CA316005B06D4 /* AppDelegate.swift in Sources */,
 				11D65210210CA798005B06D4 /* Int+Extensions.swift in Sources */,
