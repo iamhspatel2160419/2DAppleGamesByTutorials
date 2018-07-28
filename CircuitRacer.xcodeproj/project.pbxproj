@@ -156,9 +156,10 @@
 			isa = PBXGroup;
 			children = (
 				11D651F9210CA735005B06D4 /* CarType.swift */,
-				11D651FB210CA75B005B06D4 /* SKSpriteNode+CircuitRacer.swift */,
 				11D651FD210CA76A005B06D4 /* LevelType.swift */,
+				11D651FB210CA75B005B06D4 /* SKSpriteNode+CircuitRacer.swift */,
 				11D651FF210CA77B005B06D4 /* SceneOverlay.swift */,
+				11D6522C210CC848005B06D4 /* Game States */,
 				11D651F0210CA6D3005B06D4 /* Scene */,
 			);
 			path = Models;
@@ -249,6 +250,13 @@
 				11D65227210CA846005B06D4 /* box.wav */,
 			);
 			path = Sounds;
+			sourceTree = "<group>";
+		};
+		11D6522C210CC848005B06D4 /* Game States */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Game States";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

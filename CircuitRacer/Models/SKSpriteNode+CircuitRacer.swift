@@ -6,4 +6,14 @@
 //  Copyright © 2018 Neil Hiddink. All rights reserved.
 //
 
-import Foundation
+import SpriteKit
+
+extension SKSpriteNode {
+    func resetPhysicsForcesAndVelocity() {
+        zRotation = 0
+        if let pBody = physicsBody {
+            pBody.angularVelocity = 0
+            pBody.velocity = .zero
+        }
+    }
+}

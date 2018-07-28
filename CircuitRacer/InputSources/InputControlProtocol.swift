@@ -6,4 +6,8 @@
 //  Copyright © 2018 Neil Hiddink. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+protocol InputControlProtocol {
+    func directionChangedWithMagnitude(position: CGPoint)
+}

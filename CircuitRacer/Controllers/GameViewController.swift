@@ -17,39 +17,54 @@ class GameViewController: UIViewController {
     var carType: CarType!
     var levelType: LevelType!
     
+    var gameScene: GameScene!
+    var analogControl: AnalogControl?
+    
+    override var shouldAutorotate: Bool { return true }
+    override var prefersStatusBarHidden: Bool { return true }
+    
+    // MARK: View Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let view = self.view as! SKView? {
-            // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "GameScene") {
-                // Set the scale mode to scale to fit the window
-                scene.scaleMode = .aspectFill
-                
-                // Present the scene
-                view.presentScene(scene)
-            }
+        if let scene = GameScene(fileNamed:"GameScene") {
             
-            view.ignoresSiblingOrder = true
+            gameScene = scene
+            gameScene.gameSceneDelegate = self
             
-            view.showsFPS = true
-            view.showsNodeCount = true
+            let skView = self.view as! SKView
+            skView.showsFPS = true
+            skView.showsNodeCount = true
+            
+            skView.ignoresSiblingOrder = true
+            
+            scene.scaleMode = .aspectFill
+            scene.levelType = levelType
+            scene.carType = carType
+            
+            skView.presentScene(scene)
+            
+            let analogControlSize: CGFloat = view.frame.size.height / 2.5
+            let analogControlPadding: CGFloat = view.frame.size.height / 32
+            
+            analogControl = AnalogControl(frame: CGRect(origin: CGPoint(x: analogControlPadding, y: skView.frame.size.height - analogControlPadding - analogControlSize), size: CGSize(width: analogControlSize, height: analogControlSize)))
+            analogControl?.delegate = scene
+            view.addSubview(analogControl!)
         }
     }
+}
 
-    override var shouldAutorotate: Bool {
-        return true
+extension GameViewController: GameSceneProtocol {
+    func didSelectCancelButton(gameScene: GameScene) {
+        _ = navigationController?.popToRootViewController(animated: false)
     }
-
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            return .allButUpsideDown
-        } else {
-            return .all
-        }
+    
+    func didShowOverlay(gameScene: GameScene) {
+        analogControl?.isHidden = true
     }
-
-    override var prefersStatusBarHidden: Bool {
-        return true
+    
+    func didDismissOverlay(gameScene: GameScene) {
+        analogControl?.isHidden = false
     }
 }
