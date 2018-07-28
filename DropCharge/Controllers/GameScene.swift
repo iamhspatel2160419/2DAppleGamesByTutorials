@@ -95,6 +95,12 @@ class GameScene: SKScene {
     var coinAnimation: SKAction!
     var coinSpecialAnimation: SKAction!
     
+    var playerAnimationJump: SKAction!
+    var playerAnimationFall: SKAction!
+    var playerAnimationSteerLeft: SKAction!
+    var playerAnimationSteerRight: SKAction!
+    var currentPlayerAnimation: SKAction?
+    
     // MARK: Scene Life Cycle
     
     override func didMove(to view: SKView) {
@@ -109,6 +115,11 @@ class GameScene: SKScene {
         physicsWorld.contactDelegate = self
         
         playBackgroundMusic(name: "SpaceGame.caf")
+        
+        playerAnimationJump = setupAnimationWithPrefix("player01_jump_", start: 1, end: 4, timePerFrame: 0.1)
+        playerAnimationFall = setupAnimationWithPrefix("player01_fall_", start: 1, end: 3, timePerFrame: 0.1)
+        playerAnimationSteerLeft = setupAnimationWithPrefix("player01_steerleft_", start: 1, end: 2, timePerFrame: 0.1)
+        playerAnimationSteerRight = setupAnimationWithPrefix("player01_steerright_", start: 1, end: 2, timePerFrame: 0.1)
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -407,10 +418,25 @@ class GameScene: SKScene {
         
         if player.physicsBody!.velocity.dy < CGFloat(0.0) && playerState != .fall {
             playerState = .fall
-            print("Falling.")
+            //print("Falling.")
         } else if player.physicsBody!.velocity.dy > CGFloat(0.0) && playerState != .jump {
             playerState = .jump
-            print("Jumping.")
+            //print("Jumping.")
+        }
+        
+        // Animate player
+        if playerState == .jump {
+            if abs(player.physicsBody!.velocity.dx) > 100.0 {
+                if player.physicsBody!.velocity.dx > 0 {
+                    runPlayerAnimation(playerAnimationSteerRight)
+                } else {
+                    runPlayerAnimation(playerAnimationSteerLeft)
+                }
+            } else {
+                runPlayerAnimation(playerAnimationJump)
+            }
+        } else if playerState == .fall {
+            runPlayerAnimation(playerAnimationFall)
         }
     }
     
@@ -625,5 +651,13 @@ extension GameScene {
                 node.run(SKAction.repeatForever(self.coinAnimation))
             }
         })
+    }
+    
+    func runPlayerAnimation(_ animation: SKAction) {
+        if animation != currentPlayerAnimation {
+            player.removeAction(forKey: "playerAnimation")
+            player.run(animation, withKey: "playerAnimation")
+            currentPlayerAnimation = animation
+        }
     }
 }
