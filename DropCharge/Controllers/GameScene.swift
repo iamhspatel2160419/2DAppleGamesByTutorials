@@ -92,6 +92,9 @@ class GameScene: SKScene {
                            SKAction.playSoundFileNamed("explosion3.wav", waitForCompletion: false),
                            SKAction.playSoundFileNamed("explosion4.wav", waitForCompletion: false)]
     
+    var coinAnimation: SKAction!
+    var coinSpecialAnimation: SKAction!
+    
     // MARK: Scene Life Cycle
     
     override func didMove(to view: SKView) {
@@ -150,6 +153,10 @@ class GameScene: SKScene {
         breakArrow = loadForegroundOverlayTemplate("BreakArrow")
         break5Across = loadForegroundOverlayTemplate("Break5Across")
         breakDiagonal = loadForegroundOverlayTemplate("BreakDiagonal")
+        
+        coinAnimation = setupAnimationWithPrefix("powerup05_", start: 1, end: 6, timePerFrame: 0.083)
+        coinSpecialAnimation = setupAnimationWithPrefix("powerup01_", start: 1, end: 6, timePerFrame: 0.083)
+        
         coin5Across = loadForegroundOverlayTemplate("Coin5Across")
         coinDiagonal = loadForegroundOverlayTemplate("CoinDiagonal")
         coinCross = loadForegroundOverlayTemplate("CoinCross")
@@ -222,6 +229,8 @@ class GameScene: SKScene {
             foregroundOverlay.xScale = -1.0
         }
         fgNode.addChild(foregroundOverlay)
+        
+        foregroundOverlay.isPaused = false
     }
     
     func addRandomForegroundOverlay() {
@@ -297,6 +306,7 @@ class GameScene: SKScene {
                         overlaySprite = coinSArrow
                 }
             }
+            animateCoinsInOverlay(overlaySprite)
         }
         
         createForegroundOverlay(overlaySprite, flipX: flipH)
@@ -593,5 +603,27 @@ extension GameScene {
         music.name = "backgroundMusic"
         music.autoplayLooped = true
         addChild(music)
+    }
+}
+
+// MARK: Animations
+extension GameScene {
+    func setupAnimationWithPrefix(_ prefix: String, start: Int, end: Int, timePerFrame: TimeInterval) -> SKAction {
+        var textures: [SKTexture] = []
+        for i in start...end {
+            textures.append(SKTexture(imageNamed: "\(prefix)\(i)"))
+        }
+        
+        return SKAction.animate(with: textures, timePerFrame: timePerFrame)
+    }
+    
+    func animateCoinsInOverlay(_ overlay: SKSpriteNode) {
+        overlay.enumerateChildNodes(withName: "*", using: { (node, stop) in
+            if node.name == "special" {
+                node.run(SKAction.repeatForever(self.coinSpecialAnimation))
+            } else {
+                node.run(SKAction.repeatForever(self.coinAnimation))
+            }
+        })
     }
 }
