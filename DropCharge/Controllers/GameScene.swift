@@ -108,6 +108,8 @@ class GameScene: SKScene {
     
     let gameGain: CGFloat = 2.5
     
+    var redAlertTime: TimeInterval = 0
+    
     // MARK: Scene Life Cycle
     
     override func didMove(to view: SKView) {
@@ -148,6 +150,7 @@ class GameScene: SKScene {
             updateLava(deltaTime)
             updateCollisionLava()
             updateExplosions(deltaTime)
+            updateRedAlert(deltaTime)
         }
     }
     
@@ -363,9 +366,8 @@ class GameScene: SKScene {
         addChild(alarm)
     }
     
-    func setPlayerVelocity(_ amount:CGFloat) {
-        let gain: CGFloat = 2.5
-        player.physicsBody!.velocity.dy = max(player.physicsBody!.velocity.dy, amount * gain)
+    func setPlayerVelocity(_ amount: CGFloat) {
+        player.physicsBody!.velocity.dy = max(player.physicsBody!.velocity.dy, amount * gameGain)
     }
     
     func bombDrop() {
@@ -501,6 +503,13 @@ class GameScene: SKScene {
                 addRandomForegroundOverlay()
             }
         }
+        
+        for fgChild in fgNode.children {
+            let nodePos = fgNode.convert(fgChild.position, to: self)
+            if !isNodeVisible(fgChild, positionY: nodePos.y) {
+                fgChild.removeFromParent()
+            }
+        }
     }
     
     func gameOver() {
@@ -571,8 +580,9 @@ extension GameScene: SKPhysicsContactDelegate {
                     run(soundBoost)
                 }
             case PhysicsCategory.PlatformNormal:
-                if let _ = other.node as? SKSpriteNode {
+                if let platform = other.node as? SKSpriteNode {
                     if player.physicsBody!.velocity.dy < 0 {
+                        platformAction(platform, breakable: false)
                         jumpPlayer()
                         run(soundJump)
                     }
@@ -580,7 +590,7 @@ extension GameScene: SKPhysicsContactDelegate {
             case PhysicsCategory.PlatformBreakable:
                 if let platform = other.node as? SKSpriteNode {
                     if player.physicsBody!.velocity.dy < 0 {
-                        emitParticles(name: "BrokenPlatform", sprite: platform)
+                        platformAction(platform, breakable: true)
                         jumpPlayer()
                         run(soundBrick)
                     }
@@ -734,5 +744,49 @@ extension GameScene {
         let amount = CGPoint(x: 0, y: -(amt * gameGain))
         let action = SKAction.screenShakeWithNode(worldNode, amount: amount, oscillations: 10, duration: 2.0)
         worldNode.run(action, withKey: "shake")
+    }
+    
+    func isNodeVisible(_ node: SKNode, positionY: CGFloat) -> Bool {
+            if !camera!.contains(node) {
+                if positionY < camera!.position.y - size.height * 2.0 {
+                    return false
+                }
+            }
+        return true
+    }
+    
+    func updateRedAlert(_ lastUpdateTime: TimeInterval) {
+
+        redAlertTime += lastUpdateTime
+        let amt: CGFloat = CGFloat(redAlertTime) * π * 2.0 / 1.93725
+        let colorBlendFactor = (sin(amt) + 1.0) / 2.0
+
+        for bgChild in bgNode.children {
+            for node in bgChild.children {
+                if let sprite = node as? SKSpriteNode {
+                    let nodePos = bgChild.convert(sprite.position, to: self)
+
+                    if !isNodeVisible(sprite, positionY: nodePos.y) {
+                        sprite.removeFromParent()
+                    } else {
+                        sprite.color = SKColorWithRGB(255, g: 0, b: 0)
+                        sprite.colorBlendFactor = colorBlendFactor
+                    }
+                }
+            }
+
+            if bgChild.name == "Overlay" && bgChild.children.count == 0 {
+                bgChild.removeFromParent()
+            }
+        }
+    }
+    
+    func platformAction(_ sprite: SKSpriteNode, breakable: Bool) {
+        let amount = CGPoint(x: 0, y: -75.0)
+        let action = SKAction.screenShakeWithNode(sprite, amount: amount, oscillations: 10, duration: 2.0)
+        sprite.run(action)
+        if breakable == true {
+            emitParticles(name: "BrokenPlatform", sprite: sprite)
+        }
     }
 }
