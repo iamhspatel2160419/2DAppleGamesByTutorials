@@ -7,3 +7,19 @@
 //
 
 import Foundation
+
+enum CarType: Int, CustomStringConvertible {
+    case yellow, blue, red
+    
+    var description: String {
+        switch self {
+        case .yellow:
+            return "Yellow car"
+        case .blue:
+            return "Blue car"
+        case .red:
+            return "Red car"
+        }
+    }
+}
+

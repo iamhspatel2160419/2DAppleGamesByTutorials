@@ -12,6 +12,11 @@ import GameplayKit
 
 class GameViewController: UIViewController {
 
+    // MARK: Properties
+    
+    var carType: CarType!
+    var levelType: LevelType!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
