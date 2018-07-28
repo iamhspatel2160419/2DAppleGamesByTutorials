@@ -10,4 +10,9 @@ import UIKit
 
 // MARK: SelectLevelViewController: UIViewController
 
-class SelectLevelViewController: UIViewController {}
+class SelectLevelViewController: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+}

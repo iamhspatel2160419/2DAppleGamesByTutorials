@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Czu-DU-xvo">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Pyj-mO-vwM">
+    <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -14,11 +14,11 @@
             <objects>
                 <viewController id="Czu-DU-xvo" customClass="HomeScreenViewController" customModule="CircuitRacer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jnR-rm-l9R">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KhM-ax-McE">
-                                <rect key="frame" x="62.5" y="308.5" width="250" height="50"/>
+                                <rect key="frame" x="208.5" y="162.5" width="250" height="50"/>
                                 <color key="backgroundColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Ysd-01-clc"/>
@@ -40,17 +40,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RxT-iY-UCk"/>
                     </view>
+                    <navigationItem key="navigationItem" id="hql-UW-LZl"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1sY-Lu-yrg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2151.1999999999998" y="132.68365817091455"/>
+            <point key="canvasLocation" x="-1360.569715142429" y="-791.20000000000005"/>
         </scene>
         <!--Select Car View Controller-->
         <scene sceneID="FoV-8w-AIZ">
             <objects>
                 <viewController storyboardIdentifier="SelectCarViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UkS-cu-RAu" customClass="SelectCarViewController" customModule="CircuitRacer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EVQ-y2-Qst">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ugN-Nc-sqB"/>
@@ -58,14 +59,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t7b-yl-w8R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1295" y="133"/>
+            <point key="canvasLocation" x="-669.71514242878561" y="-791.20000000000005"/>
         </scene>
         <!--Select Level View Controller-->
         <scene sceneID="LZm-us-wju">
             <objects>
                 <viewController storyboardIdentifier="SelectLevelViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="f9G-Cv-ydd" customClass="SelectLevelViewController" customModule="CircuitRacer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gu3-pI-k5f">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="S2f-Ia-1oi"/>
@@ -73,14 +74,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="itm-Hk-r3o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-436" y="133"/>
+            <point key="canvasLocation" x="22.938530734632685" y="-791.20000000000005"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
                 <viewController storyboardIdentifier="GameViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BV1-FR-VrT" customClass="GameViewController" customModule="CircuitRacer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
@@ -88,7 +89,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="407" y="133"/>
+            <point key="canvasLocation" x="725.48725637181417" y="-791.20000000000005"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wuj-it-C5W">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Pyj-mO-vwM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zoM-Sx-dzj">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Czu-DU-xvo" kind="relationship" relationship="rootViewController" id="nlv-4k-PcX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dop-bc-fVx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2062" y="-791"/>
         </scene>
     </scenes>
 </document>

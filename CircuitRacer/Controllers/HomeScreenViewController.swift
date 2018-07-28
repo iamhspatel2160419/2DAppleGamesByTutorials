@@ -13,10 +13,9 @@ import UIKit
 class HomeScreenViewController: UIViewController {
     @IBAction func playGame(_ sender: UIButton) {
         SKTAudio.sharedInstance().playSoundEffect("button_press.wav")
-        if let selectCarVC = self.storyboard?.instantiateViewController(withIdentifier: "SelectCarViewController") as? SelectCarViewController {
-            navigationController?.pushViewController(selectCarVC, animated: true)
+        if let selectCarVC = storyboard?.instantiateViewController(withIdentifier: "SelectCarViewController") as? SelectCarViewController {
+            navigationController?.pushViewController(selectCarVC, animated: false)
         }
-        
     }
 }
 

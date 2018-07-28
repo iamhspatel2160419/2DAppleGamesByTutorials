@@ -10,4 +10,10 @@ import UIKit
 
 // MARK: SelectCarViewController: UIViewController
 
-class SelectCarViewController: UIViewController {}
+class SelectCarViewController: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+}
