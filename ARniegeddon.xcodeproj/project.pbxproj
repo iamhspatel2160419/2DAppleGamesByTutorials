@@ -14,6 +14,13 @@
 		11019EDA20C83459005DBE27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11019ED820C83459005DBE27 /* Main.storyboard */; };
 		11019EDC20C8345A005DBE27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11019EDB20C8345A005DBE27 /* Assets.xcassets */; };
 		11019EDF20C8345A005DBE27 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11019EDD20C8345A005DBE27 /* LaunchScreen.storyboard */; };
+		11601255210E699500EF5DC9 /* win.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1160124E210E699500EF5DC9 /* win.wav */; };
+		11601256210E699500EF5DC9 /* hitBug.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1160124F210E699500EF5DC9 /* hitBug.wav */; };
+		11601257210E699500EF5DC9 /* lose.wav in Resources */ = {isa = PBXBuildFile; fileRef = 11601250210E699500EF5DC9 /* lose.wav */; };
+		11601258210E699500EF5DC9 /* Attribution.md in Resources */ = {isa = PBXBuildFile; fileRef = 11601251210E699500EF5DC9 /* Attribution.md */; };
+		11601259210E699500EF5DC9 /* sprayFirebug.wav in Resources */ = {isa = PBXBuildFile; fileRef = 11601252210E699500EF5DC9 /* sprayFirebug.wav */; };
+		1160125A210E699500EF5DC9 /* sprayBug.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 11601253210E699500EF5DC9 /* sprayBug.mp3 */; };
+		1160125B210E699500EF5DC9 /* catchBugspray.wav in Resources */ = {isa = PBXBuildFile; fileRef = 11601254210E699500EF5DC9 /* catchBugspray.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +33,13 @@
 		11019EDB20C8345A005DBE27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11019EDE20C8345A005DBE27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11019EE020C8345A005DBE27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1160124E210E699500EF5DC9 /* win.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = win.wav; sourceTree = "<group>"; };
+		1160124F210E699500EF5DC9 /* hitBug.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hitBug.wav; sourceTree = "<group>"; };
+		11601250210E699500EF5DC9 /* lose.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = lose.wav; sourceTree = "<group>"; };
+		11601251210E699500EF5DC9 /* Attribution.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Attribution.md; sourceTree = "<group>"; };
+		11601252210E699500EF5DC9 /* sprayFirebug.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sprayFirebug.wav; sourceTree = "<group>"; };
+		11601253210E699500EF5DC9 /* sprayBug.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sprayBug.mp3; sourceTree = "<group>"; };
+		11601254210E699500EF5DC9 /* catchBugspray.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = catchBugspray.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,8 +120,23 @@
 			isa = PBXGroup;
 			children = (
 				11019EDB20C8345A005DBE27 /* Assets.xcassets */,
+				1160124D210E699500EF5DC9 /* Sounds */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		1160124D210E699500EF5DC9 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				1160124E210E699500EF5DC9 /* win.wav */,
+				1160124F210E699500EF5DC9 /* hitBug.wav */,
+				11601250210E699500EF5DC9 /* lose.wav */,
+				11601251210E699500EF5DC9 /* Attribution.md */,
+				11601252210E699500EF5DC9 /* sprayFirebug.wav */,
+				11601253210E699500EF5DC9 /* sprayBug.mp3 */,
+				11601254210E699500EF5DC9 /* catchBugspray.wav */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,9 +197,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11601259210E699500EF5DC9 /* sprayFirebug.wav in Resources */,
 				11019ED320C83459005DBE27 /* Scene.sks in Resources */,
 				11019EDF20C8345A005DBE27 /* LaunchScreen.storyboard in Resources */,
+				11601258210E699500EF5DC9 /* Attribution.md in Resources */,
 				11019EDC20C8345A005DBE27 /* Assets.xcassets in Resources */,
+				11601257210E699500EF5DC9 /* lose.wav in Resources */,
+				1160125B210E699500EF5DC9 /* catchBugspray.wav in Resources */,
+				11601256210E699500EF5DC9 /* hitBug.wav in Resources */,
+				1160125A210E699500EF5DC9 /* sprayBug.mp3 in Resources */,
+				11601255210E699500EF5DC9 /* win.wav in Resources */,
 				11019EDA20C83459005DBE27 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,7 +363,6 @@
 		11019EE420C8345A005DBE27 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7G4UHWJ29G;
 				INFOPLIST_FILE = "ARKit-Demo/Info.plist";
@@ -338,14 +373,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Neil-Hiddink.ARKit-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		11019EE520C8345A005DBE27 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7G4UHWJ29G;
 				INFOPLIST_FILE = "ARKit-Demo/Info.plist";
@@ -356,7 +390,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Neil-Hiddink.ARKit-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
