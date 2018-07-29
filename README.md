@@ -12,4 +12,5 @@
 
 ### Future Plans
 
-- No future work is planned at this time.
+- **Leaderboards** - implement Game Center Leaderboards in the game.
+- **Replay Kit** - allow users to record sessions of their gameplay.
