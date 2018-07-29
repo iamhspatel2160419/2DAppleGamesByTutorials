@@ -53,6 +53,7 @@
 		11D65241210CCD4E005B06D4 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D65240210CCD4E005B06D4 /* GameKit.framework */; };
 		11D65244210E3453005B06D4 /* GameKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D65243210E3453005B06D4 /* GameKitHelper.swift */; };
 		11D65246210E3637005B06D4 /* CircuitRacerNavigationControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D65245210E3637005B06D4 /* CircuitRacerNavigationControllerViewController.swift */; };
+		11D65248210E393E005B06D4 /* AchievementsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D65247210E393E005B06D4 /* AchievementsHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +105,7 @@
 		11D65240210CCD4E005B06D4 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		11D65243210E3453005B06D4 /* GameKitHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameKitHelper.swift; sourceTree = "<group>"; };
 		11D65245210E3637005B06D4 /* CircuitRacerNavigationControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitRacerNavigationControllerViewController.swift; sourceTree = "<group>"; };
+		11D65247210E393E005B06D4 /* AchievementsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,6 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				11D65243210E3453005B06D4 /* GameKitHelper.swift */,
+				11D65247210E393E005B06D4 /* AchievementsHelper.swift */,
 			);
 			path = GameKit;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 				11D6522E210CC8A7005B06D4 /* GameActiveState.swift in Sources */,
 				11D65212210CA798005B06D4 /* SKAction+Extensions.swift in Sources */,
 				11D651CC210CA316005B06D4 /* AppDelegate.swift in Sources */,
+				11D65248210E393E005B06D4 /* AchievementsHelper.swift in Sources */,
 				11D65210210CA798005B06D4 /* Int+Extensions.swift in Sources */,
 				11D65217210CA798005B06D4 /* SKTAudio.swift in Sources */,
 				11D65220210CA815005B06D4 /* InputControlProtocol.swift in Sources */,

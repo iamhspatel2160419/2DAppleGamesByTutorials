@@ -31,3 +31,14 @@ class GameKitHelper: NSObject {
         }
     }
 }
+
+// MARK: Achievements
+
+extension GameKitHelper {
+    
+    func reportAchievements(achievements: [GKAchievement], errorHandler: ((Error?) -> Void)? = nil) {
+        guard gameCenterEnabled else { return }
+        GKAchievement.report(achievements, withCompletionHandler: errorHandler)
+    }
+    
+}
