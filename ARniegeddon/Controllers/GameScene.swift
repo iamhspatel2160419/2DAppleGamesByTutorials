@@ -1,6 +1,6 @@
 //
-//  Scene.swift
-//  ARKit-Demo
+//  GameScene.swift
+//  ARniegeddon
 //
 //  Created by Neil Hiddink on 6/6/18.
 //  Copyright © 2018 Neil Hiddink. All rights reserved.
@@ -9,7 +9,7 @@
 import SpriteKit
 import ARKit
 
-class Scene: SKScene {
+class GameScene: SKScene {
     
     override func didMove(to view: SKView) {
         // Setup your scene here
