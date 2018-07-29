@@ -12,4 +12,4 @@ Become a space hero with a mission to blow up an alien space ship. Escape with y
 
 ### Future Plans
 
-- Project currently in development.
+No future plans are in place at this time.
