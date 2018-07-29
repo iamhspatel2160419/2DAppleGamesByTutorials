@@ -41,4 +41,23 @@ extension GameKitHelper {
         GKAchievement.report(achievements, withCompletionHandler: errorHandler)
     }
     
+    
+    
+}
+
+// MARK: GameKitHelper: GKGameCenterControllerDelegate
+
+extension GameKitHelper: GKGameCenterControllerDelegate {
+    
+    func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
+        gameCenterViewController.dismiss(animated: true)
+    }
+    
+    func showGKGameCenterViewController(viewController: UIViewController) {
+        guard gameCenterEnabled else { return }
+        let gameCenterViewController = GKGameCenterViewController()
+        gameCenterViewController.gameCenterDelegate = self
+        viewController.present(gameCenterViewController, animated: true)
+    }
+    
 }

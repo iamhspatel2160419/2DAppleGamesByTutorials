@@ -14,11 +14,17 @@ class HomeScreenViewController: UIViewController {
     
     // MARK: IB Actions
     
-    @IBAction func playGame(_ sender: UIButton) {
+    @IBAction func playGameButtonPressed(_ sender: UIButton) {
         SKTAudio.sharedInstance().playSoundEffect("button_press.wav")
         if let selectCarVC = storyboard?.instantiateViewController(withIdentifier: "SelectCarViewController") as? SelectCarViewController {
             navigationController?.pushViewController(selectCarVC, animated: false)
         }
     }
+    
+    @IBAction func gameCenterButtonPressed(_ sender: UIButton) {
+        SKTAudio.sharedInstance().playSoundEffect("button_press.wav")
+        GameKitHelper.sharedInstance.showGKGameCenterViewController(viewController: self)
+    }
+    
 }
 
