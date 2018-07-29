@@ -220,10 +220,10 @@
             </objects>
             <point key="canvasLocation" x="714" y="-791"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Circuit Racer Navigation Controller View Controller-->
         <scene sceneID="wuj-it-C5W">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Pyj-mO-vwM" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Pyj-mO-vwM" customClass="CircuitRacerNavigationControllerViewController" customModule="CircuitRacer" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zoM-Sx-dzj">
                         <autoresizingMask key="autoresizingMask"/>
