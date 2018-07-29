@@ -69,21 +69,16 @@ class GameActiveState: GKState {
         let vector = carPosition - trackCenter
         let progressAngle = Double(vector.angle) + Double.pi
         
-        //1
-        if progressAngle > nextProgressAngle
-            && (progressAngle - nextProgressAngle) < Double.pi/4 {
+        if progressAngle > nextProgressAngle && (progressAngle - nextProgressAngle) < Double.pi/4 {
             
-            //2
             nextProgressAngle += Double.pi/2
             
-            //3
             if nextProgressAngle >= (2 * Double.pi) {
                 nextProgressAngle = 0
             }
             
-            //4
             if fabs(nextProgressAngle - Double.pi) < Double(Float.ulpOfOne) {
-                //lap completed!
+
                 numberOfLaps -= 1
                 
                 updateLabels()
@@ -94,8 +89,10 @@ class GameActiveState: GKState {
         if timeInSeconds < 0 || numberOfLaps == 0 {
             if numberOfLaps == 0 {
                 stateMachine?.enter(GameSuccessState.self)
+                gameScene.reportAllAchievementsForGameState(hasWon: true)
             } else {
                 stateMachine?.enter(GameFailureState.self)
+                gameScene.reportAllAchievementsForGameState(hasWon: false)
             }
         }
     }

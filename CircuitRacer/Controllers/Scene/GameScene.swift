@@ -8,6 +8,7 @@
 
 import SpriteKit
 import GameplayKit
+import GameKit
 
 protocol GameSceneProtocol: class {
     func didSelectCancelButton(gameScene: GameScene)
@@ -15,7 +16,11 @@ protocol GameSceneProtocol: class {
     func didDismissOverlay(gameScene: GameScene)
 }
 
+// MARK: GameScene: SKScene
+
 class GameScene: SKScene {
+    
+    // MARK: Properties
     
     weak var gameSceneDelegate: GameSceneProtocol?
     
@@ -57,7 +62,13 @@ class GameScene: SKScene {
         GamePauseState(gameScene: self),
         GameFailureState(gameScene: self),
         GameSuccessState(gameScene: self)
-        ])
+    ])
+    
+    var noOfCollisions = 0
+    static let CarCategoryMask: UInt32 = 1
+    static let BoxCategoryMask: UInt32 = 2
+    
+    // MARK: Scene Life Cycle
     
     override func didMove(to view: SKView) {
         
@@ -74,11 +85,11 @@ class GameScene: SKScene {
         lapSoundAction = SKAction.playSoundFileNamed("lap.wav",
                                                      waitForCompletion: false)
         
-        box1 = childNode(withName: "box_1") as! SKSpriteNode
-        box2 = childNode(withName: "box_2") as! SKSpriteNode
+        box1 = (childNode(withName: "box_1") as! SKSpriteNode)
+        box2 = (childNode(withName: "box_2") as! SKSpriteNode)
         
-        laps = self.childNode(withName: "laps_label") as! SKLabelNode
-        time = self.childNode(withName: "time_left_label") as! SKLabelNode
+        laps = (self.childNode(withName: "laps_label") as! SKLabelNode)
+        time = (self.childNode(withName: "time_left_label") as! SKLabelNode)
         
         let camera = SKCameraNode()
         scene?.camera = camera
@@ -86,6 +97,9 @@ class GameScene: SKScene {
         setCameraPosition(position: CGPoint(x: size.width/2, y: size.height/2))
         
         stateMachine.enter(GameActiveState.self)
+        
+        childNode(withName: "car")?.physicsBody?.contactTestBitMask = GameScene.BoxCategoryMask
+        physicsWorld.contactDelegate = self
     }
     
     override func update(_ currentTime: CFTimeInterval) {
@@ -94,7 +108,7 @@ class GameScene: SKScene {
         stateMachine.update(deltaTime: deltaTime)
     }
     
-    // MARK: Private methods
+    // MARK: Private Methods
     
     private func setupPhysicsBodies() {
         let innerBoundary = SKNode()
@@ -135,7 +149,18 @@ class GameScene: SKScene {
     private func setCameraPosition(position: CGPoint) {
         scene?.camera?.position = CGPoint(x: position.x, y: position.y)
     }
+    
+    func reportAllAchievementsForGameState(hasWon: Bool) {
+        var achievements: [GKAchievement] = []
+        achievements.append(AchievementsHelper.collisionAchievement(noOfCollisions: noOfCollisions))
+        if hasWon {
+            achievements.append(AchievementsHelper.achievementForLevel(levelType: levelType))
+        }
+        GameKitHelper.sharedInstance.reportAchievements(achievements: achievements)
+    }
 }
+
+// MARK: GameScene: InputControlProtocol
 
 extension GameScene: InputControlProtocol {
     func directionChangedWithMagnitude(position: CGPoint) {
@@ -152,6 +177,20 @@ extension GameScene: InputControlProtocol {
             if position != CGPoint.zero {
                 car.zRotation = CGPoint(x: position.x, y: position.y).angle
             }
+        }
+    }
+}
+
+// MARK: GameScene: SKPhysicsContactDelegate
+
+extension GameScene: SKPhysicsContactDelegate {
+    func didBegin(_ contact: SKPhysicsContact) {
+        if contact.bodyA.categoryBitMask != UInt32.max &&
+           contact.bodyB.categoryBitMask != UInt32.max &&
+           (contact.bodyA.categoryBitMask + contact.bodyB.categoryBitMask ==
+            GameScene.CarCategoryMask + GameScene.BoxCategoryMask) {
+            noOfCollisions += 1
+            run(boxSoundAction)
         }
     }
 }
