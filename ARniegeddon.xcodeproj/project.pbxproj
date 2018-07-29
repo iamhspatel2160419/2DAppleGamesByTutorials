@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		11019ECD20C83459005DBE27 /* ARKit-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ARKit-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		11019ECD20C83459005DBE27 /* ARniegeddon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARniegeddon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11019ED020C83459005DBE27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11019ED220C83459005DBE27 /* Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Scene.sks; sourceTree = "<group>"; };
 		11019ED420C83459005DBE27 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
@@ -42,7 +42,7 @@
 		11019EC420C83459005DBE27 = {
 			isa = PBXGroup;
 			children = (
-				11019ECF20C83459005DBE27 /* ARKit-Demo */,
+				11019ECF20C83459005DBE27 /* ARniegeddon */,
 				11019ECE20C83459005DBE27 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,32 +50,72 @@
 		11019ECE20C83459005DBE27 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				11019ECD20C83459005DBE27 /* ARKit-Demo.app */,
+				11019ECD20C83459005DBE27 /* ARniegeddon.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		11019ECF20C83459005DBE27 /* ARKit-Demo */ = {
+		11019ECF20C83459005DBE27 /* ARniegeddon */ = {
 			isa = PBXGroup;
 			children = (
 				11019ED020C83459005DBE27 /* AppDelegate.swift */,
+				11601248210E68D100EF5DC9 /* Models */,
+				11601249210E68D700EF5DC9 /* Views */,
+				1160124A210E68DB00EF5DC9 /* Controllers */,
+				1160124C210E68E500EF5DC9 /* Resources */,
+				1160124B210E68E000EF5DC9 /* Supporting Files */,
+			);
+			path = ARniegeddon;
+			sourceTree = "<group>";
+		};
+		11601248210E68D100EF5DC9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		11601249210E68D700EF5DC9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
 				11019ED220C83459005DBE27 /* Scene.sks */,
+				11019ED820C83459005DBE27 /* Main.storyboard */,
+				11019EDD20C8345A005DBE27 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1160124A210E68DB00EF5DC9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
 				11019ED420C83459005DBE27 /* Scene.swift */,
 				11019ED620C83459005DBE27 /* ViewController.swift */,
-				11019ED820C83459005DBE27 /* Main.storyboard */,
-				11019EDB20C8345A005DBE27 /* Assets.xcassets */,
-				11019EDD20C8345A005DBE27 /* LaunchScreen.storyboard */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1160124B210E68E000EF5DC9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
 				11019EE020C8345A005DBE27 /* Info.plist */,
 			);
-			path = "ARKit-Demo";
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1160124C210E68E500EF5DC9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				11019EDB20C8345A005DBE27 /* Assets.xcassets */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		11019ECC20C83459005DBE27 /* ARKit-Demo */ = {
+		11019ECC20C83459005DBE27 /* ARniegeddon */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 11019EE320C8345A005DBE27 /* Build configuration list for PBXNativeTarget "ARKit-Demo" */;
+			buildConfigurationList = 11019EE320C8345A005DBE27 /* Build configuration list for PBXNativeTarget "ARniegeddon" */;
 			buildPhases = (
 				11019EC920C83459005DBE27 /* Sources */,
 				11019ECA20C83459005DBE27 /* Frameworks */,
@@ -85,9 +125,9 @@
 			);
 			dependencies = (
 			);
-			name = "ARKit-Demo";
+			name = ARniegeddon;
 			productName = "ARKit-Demo";
-			productReference = 11019ECD20C83459005DBE27 /* ARKit-Demo.app */;
+			productReference = 11019ECD20C83459005DBE27 /* ARniegeddon.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -105,7 +145,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 11019EC820C83459005DBE27 /* Build configuration list for PBXProject "ARKit-Demo" */;
+			buildConfigurationList = 11019EC820C83459005DBE27 /* Build configuration list for PBXProject "ARniegeddon" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -118,7 +158,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				11019ECC20C83459005DBE27 /* ARKit-Demo */,
+				11019ECC20C83459005DBE27 /* ARniegeddon */,
 			);
 		};
 /* End PBXProject section */
@@ -323,7 +363,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		11019EC820C83459005DBE27 /* Build configuration list for PBXProject "ARKit-Demo" */ = {
+		11019EC820C83459005DBE27 /* Build configuration list for PBXProject "ARniegeddon" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				11019EE120C8345A005DBE27 /* Debug */,
@@ -332,7 +372,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		11019EE320C8345A005DBE27 /* Build configuration list for PBXNativeTarget "ARKit-Demo" */ = {
+		11019EE320C8345A005DBE27 /* Build configuration list for PBXNativeTarget "ARniegeddon" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				11019EE420C8345A005DBE27 /* Debug */,

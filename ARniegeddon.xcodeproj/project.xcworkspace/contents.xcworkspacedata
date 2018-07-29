@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:ARKit-Demo.xcodeproj">
+      location = "self:/Users/neilhiddink/Github/ARniegeddon/ARniegeddon.xcodeproj">
    </FileRef>
 </Workspace>
