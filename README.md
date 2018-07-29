@@ -2,6 +2,8 @@
 
 2D Top-Down Action Game for iOS using SpriteKit and Game Center - Take control of a circuit racer and compete for the best completion time!
 
+![GIPHY](https://media.giphy.com/media/7J26CHerDPUkG94TxZ/giphy.gif)
+
 ### Dependencies
 
 - iOS 11
