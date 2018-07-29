@@ -21,6 +21,9 @@ class AchievementsHelper {
     static let IntermediateAchievementId = "circuitracer.intermediateracer"
     static let ProfessionalHeroAchievementId = "circuitracer.professionalracer"
     
+    static let RacingAddictAchievementId = "circuitracer.racingaddict"
+    static var numberOfRacesCompleted = 0
+    
     // MARK: Methods
     
     class func collisionAchievement(noOfCollisions: Int) -> GKAchievement {
@@ -44,5 +47,14 @@ class AchievementsHelper {
         levelAchievement.showsCompletionBanner = true
         
         return levelAchievement
+    }
+    
+    class func racingAddictAchievement(plays: Int) -> GKAchievement {
+        let achievementId = AchievementsHelper.RacingAddictAchievementId
+        let achievement = GKAchievement(identifier: achievementId)
+        achievement.percentComplete = Double(plays) * 10.0
+        achievement.showsCompletionBanner = true
+        
+        return achievement
     }
 }

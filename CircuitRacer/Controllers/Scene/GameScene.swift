@@ -156,6 +156,8 @@ class GameScene: SKScene {
         if hasWon {
             achievements.append(AchievementsHelper.achievementForLevel(levelType: levelType))
         }
+        AchievementsHelper.numberOfRacesCompleted += 1
+        achievements.append(AchievementsHelper.racingAddictAchievement(plays: AchievementsHelper.numberOfRacesCompleted))
         GameKitHelper.sharedInstance.reportAchievements(achievements: achievements)
     }
 }
