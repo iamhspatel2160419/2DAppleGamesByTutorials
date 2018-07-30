@@ -17,8 +17,14 @@ class GameScene: SKScene {
     }
     
     var isWorldSetUp = false
+    var sight: SKSpriteNode!
     
     // MARK: Scene Life Cycle
+    
+    override func didMove(to view: SKView) {
+        sight = SKSpriteNode(imageNamed: "sight")
+        addChild(sight)
+    }
     
     override func update(_ currentTime: TimeInterval) {
         if !isWorldSetUp {
@@ -50,6 +56,35 @@ class GameScene: SKScene {
         let anchor = ARAnchor(transform: transform)
         sceneView.session.add(anchor: anchor)
         isWorldSetUp = true
+    }
+
+}
+
+// MARK: Touch Methods
+
+extension GameScene {
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let location = sight.position
+        let hitNodes = nodes(at: location)
+        
+        var hitBug: SKNode?
+        for node in hitNodes {
+            if node.name == "bug" {
+                hitBug = node
+                break
+            }
+        }
+        
+        run(Sounds.fire)
+        if let hitBug = hitBug, let anchor = sceneView.anchor(for: hitBug) {
+            let action = SKAction.run {
+                self.sceneView.session.remove(anchor: anchor)
+            }
+            let group = SKAction.group([Sounds.hit, action])
+            let sequence = [SKAction.wait(forDuration: 0.3), group]
+            hitBug.run(SKAction.sequence(sequence))
+        }
     }
     
 }
