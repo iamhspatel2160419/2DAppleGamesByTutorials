@@ -28,7 +28,7 @@ No future work is planned at this time.
 
 ### Attribution
 
-This project was produced step-by-step using [Ray Wenderlich's 2D Apple Games by Tutorials - Chapter 24](https://amzn.to/2K7ECUt). Development is authorized according to the following license:
+This project was produced step-by-step using [Ray Wenderlich's 2D Apple Games by Tutorials](https://amzn.to/2K7ECUt). Development is authorized according to the following license:
 
 ```
 Copyright (c) 2017 Razeware LLC
