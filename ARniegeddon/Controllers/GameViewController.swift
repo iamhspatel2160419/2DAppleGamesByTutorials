@@ -70,6 +70,7 @@ extension GameViewController: ARSKViewDelegate {
         sceneView.session.run(session.configuration!,
                               options: [.resetTracking,
                                         .removeExistingAnchors])
+        (sceneView.scene as? GameScene)?.newGame()
     }
     
     func view(_ view: ARSKView, nodeFor anchor: ARAnchor) -> SKNode? {

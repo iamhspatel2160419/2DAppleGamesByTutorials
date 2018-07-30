@@ -27,6 +27,8 @@ class GameScene: SKScene {
         }
     }
     
+    var bugCounter = 0
+    
     // MARK: Scene Life Cycle
     
     override func didMove(to view: SKView) {
@@ -57,8 +59,12 @@ class GameScene: SKScene {
         for anchor in currentFrame.anchors {
             guard let node = sceneView.node(for: anchor), node.name == NodeType.bugspray.rawValue else { continue }
             let distance = simd_distance(anchor.transform.columns.3, currentFrame.camera.transform.columns.3)
-            if distance < 0.1 {
-                remove(bugspray: anchor)
+            if distance < 0.1, let name = node.name, let type = NodeType(rawValue: name) {
+                if type == .bugspray {
+                    remove(bugspray: anchor)
+                } else {
+                    gameOver(win: false)
+                }
                 break
             }
         }
@@ -84,6 +90,7 @@ class GameScene: SKScene {
                 if let name = node.name, let type = NodeType(rawValue: name) {
                     anchor.type = type
                     sceneView.session.add(anchor: anchor)
+                    bugCounter += 1
                     if anchor.type == .firebug {
                         addBugSpray(to: currentFrame)
                     }
@@ -108,6 +115,33 @@ class GameScene: SKScene {
         run(Sounds.bugspray)
         sceneView.session.remove(anchor: anchor)
         hasBugspray = true
+    }
+    
+    private func gameOver(win: Bool) {
+        sight?.removeFromParent()
+        sight = nil
+        let message = win ? "You Win!!!" : "You Lose :["
+        let label = SKLabelNode(fontNamed: "Menlo")
+        label.text = message
+        label.fontSize = 40
+        label.fontColor = win ? .green : .red
+        addChild(label)
+        let sound = win ? Sounds.win : Sounds.lose
+        
+        let newSceneAction = SKAction.run { [weak self] in
+            self?.newGame()
+        }
+        let runAction = SKAction.sequence([sound,
+                                           SKAction.wait(forDuration: 3.0),
+                                           newSceneAction])
+        run(runAction)
+    }
+    
+    func newGame() {
+        let scene = GameScene(size: size)
+        scene.scaleMode = scaleMode
+        scene.anchorPoint = anchorPoint
+        view?.presentScene(scene)
     }
     
 }
@@ -136,9 +170,14 @@ extension GameScene {
             let group = SKAction.group([Sounds.hit, action])
             let sequence = [SKAction.wait(forDuration: 0.3), group]
             hitBug.run(SKAction.sequence(sequence))
+            bugCounter -= 1
         }
         
         hasBugspray = false
+        
+        if bugCounter <= 0 {
+            gameOver(win: true)
+        }
     }
     
 }
