@@ -20,6 +20,13 @@ class GameScene: SKScene {
     var sight: SKSpriteNode!
     let gameSize = CGSize(width: 2, height: 2)
     
+    var hasBugspray = false {
+        didSet {
+            let sightImageName = hasBugspray ? "bugspraySight" : "sight"
+            sight.texture = SKTexture(imageNamed: sightImageName)
+        }
+    }
+    
     // MARK: Scene Life Cycle
     
     override func didMove(to view: SKView) {
@@ -46,6 +53,15 @@ class GameScene: SKScene {
                 bug.colorBlendFactor = blendFactor
             }
         }
+        
+        for anchor in currentFrame.anchors {
+            guard let node = sceneView.node(for: anchor), node.name == NodeType.bugspray.rawValue else { continue }
+            let distance = simd_distance(anchor.transform.columns.3, currentFrame.camera.transform.columns.3)
+            if distance < 0.1 {
+                remove(bugspray: anchor)
+                break
+            }
+        }
     }
     
     // MARK: Private Methods
@@ -68,10 +84,30 @@ class GameScene: SKScene {
                 if let name = node.name, let type = NodeType(rawValue: name) {
                     anchor.type = type
                     sceneView.session.add(anchor: anchor)
+                    if anchor.type == .firebug {
+                        addBugSpray(to: currentFrame)
+                    }
                 }
             }
         }
         isWorldSetUp = true
+    }
+    
+    private func addBugSpray(to currentFrame: ARFrame) {
+        var translation = matrix_identity_float4x4
+        translation.columns.3.x = Float(drand48()*2 - 1)
+        translation.columns.3.z = -Float(drand48()*2 - 1)
+        translation.columns.3.y = Float(drand48() - 0.5)
+        let transform = currentFrame.camera.transform * translation
+        let anchor = Anchor(transform: transform)
+        anchor.type = .bugspray
+        sceneView.session.add(anchor: anchor)
+    }
+    
+    private func remove(bugspray anchor: ARAnchor) {
+        run(Sounds.bugspray)
+        sceneView.session.remove(anchor: anchor)
+        hasBugspray = true
     }
     
 }
@@ -86,7 +122,7 @@ extension GameScene {
         
         var hitBug: SKNode?
         for node in hitNodes {
-            if node.name == "bug" {
+            if node.name == NodeType.bug.rawValue || (node.name == NodeType.firebug.rawValue && hasBugspray) {
                 hitBug = node
                 break
             }
@@ -101,6 +137,8 @@ extension GameScene {
             let sequence = [SKAction.wait(forDuration: 0.3), group]
             hitBug.run(SKAction.sequence(sequence))
         }
+        
+        hasBugspray = false
     }
     
 }
