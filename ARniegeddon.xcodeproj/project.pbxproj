@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		11019ED120C83459005DBE27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11019ED020C83459005DBE27 /* AppDelegate.swift */; };
-		11019ED320C83459005DBE27 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 11019ED220C83459005DBE27 /* GameScene.sks */; };
 		11019ED520C83459005DBE27 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11019ED420C83459005DBE27 /* GameScene.swift */; };
 		11019ED720C83459005DBE27 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11019ED620C83459005DBE27 /* GameViewController.swift */; };
 		11019EDA20C83459005DBE27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11019ED820C83459005DBE27 /* Main.storyboard */; };
@@ -22,12 +21,12 @@
 		1160125A210E699500EF5DC9 /* sprayBug.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 11601253210E699500EF5DC9 /* sprayBug.mp3 */; };
 		1160125B210E699500EF5DC9 /* catchBugspray.wav in Resources */ = {isa = PBXBuildFile; fileRef = 11601254210E699500EF5DC9 /* catchBugspray.wav */; };
 		1160125D210E69E100EF5DC9 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1160125C210E69E100EF5DC9 /* Types.swift */; };
+		1160125F210F786400EF5DC9 /* Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1160125E210F786400EF5DC9 /* Anchor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		11019ECD20C83459005DBE27 /* ARniegeddon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARniegeddon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11019ED020C83459005DBE27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		11019ED220C83459005DBE27 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		11019ED420C83459005DBE27 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		11019ED620C83459005DBE27 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		11019ED920C83459005DBE27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -42,6 +41,7 @@
 		11601253210E699500EF5DC9 /* sprayBug.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sprayBug.mp3; sourceTree = "<group>"; };
 		11601254210E699500EF5DC9 /* catchBugspray.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = catchBugspray.wav; sourceTree = "<group>"; };
 		1160125C210E69E100EF5DC9 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		1160125E210F786400EF5DC9 /* Anchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anchor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				1160125C210E69E100EF5DC9 /* Types.swift */,
+				1160125E210F786400EF5DC9 /* Anchor.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -95,7 +96,6 @@
 		11601249210E68D700EF5DC9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				11019ED220C83459005DBE27 /* GameScene.sks */,
 				11019ED820C83459005DBE27 /* Main.storyboard */,
 				11019EDD20C8345A005DBE27 /* LaunchScreen.storyboard */,
 			);
@@ -201,7 +201,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				11601259210E699500EF5DC9 /* sprayFirebug.wav in Resources */,
-				11019ED320C83459005DBE27 /* GameScene.sks in Resources */,
 				11019EDF20C8345A005DBE27 /* LaunchScreen.storyboard in Resources */,
 				11601258210E699500EF5DC9 /* Attribution.md in Resources */,
 				11019EDC20C8345A005DBE27 /* Assets.xcassets in Resources */,
@@ -222,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11019ED720C83459005DBE27 /* GameViewController.swift in Sources */,
+				1160125F210F786400EF5DC9 /* Anchor.swift in Sources */,
 				11019ED520C83459005DBE27 /* GameScene.swift in Sources */,
 				11019ED120C83459005DBE27 /* AppDelegate.swift in Sources */,
 				1160125D210E69E100EF5DC9 /* Types.swift in Sources */,
