@@ -72,7 +72,7 @@ extension GameViewController: ARSKViewDelegate {
                                         .removeExistingAnchors])
     }
     
-    /*func view(_ view: ARSKView, nodeFor anchor: ARAnchor) -> SKNode? {
+    func view(_ view: ARSKView, nodeFor anchor: ARAnchor) -> SKNode? {
         var node: SKNode?
         if let anchor = anchor as? Anchor {
             if let type = anchor.type {
@@ -81,11 +81,6 @@ extension GameViewController: ARSKViewDelegate {
             }
         }
         return node
-    }*/
-    
-    func view(_ view: ARSKView, nodeFor anchor: ARAnchor) -> SKNode? {
-        let bug = SKSpriteNode(imageNamed: "bug")
-        bug.name = "bug"
-        return bug
     }
+
 }
