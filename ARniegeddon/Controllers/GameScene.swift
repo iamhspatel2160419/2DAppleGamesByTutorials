@@ -18,12 +18,14 @@ class GameScene: SKScene {
     
     var isWorldSetUp = false
     var sight: SKSpriteNode!
+    let gameSize = CGSize(width: 2, height: 2)
     
     // MARK: Scene Life Cycle
     
     override func didMove(to view: SKView) {
         sight = SKSpriteNode(imageNamed: "sight")
         addChild(sight)
+        srand48(Int(Date.timeIntervalSinceReferenceDate))
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -49,15 +51,26 @@ class GameScene: SKScene {
     // MARK: Private Methods
     
     private func setUpWorld() {
-        guard let currentFrame = sceneView.session.currentFrame else { return }
-        var translation = matrix_identity_float4x4
-        translation.columns.3.z = -0.3
-        let transform = currentFrame.camera.transform * translation
-        let anchor = ARAnchor(transform: transform)
-        sceneView.session.add(anchor: anchor)
+        guard let currentFrame = sceneView.session.currentFrame,
+              let scene = SKScene(fileNamed: "Level1") else { return }
+        
+        for node in scene.children {
+            if let node = node as? SKSpriteNode {
+                var translation = matrix_identity_float4x4
+
+                let positionX = node.position.x / scene.size.width
+                let positionY = node.position.y / scene.size.height
+                translation.columns.3.x = Float(positionX * gameSize.width)
+                translation.columns.3.z = -Float(positionY * gameSize.height)
+                let transform = currentFrame.camera.transform * translation
+                translation.columns.3.y = Float(drand48() - 0.5)
+                let anchor = ARAnchor(transform: transform)
+                sceneView.session.add(anchor: anchor)
+            }
+        }
         isWorldSetUp = true
     }
-
+    
 }
 
 // MARK: Touch Methods

@@ -22,6 +22,7 @@
 		1160125B210E699500EF5DC9 /* catchBugspray.wav in Resources */ = {isa = PBXBuildFile; fileRef = 11601254210E699500EF5DC9 /* catchBugspray.wav */; };
 		1160125D210E69E100EF5DC9 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1160125C210E69E100EF5DC9 /* Types.swift */; };
 		1160125F210F786400EF5DC9 /* Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1160125E210F786400EF5DC9 /* Anchor.swift */; };
+		11E67FF4210FC2C200F06DE9 /* Level1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 11E67FF3210FC2C200F06DE9 /* Level1.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		11601254210E699500EF5DC9 /* catchBugspray.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = catchBugspray.wav; sourceTree = "<group>"; };
 		1160125C210E69E100EF5DC9 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		1160125E210F786400EF5DC9 /* Anchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anchor.swift; sourceTree = "<group>"; };
+		11E67FF3210FC2C200F06DE9 /* Level1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level1.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 		11601249210E68D700EF5DC9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				11E67FF5210FC2C600F06DE9 /* Scenes */,
 				11019ED820C83459005DBE27 /* Main.storyboard */,
 				11019EDD20C8345A005DBE27 /* LaunchScreen.storyboard */,
 			);
@@ -140,6 +143,14 @@
 				11601254210E699500EF5DC9 /* catchBugspray.wav */,
 			);
 			path = Sounds;
+			sourceTree = "<group>";
+		};
+		11E67FF5210FC2C600F06DE9 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				11E67FF3210FC2C200F06DE9 /* Level1.sks */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +220,7 @@
 				11601256210E699500EF5DC9 /* hitBug.wav in Resources */,
 				1160125A210E699500EF5DC9 /* sprayBug.mp3 in Resources */,
 				11601255210E699500EF5DC9 /* win.wav in Resources */,
+				11E67FF4210FC2C200F06DE9 /* Level1.sks in Resources */,
 				11019EDA20C83459005DBE27 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
