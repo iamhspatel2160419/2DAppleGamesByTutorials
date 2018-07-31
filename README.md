@@ -3,7 +3,8 @@
 ![Banner](ZombieConga/Assets.xcassets/Characters/cat.imageset/cat.png)
 
 # Zombie Conga
-This game's initial content was built step-by-step from Ray Wenderlich's Tutorial Book [2D Apple Games by Tutorials](https://store.raywenderlich.com/products/2d-apple-games-by-tutorials)
+
+Play the role of a zombie who's sole mission is to break the world record for the longest conga line of cats!
 
 ### Dependencies
 
