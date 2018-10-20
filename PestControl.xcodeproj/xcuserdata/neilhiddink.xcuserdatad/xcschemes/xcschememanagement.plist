@@ -4,12 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Zombie Conga.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>0</integer>
-		</dict>
-		<key>ZombieConga.xcscheme</key>
+		<key>PestControl.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
