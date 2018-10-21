@@ -1,0 +1,332 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "shortestAngleBetween"
+provides-nominal:
+provides-member:
+- ["12CoreGraphics7CGFloatV", ""]
+- ["12CoreGraphics7CGFloatV", "degreesToRadians"]
+- ["12CoreGraphics7CGFloatV", "radiansToDegrees"]
+- ["12CoreGraphics7CGFloatV", "clamped"]
+- ["12CoreGraphics7CGFloatV", "clamp"]
+- ["12CoreGraphics7CGFloatV", "sign"]
+- ["12CoreGraphics7CGFloatV", "random"]
+- ["12CoreGraphics7CGFloatV", "random"]
+- ["12CoreGraphics7CGFloatV", "randomSign"]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "*"
+- !private "+"
+- !private "-"
+- !private "/"
+- !private "<"
+- !private "<="
+- !private "=="
+- !private ">"
+- !private ">="
+- "AssignmentPrecedence"
+- "CGFloat"
+- !private "Float"
+- !private "FloatLiteralType"
+- !private "IntegerLiteralType"
+- !private "StringLiteralType"
+- "TernaryPrecedence"
+- !private "arc4random"
+- !private "arc4random_uniform"
+- !private "assert"
+- "shortestAngleBetween"
+depends-member:
+- !private ["s19BinaryFloatingPointP", "CGFloat"]
+- !private ["s19BinaryFloatingPointP", "Float"]
+- !private ["s19BinaryFloatingPointP", "arc4random"]
+- !private ["s19BinaryFloatingPointP", "arc4random_uniform"]
+- !private ["s19BinaryFloatingPointP", "assert"]
+- !private ["s19BinaryFloatingPointP", "clamped"]
+- !private ["s19BinaryFloatingPointP", "init"]
+- !private ["s19BinaryFloatingPointP", "pi"]
+- !private ["s19BinaryFloatingPointP", "random"]
+- !private ["s19BinaryFloatingPointP", "truncatingRemainder"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- ["12CoreGraphics7CGFloatV", "CGFloat"]
+- !private ["12CoreGraphics7CGFloatV", "Float"]
+- !private ["12CoreGraphics7CGFloatV", "arc4random"]
+- !private ["12CoreGraphics7CGFloatV", "arc4random_uniform"]
+- !private ["12CoreGraphics7CGFloatV", "assert"]
+- ["12CoreGraphics7CGFloatV", "clamp"]
+- ["12CoreGraphics7CGFloatV", "clamped"]
+- ["12CoreGraphics7CGFloatV", "degreesToRadians"]
+- !private ["12CoreGraphics7CGFloatV", "init"]
+- !private ["12CoreGraphics7CGFloatV", "pi"]
+- ["12CoreGraphics7CGFloatV", "radiansToDegrees"]
+- ["12CoreGraphics7CGFloatV", "random"]
+- ["12CoreGraphics7CGFloatV", "randomSign"]
+- ["12CoreGraphics7CGFloatV", "sign"]
+- !private ["12CoreGraphics7CGFloatV", "truncatingRemainder"]
+- !private ["s7CVarArgP", "CGFloat"]
+- !private ["s7CVarArgP", "Float"]
+- !private ["s7CVarArgP", "arc4random"]
+- !private ["s7CVarArgP", "arc4random_uniform"]
+- !private ["s7CVarArgP", "assert"]
+- !private ["s7CVarArgP", "clamped"]
+- !private ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "pi"]
+- !private ["s7CVarArgP", "random"]
+- !private ["s7CVarArgP", "truncatingRemainder"]
+- !private ["s10ComparableP", "CGFloat"]
+- !private ["s10ComparableP", "Float"]
+- !private ["s10ComparableP", "arc4random"]
+- !private ["s10ComparableP", "arc4random_uniform"]
+- !private ["s10ComparableP", "assert"]
+- !private ["s10ComparableP", "clamped"]
+- !private ["s10ComparableP", "init"]
+- !private ["s10ComparableP", "pi"]
+- !private ["s10ComparableP", "random"]
+- !private ["s10ComparableP", "truncatingRemainder"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s29CustomPlaygroundQuickLookableP", "_getBuiltinLogicValue"]
+- !private ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s17CustomReflectableP", "CGFloat"]
+- !private ["s17CustomReflectableP", "Float"]
+- !private ["s17CustomReflectableP", "_getBuiltinLogicValue"]
+- !private ["s17CustomReflectableP", "arc4random"]
+- !private ["s17CustomReflectableP", "arc4random_uniform"]
+- !private ["s17CustomReflectableP", "assert"]
+- !private ["s17CustomReflectableP", "clamped"]
+- !private ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "pi"]
+- !private ["s17CustomReflectableP", "random"]
+- !private ["s17CustomReflectableP", "truncatingRemainder"]
+- !private ["s23CustomStringConvertibleP", "CGFloat"]
+- !private ["s23CustomStringConvertibleP", "Float"]
+- !private ["s23CustomStringConvertibleP", "_getBuiltinLogicValue"]
+- !private ["s23CustomStringConvertibleP", "arc4random"]
+- !private ["s23CustomStringConvertibleP", "arc4random_uniform"]
+- !private ["s23CustomStringConvertibleP", "assert"]
+- !private ["s23CustomStringConvertibleP", "clamped"]
+- !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "pi"]
+- !private ["s23CustomStringConvertibleP", "random"]
+- !private ["s23CustomStringConvertibleP", "truncatingRemainder"]
+- !private ["s9DecodableP", "CGFloat"]
+- !private ["s9DecodableP", "Float"]
+- !private ["s9DecodableP", "_getBuiltinLogicValue"]
+- !private ["s9DecodableP", "arc4random"]
+- !private ["s9DecodableP", "arc4random_uniform"]
+- !private ["s9DecodableP", "assert"]
+- !private ["s9DecodableP", "clamped"]
+- !private ["s9DecodableP", "init"]
+- !private ["s9DecodableP", "pi"]
+- !private ["s9DecodableP", "random"]
+- !private ["s9DecodableP", "truncatingRemainder"]
+- !private ["s9EncodableP", "CGFloat"]
+- !private ["s9EncodableP", "Float"]
+- !private ["s9EncodableP", "_getBuiltinLogicValue"]
+- !private ["s9EncodableP", "arc4random"]
+- !private ["s9EncodableP", "arc4random_uniform"]
+- !private ["s9EncodableP", "assert"]
+- !private ["s9EncodableP", "clamped"]
+- !private ["s9EncodableP", "init"]
+- !private ["s9EncodableP", "pi"]
+- !private ["s9EncodableP", "random"]
+- !private ["s9EncodableP", "truncatingRemainder"]
+- !private ["s9EquatableP", "CGFloat"]
+- !private ["s9EquatableP", "Float"]
+- !private ["s9EquatableP", "_getBuiltinLogicValue"]
+- !private ["s9EquatableP", "arc4random"]
+- !private ["s9EquatableP", "arc4random_uniform"]
+- !private ["s9EquatableP", "assert"]
+- !private ["s9EquatableP", "clamped"]
+- !private ["s9EquatableP", "init"]
+- !private ["s9EquatableP", "pi"]
+- !private ["s9EquatableP", "random"]
+- !private ["s9EquatableP", "truncatingRemainder"]
+- !private ["s27ExpressibleByBooleanLiteralP", "_getBuiltinLogicValue"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s25ExpressibleByFloatLiteralP", "CGFloat"]
+- !private ["s25ExpressibleByFloatLiteralP", "Float"]
+- !private ["s25ExpressibleByFloatLiteralP", "arc4random"]
+- !private ["s25ExpressibleByFloatLiteralP", "arc4random_uniform"]
+- !private ["s25ExpressibleByFloatLiteralP", "assert"]
+- !private ["s25ExpressibleByFloatLiteralP", "clamped"]
+- !private ["s25ExpressibleByFloatLiteralP", "init"]
+- !private ["s25ExpressibleByFloatLiteralP", "pi"]
+- !private ["s25ExpressibleByFloatLiteralP", "random"]
+- !private ["s25ExpressibleByFloatLiteralP", "truncatingRemainder"]
+- !private ["s27ExpressibleByIntegerLiteralP", "CGFloat"]
+- !private ["s27ExpressibleByIntegerLiteralP", "Float"]
+- !private ["s27ExpressibleByIntegerLiteralP", "arc4random"]
+- !private ["s27ExpressibleByIntegerLiteralP", "arc4random_uniform"]
+- !private ["s27ExpressibleByIntegerLiteralP", "assert"]
+- !private ["s27ExpressibleByIntegerLiteralP", "clamped"]
+- !private ["s27ExpressibleByIntegerLiteralP", "init"]
+- !private ["s27ExpressibleByIntegerLiteralP", "pi"]
+- !private ["s27ExpressibleByIntegerLiteralP", "random"]
+- !private ["s27ExpressibleByIntegerLiteralP", "truncatingRemainder"]
+- !private ["s26ExpressibleByStringLiteralP", "init"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- !private ["Sf", "init"]
+- !private ["s13FloatingPointP", "CGFloat"]
+- !private ["s13FloatingPointP", "Float"]
+- !private ["s13FloatingPointP", "arc4random"]
+- !private ["s13FloatingPointP", "arc4random_uniform"]
+- !private ["s13FloatingPointP", "assert"]
+- !private ["s13FloatingPointP", "clamped"]
+- !private ["s13FloatingPointP", "init"]
+- !private ["s13FloatingPointP", "pi"]
+- !private ["s13FloatingPointP", "random"]
+- !private ["s13FloatingPointP", "truncatingRemainder"]
+- !private ["s8HashableP", "CGFloat"]
+- !private ["s8HashableP", "Float"]
+- !private ["s8HashableP", "_getBuiltinLogicValue"]
+- !private ["s8HashableP", "arc4random"]
+- !private ["s8HashableP", "arc4random_uniform"]
+- !private ["s8HashableP", "assert"]
+- !private ["s8HashableP", "clamped"]
+- !private ["s8HashableP", "init"]
+- !private ["s8HashableP", "pi"]
+- !private ["s8HashableP", "random"]
+- !private ["s8HashableP", "truncatingRemainder"]
+- !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
+- !private ["s25LosslessStringConvertibleP", "init"]
+- !private ["s7NumericP", "CGFloat"]
+- !private ["s7NumericP", "Float"]
+- !private ["s7NumericP", "arc4random"]
+- !private ["s7NumericP", "arc4random_uniform"]
+- !private ["s7NumericP", "assert"]
+- !private ["s7NumericP", "clamped"]
+- !private ["s7NumericP", "init"]
+- !private ["s7NumericP", "pi"]
+- !private ["s7NumericP", "random"]
+- !private ["s7NumericP", "truncatingRemainder"]
+- !private ["s13SignedNumericP", "CGFloat"]
+- !private ["s13SignedNumericP", "Float"]
+- !private ["s13SignedNumericP", "arc4random"]
+- !private ["s13SignedNumericP", "arc4random_uniform"]
+- !private ["s13SignedNumericP", "assert"]
+- !private ["s13SignedNumericP", "clamped"]
+- !private ["s13SignedNumericP", "init"]
+- !private ["s13SignedNumericP", "pi"]
+- !private ["s13SignedNumericP", "random"]
+- !private ["s13SignedNumericP", "truncatingRemainder"]
+- !private ["s12StaticStringV", "init"]
+- !private ["s10StrideableP", "CGFloat"]
+- !private ["s10StrideableP", "Float"]
+- !private ["s10StrideableP", "arc4random"]
+- !private ["s10StrideableP", "arc4random_uniform"]
+- !private ["s10StrideableP", "assert"]
+- !private ["s10StrideableP", "clamped"]
+- !private ["s10StrideableP", "init"]
+- !private ["s10StrideableP", "pi"]
+- !private ["s10StrideableP", "random"]
+- !private ["s10StrideableP", "truncatingRemainder"]
+- !private ["s15_CVarArgAlignedP", "CGFloat"]
+- !private ["s15_CVarArgAlignedP", "Float"]
+- !private ["s15_CVarArgAlignedP", "arc4random"]
+- !private ["s15_CVarArgAlignedP", "arc4random_uniform"]
+- !private ["s15_CVarArgAlignedP", "assert"]
+- !private ["s15_CVarArgAlignedP", "clamped"]
+- !private ["s15_CVarArgAlignedP", "init"]
+- !private ["s15_CVarArgAlignedP", "pi"]
+- !private ["s15_CVarArgAlignedP", "random"]
+- !private ["s15_CVarArgAlignedP", "truncatingRemainder"]
+- !private ["s22_CVarArgPassedAsDoubleP", "CGFloat"]
+- !private ["s22_CVarArgPassedAsDoubleP", "Float"]
+- !private ["s22_CVarArgPassedAsDoubleP", "arc4random"]
+- !private ["s22_CVarArgPassedAsDoubleP", "arc4random_uniform"]
+- !private ["s22_CVarArgPassedAsDoubleP", "assert"]
+- !private ["s22_CVarArgPassedAsDoubleP", "clamped"]
+- !private ["s22_CVarArgPassedAsDoubleP", "init"]
+- !private ["s22_CVarArgPassedAsDoubleP", "pi"]
+- !private ["s22_CVarArgPassedAsDoubleP", "random"]
+- !private ["s22_CVarArgPassedAsDoubleP", "truncatingRemainder"]
+- !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "_getBuiltinLogicValue"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s33_ExpressibleByBuiltinFloatLiteralP", "init"]
+- !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "CGFloat"]
+- !private ["s21_ObjectiveCBridgeableP", "Float"]
+- !private ["s21_ObjectiveCBridgeableP", "_getBuiltinLogicValue"]
+- !private ["s21_ObjectiveCBridgeableP", "arc4random"]
+- !private ["s21_ObjectiveCBridgeableP", "arc4random_uniform"]
+- !private ["s21_ObjectiveCBridgeableP", "assert"]
+- !private ["s21_ObjectiveCBridgeableP", "clamped"]
+- !private ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "pi"]
+- !private ["s21_ObjectiveCBridgeableP", "random"]
+- !private ["s21_ObjectiveCBridgeableP", "truncatingRemainder"]
+- !private ["s11_StrideableP", "CGFloat"]
+- !private ["s11_StrideableP", "Float"]
+- !private ["s11_StrideableP", "arc4random"]
+- !private ["s11_StrideableP", "arc4random_uniform"]
+- !private ["s11_StrideableP", "assert"]
+- !private ["s11_StrideableP", "clamped"]
+- !private ["s11_StrideableP", "init"]
+- !private ["s11_StrideableP", "pi"]
+- !private ["s11_StrideableP", "random"]
+- !private ["s11_StrideableP", "truncatingRemainder"]
+depends-nominal:
+- !private "s19BinaryFloatingPointP"
+- !private "Sb"
+- "12CoreGraphics7CGFloatV"
+- !private "s7CVarArgP"
+- !private "s10ComparableP"
+- !private "s28CustomDebugStringConvertibleP"
+- !private "s29CustomPlaygroundQuickLookableP"
+- !private "s17CustomReflectableP"
+- !private "s23CustomStringConvertibleP"
+- !private "s9DecodableP"
+- !private "s9EncodableP"
+- !private "s9EquatableP"
+- !private "s27ExpressibleByBooleanLiteralP"
+- !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- !private "s25ExpressibleByFloatLiteralP"
+- !private "s27ExpressibleByIntegerLiteralP"
+- !private "s26ExpressibleByStringLiteralP"
+- !private "s33ExpressibleByUnicodeScalarLiteralP"
+- !private "Sf"
+- !private "s13FloatingPointP"
+- !private "s8HashableP"
+- !private "s25LosslessStringConvertibleP"
+- !private "s7NumericP"
+- !private "s13SignedNumericP"
+- !private "s12StaticStringV"
+- !private "s10StrideableP"
+- !private "s15_CVarArgAlignedP"
+- !private "s22_CVarArgPassedAsDoubleP"
+- !private "s35_ExpressibleByBuiltinBooleanLiteralP"
+- !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- !private "s33_ExpressibleByBuiltinFloatLiteralP"
+- !private "s35_ExpressibleByBuiltinIntegerLiteralP"
+- !private "s34_ExpressibleByBuiltinStringLiteralP"
+- !private "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- !private "s21_ObjectiveCBridgeableP"
+- !private "s11_StrideableP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/ModelIO.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreMedia.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/simd.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Metal.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/AVFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreAudio.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/GLKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/SpriteKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/SwiftOnoneSupport.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.0.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.0.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.0.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.0.sdk/System/Library/Frameworks/SpriteKit.framework/Headers/SpriteKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.0.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+interface-hash: "b41eb4e3362332de4e614312b92b2986"
