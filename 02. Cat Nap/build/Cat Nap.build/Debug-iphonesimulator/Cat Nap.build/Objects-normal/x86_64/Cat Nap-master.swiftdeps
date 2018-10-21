@@ -1,7 +1,0 @@
-version: "Apple Swift version 4.0 (swiftlang-900.0.65 clang-900.0.37)"
-options: "9e55762500f6bc1313f520d1cdba4949"
-build_time: [1506988296, 313191000]
-inputs:
-  "/Users/nhiddink/GitHub/Cat Nap/Cat Nap/GameScene.swift": [1506988208, 0]
-  "/Users/nhiddink/GitHub/Cat Nap/Cat Nap/GameViewController.swift": [1506988208, 0]
-  "/Users/nhiddink/GitHub/Cat Nap/Cat Nap/AppDelegate.swift": [1506988207, 0]
