@@ -1,0 +1,162 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "GameAudioPlayer"
+- "GameAudioPlayerInstance"
+provides-nominal:
+- "8XBlaster15GameAudioPlayerC"
+provides-member:
+- ["8XBlaster15GameAudioPlayerC", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "!"
+- !private "=="
+- "AVAudioPlayer"
+- "AssignmentPrecedence"
+- "GameAudioPlayer"
+- "GameAudioPlayerInstance"
+- !private "NSBundle"
+- !private "NSError"
+- "String"
+- !private "println"
+depends-member:
+- !private ["So13AVAudioPlayerC", "numberOfLoops"]
+- !private ["So13AVAudioPlayerC", "pause"]
+- !private ["So13AVAudioPlayerC", "play"]
+- !private ["So13AVAudioPlayerC", "playing"]
+- !private ["So13AVAudioPlayerC", "prepareToPlay"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- !private ["So6BundleC", "mainBundle"]
+- !private ["s7CVarArgP", "mainBundle"]
+- !private ["s7CVarArgP", "numberOfLoops"]
+- !private ["s7CVarArgP", "pause"]
+- !private ["s7CVarArgP", "play"]
+- !private ["s7CVarArgP", "playing"]
+- !private ["s7CVarArgP", "prepareToPlay"]
+- !private ["s28CustomDebugStringConvertibleP", "mainBundle"]
+- !private ["s28CustomDebugStringConvertibleP", "numberOfLoops"]
+- !private ["s28CustomDebugStringConvertibleP", "pause"]
+- !private ["s28CustomDebugStringConvertibleP", "play"]
+- !private ["s28CustomDebugStringConvertibleP", "playing"]
+- !private ["s28CustomDebugStringConvertibleP", "prepareToPlay"]
+- !private ["s29CustomPlaygroundQuickLookableP", "_getBuiltinLogicValue"]
+- !private ["s17CustomReflectableP", "_getBuiltinLogicValue"]
+- !private ["s23CustomStringConvertibleP", "_getBuiltinLogicValue"]
+- !private ["s23CustomStringConvertibleP", "mainBundle"]
+- !private ["s23CustomStringConvertibleP", "numberOfLoops"]
+- !private ["s23CustomStringConvertibleP", "pause"]
+- !private ["s23CustomStringConvertibleP", "play"]
+- !private ["s23CustomStringConvertibleP", "playing"]
+- !private ["s23CustomStringConvertibleP", "prepareToPlay"]
+- !private ["s9DecodableP", "_getBuiltinLogicValue"]
+- !private ["s9EncodableP", "_getBuiltinLogicValue"]
+- !private ["s9EquatableP", "_getBuiltinLogicValue"]
+- !private ["s9EquatableP", "mainBundle"]
+- !private ["s9EquatableP", "numberOfLoops"]
+- !private ["s9EquatableP", "pause"]
+- !private ["s9EquatableP", "play"]
+- !private ["s9EquatableP", "playing"]
+- !private ["s9EquatableP", "prepareToPlay"]
+- !private ["s27ExpressibleByBooleanLiteralP", "_getBuiltinLogicValue"]
+- ["8XBlaster15GameAudioPlayerC", "AVAudioPlayer"]
+- ["8XBlaster15GameAudioPlayerC", "GameAudioPlayer"]
+- !private ["8XBlaster15GameAudioPlayerC", "GameAudioPlayerInstance"]
+- !private ["8XBlaster15GameAudioPlayerC", "NSBundle"]
+- !private ["8XBlaster15GameAudioPlayerC", "NSError"]
+- ["8XBlaster15GameAudioPlayerC", "String"]
+- ["8XBlaster15GameAudioPlayerC", "backgroundMusicPlayer"]
+- ["8XBlaster15GameAudioPlayerC", "deinit"]
+- ["8XBlaster15GameAudioPlayerC", "init"]
+- ["8XBlaster15GameAudioPlayerC", "pauseBackgroundMusic"]
+- ["8XBlaster15GameAudioPlayerC", "playBackgroundMusic"]
+- ["8XBlaster15GameAudioPlayerC", "playSoundEffect"]
+- !private ["8XBlaster15GameAudioPlayerC", "println"]
+- ["8XBlaster15GameAudioPlayerC", "resumeBackgroundMusic"]
+- ["8XBlaster15GameAudioPlayerC", "sharedInstance"]
+- ["8XBlaster15GameAudioPlayerC", "soundEffectPlayer"]
+- !private ["s8HashableP", "_getBuiltinLogicValue"]
+- !private ["s8HashableP", "mainBundle"]
+- !private ["s8HashableP", "numberOfLoops"]
+- !private ["s8HashableP", "pause"]
+- !private ["s8HashableP", "play"]
+- !private ["s8HashableP", "playing"]
+- !private ["s8HashableP", "prepareToPlay"]
+- !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
+- !private ["So8NSObjectC", "mainBundle"]
+- !private ["So8NSObjectC", "numberOfLoops"]
+- !private ["So8NSObjectC", "pause"]
+- !private ["So8NSObjectC", "play"]
+- !private ["So8NSObjectC", "playing"]
+- !private ["So8NSObjectC", "prepareToPlay"]
+- !private ["So16NSObjectProtocolP", "mainBundle"]
+- !private ["So16NSObjectProtocolP", "numberOfLoops"]
+- !private ["So16NSObjectProtocolP", "pause"]
+- !private ["So16NSObjectProtocolP", "play"]
+- !private ["So16NSObjectProtocolP", "playing"]
+- !private ["So16NSObjectProtocolP", "prepareToPlay"]
+- !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "_getBuiltinLogicValue"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "mainBundle"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "numberOfLoops"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "pause"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "play"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "playing"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "prepareToPlay"]
+- !private ["s21_ObjectiveCBridgeableP", "_getBuiltinLogicValue"]
+depends-nominal:
+- !private "So13AVAudioPlayerC"
+- !private "Sb"
+- !private "So6BundleC"
+- !private "s7CVarArgP"
+- !private "s28CustomDebugStringConvertibleP"
+- !private "s29CustomPlaygroundQuickLookableP"
+- !private "s17CustomReflectableP"
+- !private "s23CustomStringConvertibleP"
+- !private "s9DecodableP"
+- !private "s9EncodableP"
+- !private "s9EquatableP"
+- !private "s27ExpressibleByBooleanLiteralP"
+- "8XBlaster15GameAudioPlayerC"
+- !private "s8HashableP"
+- !private "s25LosslessStringConvertibleP"
+- !private "So8NSObjectC"
+- !private "So16NSObjectProtocolP"
+- !private "s35_ExpressibleByBuiltinBooleanLiteralP"
+- !private "10Foundation27_KeyValueCodingAndObservingP"
+- !private "s21_ObjectiveCBridgeableP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ModelIO.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreMedia.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/simd.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Metal.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/AVFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreAudio.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/GLKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SpriteKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/ModelIO.framework/Headers/ModelIO.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVFoundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/GLKit.framework/Headers/GLKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/SpriteKit.framework/Headers/SpriteKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.0.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
+interface-hash: "f2af787d973661dde6c2c62cf414d870"

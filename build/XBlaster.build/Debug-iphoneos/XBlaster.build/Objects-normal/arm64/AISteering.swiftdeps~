@@ -1,0 +1,147 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "AISteering"
+provides-nominal:
+- "8XBlaster10AISteeringC"
+provides-member:
+- ["8XBlaster10AISteeringC", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "*"
+- !private "+"
+- !private "-"
+- !private "/"
+- !private "<"
+- "AISteering"
+- "AssignmentPrecedence"
+- "BooleanLiteralType"
+- "CFTimeInterval"
+- "CGFloat"
+- "CGPoint"
+- "Entity"
+- "FloatLiteralType"
+depends-member:
+- ["8XBlaster10AISteeringC", "CFTimeInterval"]
+- ["8XBlaster10AISteeringC", "CGFloat"]
+- ["8XBlaster10AISteeringC", "CGPoint"]
+- ["8XBlaster10AISteeringC", "Entity"]
+- ["8XBlaster10AISteeringC", "currentDirection"]
+- ["8XBlaster10AISteeringC", "currentPosition"]
+- ["8XBlaster10AISteeringC", "deinit"]
+- ["8XBlaster10AISteeringC", "entity"]
+- ["8XBlaster10AISteeringC", "faceDirectionOfTravel"]
+- ["8XBlaster10AISteeringC", "init"]
+- ["8XBlaster10AISteeringC", "maxSteeringForce"]
+- ["8XBlaster10AISteeringC", "maxVelocity"]
+- ["8XBlaster10AISteeringC", "update"]
+- ["8XBlaster10AISteeringC", "updateWaypoint"]
+- ["8XBlaster10AISteeringC", "waypoint"]
+- ["8XBlaster10AISteeringC", "waypointRadius"]
+- ["8XBlaster10AISteeringC", "waypointReached"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- !private ["SC7CGPointV", "length"]
+- ["SC7CGPointV", "zero"]
+- !private ["s7CVarArgP", "position"]
+- !private ["s28CustomDebugStringConvertibleP", "length"]
+- !private ["s28CustomDebugStringConvertibleP", "position"]
+- ["s28CustomDebugStringConvertibleP", "zero"]
+- !private ["s29CustomPlaygroundQuickLookableP", "_getBuiltinLogicValue"]
+- !private ["s29CustomPlaygroundQuickLookableP", "length"]
+- !private ["s29CustomPlaygroundQuickLookableP", "position"]
+- ["s29CustomPlaygroundQuickLookableP", "zero"]
+- !private ["s17CustomReflectableP", "_getBuiltinLogicValue"]
+- !private ["s17CustomReflectableP", "length"]
+- ["s17CustomReflectableP", "zero"]
+- !private ["s23CustomStringConvertibleP", "_getBuiltinLogicValue"]
+- !private ["s23CustomStringConvertibleP", "position"]
+- !private ["s9DecodableP", "_getBuiltinLogicValue"]
+- !private ["s9DecodableP", "length"]
+- ["s9DecodableP", "zero"]
+- !private ["s9EncodableP", "_getBuiltinLogicValue"]
+- !private ["s9EncodableP", "length"]
+- ["s9EncodableP", "zero"]
+- !private ["8XBlaster6EntityC", "position"]
+- !private ["s9EquatableP", "_getBuiltinLogicValue"]
+- !private ["s9EquatableP", "length"]
+- !private ["s9EquatableP", "position"]
+- ["s9EquatableP", "zero"]
+- !private ["s27ExpressibleByBooleanLiteralP", "_getBuiltinLogicValue"]
+- !private ["s8HashableP", "_getBuiltinLogicValue"]
+- !private ["s8HashableP", "position"]
+- !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
+- !private ["So8NSCodingP", "position"]
+- !private ["So9NSCopyingP", "position"]
+- !private ["So8NSObjectC", "position"]
+- !private ["So16NSObjectProtocolP", "position"]
+- !private ["So6SKNodeC", "position"]
+- !private ["So12SKSpriteNodeC", "position"]
+- !private ["So10SKWarpableP", "position"]
+- !private ["So18UIFocusEnvironmentP", "position"]
+- !private ["So11UIFocusItemP", "position"]
+- !private ["So30UIPasteConfigurationSupportingP", "position"]
+- !private ["So11UIResponderC", "position"]
+- !private ["So30UIResponderStandardEditActionsP", "position"]
+- !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "_getBuiltinLogicValue"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "position"]
+- !private ["s21_ObjectiveCBridgeableP", "_getBuiltinLogicValue"]
+- !private ["s21_ObjectiveCBridgeableP", "length"]
+- ["s21_ObjectiveCBridgeableP", "zero"]
+depends-nominal:
+- "8XBlaster10AISteeringC"
+- !private "Sb"
+- "SC7CGPointV"
+- !private "s7CVarArgP"
+- "s28CustomDebugStringConvertibleP"
+- "s29CustomPlaygroundQuickLookableP"
+- "s17CustomReflectableP"
+- !private "s23CustomStringConvertibleP"
+- "s9DecodableP"
+- "s9EncodableP"
+- !private "8XBlaster6EntityC"
+- "s9EquatableP"
+- !private "s27ExpressibleByBooleanLiteralP"
+- !private "s8HashableP"
+- !private "s25LosslessStringConvertibleP"
+- !private "So8NSCodingP"
+- !private "So9NSCopyingP"
+- !private "So8NSObjectC"
+- !private "So16NSObjectProtocolP"
+- !private "So6SKNodeC"
+- !private "So12SKSpriteNodeC"
+- !private "So10SKWarpableP"
+- !private "So18UIFocusEnvironmentP"
+- !private "So11UIFocusItemP"
+- !private "So30UIPasteConfigurationSupportingP"
+- !private "So11UIResponderC"
+- !private "So30UIResponderStandardEditActionsP"
+- !private "s35_ExpressibleByBuiltinBooleanLiteralP"
+- !private "10Foundation27_KeyValueCodingAndObservingP"
+- "s21_ObjectiveCBridgeableP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/ModelIO.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreMedia.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/simd.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Metal.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/AVFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreAudio.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/GLKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/SpriteKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/SwiftOnoneSupport.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.0.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.0.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.0.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.0.sdk/System/Library/Frameworks/SpriteKit.framework/Headers/SpriteKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.0.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+interface-hash: "f75e48eee13ef4c882b7b85bd8d3437e"
